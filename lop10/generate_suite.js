@@ -2093,7 +2093,7 @@ function buildMasterHub() {
   <div class="dashboard-modal" id="dashboardModal" style="display:none;" onclick="if(event.target===this) toggleDashboard()">
     <div class="dashboard-content" onclick="event.stopPropagation()">
       <div class="dashboard-header">
-        <h2>📊 HỌC BẠ TIẾN ĐỘ HOÁ HỌC 12 - 8 CHƯƠNG</h2>
+        <h2>📊 HỌC BẠ TIẾN ĐỘ HOÁ HỌC 10 - 7 CHƯƠNG</h2>
         <button class="btn-close-modal" onclick="toggleDashboard()">✕ Đóng</button>
       </div>
       
@@ -2598,7 +2598,7 @@ function buildStandaloneFile(filename, lessonId, lessonTitle, questions) {
             <span class="font-scale-badge" id="fontScaleDisplay">100%</span>
             <button class="btn-font-scale" onclick="changeFontScale(1)" title="Tăng cỡ chữ (A+)">A+</button>
           </div>
-          <div class="lesson-title-badge">HOÁ HỌC 12 - ${lessonTitle}</div>
+          <div class="lesson-title-badge">HOÁ HỌC 10 – ${lessonTitle}</div>
         </div>
 
         <!-- Center: Mode Switcher & Mini-map -->
