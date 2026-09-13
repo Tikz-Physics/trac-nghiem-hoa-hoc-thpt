@@ -4,28 +4,28 @@ const LESSONS_DATA = {
       "type": "mcq",
       "q": "Cân bằng hóa học là trạng thái của một phản ứng thuận nghịch khi:",
       "opts": [
-        "Tốc độ phản ứng thuận bằng tốc độ phản ứng nghịch (v_t = v_n).",
+        "Tốc độ phản ứng thuận bằng tốc độ phản ứng nghịch (v<sub>t</sub> = v<sub>n</sub>).",
         "Nồng độ của các chất phản ứng bằng nồng độ của các sản phẩm.",
         "Phản ứng dừng lại hoàn toàn không xảy ra nữa.",
         "Toàn bộ chất phản ứng đã chuyển hóa hết thành sản phẩm."
       ],
       "ans": 0,
       "correctText": "Đáp án A (Tốc độ thuận bằng tốc độ nghịch)",
-      "exp": "• <b>Định nghĩa SGK Hóa 11:</b> Cân bằng hóa học là trạng thái của phản ứng thuận nghịch khi tốc độ phản ứng thuận bằng tốc độ phản ứng nghịch (v_thuận = v_nghịch).<br>• Cân bằng hóa học là một cân bằng động (dynamic equilibrium): phản ứng vẫn diễn ra ở mức độ vi mô theo cả 2 chiều với tốc độ bằng nhau.<br>• <b>Kết luận:</b> Chọn đáp án A.",
+      "exp": "• <b>Định nghĩa SGK Hóa 11:</b> Cân bằng hóa học là trạng thái của phản ứng thuận nghịch khi tốc độ phản ứng thuận bằng tốc độ phản ứng nghịch (v<sub>thuận</sub> = v<sub>nghịch</sub>).<br>• Cân bằng hóa học là một cân bằng động (dynamic equilibrium): phản ứng vẫn diễn ra ở mức độ vi mô theo cả 2 chiều với tốc độ bằng nhau.<br>• <b>Kết luận:</b> Chọn đáp án A.",
       "svgGraph": "<svg viewBox=\"0 0 540 240\" width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\">\n  <rect width=\"100%\" height=\"100%\" fill=\"#070a14\" rx=\"14\" stroke=\"rgba(56,189,248,0.2)\"/>\n  <text x=\"270\" y=\"26\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"800\">ĐỒ THỊ TỐC ĐỘ PHẢN ỨNG THUẬN – NGHỊCH VÀ CÂN BẰNG HOÁ HỌC</text>\n  \n  <g transform=\"translate(45, 46)\">\n    <rect width=\"450\" height=\"170\" rx=\"12\" fill=\"rgba(15,23,42,0.85)\" stroke=\"rgba(56,189,248,0.25)\"/>\n    \n    <!-- Axes -->\n    <line x1=\"50\" y1=\"130\" x2=\"380\" y2=\"130\" stroke=\"#94a3b8\" stroke-width=\"1.5\"/>\n    <line x1=\"50\" y1=\"130\" x2=\"50\" y2=\"20\" stroke=\"#94a3b8\" stroke-width=\"1.5\"/>\n    <text x=\"385\" y=\"135\" fill=\"#94a3b8\" font-size=\"10\">Thời gian (t)</text>\n    <text x=\"45\" y=\"14\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"10\">Tốc độ (v)</text>\n\n    <!-- Curve v_thuan (Down) -->\n    <path d=\"M 50 35 Q 150 78 250 78\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.5\"/>\n    <text x=\"140\" y=\"52\" fill=\"#38bdf8\" font-size=\"10.5\" font-weight=\"bold\">v(thuận) giảm</text>\n\n    <!-- Curve v_nghich (Up) -->\n    <path d=\"M 50 125 Q 150 78 250 78\" fill=\"none\" stroke=\"#f43f5e\" stroke-width=\"2.5\"/>\n    <text x=\"140\" y=\"112\" fill=\"#f43f5e\" font-size=\"10.5\" font-weight=\"bold\">v(nghịch) tăng</text>\n\n    <!-- Merged equilibrium line -->\n    <line x1=\"250\" y1=\"78\" x2=\"370\" y2=\"78\" stroke=\"#34d399\" stroke-width=\"2.5\"/>\n\n    <!-- Equilibrium vertical marker -->\n    <line x1=\"250\" y1=\"20\" x2=\"250\" y2=\"130\" stroke=\"#fbbf24\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/>\n    <text x=\"250\" y=\"144\" text-anchor=\"middle\" fill=\"#fbbf24\" font-size=\"10\" font-weight=\"bold\">Thời điểm cân bằng (t_cb)</text>\n\n    <!-- Equilibrium label sitting cleanly above line -->\n    <rect x=\"265\" y=\"38\" width=\"135\" height=\"26\" rx=\"6\" fill=\"#0f172a\" stroke=\"#10b981\" stroke-width=\"1.5\"/>\n    <line x1=\"332\" y1=\"64\" x2=\"332\" y2=\"78\" stroke=\"#10b981\" stroke-width=\"1.5\" stroke-dasharray=\"2 2\"/>\n    <text x=\"332\" y=\"55\" text-anchor=\"middle\" fill=\"#34d399\" font-size=\"11\" font-weight=\"bold\">v(thuận) = v(nghịch)</text>\n\n    <text x=\"225\" y=\"160\" text-anchor=\"middle\" fill=\"#cbd5e1\" font-size=\"10.5\">Cân bằng hoá học là cân bằng ĐỘNG (phản ứng vẫn tiếp diễn cả 2 chiều)</text>\n  </g>\n</svg>"
     },
     {
       "type": "mcq",
-      "q": "Đối với phản ứng thuận nghịch: aA + bB ⇌ cC + dD. Biểu thức của hằng số cân bằng nồng độ (K_C) ở trạng thái cân bằng là:",
+      "q": "Đối với phản ứng thuận nghịch: aA + bB ⇌ cC + dD. Biểu thức của hằng số cân bằng nồng độ (K<sub>C</sub>) ở trạng thái cân bằng là:",
       "opts": [
-        "K_C = ([C]^c · [D]^d) / ([A]^a · [B]^b)",
-        "K_C = ([A]^a · [B]^b) / ([C]^c · [D]^d)",
-        "K_C = (c[C] + d[D]) / (a[A] + b[B])",
-        "K_C = [C] · [D] / ([A] · [B])"
+        "K<sub>C</sub> = ([C]<sup>c</sup> · [D]<sup>d</sup>) / ([A]<sup>a</sup> · [B]<sup>b</sup>)",
+        "K<sub>C</sub> = ([A]<sup>a</sup> · [B]<sup>b</sup>) / ([C]<sup>c</sup> · [D]<sup>d</sup>)",
+        "K<sub>C</sub> = (c[C] + d[D]) / (a[A] + b[B])",
+        "K<sub>C</sub> = [C] · [D] / ([A] · [B])"
       ],
       "ans": 0,
-      "correctText": "Đáp án A (K_C = ([C]^c · [D]^d) / ([A]^a · [B]^b))",
-      "exp": "• Hằng số cân bằng K_C bằng tỉ số giữa tích nồng độ các sản phẩm với tích nồng độ các chất phản ứng, mỗi nồng độ được nâng lên lũy thừa bằng hệ số tỉ lượng tương ứng trong phương trình hóa học.<br>• K_C chỉ phụ thuộc vào bản chất của phản ứng và nhiệt độ.<br>• <b>Kết luận:</b> Chọn đáp án A."
+      "correctText": "Đáp án A (K<sub>C</sub> = ([C]<sup>c</sup> · [D]<sup>d</sup>) / ([A]<sup>a</sup> · [B]<sup>b</sup>))",
+      "exp": "• Hằng số cân bằng K<sub>C</sub> bằng tỉ số giữa tích nồng độ các sản phẩm với tích nồng độ các chất phản ứng, mỗi nồng độ được nâng lên lũy thừa bằng hệ số tỉ lượng tương ứng trong phương trình hóa học.<br>• K<sub>C</sub> chỉ phụ thuộc vào bản chất của phản ứng và nhiệt độ.<br>• <b>Kết luận:</b> Chọn đáp án A."
     },
     {
       "type": "tf",
@@ -47,16 +47,16 @@ const LESSONS_DATA = {
           "exp": "Đúng."
         },
         {
-          "text": "d) Chất xúc tác làm thay đổi giá trị của hằng số cân bằng K_C.",
+          "text": "d) Chất xúc tác làm thay đổi giá trị của hằng số cân bằng K<sub>C</sub>.",
           "ans": false,
-          "exp": "Sai. Chất xúc tác chỉ làm tăng tốc độ đạt đến cân bằng mà không làm thay đổi K_C và vị trí cân bằng."
+          "exp": "Sai. Chất xúc tác chỉ làm tăng tốc độ đạt đến cân bằng mà không làm thay đổi K<sub>C</sub> và vị trí cân bằng."
         }
       ],
       "stmts": [
         "Khi làm thay đổi một trong các yếu tố nồng độ, nhiệt độ, áp suất thì cân bằng chuyển dịch theo chiều chống lại sự thay đổi đó.",
         "Khi tăng nhiệt độ, cân bằng luôn chuyển dịch theo chiều phản ứng thu nhiệt (chiều có ΔH > 0).",
         "Khi tăng áp suất chung của hệ, cân bằng chuyển dịch theo chiều làm giảm số mol khí.",
-        "Chất xúc tác làm thay đổi giá trị của hằng số cân bằng K_C."
+        "Chất xúc tác làm thay đổi giá trị của hằng số cân bằng K<sub>C</sub>."
       ],
       "ans": [
         true,
@@ -65,7 +65,7 @@ const LESSONS_DATA = {
         false
       ],
       "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
-      "exp": "• <b>Ý a) [Đúng]:</b> Đúng theo nguyên lí Le Chatelier.<br>• <b>Ý b) [Đúng]:</b> Đúng (thu bớt nhiệt lượng để hạ nhiệt độ).<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Chất xúc tác chỉ làm tăng tốc độ đạt đến cân bằng mà không làm thay đổi K_C và vị trí cân bằng."
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng theo nguyên lí Le Chatelier.<br>• <b>Ý b) [Đúng]:</b> Đúng (thu bớt nhiệt lượng để hạ nhiệt độ).<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Chất xúc tác chỉ làm tăng tốc độ đạt đến cân bằng mà không làm thay đổi K<sub>C</sub> và vị trí cân bằng."
     },
     {
       "type": "mcq",
@@ -124,7 +124,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "mcq",
-      "q": "Cho cân bằng: C(s) + CO₂(g) ⇌ 2CO(g)   ΔrH°₂₉₈ = +172,5 kJ. Khi biểu diễn hằng số cân bằng K_C, đại lượng nào KHÔNG xuất hiện trong biểu thức?",
+      "q": "Cho cân bằng: C(s) + CO₂(g) ⇌ 2CO(g)   ΔrH°₂₉₈ = +172,5 kJ. Khi biểu diễn hằng số cân bằng K<sub>C</sub>, đại lượng nào KHÔNG xuất hiện trong biểu thức?",
       "opts": [
         "Nồng độ của Carbon rắn C(s).",
         "Nồng độ của CO₂(g).",
@@ -133,7 +133,7 @@ const LESSONS_DATA = {
       ],
       "ans": 0,
       "correctText": "Đáp án A (Nồng độ chất rắn C)",
-      "exp": "• Quy ước: Nồng độ chất rắn nguyên chất được coi là hằng số (bằng 1) nên không được đưa vào biểu thức K_C.<br>• Biểu thức chuẩn: K_C = [CO]² / [CO₂].<br>• <b>Kết luận:</b> Chọn đáp án A."
+      "exp": "• Quy ước: Nồng độ chất rắn nguyên chất được coi là hằng số (bằng 1) nên không được đưa vào biểu thức K<sub>C</sub>.<br>• Biểu thức chuẩn: K<sub>C</sub> = [CO]² / [CO₂].<br>• <b>Kết luận:</b> Chọn đáp án A."
     },
     {
       "type": "tf",
@@ -150,7 +150,7 @@ const LESSONS_DATA = {
           "exp": "Đúng (do số mol khí 2 vế bằng nhau: Δn = 0)."
         },
         {
-          "text": "c) Hằng số cân bằng K_C = [HI]² / ([H₂] · [I₂]).",
+          "text": "c) Hằng số cân bằng K<sub>C</sub> = [HI]² / ([H₂] · [I₂]).",
           "ans": true,
           "exp": "Đúng."
         },
@@ -163,7 +163,7 @@ const LESSONS_DATA = {
       "stmts": [
         "Số mol khí ở hai vế phương trình bằng nhau (1 + 1 = 2).",
         "Khi thay đổi áp suất của hệ, cân bằng không bị chuyển dịch.",
-        "Hằng số cân bằng K_C = [HI]² / ([H₂] · [I₂]).",
+        "Hằng số cân bằng K<sub>C</sub> = [HI]² / ([H₂] · [I₂]).",
         "Thêm khí trơ Argon vào bình ở thể tích không đổi làm cân bằng chuyển dịch theo chiều thuận."
       ],
       "ans": [
@@ -177,7 +177,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "mcq",
-      "q": "Nếu ở nhiệt độ T, hằng số cân bằng K_C của phản ứng rất lớn (K_C >> 1) thì điều đó có ý nghĩa gì?",
+      "q": "Nếu ở nhiệt độ T, hằng số cân bằng K<sub>C</sub> của phản ứng rất lớn (K<sub>C</sub> >> 1) thì điều đó có ý nghĩa gì?",
       "opts": [
         "Ở trạng thái cân bằng, nồng độ các sản phẩm chiếm ưu thế lớn so với chất phản ứng (phản ứng xảy ra gần như hoàn toàn).",
         "Phản ứng xảy ra rất chậm.",
@@ -186,7 +186,7 @@ const LESSONS_DATA = {
       ],
       "ans": 0,
       "correctText": "Đáp án A (Sản phẩm chiếm ưu thế, hiệu suất cao)",
-      "exp": "• K_C = [Sản phẩm] / [Chất đầu].<br>• K_C >> 1 chứng tỏ ở trạng thái cân bằng lượng sản phẩm rất lớn, phản ứng thuận diễn ra rất thuận lợi.<br>• K_C << 1 chứng tỏ phản ứng thuận khó xảy ra.<br>• <b>Kết luận:</b> Chọn đáp án A."
+      "exp": "• K<sub>C</sub> = [Sản phẩm] / [Chất đầu].<br>• K<sub>C</sub> >> 1 chứng tỏ ở trạng thái cân bằng lượng sản phẩm rất lớn, phản ứng thuận diễn ra rất thuận lợi.<br>• K<sub>C</sub> << 1 chứng tỏ phản ứng thuận khó xảy ra.<br>• <b>Kết luận:</b> Chọn đáp án A."
     },
     {
       "type": "drag",
@@ -414,7 +414,7 @@ const LESSONS_DATA = {
       ],
       "ans": 0,
       "correctText": "Đáp án A (Nồng độ mol chính xác)",
-      "exp": "• Chuẩn độ acid - base là kĩ thuật chuẩn độ thể tích: dùng một dung dịch chuẩn đã biết chính xác nồng độ (trên buret) để chuẩn độ thể tích xác định của dung dịch cần xác định nồng độ (dưới bình tam giác) đến điểm tương đương (nhận biết qua chất chỉ thị màu).<br>• Áp dụng công thức: C_A · V_A = C_B · V_B.<br>• <b>Kết luận:</b> Chọn đáp án A."
+      "exp": "• Chuẩn độ acid - base là kĩ thuật chuẩn độ thể tích: dùng một dung dịch chuẩn đã biết chính xác nồng độ (trên buret) để chuẩn độ thể tích xác định của dung dịch cần xác định nồng độ (dưới bình tam giác) đến điểm tương đương (nhận biết qua chất chỉ thị màu).<br>• Áp dụng công thức: C<sub>A</sub> · V<sub>A</sub> = C<sub>B</sub> · V<sub>B</sub>.<br>• <b>Kết luận:</b> Chọn đáp án A."
     },
     {
       "type": "drag",
@@ -431,14 +431,14 @@ const LESSONS_DATA = {
         2,
         3
       ],
-      "exp": "• Acid cho, base nhận.<br>• K_w = 10⁻¹⁴.<br>• Thang pH từ 0 đến 14.",
+      "exp": "• Acid cho, base nhận.<br>• K<sub>w</sub> = 10⁻¹⁴.<br>• Thang pH từ 0 đến 14.",
       "words": [
         "cho",
         "nhận",
         "10⁻¹⁴",
         "0 đến 14"
       ],
-      "text": "Theo thuyết Brønsted – Lowry, acid là chất [blank] proton H⁺, base là chất [blank] proton H⁺. Tích số ion của nước ở 25 °C là K_w = [H⁺] · [OH⁻] = [blank]. Thang đo pH tiện dụng thường có giá trị từ [blank].",
+      "text": "Theo thuyết Brønsted – Lowry, acid là chất [blank] proton H⁺, base là chất [blank] proton H⁺. Tích số ion của nước ở 25 °C là K<sub>w</sub> = [H⁺] · [OH⁻] = [blank]. Thang đo pH tiện dụng thường có giá trị từ [blank].",
       "correctText": "1: cho | 2: nhận | 3: 10⁻¹⁴ | 4: 0 đến 14"
     },
     {
@@ -472,7 +472,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "mcq",
-      "q": "Biết hằng số cân bằng K_C của phản ứng H₂(g) + I₂(g) ⇌ 2HI(g) ở 430 °C là 50. Nếu nồng độ cân bằng của H₂ và I₂ đều là 0,1 M thì nồng độ cân bằng của HI là:",
+      "q": "Biết hằng số cân bằng K<sub>C</sub> của phản ứng H₂(g) + I₂(g) ⇌ 2HI(g) ở 430 °C là 50. Nếu nồng độ cân bằng của H₂ và I₂ đều là 0,1 M thì nồng độ cân bằng của HI là:",
       "opts": [
         "≈ 0,71 M (√0,5 M)",
         "5,0 M",
@@ -481,7 +481,7 @@ const LESSONS_DATA = {
       ],
       "ans": 0,
       "correctText": "Đáp án A (≈ 0,71 M)",
-      "exp": "• Biểu thức: K_C = [HI]² / ([H₂] · [I₂]) = 50.<br>• Thay số: [HI]² / (0,1 · 0,1) = 50 ⇒ [HI]² = 50 · 0,01 = 0,5 ⇒ [HI] = √0,5 ≈ 0,707 M.<br>• <b>Kết luận:</b> Chọn đáp án A."
+      "exp": "• Biểu thức: K<sub>C</sub> = [HI]² / ([H₂] · [I₂]) = 50.<br>• Thay số: [HI]² / (0,1 · 0,1) = 50 ⇒ [HI]² = 50 · 0,01 = 0,5 ⇒ [HI] = √0,5 ≈ 0,707 M.<br>• <b>Kết luận:</b> Chọn đáp án A."
     },
     {
       "type": "tf",
@@ -534,7 +534,7 @@ const LESSONS_DATA = {
       ],
       "ans": 0,
       "correctText": "Đáp án A (0,125 M)",
-      "exp": "• Phản ứng: HCl + NaOH -> NaCl + H₂O.<br>• Tại điểm tương đương: n_HCl = n_NaOH<br>⇒ C_HCl · V_HCl = C_NaOH · V_NaOH<br>⇒ C_HCl = (0,10 · 25,0) / 20,0 = 0,125 M.<br>• <b>Kết luận:</b> Chọn đáp án A."
+      "exp": "• Phản ứng: HCl + NaOH -> NaCl + H₂O.<br>• Tại điểm tương đương: n<sub>HCl</sub> = n<sub>NaOH</sub><br>⇒ C<sub>HCl</sub> · V<sub>HCl</sub> = C<sub>NaOH</sub> · V<sub>NaOH</sub><br>⇒ C<sub>HCl</sub> = (0,10 · 25,0) / 20,0 = 0,125 M.<br>• <b>Kết luận:</b> Chọn đáp án A."
     },
     {
       "type": "match",
@@ -606,12 +606,12 @@ const LESSONS_DATA = {
           "exp": "Đúng (CO liên kết chặt hơn O₂ khoảng 200 lần gây ngộ độc khí than)."
         },
         {
-          "text": "c) Nhiệt độ tăng luôn làm tăng giá trị hằng số cân bằng K_C của mọi phản ứng.",
+          "text": "c) Nhiệt độ tăng luôn làm tăng giá trị hằng số cân bằng K<sub>C</sub> của mọi phản ứng.",
           "ans": false,
-          "exp": "Sai. Chỉ làm tăng K_C của phản ứng thu nhiệt (ΔH > 0), và làm giảm K_C của phản ứng tỏa nhiệt (ΔH < 0)."
+          "exp": "Sai. Chỉ làm tăng K<sub>C</sub> của phản ứng thu nhiệt (ΔH > 0), và làm giảm K<sub>C</sub> của phản ứng tỏa nhiệt (ΔH < 0)."
         },
         {
-          "text": "d) Biểu thức K_C chỉ phụ thuộc vào nhiệt độ và bản chất của phản ứng.",
+          "text": "d) Biểu thức K<sub>C</sub> chỉ phụ thuộc vào nhiệt độ và bản chất của phản ứng.",
           "ans": true,
           "exp": "Đúng."
         }
@@ -619,8 +619,8 @@ const LESSONS_DATA = {
       "stmts": [
         "Quá trình hòa tan và lắng đọng đá vôi tạo hang động nhũ đá là cân bằng: CaCO₃ + CO₂ + H₂O ⇌ Ca(HCO₃)₂.",
         "Sự tạo phức của hemoglobin với khí O₂ và CO trong máu là các cân bằng hóa học cạnh tranh.",
-        "Nhiệt độ tăng luôn làm tăng giá trị hằng số cân bằng K_C của mọi phản ứng.",
-        "Biểu thức K_C chỉ phụ thuộc vào nhiệt độ và bản chất của phản ứng."
+        "Nhiệt độ tăng luôn làm tăng giá trị hằng số cân bằng K<sub>C</sub> của mọi phản ứng.",
+        "Biểu thức K<sub>C</sub> chỉ phụ thuộc vào nhiệt độ và bản chất của phản ứng."
       ],
       "ans": [
         true,
@@ -629,7 +629,7 @@ const LESSONS_DATA = {
         true
       ],
       "correctText": "a) Đúng | b) Đúng | c) Sai | d) Đúng",
-      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (chiều thuận hòa tan đá vôi tạo hang, chiều nghịch kết tinh tạo thạch nhũ).<br>• <b>Ý b) [Đúng]:</b> Đúng (CO liên kết chặt hơn O₂ khoảng 200 lần gây ngộ độc khí than).<br>• <b>Ý c) [Sai]:</b> Sai. Chỉ làm tăng K_C của phản ứng thu nhiệt (ΔH > 0), và làm giảm K_C của phản ứng tỏa nhiệt (ΔH < 0).<br>• <b>Ý d) [Đúng]:</b> Đúng."
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (chiều thuận hòa tan đá vôi tạo hang, chiều nghịch kết tinh tạo thạch nhũ).<br>• <b>Ý b) [Đúng]:</b> Đúng (CO liên kết chặt hơn O₂ khoảng 200 lần gây ngộ độc khí than).<br>• <b>Ý c) [Sai]:</b> Sai. Chỉ làm tăng K<sub>C</sub> của phản ứng thu nhiệt (ΔH > 0), và làm giảm K<sub>C</sub> của phản ứng tỏa nhiệt (ΔH < 0).<br>• <b>Ý d) [Đúng]:</b> Đúng."
     },
     {
       "type": "mcq",
@@ -666,7 +666,7 @@ const LESSONS_DATA = {
         "tương đương",
         "chỉ thị màu"
       ],
-      "text": "Hằng số cân bằng nồng độ K_C cho biết mức độ xảy ra của phản ứng [blank]. Chuẩn độ acid – base dựa trên phản ứng [blank] giữa ion H⁺ và ion OH⁻. Điểm mà tại đó lượng acid và lượng base vừa đủ tác dụng hết với nhau gọi là điểm [blank], được nhận biết bằng chất [blank].",
+      "text": "Hằng số cân bằng nồng độ K<sub>C</sub> cho biết mức độ xảy ra của phản ứng [blank]. Chuẩn độ acid – base dựa trên phản ứng [blank] giữa ion H⁺ và ion OH⁻. Điểm mà tại đó lượng acid và lượng base vừa đủ tác dụng hết với nhau gọi là điểm [blank], được nhận biết bằng chất [blank].",
       "correctText": "1: thuận nghịch | 2: trung hòa | 3: tương đương | 4: chỉ thị màu"
     },
     {
@@ -924,7 +924,7 @@ const LESSONS_DATA = {
       "ans": 0,
       "correctText": "Đáp án A (Hình chóp tam giác, phân cực, còn 1 cặp e)",
       "exp": "• Nguyên tử N lai hóa sp³, 3 obitan lai hóa xen phủ với 3 nguyên tử H tạo hình chóp tam giác, đỉnh là cặp electron tự do chưa chia của N.<br>• Cặp electron tự do này quyết định tính base và khả năng tạo phức của NH₃.<br>• <b>Kết luận:</b> Chọn đáp án A.",
-      "svgGraph": "<svg viewBox=\"0 0 540 240\" width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\">\n  <rect width=\"100%\" height=\"100%\" fill=\"#070a14\" rx=\"14\" stroke=\"rgba(56,189,248,0.2)\"/>\n  <text x=\"270\" y=\"26\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"800\">CẤU TRÚC PHÂN TỬ VÀ TÍNH CHẤT CỦA AMMONIA (NH₃)</text>\n  \n  <g transform=\"translate(40, 50)\">\n    <rect width=\"460\" height=\"160\" rx=\"12\" fill=\"rgba(15,23,42,0.85)\" stroke=\"rgba(56,189,248,0.25)\"/>\n    \n    <!-- NH3 Geometry -->\n    <g transform=\"translate(110, 60)\">\n      <!-- Lone pair -->\n      <ellipse cx=\"0\" cy=\"-30\" rx=\"14\" ry=\"10\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"1.5\" stroke-dasharray=\"2 2\"/>\n      <circle cx=\"-4\" cy=\"-30\" r=\"2.5\" fill=\"#fbbf24\"/>\n      <circle cx=\"4\" cy=\"-30\" r=\"2.5\" fill=\"#fbbf24\"/>\n      <text x=\"0\" y=\"-45\" text-anchor=\"middle\" fill=\"#fbbf24\" font-size=\"9.5\" font-weight=\"bold\">Cặp e tự do</text>\n\n      <!-- Nitrogen center -->\n      <circle cx=\"0\" cy=\"0\" r=\"20\" fill=\"rgba(56,189,248,0.3)\" stroke=\"#38bdf8\" stroke-width=\"2\"/>\n      <text x=\"0\" y=\"5\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"13\" font-weight=\"bold\">N</text>\n\n      <!-- 3 H atoms -->\n      <line x1=\"-12\" y1=\"15\" x2=\"-35\" y2=\"45\" stroke=\"#94a3b8\" stroke-width=\"2\"/>\n      <circle cx=\"-35\" cy=\"45\" r=\"10\" fill=\"#38bdf8\"/>\n      <text x=\"-35\" y=\"48\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"9\">H</text>\n\n      <line x1=\"0\" y1=\"20\" x2=\"0\" y2=\"55\" stroke=\"#94a3b8\" stroke-width=\"2\"/>\n      <circle cx=\"0\" cy=\"55\" r=\"10\" fill=\"#38bdf8\"/>\n      <text x=\"0\" y=\"58\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"9\">H</text>\n\n      <line x1=\"12\" y1=\"15\" x2=\"35\" y2=\"45\" stroke=\"#94a3b8\" stroke-width=\"2\"/>\n      <circle cx=\"35\" cy=\"45\" r=\"10\" fill=\"#38bdf8\"/>\n      <text x=\"35\" y=\"48\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"9\">H</text>\n\n      <text x=\"0\" y=\"80\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"10\" font-weight=\"bold\">Hình chóp tam giác</text>\n    </g>\n\n    <!-- Properties -->\n    <g transform=\"translate(230, 20)\">\n      <rect width=\"205\" height=\"52\" rx=\"8\" fill=\"rgba(16,185,129,0.15)\" stroke=\"#10b981\"/>\n      <text x=\"12\" y=\"22\" fill=\"#34d399\" font-size=\"11\" font-weight=\"bold\">TÍNH BASE YẾU</text>\n      <text x=\"12\" y=\"40\" fill=\"#cbd5e1\" font-size=\"10\">Do cặp e tự do trên N dễ nhận H⁺</text>\n\n      <rect y=\"62\" width=\"205\" height=\"52\" rx=\"8\" fill=\"rgba(244,63,94,0.15)\" stroke=\"#f43f5e\"/>\n      <text x=\"12\" y=\"84\" fill=\"#f43f5e\" font-size=\"11\" font-weight=\"bold\">TÍNH KHỬ MẠNH</text>\n      <text x=\"12\" y=\"102\" fill=\"#cbd5e1\" font-size=\"10\">N có số oxi hoá thấp nhất (-3)</text>\n    </g>\n\n    <text x=\"230\" y=\"145\" text-anchor=\"middle\" fill=\"#fbbf24\" font-size=\"10.5\">Thí nghiệm đài phun nước: NH₃ tan cực nhiều trong nước (1L H₂O tan 800L NH₃)</text>\n  </g>\n</svg>"
+      "svgGraph": "<svg viewBox=\"0 0 540 240\" width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\">\n  <rect width=\"100%\" height=\"100%\" fill=\"#070a14\" rx=\"14\" stroke=\"rgba(56,189,248,0.2)\"/>\n  <text x=\"270\" y=\"26\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"800\">MÔ HÌNH PHÂN TỬ VÀ TÍNH CHẤT AMMONIA (NH₃)</text>\n  \n  <g transform=\"translate(40, 50)\">\n    <rect width=\"460\" height=\"160\" rx=\"12\" fill=\"rgba(15,23,42,0.85)\" stroke=\"rgba(56,189,248,0.25)\"/>\n    \n    <!-- NH3 Geometry -->\n    <g transform=\"translate(110, 46)\">\n      <!-- Lone pair -->\n      <ellipse cx=\"0\" cy=\"-30\" rx=\"14\" ry=\"10\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"1.5\" stroke-dasharray=\"2 2\"/>\n      <circle cx=\"-4\" cy=\"-30\" r=\"2.5\" fill=\"#fbbf24\"/>\n      <circle cx=\"4\" cy=\"-30\" r=\"2.5\" fill=\"#fbbf24\"/>\n      <text x=\"0\" y=\"-45\" text-anchor=\"middle\" fill=\"#fbbf24\" font-size=\"9.5\" font-weight=\"bold\">Cặp e tự do</text>\n\n      <!-- Nitrogen center -->\n      <circle cx=\"0\" cy=\"0\" r=\"20\" fill=\"rgba(56,189,248,0.3)\" stroke=\"#38bdf8\" stroke-width=\"2\"/>\n      <text x=\"0\" y=\"5\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"13\" font-weight=\"bold\">N</text>\n\n      <!-- 3 H atoms -->\n      <line x1=\"-12\" y1=\"15\" x2=\"-35\" y2=\"45\" stroke=\"#94a3b8\" stroke-width=\"2\"/>\n      <circle cx=\"-35\" cy=\"45\" r=\"10\" fill=\"#38bdf8\"/>\n      <text x=\"-35\" y=\"48\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"9\">H</text>\n\n      <line x1=\"0\" y1=\"20\" x2=\"0\" y2=\"55\" stroke=\"#94a3b8\" stroke-width=\"2\"/>\n      <circle cx=\"0\" cy=\"55\" r=\"10\" fill=\"#38bdf8\"/>\n      <text x=\"0\" y=\"58\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"9\">H</text>\n\n      <line x1=\"12\" y1=\"15\" x2=\"35\" y2=\"45\" stroke=\"#94a3b8\" stroke-width=\"2\"/>\n      <circle cx=\"35\" cy=\"45\" r=\"10\" fill=\"#38bdf8\"/>\n      <text x=\"35\" y=\"48\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"9\">H</text>\n\n      <text x=\"0\" y=\"70\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"10\" font-weight=\"bold\">Cấu trúc phân tử NH₃</text>\n    </g>\n\n    <!-- Properties -->\n    <g transform=\"translate(230, 20)\">\n      <rect width=\"205\" height=\"52\" rx=\"8\" fill=\"rgba(16,185,129,0.15)\" stroke=\"#10b981\"/>\n      <text x=\"12\" y=\"22\" fill=\"#34d399\" font-size=\"11\" font-weight=\"bold\">TÍNH BASE YẾU</text>\n      <text x=\"12\" y=\"40\" fill=\"#cbd5e1\" font-size=\"10\">Do cặp e tự do trên N dễ nhận H⁺</text>\n\n      <rect y=\"62\" width=\"205\" height=\"52\" rx=\"8\" fill=\"rgba(244,63,94,0.15)\" stroke=\"#f43f5e\"/>\n      <text x=\"12\" y=\"84\" fill=\"#f43f5e\" font-size=\"11\" font-weight=\"bold\">TÍNH KHỬ MẠNH</text>\n      <text x=\"12\" y=\"102\" fill=\"#cbd5e1\" font-size=\"10\">N có số oxi hoá thấp nhất (-3)</text>\n    </g>\n\n    <text x=\"230\" y=\"148\" text-anchor=\"middle\" fill=\"#fbbf24\" font-size=\"10.5\">Thí nghiệm đài phun nước: NH₃ tan cực nhiều trong nước (1L H₂O tan 800L NH₃)</text>\n  </g>\n</svg>"
     },
     {
       "type": "mcq",
@@ -1364,7 +1364,7 @@ const LESSONS_DATA = {
       ],
       "ans": 0,
       "correctText": "Đáp án A (0,4958 L)",
-      "exp": "• n_Cu = 1,92 / 64 = 0,03 mol.<br>• Phản ứng: 3Cu + 8HNO₃ -> 3Cu(NO₃)₂ + 2NO + 4H₂O.<br>• n_NO = (2/3) · n_Cu = 0,02 mol.<br>• Theo chuẩn SGK 2018 (1 bar, 25 °C): V = 0,02 · 24,79 = 0,4958 L.<br>• <b>Kết luận:</b> Chọn đáp án A."
+      "exp": "• n<sub>Cu</sub> = 1,92 / 64 = 0,03 mol.<br>• Phản ứng: 3Cu + 8HNO₃ -> 3Cu(NO₃)₂ + 2NO + 4H₂O.<br>• n<sub>NO</sub> = (2/3) · n<sub>Cu</sub> = 0,02 mol.<br>• Theo chuẩn SGK 2018 (1 bar, 25 °C): V = 0,02 · 24,79 = 0,4958 L.<br>• <b>Kết luận:</b> Chọn đáp án A."
     }
   ],
   "7": [
@@ -2519,7 +2519,7 @@ const LESSONS_DATA = {
       ],
       "ans": 0,
       "correctText": "Đáp án A (Tỉ lệ số nguyên tử tối giản)",
-      "exp": "• <b>Định nghĩa:</b> Công thức đơn giản nhất cho biết tỉ lệ số nguyên tử của các nguyên tố trong phân tử dưới dạng các số nguyên tối giản (x : y : z = n_C : n_H : n_O).<br>• Ví dụ: Glucose có công thức phân tử là C₆H₁₂O₆, công thức đơn giản nhất là CH₂O.<br>• <b>Kết luận:</b> Chọn đáp án A.",
+      "exp": "• <b>Định nghĩa:</b> Công thức đơn giản nhất cho biết tỉ lệ số nguyên tử của các nguyên tố trong phân tử dưới dạng các số nguyên tối giản (x : y : z = n<sub>C</sub> : n<sub>H</sub> : n<sub>O</sub>).<br>• Ví dụ: Glucose có công thức phân tử là C₆H₁₂O₆, công thức đơn giản nhất là CH₂O.<br>• <b>Kết luận:</b> Chọn đáp án A.",
       "svgGraph": "<svg viewBox=\"0 0 540 240\" width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\">\n  <rect width=\"100%\" height=\"100%\" fill=\"#070a14\" rx=\"14\" stroke=\"rgba(56,189,248,0.2)\"/>\n  <text x=\"270\" y=\"26\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"800\">MỐI QUAN HỆ GIỮA CTĐGN, PHỔ MS VÀ CÔNG THỨC PHÂN TỬ</text>\n  \n  <g transform=\"translate(35, 48)\">\n    <rect width=\"470\" height=\"165\" rx=\"12\" fill=\"rgba(15,23,42,0.85)\" stroke=\"rgba(56,189,248,0.25)\"/>\n    \n    <!-- Step 1: CTDGN -->\n    <rect x=\"20\" y=\"25\" width=\"125\" height=\"90\" rx=\"8\" fill=\"rgba(56,189,248,0.15)\" stroke=\"#38bdf8\"/>\n    <text x=\"82\" y=\"48\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"11\" font-weight=\"bold\">BƯỚC 1</text>\n    <text x=\"82\" y=\"70\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"12\" font-weight=\"900\">CTĐGN</text>\n    <text x=\"82\" y=\"95\" text-anchor=\"middle\" fill=\"#cbd5e1\" font-size=\"10\">Tỉ lệ mol C : H : O</text>\n\n    <text x=\"160\" y=\"75\" fill=\"#38bdf8\" font-size=\"20\" font-weight=\"bold\">➔</text>\n\n    <!-- Step 2: MS Spectrum -->\n    <rect x=\"180\" y=\"25\" width=\"125\" height=\"90\" rx=\"8\" fill=\"rgba(245,158,11,0.15)\" stroke=\"#f59e0b\"/>\n    <text x=\"242\" y=\"48\" text-anchor=\"middle\" fill=\"#fbbf24\" font-size=\"11\" font-weight=\"bold\">BƯỚC 2</text>\n    <text x=\"242\" y=\"70\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"12\" font-weight=\"900\">PHỔ MS</text>\n    <text x=\"242\" y=\"95\" text-anchor=\"middle\" fill=\"#fbbf24\" font-size=\"10\">Ion phân tử [M⁺]</text>\n\n    <text x=\"320\" y=\"75\" fill=\"#10b981\" font-size=\"20\" font-weight=\"bold\">➔</text>\n\n    <!-- Step 3: CTPT -->\n    <rect x=\"340\" y=\"25\" width=\"115\" height=\"90\" rx=\"8\" fill=\"rgba(16,185,129,0.15)\" stroke=\"#10b981\"/>\n    <text x=\"397\" y=\"48\" text-anchor=\"middle\" fill=\"#34d399\" font-size=\"11\" font-weight=\"bold\">BƯỚC 3</text>\n    <text x=\"397\" y=\"70\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"12\" font-weight=\"900\">CTPT</text>\n    <text x=\"397\" y=\"95\" text-anchor=\"middle\" fill=\"#a7f3d0\" font-size=\"10\">(CTĐGN)ₙ = M</text>\n\n    <text x=\"235\" y=\"140\" text-anchor=\"middle\" fill=\"#cbd5e1\" font-size=\"10.5\">Ví dụ: CTĐGN là CH₂O (M=30), phổ MS cho peak [M⁺]=60 ➔ CTPT là C₂H₄O₂ (n = 2)</text>\n  </g>\n</svg>"
     },
     {
@@ -2533,7 +2533,7 @@ const LESSONS_DATA = {
       ],
       "ans": 0,
       "correctText": "Đáp án A (Khối lượng mol phân tử M)",
-      "exp": "• Trên phổ khối lượng MS, pic của ion phân tử [M⁺] (thường có m/z lớn nhất trừ các pic đồng vị rất nhỏ) cho biết trực tiếp phân tử khối M của hợp chất hữu cơ.<br>• Từ công thức đơn giản nhất (C_xH_yO_z)_n và M = M(đgn) · n ta suy ra giá trị n và công thức phân tử.<br>• <b>Kết luận:</b> Chọn đáp án A."
+      "exp": "• Trên phổ khối lượng MS, pic của ion phân tử [M⁺] (thường có m/z lớn nhất trừ các pic đồng vị rất nhỏ) cho biết trực tiếp phân tử khối M của hợp chất hữu cơ.<br>• Từ công thức đơn giản nhất (C<sub>x</sub>H<sub>y</sub>O<sub>z</sub>)_n và M = M(đgn) · n ta suy ra giá trị n và công thức phân tử.<br>• <b>Kết luận:</b> Chọn đáp án A."
     },
     {
       "type": "tf",
@@ -2542,7 +2542,7 @@ const LESSONS_DATA = {
         {
           "text": "a) Số mol C trong X là 0,2 mol và số mol H là 0,4 mol.",
           "ans": true,
-          "exp": "Đúng: n_C = 8,8/44 = 0,2 mol; n_H = 2 · (3,6/18) = 0,4 mol."
+          "exp": "Đúng: n<sub>C</sub> = 8,8/44 = 0,2 mol; n<sub>H</sub> = 2 · (3,6/18) = 0,4 mol."
         },
         {
           "text": "b) Khối lượng oxygen trong X là 4,4 - (0,2·12 + 0,4·1) = 1,6 gam (tương ứng 0,1 mol O).",
@@ -2550,7 +2550,7 @@ const LESSONS_DATA = {
           "exp": "Đúng."
         },
         {
-          "text": "c) Tỉ lệ n_C : n_H : n_O = 0,2 : 0,4 : 0,1 = 2 : 4 : 1 ⇒ Công thức đơn giản nhất là C₂H₄O.",
+          "text": "c) Tỉ lệ n<sub>C</sub> : n<sub>H</sub> : n<sub>O</sub> = 0,2 : 0,4 : 0,1 = 2 : 4 : 1 ⇒ Công thức đơn giản nhất là C₂H₄O.",
           "ans": true,
           "exp": "Đúng."
         },
@@ -2563,7 +2563,7 @@ const LESSONS_DATA = {
       "stmts": [
         "Số mol C trong X là 0,2 mol và số mol H là 0,4 mol.",
         "Khối lượng oxygen trong X là 4,4 - (0,2·12 + 0,4·1) = 1,6 gam (tương ứng 0,1 mol O).",
-        "Tỉ lệ n_C : n_H : n_O = 0,2 : 0,4 : 0,1 = 2 : 4 : 1 ⇒ Công thức đơn giản nhất là C₂H₄O.",
+        "Tỉ lệ n<sub>C</sub> : n<sub>H</sub> : n<sub>O</sub> = 0,2 : 0,4 : 0,1 = 2 : 4 : 1 ⇒ Công thức đơn giản nhất là C₂H₄O.",
         "Nếu phổ MS cho pic ion phân tử m/z = 88 thì công thức phân tử của X là C₂H₄O."
       ],
       "ans": [
@@ -2573,7 +2573,7 @@ const LESSONS_DATA = {
         false
       ],
       "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
-      "exp": "• <b>Ý a) [Đúng]:</b> Đúng: n_C = 8,8/44 = 0,2 mol; n_H = 2 · (3,6/18) = 0,4 mol.<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. M(C₂H₄O) = 44. Vì m/z = 88 ⇒ n = 88/44 = 2 ⇒ Công thức phân tử là C₄H₈O₂."
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng: n<sub>C</sub> = 8,8/44 = 0,2 mol; n<sub>H</sub> = 2 · (3,6/18) = 0,4 mol.<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. M(C₂H₄O) = 44. Vì m/z = 88 ⇒ n = 88/44 = 2 ⇒ Công thức phân tử là C₄H₈O₂."
     },
     {
       "type": "mcq",
@@ -2586,7 +2586,7 @@ const LESSONS_DATA = {
       ],
       "ans": 0,
       "correctText": "Đáp án A (C₂H₆O)",
-      "exp": "• Tỉ lệ: n_C : n_H : n_O = (52,17/12) : (13,04/1) : (34,79/16)<br>= 4,3475 : 13,04 : 2,174 = 2 : 6 : 1.<br>• Công thức đơn giản nhất là C₂H₆O (đây là ethanol hoặc dimethyl ether).<br>• <b>Kết luận:</b> Chọn đáp án A."
+      "exp": "• Tỉ lệ: n<sub>C</sub> : n<sub>H</sub> : n<sub>O</sub> = (52,17/12) : (13,04/1) : (34,79/16)<br>= 4,3475 : 13,04 : 2,174 = 2 : 6 : 1.<br>• Công thức đơn giản nhất là C₂H₆O (đây là ethanol hoặc dimethyl ether).<br>• <b>Kết luận:</b> Chọn đáp án A."
     },
     {
       "type": "match",
@@ -2980,7 +2980,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "mcq",
-      "q": "Khi đốt cháy hoàn toàn một hydrocarbon X thu được n_CO₂ = n_H₂O. Hydrocarbon X có thể thuộc dãy đồng đẳng nào?",
+      "q": "Khi đốt cháy hoàn toàn một hydrocarbon X thu được n<sub>CO₂</sub> = n<sub>H₂O</sub>. Hydrocarbon X có thể thuộc dãy đồng đẳng nào?",
       "opts": [
         "Alkene (CnH2n, n ≥ 2) hoặc Monocycloalkane",
         "Alkane (CnH2n+2)",
@@ -3196,14 +3196,14 @@ const LESSONS_DATA = {
       "type": "mcq",
       "q": "Alkane (paraffin) là các hydrocarbon no, mạch hở có công thức chung là gì?",
       "opts": [
-        "C_n H_{2n+2} (với n ≥ 1)",
-        "C_n H_{2n} (với n ≥ 2)",
-        "C_n H_{2n-2} (với n ≥ 2)",
-        "C_n H_{2n-6} (với n ≥ 6)"
+        "C<sub>n</sub>H<sub>2n+2</sub> (với n ≥ 1)",
+        "C<sub>n</sub>H<sub>2n</sub> (với n ≥ 2)",
+        "C<sub>n</sub>H<sub>2n-2</sub> (với n ≥ 2)",
+        "C<sub>n</sub>H<sub>2n-6</sub> (với n ≥ 6)"
       ],
       "ans": 0,
-      "correctText": "Đáp án A (C_n H_{2n+2}, n ≥ 1)",
-      "exp": "• <b>Định nghĩa SGK Hóa 11:</b> Alkane là hydrocarbon no mạch hở, trong phân tử chỉ chứa liên kết đơn C–C và C–H, có công thức chung C_n H_{2n+2} (n ≥ 1).<br>• Đại diện đơn giản nhất là methane (CH₄).<br>• <b>Kết luận:</b> Chọn đáp án A.",
+      "correctText": "Đáp án A (C<sub>n</sub>H<sub>2n+2</sub>, n ≥ 1)",
+      "exp": "• <b>Định nghĩa SGK Hóa 11:</b> Alkane là hydrocarbon no mạch hở, trong phân tử chỉ chứa liên kết đơn C–C và C–H, có công thức chung C<sub>n</sub>H<sub>2n+2</sub> (n ≥ 1).<br>• Đại diện đơn giản nhất là methane (CH₄).<br>• <b>Kết luận:</b> Chọn đáp án A.",
       "svgGraph": "<svg viewBox=\"0 0 540 240\" width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\">\n  <rect width=\"100%\" height=\"100%\" fill=\"#070a14\" rx=\"14\" stroke=\"rgba(56,189,248,0.2)\"/>\n  <text x=\"270\" y=\"26\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"800\">CẤU TRÚC TỨ DIỆN ĐỀU CỦA METHANE VÀ PHẢN ỨNG THẾ</text>\n  \n  <g transform=\"translate(35, 50)\">\n    <rect width=\"470\" height=\"160\" rx=\"12\" fill=\"rgba(15,23,42,0.85)\" stroke=\"rgba(56,189,248,0.25)\"/>\n    \n    <!-- CH4 tetrahedral structure -->\n    <g transform=\"translate(90, 70)\">\n      <circle cx=\"0\" cy=\"0\" r=\"18\" fill=\"rgba(56,189,248,0.3)\" stroke=\"#38bdf8\" stroke-width=\"2\"/>\n      <text x=\"0\" y=\"5\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"12\" font-weight=\"bold\">C</text>\n      <!-- 4 H atoms -->\n      <line x1=\"0\" y1=\"-18\" x2=\"0\" y2=\"-45\" stroke=\"#94a3b8\" stroke-width=\"2\"/>\n      <circle cx=\"0\" cy=\"-45\" r=\"9\" fill=\"#38bdf8\"/><text x=\"0\" y=\"-42\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"8\">H</text>\n      \n      <line x1=\"-15\" y1=\"10\" x2=\"-35\" y2=\"35\" stroke=\"#94a3b8\" stroke-width=\"2\"/>\n      <circle cx=\"-35\" cy=\"35\" r=\"9\" fill=\"#38bdf8\"/><text x=\"-35\" y=\"38\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"8\">H</text>\n\n      <line x1=\"15\" y1=\"10\" x2=\"35\" y2=\"35\" stroke=\"#94a3b8\" stroke-width=\"2\"/>\n      <circle cx=\"35\" cy=\"35\" r=\"9\" fill=\"#38bdf8\"/><text x=\"35\" y=\"38\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"8\">H</text>\n\n      <line x1=\"12\" y1=\"-10\" x2=\"35\" y2=\"-15\" stroke=\"#94a3b8\" stroke-width=\"2\"/>\n      <circle cx=\"35\" cy=\"-15\" r=\"9\" fill=\"#38bdf8\"/><text x=\"35\" y=\"-12\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"8\">H</text>\n      <text x=\"0\" y=\"60\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"10\" font-weight=\"bold\">Góc liên kết 109,5°</text>\n    </g>\n\n    <!-- Substitution Reaction -->\n    <g transform=\"translate(190, 20)\">\n      <rect width=\"255\" height=\"115\" rx=\"8\" fill=\"rgba(0,0,0,0.4)\" stroke=\"rgba(255,255,255,0.1)\"/>\n      <text x=\"127\" y=\"24\" text-anchor=\"middle\" fill=\"#fbbf24\" font-size=\"11\" font-weight=\"bold\">PHẢN ỨNG THẾ HALOGEN (ÁNH SÁNG)</text>\n      <text x=\"127\" y=\"48\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"11\">CH₄ + Cl₂  ➔  CH₃Cl + HCl (as)</text>\n      <text x=\"127\" y=\"70\" text-anchor=\"middle\" fill=\"#34d399\" font-size=\"10\">Cơ chế gốc tự do (SR)</text>\n      <text x=\"127\" y=\"95\" text-anchor=\"middle\" fill=\"#cbd5e1\" font-size=\"9.5\">Quy tắc thế: Ưu tiên thế vào C bậc cao hơn</text>\n    </g>\n  </g>\n</svg>"
     },
     {
@@ -3416,7 +3416,7 @@ const LESSONS_DATA = {
       ],
       "ans": 0,
       "correctText": "Đáp án A (C₃H₈ - Propane)",
-      "exp": "• Số nguyên tử C = n_CO₂ / n_X = 3 / 1 = 3.<br>• Số nguyên tử H = 2 · n_H₂O / n_X = 2 · 4 / 1 = 8.<br>• Công thức phân tử của X là C₃H₈ (Propane).<br>• <b>Kết luận:</b> Chọn đáp án A."
+      "exp": "• Số nguyên tử C = n<sub>CO₂</sub> / n<sub>X</sub> = 3 / 1 = 3.<br>• Số nguyên tử H = 2 · n<sub>H₂O</sub> / n<sub>X</sub> = 2 · 4 / 1 = 8.<br>• Công thức phân tử của X là C₃H₈ (Propane).<br>• <b>Kết luận:</b> Chọn đáp án A."
     }
   ],
   "16": [
@@ -3660,7 +3660,7 @@ const LESSONS_DATA = {
       "ans": 0,
       "correctText": "Đáp án A (Lục giác đều phẳng, hệ 6 electron π liên hợp bền vững)",
       "exp": "• Vòng benzene là một hình lục giác đều phẳng với độ dài các liên kết C–C hoàn toàn bằng nhau (0,139 nm), nằm trung gian giữa liên kết đơn và liên kết đôi.<br>• Hệ liên hợp electron π khép kín giải thích cho tính thơm: 'Dễ thế, khó cộng, bền vững với chất oxi hóa'.<br>• <b>Kết luận:</b> Chọn đáp án A.",
-      "svgGraph": "<svg viewBox=\"0 0 540 240\" width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\">\n  <rect width=\"100%\" height=\"100%\" fill=\"#070a14\" rx=\"14\" stroke=\"rgba(56,189,248,0.2)\"/>\n  <text x=\"270\" y=\"26\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"800\">CẤU TRÚC VÒNG BENZENE (C₆H₆) VÀ TÍNH CHẤT ARENE</text>\n  \n  <g transform=\"translate(40, 50)\">\n    <rect width=\"460\" height=\"160\" rx=\"12\" fill=\"rgba(15,23,42,0.85)\" stroke=\"rgba(56,189,248,0.25)\"/>\n    \n    <!-- Benzene Ring SVG -->\n    <g transform=\"translate(100, 75)\">\n      <polygon points=\"0,-40 35,-20 35,20 0,40 -35,20 -35,-20\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.5\"/>\n      <circle cx=\"0\" cy=\"0\" r=\"22\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\" stroke-dasharray=\"3 3\"/>\n      <text x=\"0\" y=\"5\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"11\" font-weight=\"bold\">6e⁻ π</text>\n      <text x=\"0\" y=\"55\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"10\" font-weight=\"bold\">Lục giác đều phẳng</text>\n    </g>\n\n    <!-- Arene Properties -->\n    <g transform=\"translate(200, 20)\">\n      <rect width=\"235\" height=\"115\" rx=\"8\" fill=\"rgba(0,0,0,0.4)\" stroke=\"rgba(255,255,255,0.1)\"/>\n      <text x=\"117\" y=\"24\" text-anchor=\"middle\" fill=\"#fbbf24\" font-size=\"11\" font-weight=\"bold\">ĐẶC TÍNH \"DỄ THẾ, KHÓ CỘNG, BỀN VỚI OXI HOÁ\"</text>\n      <text x=\"15\" y=\"50\" fill=\"#cbd5e1\" font-size=\"10\">• Phản ứng thế Br₂ (bột Fe): Tạo C₆H₅Br</text>\n      <text x=\"15\" y=\"70\" fill=\"#cbd5e1\" font-size=\"10\">• Phản ứng nitro hoá (HNO₃/H₂SO₄ đ): Tạo nitrobenzene</text>\n      <text x=\"15\" y=\"90\" fill=\"#34d399\" font-size=\"10\" font-weight=\"bold\">• Toluene: Định hướng thế ortho, para</text>\n    </g>\n\n    <text x=\"230\" y=\"148\" text-anchor=\"middle\" fill=\"#fecdd3\" font-size=\"10\">Hệ liên hợp 6 electron π giải toả đều trên 6 nguyên tử C làm vòng benzene cực kì bền vững</text>\n  </g>\n</svg>"
+      "svgGraph": "<svg viewBox=\"0 0 540 240\" width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\">\n  <rect width=\"100%\" height=\"100%\" fill=\"#070a14\" rx=\"14\" stroke=\"rgba(56,189,248,0.2)\"/>\n  <text x=\"270\" y=\"26\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"800\">CẤU TRÚC VÒNG BENZENE (C₆H₆) VÀ TÍNH CHẤT ARENE</text>\n  \n  <g transform=\"translate(40, 50)\">\n    <rect width=\"460\" height=\"160\" rx=\"12\" fill=\"rgba(15,23,42,0.85)\" stroke=\"rgba(56,189,248,0.25)\"/>\n    \n    <!-- Benzene Ring SVG -->\n    <g transform=\"translate(100, 75)\">\n      <polygon points=\"0,-40 35,-20 35,20 0,40 -35,20 -35,-20\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.5\"/>\n      <circle cx=\"0\" cy=\"0\" r=\"22\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\" stroke-dasharray=\"3 3\"/>\n      <text x=\"0\" y=\"5\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"11\" font-weight=\"bold\">6e⁻ π</text>\n      <text x=\"0\" y=\"55\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"10\" font-weight=\"bold\">Vòng thơm (C₆H₆)</text>\n    </g>\n\n    <!-- Arene Properties -->\n    <g transform=\"translate(200, 20)\">\n      <rect width=\"235\" height=\"115\" rx=\"8\" fill=\"rgba(0,0,0,0.4)\" stroke=\"rgba(255,255,255,0.1)\"/>\n      <text x=\"117\" y=\"24\" text-anchor=\"middle\" fill=\"#fbbf24\" font-size=\"11\" font-weight=\"bold\">ĐẶC TÍNH \"DỄ THẾ, KHÓ CỘNG, BỀN VỚI OXI HOÁ\"</text>\n      <text x=\"15\" y=\"50\" fill=\"#cbd5e1\" font-size=\"10\">• Phản ứng thế Br₂ (bột Fe): Tạo C₆H₅Br</text>\n      <text x=\"15\" y=\"70\" fill=\"#cbd5e1\" font-size=\"10\">• Phản ứng nitro hoá (HNO₃/H₂SO₄ đ): Tạo nitrobenzene</text>\n      <text x=\"15\" y=\"90\" fill=\"#34d399\" font-size=\"10\" font-weight=\"bold\">• Toluene: Định hướng thế ortho, para</text>\n    </g>\n\n    <text x=\"230\" y=\"148\" text-anchor=\"middle\" fill=\"#fecdd3\" font-size=\"10\">Hệ liên hợp 6 electron π giải toả đều trên 6 nguyên tử C làm vòng benzene cực kì bền vững</text>\n  </g>\n</svg>"
     },
     {
       "type": "mcq",
@@ -3901,19 +3901,19 @@ const LESSONS_DATA = {
       ],
       "ans": 0,
       "correctText": "Đáp án A (50%)",
-      "exp": "• Chỉ có C₂H₂ phản ứng tạo kết tủa: C₂H₂ + 2AgNO₃ + 2NH₃ -> CAg≡CAg↓ + 2NH₄NO₃.<br>• M(CAg≡CAg) = 108·2 + 24 = 240 g/mol.<br>• n(kết tủa) = 12,0 / 240 = 0,05 mol ⇒ n_C₂H₂ = 0,05 mol.<br>• % thể tích C₂H₂ = (0,05 / 0,1) · 100% = 50%.<br>• <b>Kết luận:</b> Chọn đáp án A."
+      "exp": "• Chỉ có C₂H₂ phản ứng tạo kết tủa: C₂H₂ + 2AgNO₃ + 2NH₃ -> CAg≡CAg↓ + 2NH₄NO₃.<br>• M(CAg≡CAg) = 108·2 + 24 = 240 g/mol.<br>• n(kết tủa) = 12,0 / 240 = 0,05 mol ⇒ n<sub>C</sub>₂H₂ = 0,05 mol.<br>• % thể tích C₂H₂ = (0,05 / 0,1) · 100% = 50%.<br>• <b>Kết luận:</b> Chọn đáp án A."
     },
     {
       "type": "tf",
       "q": "Xét các phản ứng điều chế và tính chất của hydrocarbon:",
       "items": [
         {
-          "text": "a) Đốt cháy hoàn toàn alkane luôn thu được n_H₂O > n_CO₂.",
+          "text": "a) Đốt cháy hoàn toàn alkane luôn thu được n<sub>H₂O</sub> > n<sub>CO₂</sub>.",
           "ans": true,
           "exp": "Đúng (CnH2n+2 -> nCO₂ + (n+1)H₂O)."
         },
         {
-          "text": "b) Đốt cháy hoàn toàn alkyne luôn thu được n_CO₂ > n_H₂O.",
+          "text": "b) Đốt cháy hoàn toàn alkyne luôn thu được n<sub>CO₂</sub> > n<sub>H₂O</sub>.",
           "ans": true,
           "exp": "Đúng (CnH2n-2 -> nCO₂ + (n-1)H₂O)."
         },
@@ -3929,8 +3929,8 @@ const LESSONS_DATA = {
         }
       ],
       "stmts": [
-        "Đốt cháy hoàn toàn alkane luôn thu được n_H₂O > n_CO₂.",
-        "Đốt cháy hoàn toàn alkyne luôn thu được n_CO₂ > n_H₂O.",
+        "Đốt cháy hoàn toàn alkane luôn thu được n<sub>H₂O</sub> > n<sub>CO₂</sub>.",
+        "Đốt cháy hoàn toàn alkyne luôn thu được n<sub>CO₂</sub> > n<sub>H₂O</sub>.",
         "Nhiệt phân methane ở 1500 °C làm lạnh nhanh thu được acetylene: 2CH₄ --1500°C--> C₂H₂ + 3H₂.",
         "Benzene làm mất màu nước bromine giống như ethylene."
       ],
@@ -4430,7 +4430,7 @@ const LESSONS_DATA = {
         },
         {
           "a": "4. Đốt cháy hoàn toàn alcohol no đơn chức",
-          "b": "D. Thu được CO₂ và H₂O với n_H₂O > n_CO₂."
+          "b": "D. Thu được CO₂ và H₂O với n<sub>H₂O</sub> > n<sub>CO₂</sub>."
         }
       ],
       "ans": [
@@ -4450,7 +4450,7 @@ const LESSONS_DATA = {
         "Tạo Aldehyde (R–CHO) và Cu kim loại màu đỏ gạch.",
         "Tạo Ketone (R–CO–R') và Cu kim loại màu đỏ gạch.",
         "Bền vững, không bị oxi hóa ở điều kiện này.",
-        "Thu được CO₂ và H₂O với n_H₂O > n_CO₂."
+        "Thu được CO₂ và H₂O với n<sub>H₂O</sub> > n<sub>CO₂</sub>."
       ],
       "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
@@ -4556,7 +4556,7 @@ const LESSONS_DATA = {
       ],
       "ans": 0,
       "correctText": "Đáp án A (Số mL ethanol trong 100 mL dung dịch)",
-      "exp": "• Độ rượu = (V_ethanol / V_dung dịch) · 100.<br>• Rượu 40° nghĩa là trong 100 mL dung dịch rượu có chứa đúng 40 mL ethanol nguyên chất.<br>• <b>Kết luận:</b> Chọn đáp án A."
+      "exp": "• Độ rượu = (V<sub>ethanol</sub> / V<sub>dung dịch</sub>) · 100.<br>• Rượu 40° nghĩa là trong 100 mL dung dịch rượu có chứa đúng 40 mL ethanol nguyên chất.<br>• <b>Kết luận:</b> Chọn đáp án A."
     }
   ],
   "21": [
@@ -4921,7 +4921,7 @@ const LESSONS_DATA = {
       ],
       "ans": 0,
       "correctText": "Đáp án A (2,479 L)",
-      "exp": "• n_ethanol = 9,2 / 46 = 0,2 mol.<br>• 2C₂H₅OH + 2Na -> 2C₂H₅ONa + H₂↑.<br>• n_H₂ = n_ethanol / 2 = 0,1 mol.<br>• Thể tích khí ở 25 °C, 1 bar: V = 0,1 · 24,79 = 2,479 L.<br>• <b>Kết luận:</b> Chọn đáp án A."
+      "exp": "• n<sub>ethanol</sub> = 9,2 / 46 = 0,2 mol.<br>• 2C₂H₅OH + 2Na -> 2C₂H₅ONa + H₂↑.<br>• n<sub>H</sub>₂ = n<sub>ethanol</sub> / 2 = 0,1 mol.<br>• Thể tích khí ở 25 °C, 1 bar: V = 0,1 · 24,79 = 2,479 L.<br>• <b>Kết luận:</b> Chọn đáp án A."
     },
     {
       "type": "tf",
@@ -5202,7 +5202,7 @@ const LESSONS_DATA = {
       ],
       "ans": 0,
       "correctText": "Đáp án A (C₂H₅–CHO)",
-      "exp": "• n_Ag = 10,8 / 108 = 0,1 mol.<br>• RCHO + 2Ag⁺ -> 2Ag ⇒ n_RCHO = 0,1 / 2 = 0,05 mol.<br>• Khối lượng mol: M = 2,9 / 0,05 = 58 g/mol (R + 29 = 58 ⇒ R = 29: gốc C₂H₅–).<br>• CTPT của X là C₂H₅CHO (propanal).<br>• <b>Kết luận:</b> Chọn đáp án A."
+      "exp": "• n<sub>Ag</sub> = 10,8 / 108 = 0,1 mol.<br>• RCHO + 2Ag⁺ -> 2Ag ⇒ n<sub>RCHO</sub> = 0,1 / 2 = 0,05 mol.<br>• Khối lượng mol: M = 2,9 / 0,05 = 58 g/mol (R + 29 = 58 ⇒ R = 29: gốc C₂H₅–).<br>• CTPT của X là C₂H₅CHO (propanal).<br>• <b>Kết luận:</b> Chọn đáp án A."
     },
     {
       "type": "drag",
@@ -5255,7 +5255,7 @@ const LESSONS_DATA = {
       ],
       "ans": 0,
       "correctText": "Đáp án A (Nhóm carboxyl –COOH)",
-      "exp": "• <b>Định nghĩa SGK Hóa 11:</b> Carboxylic acid là những hợp chất hữu cơ trong phân tử có nhóm carboxyl (–COOH) liên kết trực tiếp với nguyên tử carbon hoặc nguyên tử hydrogen.<br>• Công thức chung của acid no, đơn chức, mạch hở: CnH2n+1COOH (n ≥ 0) hay C_m H_{2m} O₂ (m ≥ 1).<br>• <b>Kết luận:</b> Chọn đáp án A.",
+      "exp": "• <b>Định nghĩa SGK Hóa 11:</b> Carboxylic acid là những hợp chất hữu cơ trong phân tử có nhóm carboxyl (–COOH) liên kết trực tiếp với nguyên tử carbon hoặc nguyên tử hydrogen.<br>• Công thức chung của acid no, đơn chức, mạch hở: CnH2n+1COOH (n ≥ 0) hay C<sub>m</sub>H<sub>2m</sub> O₂ (m ≥ 1).<br>• <b>Kết luận:</b> Chọn đáp án A.",
       "svgGraph": "<svg viewBox=\"0 0 540 240\" width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\">\n  <rect width=\"100%\" height=\"100%\" fill=\"#070a14\" rx=\"14\" stroke=\"rgba(56,189,248,0.2)\"/>\n  <text x=\"270\" y=\"26\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"800\">CẤU TRÚC DIMER VÀ TÍNH CHẤT CỦA CARBOXYLIC ACID</text>\n  \n  <g transform=\"translate(35, 48)\">\n    <rect width=\"470\" height=\"165\" rx=\"12\" fill=\"rgba(15,23,42,0.85)\" stroke=\"rgba(56,189,248,0.25)\"/>\n    \n    <!-- Dimer structure -->\n    <g transform=\"translate(40, 20)\">\n      <rect width=\"190\" height=\"100\" rx=\"8\" fill=\"rgba(244,63,94,0.15)\" stroke=\"#f43f5e\"/>\n      <text x=\"95\" y=\"24\" text-anchor=\"middle\" fill=\"#f43f5e\" font-size=\"11\" font-weight=\"bold\">CẤU TRÚC DIMER DẠNG CẶP</text>\n      <text x=\"95\" y=\"55\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"13\" font-weight=\"bold\">R–C(O)⋯H–O–C(R)</text>\n      <text x=\"95\" y=\"75\" text-anchor=\"middle\" fill=\"#fbbf24\" font-size=\"10\">2 liên kết Hydrogen bền</text>\n      <text x=\"95\" y=\"92\" text-anchor=\"middle\" fill=\"#34d399\" font-size=\"9.5\">t°sôi: Acid &gt; Alcohol &gt; Aldehyde</text>\n    </g>\n\n    <!-- Chemical properties -->\n    <g transform=\"translate(250, 20)\">\n      <rect width=\"190\" height=\"100\" rx=\"8\" fill=\"rgba(56,189,248,0.15)\" stroke=\"#38bdf8\"/>\n      <text x=\"95\" y=\"24\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"11\" font-weight=\"bold\">TÍNH CHẤT ACID</text>\n      <text x=\"14\" y=\"48\" fill=\"#cbd5e1\" font-size=\"9.5\">• Làm quỳ tím hoá đỏ</text>\n      <text x=\"14\" y=\"66\" fill=\"#cbd5e1\" font-size=\"9.5\">• Tác dụng kim loại trước H</text>\n      <text x=\"14\" y=\"84\" fill=\"#cbd5e1\" font-size=\"9.5\">• Tác dụng base, basic oxide</text>\n      <text x=\"14\" y=\"100\" fill=\"#34d399\" font-size=\"9.5\" font-weight=\"bold\">• Đẩy CO₂ ra khỏi muối carbonate</text>\n    </g>\n\n    <text x=\"235\" y=\"145\" text-anchor=\"middle\" fill=\"#fbbf24\" font-size=\"10.5\">Phản ứng este hoá: RCOOH + R'OH ⇌ RCOOR' + H₂O (H₂SO₄ đặc, t°)</text>\n  </g>\n</svg>"
     },
     {
@@ -5430,7 +5430,7 @@ const LESSONS_DATA = {
       ],
       "ans": 0,
       "correctText": "Đáp án A (50 mL)",
-      "exp": "• n_acid = 0,1 · 0,1 = 0,01 mol.<br>• Phản ứng: CH₃COOH + NaOH -> CH₃COONa + H₂O.<br>• n_NaOH = n_acid = 0,01 mol.<br>• V_NaOH = n / C = 0,01 / 0,2 = 0,05 L = 50 mL.<br>• <b>Kết luận:</b> Chọn đáp án A."
+      "exp": "• n<sub>acid</sub> = 0,1 · 0,1 = 0,01 mol.<br>• Phản ứng: CH₃COOH + NaOH -> CH₃COONa + H₂O.<br>• n<sub>NaOH</sub> = n<sub>acid</sub> = 0,01 mol.<br>• V<sub>NaOH</sub> = n / C = 0,01 / 0,2 = 0,05 L = 50 mL.<br>• <b>Kết luận:</b> Chọn đáp án A."
     },
     {
       "type": "drag",
@@ -5550,7 +5550,7 @@ const LESSONS_DATA = {
       ],
       "ans": 0,
       "correctText": "Đáp án A (60%)",
-      "exp": "• n_acid = 6,0 / 60 = 0,1 mol; n_alcohol = 4,6 / 46 = 0,1 mol (tỉ lệ 1 : 1).<br>• Theo lý thuyết thu được tối đa 0,1 mol ester (M = 88 g/mol) = 8,8 gam.<br>• Khối lượng thực tế thu được = 5,28 gam.<br>• Hiệu suất H = (5,28 / 8,8) · 100% = 60%.<br>• <b>Kết luận:</b> Chọn đáp án A."
+      "exp": "• n<sub>acid</sub> = 6,0 / 60 = 0,1 mol; n<sub>alcohol</sub> = 4,6 / 46 = 0,1 mol (tỉ lệ 1 : 1).<br>• Theo lý thuyết thu được tối đa 0,1 mol ester (M = 88 g/mol) = 8,8 gam.<br>• Khối lượng thực tế thu được = 5,28 gam.<br>• Hiệu suất H = (5,28 / 8,8) · 100% = 60%.<br>• <b>Kết luận:</b> Chọn đáp án A."
     },
     {
       "type": "match",
@@ -5700,3 +5700,4 @@ const LESSONS_DATA = {
     }
   ]
 };
+if (typeof module !== "undefined" && module.exports) { module.exports = { LESSONS_DATA }; }
