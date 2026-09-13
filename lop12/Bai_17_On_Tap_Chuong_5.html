@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="theme-color" content="#070a14" />
-  <title>Hoá Học 12 - Bài 17: Ôn tập chương 5 (Pin điện và điện phân) | Thầy Trần Mạnh Tùng</title>
+  <title>Hoá Học 12 - Bài 17: Ôn tập chương 5 (Pin điện và điện phân)</title>
   <link rel="manifest" href="./manifest.json" />
   <link rel="apple-touch-icon" href="./icon-192.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
@@ -990,7 +990,7 @@
           <a href="./index.html" class="nav-btn-hub">← Cổng Tổng Hợp</a>
           <div class="teacher-badge" id="teacherBadge" onclick="openTeacherModal()" title="Nhấp để thay đổi tên giáo viên">
             <span>👨‍🏫</span>
-            <span id="teacherNameDisplay">Thầy Trần Mạnh Tùng</span>
+            <span id="teacherNameDisplay">Thầy Cô</span>
             <span class="btn-edit-pen">✏️</span>
           </div>
           <div class="font-scale-group" title="Tăng/giảm kích cỡ chữ">
@@ -1061,7 +1061,7 @@
         <p style="color:#94a3b8; font-size:0.88rem; margin-bottom:12px; line-height:1.5;">
           Nhập tên Thầy / Cô để hiển thị trên tiêu đề bài thi, lời giải chi tiết và trong báo cáo học tập của học sinh:
         </p>
-        <input type="text" id="teacherNameInput" class="custom-input" placeholder="Ví dụ: Thầy Trần Mạnh Tùng, Cô Nguyễn Thị Lan..." />
+        <input type="text" id="teacherNameInput" class="custom-input" placeholder="Ví dụ: Thầy Nam, Cô Lan..." />
         <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px; gap:10px;">
           <button class="btn-modal-sec" onclick="resetTeacherName()">Đặt lại mặc định</button>
           <button class="btn-modal-pri" onclick="saveTeacherName()">Lưu & Áp Dụng 💾</button>
@@ -1569,7 +1569,7 @@
     }
 
     // Teacher Name Management
-    let teacherName = 'Thầy Trần Mạnh Tùng';
+    let teacherName = 'Thầy Cô';
     function initTeacherName() {
       try {
         const urlParams = new URLSearchParams(window.location.search);
@@ -1622,7 +1622,7 @@
 
     function resetTeacherName() {
       AudioEngine.playClick();
-      teacherName = 'Thầy Trần Mạnh Tùng';
+      teacherName = 'Thầy Cô';
       SafeStorage.setItem('HOA12_CUSTOM_TEACHER', teacherName);
       updateTeacherDisplay();
       closeTeacherModal();

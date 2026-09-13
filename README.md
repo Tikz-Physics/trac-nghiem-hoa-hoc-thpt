@@ -5,7 +5,7 @@ Bộ trắc nghiệm Hoá Học 10, 11, 12 bám sát Chương trình GDPT 2018 -
 - **Đồ họa SVG Dark Neon & Công thức hoá học Unicode thuần 100%** (Không phụ thuộc mạng Internet)
 - **Đấu Trường Hoá Học Liên Nhóm** • Wireless QR Buzzer Arena (Kết nối chuông bấm thời gian thực)
 - **PWA Offline 100%** - Dùng trọn đời trên mọi thiết bị di động, iPad & máy tính
-- **Tác giả định hướng & chuẩn mực sư phạm:** Thầy Trần Mạnh Tùng
+- **Tác giả định hướng & chuẩn mực sư phạm:** Tổ Chuyên Môn Hoá Học THPT
 
 ### 🌐 DANH SÁCH LIÊN KẾT CHÍNH THỨC:
 - 🏛️ Cổng tổng hợp 3 khối lớp: https://tikz-physics.github.io/trac-nghiem-hoa-hoc-thpt/
