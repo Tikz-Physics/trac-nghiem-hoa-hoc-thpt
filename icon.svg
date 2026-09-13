@@ -1,0 +1,38 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='512' height='512'>
+  <defs>
+    <radialGradient id='bgGrad' cx='50%' cy='50%' r='50%'>
+      <stop offset='0%' stop-color='#1e1b4b' />
+      <stop offset='60%' stop-color='#090d16' />
+      <stop offset='100%' stop-color='#030712' />
+    </radialGradient>
+    <radialGradient id='cyanGlow' cx='50%' cy='55%' r='40%'>
+      <stop offset='0%' stop-color='#06b6d4' stop-opacity='0.45' />
+      <stop offset='100%' stop-color='#06b6d4' stop-opacity='0' />
+    </radialGradient>
+    <linearGradient id='liqGrad' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' stop-color='#38bdf8' />
+      <stop offset='100%' stop-color='#0284c7' />
+    </linearGradient>
+  </defs>
+  <rect width='512' height='512' rx='112' fill='url(#bgGrad)' stroke='#38bdf8' stroke-width='4' stroke-opacity='0.3' />
+  <circle cx='256' cy='280' r='180' fill='url(#cyanGlow)' />
+  <!-- Atom orbit -->
+  <ellipse cx='256' cy='270' rx='200' ry='75' fill='none' stroke='#f59e0b' stroke-width='6' opacity='0.85' transform='rotate(26 256 270)' />
+  <circle cx='435' cy='355' r='14' fill='#fbbf24' stroke='#fff' stroke-width='3' />
+  <circle cx='77' cy='185' r='14' fill='#f59e0b' stroke='#fff' stroke-width='3' />
+  <!-- Flask Liquid -->
+  <path d='M176 275 L336 275 L390 395 C390 405 380 410 370 410 L142 410 C132 410 122 405 122 395 Z' fill='url(#liqGrad)' opacity='0.95' />
+  <ellipse cx='256' cy='275' rx='80' ry='12' fill='#38bdf8' />
+  <!-- Bubbles -->
+  <circle cx='220' cy='330' r='12' fill='#fff' opacity='0.85' />
+  <circle cx='290' cy='310' r='9' fill='#fff' opacity='0.85' />
+  <circle cx='260' cy='360' r='8' fill='#fff' opacity='0.85' />
+  <circle cx='250' cy='250' r='10' fill='#fff' opacity='0.8' />
+  <circle cx='270' cy='210' r='7' fill='#fff' opacity='0.8' />
+  <!-- Flask Glass Contour -->
+  <path d='M216 120 L296 120 M226 120 L226 220 L122 395 C118 405 125 415 140 415 L372 415 C387 415 394 405 390 395 L286 220 L286 120' fill='none' stroke='#f8fafc' stroke-width='14' stroke-linecap='round' stroke-linejoin='round' />
+  <rect x='210' y='110' width='92' height='16' rx='8' fill='#f8fafc' />
+  <!-- Sparkle -->
+  <path d='M370 140 L370 160 M360 150 L380 150' stroke='#38bdf8' stroke-width='4' stroke-linecap='round' />
+  <circle cx='370' cy='150' r='3' fill='#fff' />
+</svg>

@@ -1,0 +1,4097 @@
+const lessonsData = {
+  "1": [
+    {
+      "type": "mcq",
+      "q": "Nguyên tử được cấu tạo từ những loại hạt cơ bản nào sau đây?",
+      "opts": [
+        "Proton, neutron và electron.",
+        "Chỉ gồm proton và electron.",
+        "Chỉ gồm proton và neutron.",
+        "Chỉ gồm neutron và electron."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Proton, neutron và electron)",
+      "exp": "• <b>Kiến thức SGK Hóa 10:</b> Nguyên tử gồm hạt nhân mang điện tích dương ở tâm và lớp vỏ electron mang điện tích âm.<br>• Hạt nhân gồm proton (mang điện tích +1) và neutron (không mang điện, trừ hạt nhân nguyên tử <sup>1</sup>H không có neutron).<br>• Vỏ nguyên tử gồm các electron mang điện tích -1.<br>• <b>Kết luận:</b> Chọn đáp án A.",
+      "svgGraph": "<svg viewBox=\"0 0 500 220\" width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\">\n  <rect width=\"100%\" height=\"100%\" fill=\"#070a14\" rx=\"12\"/>\n  <text x=\"250\" y=\"28\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"bold\">MÔ HÌNH CẤU TẠO NGUYÊN TỬ</text>\n  <!-- Shells -->\n  <circle cx=\"250\" cy=\"120\" r=\"80\" fill=\"none\" stroke=\"rgba(56, 189, 248, 0.3)\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/>\n  <circle cx=\"250\" cy=\"120\" r=\"50\" fill=\"none\" stroke=\"rgba(56, 189, 248, 0.4)\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/>\n  <!-- Nucleus -->\n  <circle cx=\"250\" cy=\"120\" r=\"24\" fill=\"rgba(244, 63, 94, 0.25)\" stroke=\"#f43f5e\" stroke-width=\"2\"/>\n  <text x=\"250\" y=\"117\" text-anchor=\"middle\" fill=\"#fecdd3\" font-size=\"11\" font-weight=\"bold\">Hạt nhân</text>\n  <text x=\"250\" y=\"130\" text-anchor=\"middle\" fill=\"#f43f5e\" font-size=\"10\">(p + n)</text>\n  <!-- Electrons -->\n  <circle cx=\"200\" cy=\"120\" r=\"5\" fill=\"#38bdf8\"/>\n  <circle cx=\"300\" cy=\"120\" r=\"5\" fill=\"#38bdf8\"/>\n  <circle cx=\"250\" cy=\"40\" r=\"5\" fill=\"#38bdf8\"/>\n  <circle cx=\"250\" cy=\"200\" r=\"5\" fill=\"#38bdf8\"/>\n  <text x=\"320\" y=\"125\" fill=\"#38bdf8\" font-size=\"11\">Electron (e⁻)</text>\n  <text x=\"50\" y=\"170\" fill=\"#94a3b8\" font-size=\"11\">m<sub>p</sub> ≈ m<sub>n</sub> ≈ 1 amu; m<sub>e</sub> ≈ 0,00055 amu</text>\n</svg>"
+    },
+    {
+      "type": "mcq",
+      "q": "Khối lượng của một electron xấp xỉ bằng bao nhiêu lần khối lượng của một proton?",
+      "opts": [
+        "Xấp xỉ 1/1836 lần.",
+        "Xấp xỉ bằng nhau.",
+        "Xấp xỉ gấp đôi.",
+        "Xấp xỉ 1/100 lần."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Xấp xỉ 1/1836 lần)",
+      "exp": "• Khối lượng electron: m<sub>e</sub> ≈ 9,109·10⁻³¹ kg ≈ 0,00055 amu.<br>• Khối lượng proton: m<sub>p</sub> ≈ 1,673·10⁻²⁷ kg ≈ 1 amu.<br>• Do đó: m<sub>e</sub> / m<sub>p</sub> ≈ 1/1836. Vì khối lượng electron vô cùng nhỏ so với hạt nhân nên khối lượng nguyên tử hầu như tập trung ở hạt nhân.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Cho các nhận định sau về kích thước và khối lượng của nguyên tử:",
+      "items": [
+        {
+          "text": "a) Hầu hết không gian trong nguyên tử là không gian rỗng.",
+          "ans": true,
+          "exp": "Đúng. Thí nghiệm bắn phá lá vàng của Rutherford chứng minh nguyên tử có cấu tạo rỗng."
+        },
+        {
+          "text": "b) Khối lượng của nguyên tử tập trung chủ yếu ở hạt nhân.",
+          "ans": true,
+          "exp": "Đúng. Khối lượng electron rất nhỏ (chưa đến 0,05% khối lượng nguyên tử)."
+        },
+        {
+          "text": "c) Hạt nhân nguyên tử mang điện tích âm do chứa electron.",
+          "ans": false,
+          "exp": "Sai. Hạt nhân mang điện tích dương do chứa proton, electron nằm ở lớp vỏ."
+        },
+        {
+          "text": "d) Trong mọi nguyên tử trung hòa về điện, số proton luôn bằng số electron.",
+          "ans": true,
+          "exp": "Đúng. Điện tích nguyên tử bằng 0 nên số p (+) = số e (-)."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Kích thước của nguyên tử thường được đo bằng đơn vị angstrom (Å) hoặc nanomet (nm). Biết 1 nm bằng bao nhiêu mét?",
+      "opts": [
+        "10⁻⁹ m.",
+        "10⁻¹⁰ m.",
+        "10⁻¹² m.",
+        "10⁻⁶ m."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (10⁻⁹ m)",
+      "exp": "• 1 nm = 10⁻⁹ m; 1 Å = 10⁻¹⁰ m = 0,1 nm.<br>• Đường kính nguyên tử khoảng 10⁻¹⁰ m (0,1 nm), đường kính hạt nhân khoảng 10⁻¹⁴ m.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép các loại hạt cấu tạo nên nguyên tử (Cột A) với đặc điểm điện tích và khối lượng tương ứng (Cột B):",
+      "pairs": [
+        {
+          "a": "1. Proton (p)",
+          "b": "A. Mang điện tích +1 (+1,602·10⁻¹⁹ C), khối lượng ≈ 1 amu."
+        },
+        {
+          "a": "2. Neutron (n)",
+          "b": "B. Không mang điện, khối lượng ≈ 1 amu."
+        },
+        {
+          "a": "3. Electron (e)",
+          "b": "C. Mang điện tích -1 (-1,602·10⁻¹⁹ C), khối lượng ≈ 0,00055 amu."
+        },
+        {
+          "a": "4. Hạt nhân",
+          "b": "D. Mang điện tích dương, chiếm phần lớn khối lượng nguyên tử."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• Proton mang điện tích dương +1, khối lượng xấp xỉ 1 amu.<br>• Neutron không mang điện, khối lượng xấp xỉ 1 amu.<br>• Electron mang điện tích âm -1, khối lượng rất nhỏ ≈ 0,00055 amu.<br>• Hạt nhân gồm p và n, mang điện tích +Z."
+    },
+    {
+      "type": "mcq",
+      "q": "Điện tích hạt nhân của nguyên tử được quyết định bởi loại hạt nào sau đây?",
+      "opts": [
+        "Số hạt proton trong hạt nhân.",
+        "Số hạt neutron trong hạt nhân.",
+        "Tổng số proton và neutron.",
+        "Số hạt electron ở lớp vỏ ngoài cùng."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Số hạt proton)",
+      "exp": "• Trong hạt nhân chỉ có proton mang điện (+1), neutron không mang điện.<br>• Do đó điện tích hạt nhân bằng +Z (với Z là số proton).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các phát biểu về đơn vị khối lượng nguyên tử (amu):",
+      "items": [
+        {
+          "text": "a) 1 amu bằng 1/12 khối lượng của một nguyên tử carbon-12.",
+          "ans": true,
+          "exp": "Đúng theo định nghĩa quốc tế về đơn vị amu."
+        },
+        {
+          "text": "b) 1 amu xấp xỉ bằng 1,6605·10⁻²⁷ kg.",
+          "ans": true,
+          "exp": "Đúng. 1 amu ≈ 1,66054·10⁻²⁴ g = 1,66054·10⁻²⁷ kg."
+        },
+        {
+          "text": "c) Proton và neutron đều có khối lượng xấp xỉ bằng 1 amu.",
+          "ans": true,
+          "exp": "Đúng. m_p ≈ 1,0073 amu; m_n ≈ 1,0087 amu."
+        },
+        {
+          "text": "d) Khối lượng electron lớn hơn khối lượng proton nên electron quyết định khối lượng nguyên tử.",
+          "ans": false,
+          "exp": "Sai. Electron có khối lượng rất nhỏ (≈ 0,00055 amu), nhỏ hơn proton khoảng 1836 lần."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Một nguyên tử có 11 proton, 12 neutron và 11 electron. Số khối (A) của nguyên tử này là bao nhiêu?",
+      "opts": [
+        "23",
+        "11",
+        "12",
+        "34"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (23)",
+      "exp": "• Số khối A = Z + N = Số proton + Số neutron = 11 + 12 = 23.<br>• Đây là nguyên tử Sodium (Na).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền các từ khóa thích hợp vào chỗ trống:<br>Nguyên tử trung hòa về điện nên số %%%SLOT_1%%% bằng số %%%SLOT_2%%%. Khối lượng nguyên tử hầu như tập trung toàn bộ ở %%%SLOT_3%%%, trong khi lớp vỏ %%%SLOT_4%%% chiếm hầu hết thể tích của nguyên tử.",
+      "options": [
+        "proton",
+        "electron",
+        "hạt nhân",
+        "nguyên tử"
+      ],
+      "ans": [
+        "proton",
+        "electron",
+        "hạt nhân",
+        "nguyên tử"
+      ],
+      "exp": "• Số p = Số e để trung hòa điện.<br>• Hạt nhân tập trung gần 99,95% khối lượng.<br>• Vỏ electron chuyển động tạo không gian rỗng chiếm thể tích nguyên tử."
+    },
+    {
+      "type": "mcq",
+      "q": "Thí nghiệm khám phá ra hạt nhân nguyên tử do nhà bác học nào thực hiện bằng cách bắn phá lá vàng mỏng bằng hạt alpha (α)?",
+      "opts": [
+        "Ernest Rutherford (1911).",
+        "J.J. Thomson (1897).",
+        "James Chadwick (1932).",
+        "John Dalton (1803)."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Ernest Rutherford)",
+      "exp": "• Rutherford (1911) bắn phá lá vàng mỏng bằng tia alpha, phát hiện hạt nhân mang điện dương ở tâm nguyên tử.<br>• J.J. Thomson tìm ra electron (1897).<br>• Chadwick tìm ra neutron (1932).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "2": [
+    {
+      "type": "mcq",
+      "q": "Nguyên tố hóa học là tập hợp các nguyên tử có cùng đặc điểm nào sau đây?",
+      "opts": [
+        "Cùng số proton trong hạt nhân (cùng số hiệu nguyên tử Z).",
+        "Cùng số neutron trong hạt nhân.",
+        "Cùng số khối A.",
+        "Cùng tổng số hạt proton và neutron."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Cùng số proton Z)",
+      "exp": "• <b>Định nghĩa SGK Hóa 10:</b> Nguyên tố hóa học là tập hợp các nguyên tử có cùng số đơn vị điện tích hạt nhân (cùng số proton Z).<br>• Các nguyên tử có cùng số Z thì có tính chất hóa học giống nhau.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Kí hiệu nguyên tử <sup>A</sup><sub>Z</sub>X cho biết những thông tin nào về nguyên tử X?",
+      "opts": [
+        "Số khối A ở phía trên và số hiệu nguyên tử Z ở phía dưới.",
+        "Số neutron ở phía trên và số proton ở phía dưới.",
+        "Số electron ở phía trên và số khối ở phía dưới.",
+        "Điện tích hạt nhân ở phía trên và nguyên tử khối ở phía dưới."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Số khối A và số hiệu Z)",
+      "exp": "• Trong kí hiệu <sup>A</sup><sub>Z</sub>X: X là kí hiệu hóa học, Z là số hiệu nguyên tử (số p = số e), A là số khối (A = Z + N).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Cho các nguyên tử: <sup>35</sup><sub>17</sub>Cl và <sup>37</sup><sub>17</sub>Cl. Xét tính đúng / sai của các nhận định:",
+      "items": [
+        {
+          "text": "a) Hai nguyên tử trên là đồng vị của cùng một nguyên tố hóa học.",
+          "ans": true,
+          "exp": "Đúng. Cùng có số proton Z = 17 nhưng số neutron khác nhau (18 và 20)."
+        },
+        {
+          "text": "b) Hai nguyên tử trên có cùng số electron ở lớp vỏ.",
+          "ans": true,
+          "exp": "Đúng. Số e = số p = 17."
+        },
+        {
+          "text": "c) Nguyên tử <sup>37</sup><sub>17</sub>Cl có 20 hạt neutron trong hạt nhân.",
+          "ans": true,
+          "exp": "Đúng. N = A - Z = 37 - 17 = 20 hạt neutron."
+        },
+        {
+          "text": "d) Hai nguyên tử trên có tính chất hóa học hoàn toàn khác nhau.",
+          "ans": false,
+          "exp": "Sai. Vì cùng có 17 electron và cấu hình electron như nhau nên tính chất hóa học tương tự nhau."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Đồng vị là các nguyên tử của cùng một nguyên tố hóa học có đặc điểm gì?",
+      "opts": [
+        "Cùng số proton nhưng khác nhau về số neutron (dẫn đến số khối A khác nhau).",
+        "Cùng số neutron nhưng khác nhau về số proton.",
+        "Cùng số khối A nhưng khác nhau về số proton.",
+        "Cùng số electron nhưng khác nhau về số proton."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Cùng p, khác n)",
+      "exp": "• Đồng vị (isotope): Các nguyên tử cùng số proton Z, khác số neutron N, do đó số khối A khác nhau.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép các kí hiệu nguyên tử (Cột A) với số lượng các hạt tương ứng (Cột B):",
+      "pairs": [
+        {
+          "a": "1. <sup>12</sup><sub>6</sub>C",
+          "b": "A. 6 proton, 6 neutron, 6 electron."
+        },
+        {
+          "a": "2. <sup>23</sup><sub>11</sub>Na",
+          "b": "B. 11 proton, 12 neutron, 11 electron."
+        },
+        {
+          "a": "3. <sup>56</sup><sub>26</sub>Fe",
+          "b": "C. 26 proton, 30 neutron, 26 electron."
+        },
+        {
+          "a": "4. <sup>1</sup><sub>1</sub>H",
+          "b": "D. 1 proton, 0 neutron, 1 electron."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• <sup>12</sup><sub>6</sub>C: Z=6, N=12-6=6, e=6.<br>• <sup>23</sup><sub>11</sub>Na: Z=11, N=23-11=12, e=11.<br>• <sup>56</sup><sub>26</sub>Fe: Z=26, N=56-26=30, e=26.<br>• <sup>1</sup><sub>1</sub>H: Z=1, N=1-1=0, e=1."
+    },
+    {
+      "type": "mcq",
+      "q": "Trong tự nhiên, nguyên tố Chlorine có 2 đồng vị bền là <sup>35</sup>Cl (chiếm 75,77%) và <sup>37</sup>Cl (chiếm 24,23%). Nguyên tử khối trung bình của Chlorine là bao nhiêu?",
+      "opts": [
+        "35,48 amu.",
+        "36,00 amu.",
+        "35,50 amu.",
+        "37,25 amu."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (35,48 amu)",
+      "exp": "• Áp dụng công thức nguyên tử khối trung bình:<br>Ā = (35·75,77 + 37·24,23) / 100 = (2651,95 + 896,51) / 100 = 3548,46 / 100 ≈ 35,48 amu (thường làm tròn 35,5 amu).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các nhận định về nguyên tử khối và nguyên tử khối trung bình:",
+      "items": [
+        {
+          "text": "a) Nguyên tử khối là khối lượng tương đối của một nguyên tử tính theo đơn vị amu.",
+          "ans": true,
+          "exp": "Đúng theo định nghĩa."
+        },
+        {
+          "text": "b) Do khối lượng electron rất bé nên nguyên tử khối xấp xỉ bằng số khối A.",
+          "ans": true,
+          "exp": "Đúng. m ≈ A amu."
+        },
+        {
+          "text": "c) Hầu hết các nguyên tố trong tự nhiên là hỗn hợp của nhiều đồng vị.",
+          "ans": true,
+          "exp": "Đúng. Do đó bảng tuần hoàn ghi nguyên tử khối trung bình."
+        },
+        {
+          "text": "d) Nguyên tử khối trung bình của một nguyên tố luôn là một số nguyên.",
+          "ans": false,
+          "exp": "Sai. Thường là số thập phân do tỉ lệ % số nguyên tử của các đồng vị."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Nguyên tố Boron có 2 đồng vị: <sup>10</sup>B (nguyên tử khối 10,01) và <sup>11</sup>B (nguyên tử khối 11,01). Nguyên tử khối trung bình của B là 10,81. Phần trăm số nguyên tử của đồng vị <sup>11</sup>B là bao nhiêu?",
+      "opts": [
+        "80%",
+        "20%",
+        "50%",
+        "75%"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (80%)",
+      "exp": "• Gọi x là phần trăm của <sup>11</sup>B, phần trăm của <sup>10</sup>B là (100 - x).<br>• Ta có: 10,81 = [11,01·x + 10,01·(100 - x)] / 100<br>⇒ 1081 = 11,01x + 1001 - 10,01x = x + 1001 ⇒ x = 80%.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Hoàn thiện nhận định sau:<br>Các đồng vị của cùng một nguyên tố hóa học có cùng số %%%SLOT_1%%% nhưng khác nhau về số %%%SLOT_2%%%, do đó có %%%SLOT_3%%% khác nhau. Các đồng vị có tính chất hóa học %%%SLOT_4%%% nhau.",
+      "options": [
+        "proton",
+        "neutron",
+        "số khối",
+        "tương tự"
+      ],
+      "ans": [
+        "proton",
+        "neutron",
+        "số khối",
+        "tương tự"
+      ],
+      "exp": "• Cùng số proton = cùng vị trí ô nguyên tố.<br>• Khác neutron = khác khối lượng (số khối).<br>• Cùng electron lớp ngoài cùng = tính chất hóa học tương tự."
+    },
+    {
+      "type": "mcq",
+      "q": "Nguyên tử của nguyên tố X có 19 electron ở vỏ và 20 neutron trong hạt nhân. Kí hiệu nguyên tử của X là gì?",
+      "opts": [
+        "<sup>39</sup><sub>19</sub>K",
+        "<sup>20</sup><sub>19</sub>K",
+        "<sup>39</sup><sub>20</sub>Ca",
+        "<sup>19</sup><sub>39</sub>K"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (³⁹₁₉K)",
+      "exp": "• Số hiệu nguyên tử Z = số e = 19 (Potassium - K).<br>• Số khối A = Z + N = 19 + 20 = 39.<br>• Kí hiệu nguyên tử: <sup>39</sup><sub>19</sub>K.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "3": [
+    {
+      "type": "mcq",
+      "q": "Các electron trong vỏ nguyên tử được phân bố vào các lớp electron theo thứ tự mức năng lượng từ thấp đến cao. Kí hiệu các lớp electron từ n = 1 đến n = 4 lần lượt là:",
+      "opts": [
+        "K, L, M, N",
+        "L, M, N, O",
+        "K, M, L, N",
+        "A, B, C, D"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (K, L, M, N)",
+      "exp": "• Theo quy ước quốc tế (SGK Hóa 10): n = 1 (lớp K), n = 2 (lớp L), n = 3 (lớp M), n = 4 (lớp N).<br>• Các electron ở lớp K gần hạt nhân nhất, có mức năng lượng thấp nhất và liên kết chặt chẽ nhất với hạt nhân.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Số electron tối đa có thể chứa trong lớp thứ n (với n ≤ 4) được tính theo công thức nào?",
+      "opts": [
+        "2n²",
+        "n²",
+        "2n + 1",
+        "2n"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (2n²)",
+      "exp": "• Số electron tối đa ở lớp thứ n là 2n² (với n ≤ 4).<br>• Cụ thể: Lớp 1 (K): 2·1² = 2 e; Lớp 2 (L): 2·2² = 8 e; Lớp 3 (M): 2·3² = 18 e; Lớp 4 (N): 2·4² = 32 e.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Cho các nhận định về obitan nguyên tử (AO) và các phân lớp electron:",
+      "items": [
+        {
+          "text": "a) Obitan s có dạng hình cầu, obitan p có dạng hình số 8 nổi.",
+          "ans": true,
+          "exp": "Đúng theo hình dạng không gian của các orbital s và p."
+        },
+        {
+          "text": "b) Mỗi obitan nguyên tử chứa tối đa 2 electron có spin ngược nhau.",
+          "ans": true,
+          "exp": "Đúng theo nguyên lí loại trừ Pauli."
+        },
+        {
+          "text": "c) Phân lớp p gồm 3 obitan px, py, pz và chứa tối đa 6 electron.",
+          "ans": true,
+          "exp": "Đúng. 3 AO × 2 = 6 e tối đa."
+        },
+        {
+          "text": "d) Phân lớp d chứa tối đa 14 electron.",
+          "ans": false,
+          "exp": "Sai. Phân lớp d có 5 AO, chứa tối đa 10 e. Phân lớp f mới chứa tối đa 14 e."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Cấu hình electron nguyên tử của nguyên tố Sulfur (Z = 16) ở trạng thái cơ bản là:",
+      "opts": [
+        "1s² 2s² 2p⁶ 3s² 3p⁴",
+        "1s² 2s² 2p⁶ 3s² 3p⁶",
+        "1s² 2s² 2p⁶ 3s² 3p²",
+        "1s² 2s² 2p⁶ 3s¹ 3p⁵"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (1s² 2s² 2p⁶ 3s² 3p⁴)",
+      "exp": "• Sulfur có Z = 16, phân bố 16 electron theo thứ tự năng lượng:<br>1s² (2e) -> 2s² 2p⁶ (8e) -> 3s² 3p⁴ (6e).<br>• Lớp ngoài cùng (lớp 3) có 2 + 4 = 6 electron, do đó Sulfur là phi kim.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép các phân lớp electron (Cột A) với số electron tối đa chứa trong phân lớp đó (Cột B):",
+      "pairs": [
+        {
+          "a": "1. Phân lớp s (1 AO)",
+          "b": "A. Tối đa 2 electron."
+        },
+        {
+          "a": "2. Phân lớp p (3 AO)",
+          "b": "B. Tối đa 6 electron."
+        },
+        {
+          "a": "3. Phân lớp d (5 AO)",
+          "b": "C. Tối đa 10 electron."
+        },
+        {
+          "a": "4. Phân lớp f (7 AO)",
+          "b": "D. Tối đa 14 electron."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• s: 1 AO -> 2 e.<br>• p: 3 AO -> 6 e.<br>• d: 5 AO -> 10 e.<br>• f: 7 AO -> 14 e."
+    },
+    {
+      "type": "mcq",
+      "q": "Nguyên tử của nguyên tố nào sau đây là nguyên tố kim loại dựa vào số electron ở lớp ngoài cùng?",
+      "opts": [
+        "Nguyên tử X có cấu hình e: [Ne] 3s¹ (1 e lớp ngoài cùng).",
+        "Nguyên tử Y có cấu hình e: [Ne] 3s² 3p⁵ (7 e lớp ngoài cùng).",
+        "Nguyên tử Z có cấu hình e: [Ne] 3s² 3p⁶ (8 e lớp ngoài cùng).",
+        "Nguyên tử T có cấu hình e: [He] 2s² 2p⁴ (6 e lớp ngoài cùng)."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A ([Ne] 3s¹ - Sodium)",
+      "exp": "• Nguyên tử có 1, 2, 3 electron ở lớp ngoài cùng thường là kim loại (trừ H, He, B).<br>• Nguyên tử có 5, 6, 7 electron ở lớp ngoài cùng thường là phi kim.<br>• Nguyên tử có 8 electron lớp ngoài cùng (hoặc 2e ở He) là khí hiếm.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các phát biểu về trật tự sắp xếp mức năng lượng Klechkowski (trật tự phân mức năng lượng):",
+      "items": [
+        {
+          "text": "a) Trật tự mức năng lượng tăng dần: 1s 2s 2p 3s 3p 4s 3d 4p 5s...",
+          "ans": true,
+          "exp": "Đúng. Phân mức 4s có năng lượng thấp hơn 3d."
+        },
+        {
+          "text": "b) Khi viết cấu hình electron của nguyên tử, các phân lớp trong cùng một lớp được viết liền nhau.",
+          "ans": true,
+          "exp": "Đúng. Ví dụ Fe (Z = 26): trật tự năng lượng [Ar] 4s² 3d⁶ -> cấu hình e: 1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁶ 4s²."
+        },
+        {
+          "text": "c) Nguyên tố d là nguyên tố mà nguyên tử có electron cuối cùng điền vào phân lớp d.",
+          "ans": true,
+          "exp": "Đúng theo định nghĩa nguyên tố s, p, d, f."
+        },
+        {
+          "text": "d) Khí hiếm luôn có 8 electron ở lớp ngoài cùng kể cả Helium.",
+          "ans": false,
+          "exp": "Sai. Helium (He, Z = 2) chỉ có 2 electron ở lớp vỏ ngoài cùng (1s²)."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Nguyên tử Iron (Fe) có Z = 26. Cấu hình electron của ion Fe²⁺ là:",
+      "opts": [
+        "[Ar] 3d⁶",
+        "[Ar] 3d⁴ 4s²",
+        "[Ar] 3d⁵ 4s¹",
+        "[Ar] 3d⁶ 4s²"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A ([Ar] 3d⁶)",
+      "exp": "• Cấu hình e của Fe (Z = 26): 1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁶ 4s² (hay [Ar] 3d⁶ 4s²).<br>• Khi tạo thành ion Fe²⁺, nguyên tử Fe nhường 2 electron ở phân lớp ngoài cùng 4s: Fe -> Fe²⁺ + 2e.<br>• Do đó cấu hình e của Fe²⁺ là [Ar] 3d⁶.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống:<br>Trong nguyên tử, các electron chuyển động rất nhanh quanh hạt nhân tạo thành đám mây electron. Khu vực không gian xung quanh hạt nhân mà tại đó xác suất tìm thấy electron khoảng 90% được gọi là %%%SLOT_1%%%. Phân lớp s có %%%SLOT_2%%% obitan, phân lớp p có %%%SLOT_3%%% obitan và phân lớp d có %%%SLOT_4%%% obitan.",
+      "options": [
+        "obitan nguyên tử (AO)",
+        "1",
+        "3",
+        "5"
+      ],
+      "ans": [
+        "obitan nguyên tử (AO)",
+        "1",
+        "3",
+        "5"
+      ],
+      "exp": "• Định nghĩa obitan nguyên tử (Atomic Orbital - AO).<br>• Số AO tương ứng: s (1), p (3), d (5), f (7)."
+    },
+    {
+      "type": "mcq",
+      "q": "Nguyên tử Chromium (Cr) có Z = 24. Cấu hình electron ở trạng thái cơ bản có hiện tượng bán bão hòa là:",
+      "opts": [
+        "[Ar] 3d⁵ 4s¹",
+        "[Ar] 3d⁴ 4s²",
+        "[Ar] 3d⁶",
+        "[Ar] 3d³ 4s² 4p¹"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A ([Ar] 3d⁵ 4s¹)",
+      "exp": "• Do cấu hình phân lớp d bán bão hòa (3d⁵) bền vững hơn nên 1 electron từ 4s nhảy sang 3d: [Ar] 3d⁴ 4s² -> [Ar] 3d⁵ 4s¹.<br>• Tương tự Copper (Cu, Z = 29) đạt trạng thái bão hòa [Ar] 3d¹⁰ 4s¹.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "4": [
+    {
+      "type": "mcq",
+      "q": "Tổng số hạt proton, neutron và electron trong nguyên tử của một nguyên tố X là 40. Trong đó số hạt mang điện nhiều hơn số hạt không mang điện là 12. Số khối của nguyên tử X là:",
+      "opts": [
+        "27",
+        "13",
+        "14",
+        "40"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (27 - Aluminium)",
+      "exp": "• Hệ phương trình:<br>  2Z + N = 40 (1)<br>  2Z - N = 12 (2)<br>• Cộng (1) và (2) ta được: 4Z = 52 ⇒ Z = 13 (Aluminium).<br>• Thay Z = 13 vào (1) ⇒ N = 40 - 26 = 14.<br>• Số khối A = Z + N = 13 + 14 = 27.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Nguyên tử của nguyên tố Potassium (K) có Z = 19. Số electron độc thân của K ở trạng thái cơ bản là:",
+      "opts": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (1)",
+      "exp": "• Cấu hình e của K (Z = 19): 1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹.<br>• Phân lớp 4s có 1 electron, do đó có 1 electron độc thân.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét tính đúng/sai của các nhận định tổng kết Chương 1:",
+      "items": [
+        {
+          "text": "a) Đường kính nguyên tử lớn hơn đường kính hạt nhân khoảng 10.000 lần.",
+          "ans": true,
+          "exp": "Đúng (10⁻¹⁰ m so với 10⁻¹⁴ m)."
+        },
+        {
+          "text": "b) Khối lượng nguyên tử coi như bằng khối lượng hạt nhân.",
+          "ans": true,
+          "exp": "Đúng do me quá bé."
+        },
+        {
+          "text": "c) Các đồng vị có cùng số neutron nhưng khác số proton.",
+          "ans": false,
+          "exp": "Sai. Cùng proton, khác neutron."
+        },
+        {
+          "text": "d) Lớp M (n = 3) có tối đa 18 electron và chứa 3 phân lớp 3s, 3p, 3d.",
+          "ans": true,
+          "exp": "Đúng: 2·3² = 18 e."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Cặp nguyên tử nào sau đây thuộc cùng một nguyên tố hóa học?",
+      "opts": [
+        "X (Z = 8, A = 16) và Y (Z = 8, A = 17)",
+        "M (Z = 6, A = 12) và N (Z = 7, A = 14)",
+        "P (Z = 11, A = 23) và Q (Z = 12, A = 24)",
+        "A (Z = 19, A = 39) và B (Z = 20, A = 40)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (X và Y cùng Z = 8)",
+      "exp": "• Cùng nguyên tố hóa học khi và chỉ khi có cùng số proton Z.<br>• X và Y đều có Z = 8 (Oxygen) nên là đồng vị của cùng một nguyên tố.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép cấu hình electron lớp ngoài cùng (Cột A) với tính chất nguyên tố tương ứng (Cột B):",
+      "pairs": [
+        {
+          "a": "1. 3s¹",
+          "b": "A. Kim loại điển hình (nhóm IA)."
+        },
+        {
+          "a": "2. 3s² 3p⁵",
+          "b": "B. Phi kim điển hình (nhóm VIIA - Halogen)."
+        },
+        {
+          "a": "3. 2s² 2p⁶",
+          "b": "C. Khí hiếm bền vững (Neon)."
+        },
+        {
+          "a": "4. 3s² 3p²",
+          "b": "D. Phi kim nhóm IVA (Silicon)."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• 1-3 e lớp ngoài cùng: Kim loại.<br>• 5-7 e: Phi kim.<br>• 8 e (hoặc 2e ở He): Khí hiếm.<br>• 4 e: Có thể là kim loại hoặc phi kim (C, Si là phi kim; Sn, Pb là kim loại)."
+    },
+    {
+      "type": "mcq",
+      "q": "Ion X²⁻ có cấu hình electron là 1s² 2s² 2p⁶. Vị trí của nguyên tố X trong bảng tuần hoàn là:",
+      "opts": [
+        "Ô số 8, chu kì 2, nhóm VIA (Oxygen).",
+        "Ô số 10, chu kì 2, nhóm VIIIA (Neon).",
+        "Ô số 12, chu kì 3, nhóm IIA (Magnesium).",
+        "Ô số 16, chu kì 3, nhóm VIA (Sulfur)."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Ô số 8, chu kì 2, nhóm VIA)",
+      "exp": "• Ion X²⁻ nhận 2e để có 10e: e_X = 10 - 2 = 8e ⇒ Z = 8.<br>• Cấu hình e của X: 1s² 2s² 2p⁴.<br>• Vị trí: Ô số 8 (Z = 8), Chu kì 2 (2 lớp e), Nhóm VIA (6e lớp ngoài cùng, nguyên tố p).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Cho nguyên tố X có Z = 17 (Chlorine) và nguyên tố Y có Z = 11 (Sodium):",
+      "items": [
+        {
+          "text": "a) X là một phi kim mạnh, Y là một kim loại mạnh.",
+          "ans": true,
+          "exp": "Đúng. Cl có 7e lớp ngoài cùng, Na có 1e lớp ngoài cùng."
+        },
+        {
+          "text": "b) Hợp chất tạo bởi X và Y là NaCl có liên kết ion.",
+          "ans": true,
+          "exp": "Đúng. Na nhường 1e cho Cl tạo Na⁺ và Cl⁻ hút nhau bằng lực tĩnh điện."
+        },
+        {
+          "text": "c) Cấu hình electron của anion Cl⁻ giống với khí hiếm Argon (Ar).",
+          "ans": true,
+          "exp": "Đúng. Cl⁻ có 18e: [Ar]."
+        },
+        {
+          "text": "d) Cation Na⁺ có nhiều electron hơn nguyên tử Na.",
+          "ans": false,
+          "exp": "Sai. Na⁺ đã nhường 1e nên chỉ còn 10e, ít hơn Na (11e)."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Một nguyên tử X có 3 lớp electron và có 5 electron ở lớp ngoài cùng. Số hiệu nguyên tử của X là:",
+      "opts": [
+        "15 (Phosphorus)",
+        "7 (Nitrogen)",
+        "17 (Chlorine)",
+        "13 (Aluminium)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (15 - Phosphorus)",
+      "exp": "• 3 lớp electron: lớp 1 có 2e (1s²), lớp 2 có 8e (2s² 2p⁶), lớp 3 có 5e (3s² 3p³).<br>• Tổng số electron = 2 + 8 + 5 = 15 ⇒ Z = 15 (Phosphorus).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Hoàn thành đoạn văn sau:<br>Nguyên tử được cấu tạo gồm hạt nhân mang điện tích %%%SLOT_1%%% và vỏ electron mang điện tích %%%SLOT_2%%%. Khối lượng của nguyên tử xấp xỉ bằng tổng khối lượng của %%%SLOT_3%%% và %%%SLOT_4%%% trong hạt nhân.",
+      "options": [
+        "dương",
+        "âm",
+        "proton",
+        "neutron"
+      ],
+      "ans": [
+        "dương",
+        "âm",
+        "proton",
+        "neutron"
+      ],
+      "exp": "• Điện tích: Hạt nhân dương, vỏ âm.<br>• Khối lượng: p + n (neutron)."
+    },
+    {
+      "type": "mcq",
+      "q": "Cấu hình electron nào sau đây viết sai quy tắc?",
+      "opts": [
+        "1s² 2s² 2p⁷ (quá số e tối đa phân lớp p)",
+        "1s² 2s² 2p⁶ 3s¹",
+        "1s² 2s² 2p⁶ 3s² 3p⁵",
+        "1s² 2s² 2p⁶"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (1s² 2s² 2p⁷)",
+      "exp": "• Phân lớp p chỉ có 3 obitan nên chứa tối đa 6 electron (2p⁶). Phân lớp 2p⁷ là hoàn toàn sai nguyên lí Pauli.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "5": [
+    {
+      "type": "mcq",
+      "q": "Các nguyên tố trong bảng tuần hoàn hiện đại được sắp xếp theo nguyên tắc nào sau đây?",
+      "opts": [
+        "Theo chiều tăng dần của điện tích hạt nhân nguyên tử.",
+        "Theo chiều tăng dần của khối lượng nguyên tử.",
+        "Theo chiều giảm dần của bán kính nguyên tử.",
+        "Theo thứ tự bảng chữ cái của tên gọi nguyên tố."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Chiều tăng dần điện tích hạt nhân)",
+      "exp": "• <b>Nguyên tắc sắp xếp BTH (Mendeleev & Moseley):</b><br>1. Theo chiều tăng dần của điện tích hạt nhân (Z).<br>2. Các nguyên tố có cùng số lớp electron trong nguyên tử được xếp thành một hàng (chu kì).<br>3. Các nguyên tố có tính chất hóa học tương tự nhau được xếp thành một cột (nhóm).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Số thứ tự của chu kì trong bảng tuần hoàn bằng đại lượng nào của nguyên tử nguyên tố thuộc chu kì đó?",
+      "opts": [
+        "Số lớp electron của nguyên tử.",
+        "Số electron ở lớp ngoài cùng.",
+        "Số hiệu nguyên tử Z.",
+        "Số electron hóa trị."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Số lớp electron)",
+      "exp": "• Số thứ tự chu kì = Số lớp electron trong nguyên tử.<br>• Bảng tuần hoàn gồm 7 chu kì (chu kì 1, 2, 3 là chu kì nhỏ; chu kì 4, 5, 6, 7 là chu kì lớn).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các phát biểu về cấu tạo chu kì và nhóm trong bảng tuần hoàn:",
+      "items": [
+        {
+          "text": "a) Bảng tuần hoàn gồm 8 nhóm A và 8 nhóm B.",
+          "ans": true,
+          "exp": "Đúng (tổng cộng 18 cột, nhóm VIIIB gồm 3 cột 8, 9, 10)."
+        },
+        {
+          "text": "b) Nhóm A gồm các nguyên tố s và nguyên tố p.",
+          "ans": true,
+          "exp": "Đúng theo phân loại nguyên tố."
+        },
+        {
+          "text": "c) Số thứ tự nhóm A luôn bằng số electron ở lớp ngoài cùng của nguyên tử.",
+          "ans": true,
+          "exp": "Đúng. Ví dụ nhóm VIIA có 7e lớp ngoài cùng."
+        },
+        {
+          "text": "d) Chu kì 1 là chu kì dài nhất chứa 32 nguyên tố.",
+          "ans": false,
+          "exp": "Sai. Chu kì 1 ngắn nhất chỉ có 2 nguyên tố (H và He)."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Nguyên tố X có số hiệu nguyên tử Z = 15. Vị trí của X trong bảng tuần hoàn là:",
+      "opts": [
+        "Ô số 15, chu kì 3, nhóm VA (Phosphorus).",
+        "Ô số 15, chu kì 2, nhóm VA.",
+        "Ô số 15, chu kì 3, nhóm VB.",
+        "Ô số 15, chu kì 4, nhóm IIIA."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Ô 15, chu kì 3, nhóm VA)",
+      "exp": "• Cấu hình e của X (Z = 15): 1s² 2s² 2p⁶ 3s² 3p³.<br>• Có 15 electron ⇒ Ô số 15.<br>• Có 3 lớp electron ⇒ Chu kì 3.<br>• Có 5 electron lớp ngoài cùng (3s² 3p³), electron cuối điền vào p ⇒ Nhóm VA.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép các nhóm nguyên tố (Cột A) với tên gọi đặc trưng tương ứng (Cột B):",
+      "pairs": [
+        {
+          "a": "1. Nhóm IA (trừ H)",
+          "b": "A. Kim loại kiềm (Alkali metals)."
+        },
+        {
+          "a": "2. Nhóm IIA",
+          "b": "B. Kim loại kiềm thổ (Alkaline earth metals)."
+        },
+        {
+          "a": "3. Nhóm VIIA",
+          "b": "C. Nhóm Halogen."
+        },
+        {
+          "a": "4. Nhóm VIIIA",
+          "b": "D. Khí hiếm (Noble gases)."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• IA: Kim loại kiềm.<br>• IIA: Kim loại kiềm thổ.<br>• VIIA: Halogen.<br>• VIIIA: Khí hiếm."
+    },
+    {
+      "type": "mcq",
+      "q": "Các nguyên tố thuộc khối d (nguyên tố chuyển tiếp) trong bảng tuần hoàn đều thuộc phân nhóm nào?",
+      "opts": [
+        "Các nhóm B.",
+        "Các nhóm A.",
+        "Chỉ thuộc nhóm VIIIB.",
+        "Chỉ thuộc các chu kì nhỏ."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Các nhóm B)",
+      "exp": "• Khối nguyên tố d và f đều thuộc các nhóm B.<br>• Khối nguyên tố s và p thuộc các nhóm A.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các thông tin được ghi trong mỗi ô nguyên tố của bảng tuần hoàn:",
+      "items": [
+        {
+          "text": "a) Ô nguyên tố cho biết số hiệu nguyên tử, kí hiệu hóa học và tên nguyên tố.",
+          "ans": true,
+          "exp": "Đúng theo thông tin chuẩn SGK."
+        },
+        {
+          "text": "b) Ô nguyên tố cho biết nguyên tử khối trung bình của nguyên tố.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "c) Số thứ tự của ô nguyên tố bằng số khối A của đồng vị bền nhất.",
+          "ans": false,
+          "exp": "Sai. Số thứ tự ô bằng số hiệu nguyên tử Z (số proton)."
+        },
+        {
+          "text": "d) Ô nguyên tố thường có thêm độ âm điện và cấu hình electron thu gọn.",
+          "ans": true,
+          "exp": "Đúng."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Nguyên tử của nguyên tố Calcium (Ca) có cấu hình electron [Ar] 4s². Calcium là nguyên tố loại nào?",
+      "opts": [
+        "Nguyên tố s, kim loại.",
+        "Nguyên tố p, phi kim.",
+        "Nguyên tố d, kim loại chuyển tiếp.",
+        "Nguyên tố f, kim loại hiếm."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Nguyên tố s, kim loại)",
+      "exp": "• Electron cuối cùng điền vào phân lớp 4s ⇒ nguyên tố s.<br>• Có 2 electron ở lớp ngoài cùng ⇒ kim loại nhóm IIA (kiềm thổ).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống:<br>Bảng tuần hoàn gồm %%%SLOT_1%%% chu kì và %%%SLOT_2%%% cột được chia thành %%%SLOT_3%%% nhóm A và 8 nhóm B. Mỗi chu kì bắt đầu bằng một kim loại kiềm (trừ chu kì 1) và kết thúc bằng một %%%SLOT_4%%%.",
+      "options": [
+        "7",
+        "18",
+        "8",
+        "khí hiếm"
+      ],
+      "ans": [
+        "7",
+        "18",
+        "8",
+        "khí hiếm"
+      ],
+      "exp": "• 7 chu kì, 18 cột, 8 nhóm A.<br>• Chu kì mở đầu bằng kim loại kiềm (ns¹), kết thúc bằng khí hiếm (ns²np⁶)."
+    },
+    {
+      "type": "mcq",
+      "q": "Chu kì 4 của bảng tuần hoàn có tất cả bao nhiêu nguyên tố?",
+      "opts": [
+        "18",
+        "8",
+        "32",
+        "2"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (18)",
+      "exp": "• Chu kì 1: 2 nguyên tố.<br>• Chu kì 2, 3: 8 nguyên tố.<br>• Chu kì 4, 5: 18 nguyên tố.<br>• Chu kì 6, 7: 32 nguyên tố.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "6": [
+    {
+      "type": "mcq",
+      "q": "Trong một chu kì, theo chiều tăng dần của điện tích hạt nhân (từ trái sang phải), bán kính nguyên tử của các nguyên tố biến đổi như thế nào?",
+      "opts": [
+        "Giảm dần.",
+        "Tăng dần.",
+        "Không đổi.",
+        "Biến thiên không có quy luật."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Giảm dần)",
+      "exp": "• <b>Quy luật SGK Hóa 10:</b> Trong cùng một chu kì, số lớp electron không đổi nhưng điện tích hạt nhân Z tăng dần làm lực hút tĩnh điện giữa hạt nhân và electron lớp ngoài cùng tăng lên, kéo các electron lại gần hạt nhân hơn ⇒ Bán kính nguyên tử giảm dần.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Trong một nhóm A, theo chiều từ trên xuống dưới (điện tích hạt nhân tăng), tính chất nào sau đây của các nguyên tố tăng dần?",
+      "opts": [
+        "Bán kính nguyên tử và tính kim loại.",
+        "Độ âm điện và tính phi kim.",
+        "Năng lượng ion hóa thứ nhất.",
+        "Ái lực electron."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Bán kính và tính kim loại)",
+      "exp": "• Đi từ trên xuống trong nhóm A: Số lớp electron tăng làm bán kính nguyên tử tăng nhanh ⇒ Khả năng nhường electron tăng (tính kim loại tăng) và độ âm điện giảm.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét xu hướng biến đổi độ âm điện của các nguyên tố trong bảng tuần hoàn:",
+      "items": [
+        {
+          "text": "a) Độ âm điện đặc trưng cho khả năng hút electron của nguyên tử khi hình thành liên kết hóa học.",
+          "ans": true,
+          "exp": "Đúng theo định nghĩa Pauling."
+        },
+        {
+          "text": "b) Fluorine (F) là nguyên tố có độ âm điện lớn nhất trong bảng tuần hoàn (≈ 3,98).",
+          "ans": true,
+          "exp": "Đúng. F có tính phi kim mạnh nhất."
+        },
+        {
+          "text": "c) Trong cùng chu kì từ trái sang phải, độ âm điện nói chung tăng dần.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "d) Kim loại kiềm là nhóm có độ âm điện cao nhất bảng tuần hoàn.",
+          "ans": false,
+          "exp": "Sai. Kim loại kiềm có độ âm điện thấp nhất (dễ nhường e nhất)."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Dãy các nguyên tố nào sau đây được xếp theo chiều tính phi kim tăng dần?",
+      "opts": [
+        "Si < P < S < Cl",
+        "Cl < S < P < Si",
+        "F < Cl < Br < I",
+        "Na < Mg < Al < Si"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Si < P < S < Cl)",
+      "exp": "• Si, P, S, Cl cùng thuộc chu kì 3. Đi từ trái sang phải theo chu kì, điện tích hạt nhân tăng, bán kính giảm, độ âm điện tăng nên tính phi kim tăng dần: Si < P < S < Cl.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép các quy luật biến đổi trong chu kì (từ trái qua phải) với xu hướng tương ứng:",
+      "pairs": [
+        {
+          "a": "1. Bán kính nguyên tử",
+          "b": "A. Giảm dần."
+        },
+        {
+          "a": "2. Độ âm điện",
+          "b": "B. Tăng dần."
+        },
+        {
+          "a": "3. Tính kim loại",
+          "b": "C. Giảm dần."
+        },
+        {
+          "a": "4. Tính phi kim",
+          "b": "D. Tăng dần."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• Trong chu kì (trái -> phải): Bán kính giảm, Kim loại giảm, Độ âm điện tăng, Phi kim tăng."
+    },
+    {
+      "type": "mcq",
+      "q": "Trong các hydroxide của chu kì 3: NaOH, Mg(OH)₂, Al(OH)₃, H₂SiO₃, H₃PO₄, H₂SO₄, HClO₄. Chất có tính acid mạnh nhất là:",
+      "opts": [
+        "HClO₄ (perchloric acid)",
+        "H₂SO₄ (sulfuric acid)",
+        "NaOH (sodium hydroxide)",
+        "Al(OH)₃ (aluminium hydroxide)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (HClO₄)",
+      "exp": "• Đi từ trái sang phải trong chu kì, tính base của hydroxide giảm dần và tính acid tăng dần.<br>• NaOH (base mạnh) -> Mg(OH)₂ (base yếu) -> Al(OH)₃ (lưỡng tính) -> H₂SiO₃ (acid rất yếu) -> H₃PO₄ (acid trung bình) -> H₂SO₄ (acid mạnh) -> HClO₄ (acid rất mạnh).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các phát biểu về oxide cao nhất của các nguyên tố chu kì 3:",
+      "items": [
+        {
+          "text": "a) Na₂O là basic oxide tan trong nước tạo base mạnh NaOH.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "b) Al₂O₃ là amphoteric oxide (oxide lưỡng tính).",
+          "ans": true,
+          "exp": "Đúng. Vừa tác dụng với acid vừa tác dụng với base."
+        },
+        {
+          "text": "c) SO₃ và Cl₂O₇ là các acidic oxide.",
+          "ans": true,
+          "exp": "Đúng. Tạo tương ứng H₂SO₄ và HClO₄."
+        },
+        {
+          "text": "d) Trong chu kì 3, tính base của oxide cao nhất tăng dần từ trái sang phải.",
+          "ans": false,
+          "exp": "Sai. Tính base giảm dần, tính acid tăng dần."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Nguyên tố nào sau đây có tính kim loại mạnh nhất trong số các nguyên tố: Na (Z = 11), K (Z = 19), Mg (Z = 12), Al (Z = 13)?",
+      "opts": [
+        "Potassium (K)",
+        "Sodium (Na)",
+        "Magnesium (Mg)",
+        "Aluminium (Al)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Potassium - K)",
+      "exp": "• Trong chu kì 3: Na > Mg > Al (tính kim loại giảm dần).<br>• Trong nhóm IA: K (chu kì 4) > Na (chu kì 3) (tính kim loại tăng dần từ trên xuống).<br>• Do đó Potassium (K) có tính kim loại mạnh nhất.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Hoàn thành quy luật biến đổi tuần hoàn:<br>Trong một chu kì, đi từ trái sang phải: bán kính nguyên tử %%%SLOT_1%%%, độ âm điện %%%SLOT_2%%%, tính kim loại %%%SLOT_3%%% và tính phi kim %%%SLOT_4%%%.",
+      "options": [
+        "giảm dần",
+        "tăng dần",
+        "giảm dần",
+        "tăng dần"
+      ],
+      "ans": [
+        "giảm dần",
+        "tăng dần",
+        "giảm dần",
+        "tăng dần"
+      ],
+      "exp": "• Chu kì: Bán kính giảm -> độ âm điện tăng -> kim loại giảm -> phi kim tăng."
+    },
+    {
+      "type": "mcq",
+      "q": "Kim loại nào sau đây có nhiệt độ nóng chảy thấp nhất, ở trạng thái lỏng ở nhiệt độ phòng (25 °C)?",
+      "opts": [
+        "Mercury (Hg - Thủy ngân)",
+        "Cesium (Cs)",
+        "Gallium (Ga)",
+        "Sodium (Na)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Mercury - Thủy ngân)",
+      "exp": "• Mercury (Hg) là kim loại duy nhất ở thể lỏng ở điều kiện thường (t_nc = -38,83 °C).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "7": [
+    {
+      "type": "mcq",
+      "q": "Định luật tuần hoàn phát biểu rằng tính chất của các đơn chất cũng như thành phần và tính chất của các hợp chất tạo nên từ các nguyên tố biến đổi tuần hoàn theo chiều tăng của:",
+      "opts": [
+        "Điện tích hạt nhân nguyên tử.",
+        "Số khối nguyên tử.",
+        "Số neutron trong hạt nhân.",
+        "Nguyên tử khối tương đối."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Điện tích hạt nhân)",
+      "exp": "• <b>Định luật tuần hoàn hiện đại:</b> 'Tính chất của các đơn chất cũng như thành phần và tính chất của các hợp chất biến đổi tuần hoàn theo chiều tăng dần của điện tích hạt nhân nguyên tử.'<br>• Nguyên nhân là do cấu hình electron lớp ngoài cùng của nguyên tử biến đổi tuần hoàn.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Biết nguyên tố X có số hiệu nguyên tử Z = 16. Hóa trị cao nhất của X đối với oxygen và hóa trị của X trong hợp chất khí với hydrogen lần lượt là:",
+      "opts": [
+        "VI và II",
+        "IV và II",
+        "VI và IV",
+        "II và VI"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (VI và II)",
+      "exp": "• Sulfur (Z = 16) thuộc nhóm VIA có 6 electron hóa trị.<br>• Hóa trị cao nhất với oxygen = số thứ tự nhóm = VI (SO₃).<br>• Hóa trị trong hợp chất khí với H = 8 - 6 = II (H₂S).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các ứng dụng và ý nghĩa của bảng tuần hoàn các nguyên tố hóa học:",
+      "items": [
+        {
+          "text": "a) Từ vị trí của nguyên tố trong BTH có thể suy ra cấu hình electron và tính chất hóa học cơ bản của nó.",
+          "ans": true,
+          "exp": "Đúng (mối liên hệ Vị trí - Cấu tạo - Tính chất)."
+        },
+        {
+          "text": "b) Dựa vào vị trí có thể so sánh tính kim loại, phi kim của một nguyên tố với các nguyên tố lân cận.",
+          "ans": true,
+          "exp": "Đúng (so sánh trong cùng chu kì hoặc cùng nhóm)."
+        },
+        {
+          "text": "c) Các nguyên tố thuộc cùng một chu kì luôn có hóa trị cao nhất với oxygen giống nhau.",
+          "ans": false,
+          "exp": "Sai. Hóa trị cao nhất với O tăng từ I đến VII theo chu kì."
+        },
+        {
+          "text": "d) Bảng tuần hoàn là cơ sở khoa học để dự đoán tính chất của các nguyên tố chưa được tổng hợp.",
+          "ans": true,
+          "exp": "Đúng. Mendeleev đã dự đoán chuẩn xác tính chất của Ga, Ge, Sc."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Biết oxide cao nhất của một nguyên tố R có dạng R₂O₅. Hợp chất khí của R với hydrogen có công thức là:",
+      "opts": [
+        "RH₃",
+        "RH₂",
+        "RH₄",
+        "RH"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (RH₃)",
+      "exp": "• R₂O₅ ⇒ Hóa trị cao nhất với O là V ⇒ R thuộc nhóm VA.<br>• Hóa trị trong hợp chất khí với H là: 8 - 5 = 3 (hóa trị III) ⇒ Công thức là RH₃ (ví dụ NH₃, PH₃).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép công thức oxide cao nhất (Cột A) với công thức hợp chất khí với hydrogen tương ứng của nguyên tố R (Cột B):",
+      "pairs": [
+        {
+          "a": "1. RO₂ (nhóm IVA)",
+          "b": "A. RH₄ (ví dụ CH₄, SiH₄)."
+        },
+        {
+          "a": "2. R₂O₅ (nhóm VA)",
+          "b": "B. RH₃ (ví dụ NH₃, PH₃)."
+        },
+        {
+          "a": "3. RO₃ (nhóm VIA)",
+          "b": "C. H₂R (ví dụ H₂S, H₂Se)."
+        },
+        {
+          "a": "4. R₂O₇ (nhóm VIIA)",
+          "b": "D. HR (ví dụ HCl, HBr)."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• Tổng hóa trị với O và hóa trị với H bằng 8 (đối với phi kim nhóm IVA đến VIIA)."
+    },
+    {
+      "type": "mcq",
+      "q": "Cho các nguyên tố: Na, Mg, Al. Thứ tự sắp xếp theo chiều tính kim loại giảm dần là:",
+      "opts": [
+        "Na > Mg > Al",
+        "Al > Mg > Na",
+        "Mg > Na > Al",
+        "Na > Al > Mg"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Na > Mg > Al)",
+      "exp": "• Cùng chu kì 3, điện tích hạt nhân tăng dần: ₁₁Na < ₁₂Mg < ₁₃Al.<br>• Tính kim loại giảm dần từ trái sang phải: Na > Mg > Al.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét hợp chất oxide cao nhất và hydroxide của Chlorine (Z = 17, nhóm VIIA):",
+      "items": [
+        {
+          "text": "a) Oxide cao nhất là Cl₂O₇ có tính acidic oxide.",
+          "ans": true,
+          "exp": "Đúng. Tác dụng với nước tạo HClO₄."
+        },
+        {
+          "text": "b) Hydroxide cao nhất là acid HClO₄ (perchloric acid).",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "c) Hợp chất khí của Chlorine với hydrogen là HCl tan trong nước tạo dung dịch hydrochloric acid.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "d) Trong phân tử Cl₂O₇, nguyên tố Chlorine có số oxi hóa là -1.",
+          "ans": false,
+          "exp": "Sai. Chlorine có số oxi hóa cao nhất là +7."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Nguyên tố phi kim có độ âm điện lớn thứ hai trong bảng tuần hoàn (chỉ đứng sau Fluorine) là:",
+      "opts": [
+        "Oxygen (O, độ âm điện ≈ 3,44)",
+        "Nitrogen (N, độ âm điện ≈ 3,04)",
+        "Chlorine (Cl, độ âm điện ≈ 3,16)",
+        "Bromine (Br, độ âm điện ≈ 2,96)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Oxygen)",
+      "exp": "• Độ âm điện: F (3,98) > O (3,44) > Cl (3,16) ≈ N (3,04) > Br (2,96).<br>• Oxygen là nguyên tố có độ âm điện lớn thứ 2 trong bảng tuần hoàn.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Hoàn thành nguyên nhân biến đổi tuần hoàn:<br>Sự biến đổi tuần hoàn về tính chất của các đơn chất và hợp chất là do sự biến đổi tuần hoàn của cấu hình %%%SLOT_1%%% của nguyên tử các nguyên tố, đặc biệt là số electron ở lớp %%%SLOT_2%%%. Số thứ tự chu kì bằng số %%%SLOT_3%%%, số thứ tự nhóm A bằng số %%%SLOT_4%%%.",
+      "options": [
+        "electron",
+        "ngoài cùng",
+        "lớp electron",
+        "electron hóa trị"
+      ],
+      "ans": [
+        "electron",
+        "ngoài cùng",
+        "lớp electron",
+        "electron hóa trị"
+      ],
+      "exp": "• Cấu hình e biến đổi tuần hoàn.<br>• Lớp ngoài cùng quyết định tính chất.<br>• Chu kì = số lớp e.<br>• Nhóm A = e hóa trị (e ngoài cùng)."
+    },
+    {
+      "type": "mcq",
+      "q": "Hợp chất khí với hydrogen của một nguyên tố R là RH₄. Trong oxide cao nhất của R thì oxygen chiếm 53,33% về khối lượng. Nguyên tố R là:",
+      "opts": [
+        "Silicon (Si, M = 28)",
+        "Carbon (C, M = 12)",
+        "Sulfur (S, M = 32)",
+        "Germanium (Ge, M = 73)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Silicon - Si)",
+      "exp": "• Hợp chất khí RH₄ ⇒ R thuộc nhóm IVA ⇒ Oxide cao nhất là RO₂.<br>• Ta có %O = 32 / (M_R + 32) = 0,5333 ⇒ M_R + 32 = 60 ⇒ M_R = 28 (Silicon - Si).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "8": [
+    {
+      "type": "mcq",
+      "q": "Hai nguyên tố X và Y đứng kế tiếp nhau trong cùng một chu kì của bảng tuần hoàn có tổng số proton trong hai hạt nhân là 25. Tên của hai nguyên tố X và Y là:",
+      "opts": [
+        "Magnesium (Mg, Z = 12) và Aluminium (Al, Z = 13)",
+        "Sodium (Na, Z = 11) và Magnesium (Mg, Z = 12)",
+        "Aluminium (Al, Z = 13) và Silicon (Si, Z = 14)",
+        "Carbon (C, Z = 6) và Fluorine (F, Z = 9)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Mg và Al)",
+      "exp": "• Kế tiếp nhau trong cùng chu kì: Z_Y - Z_X = 1.<br>• Tổng số proton: Z_X + Z_Y = 25.<br>• Giải hệ: Z_X = 12 (Mg) và Z_Y = 13 (Al).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Nguyên tố X ở chu kì 3, nhóm IIA. Cấu hình electron của nguyên tử X là:",
+      "opts": [
+        "1s² 2s² 2p⁶ 3s² (Magnesium)",
+        "1s² 2s² 2p⁶ 3s¹",
+        "1s² 2s² 2p⁶ 3s² 3p²",
+        "1s² 2s² 2p⁶ 4s²"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (1s² 2s² 2p⁶ 3s²)",
+      "exp": "• Chu kì 3 ⇒ có 3 lớp electron.<br>• Nhóm IIA ⇒ có 2 electron ở phân lớp ngoài cùng 3s².<br>• Cấu hình e: 1s² 2s² 2p⁶ 3s² (Z = 12 - Magnesium).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Cho ba nguyên tố X (Z = 11, Na), Y (Z = 12, Mg) và Z (Z = 19, K):",
+      "items": [
+        {
+          "text": "a) Na và Mg thuộc cùng chu kì 3.",
+          "ans": true,
+          "exp": "Đúng (cùng có 3 lớp electron)."
+        },
+        {
+          "text": "b) Na và K thuộc cùng nhóm IA.",
+          "ans": true,
+          "exp": "Đúng (cùng có 1 electron lớp ngoài cùng)."
+        },
+        {
+          "text": "c) Tính kim loại của K mạnh hơn Na, tính kim loại của Na mạnh hơn Mg.",
+          "ans": true,
+          "exp": "Đúng. K > Na > Mg."
+        },
+        {
+          "text": "d) Bán kính nguyên tử của Mg lớn hơn bán kính nguyên tử của Na.",
+          "ans": false,
+          "exp": "Sai. Trong chu kì 3, bán kính giảm dần: r_Na > r_Mg."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Hydroxide nào sau đây có tính base mạnh nhất trong số: LiOH, NaOH, KOH, RbOH?",
+      "opts": [
+        "RbOH (Rubidium hydroxide)",
+        "KOH (Potassium hydroxide)",
+        "NaOH (Sodium hydroxide)",
+        "LiOH (Lithium hydroxide)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (RbOH)",
+      "exp": "• Li, Na, K, Rb đều thuộc nhóm IA. Đi từ trên xuống dưới, tính kim loại tăng dần, khả năng nhường e tăng dần nên tính base của hydroxide tăng dần: LiOH < NaOH < KOH < RbOH.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép vị trí nguyên tố (Cột A) với cấu hình electron tương ứng (Cột B):",
+      "pairs": [
+        {
+          "a": "1. Chu kì 2, nhóm IVA",
+          "b": "A. 1s² 2s² 2p² (Carbon)."
+        },
+        {
+          "a": "2. Chu kì 3, nhóm VIA",
+          "b": "B. 1s² 2s² 2p⁶ 3s² 3p⁴ (Sulfur)."
+        },
+        {
+          "a": "3. Chu kì 3, nhóm VIIA",
+          "b": "C. 1s² 2s² 2p⁶ 3s² 3p⁵ (Chlorine)."
+        },
+        {
+          "a": "4. Chu kì 4, nhóm IA",
+          "b": "D. [Ar] 4s¹ (Potassium)."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• Đối chiếu số lớp e với chu kì và số e lớp ngoài cùng với nhóm A."
+    },
+    {
+      "type": "mcq",
+      "q": "Cho biết cấu hình electron của ion X²⁺ là [Ar] 3d⁶. Vị trí của nguyên tố X trong bảng tuần hoàn là:",
+      "opts": [
+        "Ô số 26, chu kì 4, nhóm VIIIB (Iron - Fe)",
+        "Ô số 24, chu kì 4, nhóm VIB (Chromium)",
+        "Ô số 28, chu kì 4, nhóm VIIIB (Nickel)",
+        "Ô số 26, chu kì 3, nhóm VIIIB"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Ô 26, chu kì 4, nhóm VIIIB)",
+      "exp": "• X²⁺ nhường 2e để có cấu hình [Ar] 3d⁶ ⇒ Nguyên tử X có cấu hình [Ar] 3d⁶ 4s² (Z = 26 - Fe).<br>• Có 4 lớp e ⇒ Chu kì 4.<br>• Electron hóa trị = 6 (ở 3d) + 2 (ở 4s) = 8e ⇒ Nhóm VIIIB.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các quy luật biến đổi trong bảng tuần hoàn:",
+      "items": [
+        {
+          "text": "a) Độ âm điện cao nhất thuộc về nhóm Halogen (nhóm VIIA).",
+          "ans": true,
+          "exp": "Đúng (F, Cl, Br có độ âm điện rất cao)."
+        },
+        {
+          "text": "b) Năng lượng ion hóa thứ nhất của khí hiếm là lớn nhất trong mỗi chu kì.",
+          "ans": true,
+          "exp": "Đúng do cấu hình octet bền vững khó bứt e nhất."
+        },
+        {
+          "text": "c) Phi kim có bán kính nguyên tử lớn hơn kim loại trong cùng chu kì.",
+          "ans": false,
+          "exp": "Sai. Phi kim ở bên phải chu kì có bán kính nhỏ hơn."
+        },
+        {
+          "text": "d) Bảng tuần hoàn hiện nay có 118 nguyên tố hóa học đã được xác nhận.",
+          "ans": true,
+          "exp": "Đúng từ H (Z = 1) đến Og (Z = 118)."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Nguyên tố R tạo hợp chất với hydrogen có công thức RH₃. Trong oxide cao nhất của R, R chiếm 25,93% về khối lượng. Nguyên tố R là:",
+      "opts": [
+        "Nitrogen (N, M = 14)",
+        "Phosphorus (P, M = 31)",
+        "Arsenic (As, M = 75)",
+        "Boron (B, M = 11)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Nitrogen - N)",
+      "exp": "• Khí RH₃ ⇒ R thuộc nhóm VA ⇒ Oxide cao nhất là R₂O₅.<br>• Ta có: %R = 2R / (2R + 80) = 0,2593 ⇒ 2R = 0,5186R + 20,744 ⇒ 1,4814R = 20,744 ⇒ R = 14 (Nitrogen - N).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống:<br>Định luật tuần hoàn là cơ sở để liên hệ giữa %%%SLOT_1%%% của nguyên tố trong bảng tuần hoàn với %%%SLOT_2%%% nguyên tử và %%%SLOT_3%%% hóa học của đơn chất và %%%SLOT_4%%% tương ứng.",
+      "options": [
+        "vị trí",
+        "cấu tạo",
+        "tính chất",
+        "hợp chất"
+      ],
+      "ans": [
+        "vị trí",
+        "cấu tạo",
+        "tính chất",
+        "hợp chất"
+      ],
+      "exp": "• Tam giác quan hệ: Vị trí - Cấu tạo - Tính chất của đơn chất và hợp chất."
+    },
+    {
+      "type": "mcq",
+      "q": "Cho các nguyên tố: F, Cl, Br, I. Tính oxi hóa của các đơn chất giảm dần theo thứ tự:",
+      "opts": [
+        "F₂ > Cl₂ > Br₂ > I₂",
+        "I₂ > Br₂ > Cl₂ > F₂",
+        "Cl₂ > F₂ > Br₂ > I₂",
+        "F₂ > Br₂ > Cl₂ > I₂"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (F₂ > Cl₂ > Br₂ > I₂)",
+      "exp": "• Trong nhóm VIIA (Halogen), từ trên xuống dưới độ âm điện giảm nên khả năng nhận e giảm ⇒ tính oxi hóa giảm dần: F₂ > Cl₂ > Br₂ > I₂.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "9": [
+    {
+      "type": "mcq",
+      "q": "Theo quy tắc octet (bát tử), các nguyên tử của các nguyên tố nhóm A có xu hướng liên kết với các nguyên tử khác để đạt được cấu hình electron bền vững giống khí hiếm với bao nhiêu electron ở lớp ngoài cùng?",
+      "opts": [
+        "8 electron (hoặc 2 electron như Helium).",
+        "18 electron.",
+        "2 electron cho mọi nguyên tố.",
+        "10 electron."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (8 electron, He là 2e)",
+      "exp": "• <b>Quy tắc octet (G.N. Lewis):</b> Trong quá trình hình thành liên kết hóa học, nguyên tử các nguyên tố nhóm A có xu hướng nhường, nhận hoặc góp chung electron để đạt cấu hình electron bền vững của khí hiếm gần nhất với 8 electron ở lớp ngoài cùng (hoặc 2 electron như He).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Nguyên tử Sodium (Na, Z = 11) có xu hướng đạt cấu hình octet bền vững bằng cách nào sau đây?",
+      "opts": [
+        "Nhường 1 electron để tạo thành ion Na⁺ có cấu hình giống Neon [Ne].",
+        "Nhận 7 electron để tạo thành ion Na⁷⁻.",
+        "Góp chung 3 cặp electron.",
+        "Nhường 2 electron để tạo ion Na²⁺."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Nhường 1 electron)",
+      "exp": "• Na có cấu hình [Ne] 3s¹. Để đạt octet, Na dễ dàng nhường 1 electron ở phân lớp 3s: Na -> Na⁺ + 1e.<br>• Ion Na⁺ có cấu hình [Ne] với 8 electron ở lớp 2 bền vững.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét xu hướng đạt cấu hình octet của các nguyên tử phi kim:",
+      "items": [
+        {
+          "text": "a) Nguyên tử Chlorine (Z = 17) có 7e lớp ngoài cùng, có xu hướng nhận thêm 1e tạo ion Cl⁻.",
+          "ans": true,
+          "exp": "Đúng. Cl + 1e -> Cl⁻ [Ar]."
+        },
+        {
+          "text": "b) Nguyên tử Oxygen (Z = 8) có xu hướng nhận 2e tạo ion O²⁻ có cấu hình giống Ne.",
+          "ans": true,
+          "exp": "Đúng. 2s² 2p⁴ + 2e -> 2s² 2p⁶."
+        },
+        {
+          "text": "c) Nguyên tử Nitrogen (Z = 7) có thể góp chung 3 cặp electron với nguyên tử N khác tạo phân tử N₂.",
+          "ans": true,
+          "exp": "Đúng. Liên kết ba N≡N giúp mỗi nguyên tử N có đủ 8e."
+        },
+        {
+          "text": "d) Mọi phân tử trong tự nhiên đều thỏa mãn tuyệt đối quy tắc octet.",
+          "ans": false,
+          "exp": "Sai. Có các ngoại lệ mở rộng octet (như PCl₅, SF₆) hoặc thiếu octet (như BF₃, NO, NO₂)."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Để đạt cấu hình octet, nguyên tử Magnesium (Mg, Z = 12) sẽ biến đổi thành ion nào?",
+      "opts": [
+        "Mg²⁺",
+        "Mg⁺",
+        "Mg²⁻",
+        "Mg⁴⁺"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Mg²⁺)",
+      "exp": "• Mg có cấu hình [Ne] 3s². Mg nhường 2 electron ở lớp ngoài cùng: Mg -> Mg²⁺ + 2e.<br>• Ion Mg²⁺ có cấu hình bền vững của khí hiếm Ne.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép các nguyên tử (Cột A) với xu hướng đạt cấu hình octet tương ứng (Cột B):",
+      "pairs": [
+        {
+          "a": "1. Potassium (K, Z = 19)",
+          "b": "A. Nhường 1 electron tạo cation K⁺ giống Ar."
+        },
+        {
+          "a": "2. Calcium (Ca, Z = 20)",
+          "b": "B. Nhường 2 electron tạo cation Ca²⁺ giống Ar."
+        },
+        {
+          "a": "3. Fluorine (F, Z = 9)",
+          "b": "C. Nhận 1 electron tạo anion F⁻ giống Ne."
+        },
+        {
+          "a": "4. Sulfur (S, Z = 16)",
+          "b": "D. Nhận 2 electron tạo anion S²⁻ giống Ar."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• Kim loại nhường e (1, 2, 3e).<br>• Phi kim nhận e (1, 2, 3e) hoặc góp chung e."
+    },
+    {
+      "type": "mcq",
+      "q": "Phân tử nào sau đây có nguyên tử trung tâm KHÔNG tuân theo quy tắc octet (ngoại lệ octet)?",
+      "opts": [
+        "BF₃ (Boron trifluoride - quanh B chỉ có 6 electron)",
+        "CH₄ (Methane)",
+        "NH₃ (Ammonia)",
+        "H₂O (Nước)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (BF₃)",
+      "exp": "• Trong phân tử BF₃, B có 3 electron hóa trị tạo 3 liên kết đơn với 3 nguyên tử F, do đó quanh nguyên tử B chỉ có 6 electron (chưa đủ octet 8e).<br>• CH₄, NH₃, H₂O đều có đủ 8 electron quanh nguyên tử trung tâm C, N, O.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các phát biểu về sự hình thành liên kết theo quy tắc octet:",
+      "items": [
+        {
+          "text": "a) Kim loại kiềm luôn có xu hướng nhường 1 electron để tạo cation điện tích +1.",
+          "ans": true,
+          "exp": "Đúng. [Khí hiếm] ns¹ -> [Khí hiếm] + 1e."
+        },
+        {
+          "text": "b) Halogen có xu hướng nhận 1 electron hoặc góp chung 1 cặp electron.",
+          "ans": true,
+          "exp": "Đúng (tạo anion X⁻ hoặc liên kết đơn CHT)."
+        },
+        {
+          "text": "c) Khí hiếm rất bền vững và trơ về mặt hóa học vì đã có cấu hình octet (hoặc duplet ở He).",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "d) Quá trình nguyên tử kim loại nhường electron là quá trình thu nhiệt tạo anion.",
+          "ans": false,
+          "exp": "Sai. Nhường e tạo cation (ion dương)."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Để biểu diễn electron hóa trị theo Lewis, xung quanh kí hiệu nguyên tố Carbon (C, Z = 6) người ta chấm bao nhiêu dấu chấm đại diện cho các electron hóa trị?",
+      "opts": [
+        "4 chấm",
+        "6 chấm",
+        "2 chấm",
+        "8 chấm"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (4 chấm)",
+      "exp": "• C có cấu hình 1s² 2s² 2p², có 4 electron ở lớp ngoài cùng (electron hóa trị).<br>• Công thức Lewis biểu diễn 4 electron hóa trị bằng 4 dấu chấm xung quanh C.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống:<br>Nguyên tử có xu hướng đạt cấu hình bền vững của %%%SLOT_1%%% với %%%SLOT_2%%% electron ở lớp ngoài cùng (hoặc 2 electron như %%%SLOT_3%%%). Kim loại có xu hướng %%%SLOT_4%%% electron, còn phi kim có xu hướng nhận hoặc góp chung electron.",
+      "options": [
+        "khí hiếm",
+        "8",
+        "Helium",
+        "nhường"
+      ],
+      "ans": [
+        "khí hiếm",
+        "8",
+        "Helium",
+        "nhường"
+      ],
+      "exp": "• Quy tắc Octet (bát tử 8e) và Helium (duplet 2e).<br>• Kim loại nhường e, phi kim nhận/góp e."
+    },
+    {
+      "type": "mcq",
+      "q": "Ion nào sau đây KHÔNG có cấu hình electron của khí hiếm Neon (1s² 2s² 2p⁶)?",
+      "opts": [
+        "Cl⁻ (cấu hình của Argon [Ar])",
+        "Na⁺",
+        "Mg²⁺",
+        "F⁻"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Cl⁻ có 18e giống Ar)",
+      "exp": "• Na⁺ (10e), Mg²⁺ (10e), F⁻ (10e), O²⁻ (10e) đều có cấu hình của Neon (10e).<br>• Cl⁻ có 17 + 1 = 18e, là cấu hình của Argon (Ar).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "10": [
+    {
+      "type": "mcq",
+      "q": "Liên kết ion là loại liên kết hóa học được hình thành bởi yếu tố nào sau đây?",
+      "opts": [
+        "Lực hút tĩnh điện giữa các ion mang điện tích trái dấu (cation và anion).",
+        "Sự dùng chung một hoặc nhiều cặp electron giữa hai nguyên tử.",
+        "Lực hút giữa nguyên tử hydrogen mang điện dương và nguyên tử âm điện.",
+        "Lực tương tác yếu giữa các phân tử phân cực."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Lực hút tĩnh điện giữa cation và anion)",
+      "exp": "• <b>Định nghĩa SGK Hóa 10:</b> Liên kết ion là liên kết được hình thành bởi lực hút tĩnh điện giữa các ion mang điện tích trái dấu (cation kim loại và anion phi kim).<br>• Ví dụ: Na⁺ + Cl⁻ -> NaCl.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Liên kết ion thường được hình thành giữa hai nguyên tử nào?",
+      "opts": [
+        "Một kim loại điển hình (nhóm IA, IIA) và một phi kim điển hình (nhóm VIIA, VIA).",
+        "Hai nguyên tử phi kim giống nhau.",
+        "Hai nguyên tử kim loại chuyển tiếp.",
+        "Một nguyên tử phi kim và khí hiếm."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Kim loại điển hình và phi kim điển hình)",
+      "exp": "• Khi hiệu độ âm điện Δχ ≥ 1,7 (giữa kim loại mạnh và phi kim mạnh), electron chuyển hẳn từ kim loại sang phi kim tạo ion dương và ion âm hút nhau bằng liên kết ion.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các đặc điểm tính chất của các hợp chất ion (như NaCl, MgO, CaCl₂):",
+      "items": [
+        {
+          "text": "a) Ở điều kiện thường, các hợp chất ion đều ở trạng thái rắn kết tinh.",
+          "ans": true,
+          "exp": "Đúng (tinh thể ion vững chắc)."
+        },
+        {
+          "text": "b) Hợp chất ion có nhiệt độ nóng chảy và nhiệt độ sôi khá cao.",
+          "ans": true,
+          "exp": "Đúng do lực hút tĩnh điện giữa các ion đa chiều rất mạnh."
+        },
+        {
+          "text": "c) Ở trạng thái rắn kết tinh, tinh thể muối ăn dẫn điện rất tốt.",
+          "ans": false,
+          "exp": "Sai. Ở trạng thái rắn, các ion bị giữ chặt ở nút mạng không di chuyển tự do được nên không dẫn điện."
+        },
+        {
+          "text": "d) Hợp chất ion dẫn điện tốt khi nóng chảy hoặc khi hòa tan trong nước.",
+          "ans": true,
+          "exp": "Đúng vì các ion phân li và chuyển động tự do mang điện tích."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Trong tinh thể muối ăn NaCl, xung quanh mỗi ion Na⁺ có bao nhiêu ion Cl⁻ bao quanh gần nhất?",
+      "opts": [
+        "6 ion Cl⁻",
+        "8 ion Cl⁻",
+        "4 ion Cl⁻",
+        "12 ion Cl⁻"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (6 ion Cl⁻)",
+      "exp": "• Tinh thể NaCl có cấu trúc lập phương tâm diện: Xung quanh mỗi ion Na⁺ có 6 ion Cl⁻ bao quanh theo hình bát diện đều, và ngược lại xung quanh mỗi ion Cl⁻ cũng có 6 ion Na⁺ bao quanh.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép các chất (Cột A) với bản chất liên kết tương ứng (Cột B):",
+      "pairs": [
+        {
+          "a": "1. NaCl (Muối ăn)",
+          "b": "A. Liên kết ion (Na⁺ và Cl⁻)."
+        },
+        {
+          "a": "2. MgO (Magnesium oxide)",
+          "b": "B. Liên kết ion hai điện tích (Mg²⁺ và O²⁻)."
+        },
+        {
+          "a": "3. CaCl₂ (Calcium chloride)",
+          "b": "C. Liên kết ion (Ca²⁺ và 2Cl⁻)."
+        },
+        {
+          "a": "4. Cl₂ (Khí chlorine)",
+          "b": "D. Liên kết cộng hóa trị không cực."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• NaCl, MgO, CaCl₂ là hợp chất ion.<br>• Cl₂ là đơn chất cộng hóa trị không cực."
+    },
+    {
+      "type": "mcq",
+      "q": "Cặp chất nào sau đây đều chứa liên kết ion trong phân tử?",
+      "opts": [
+        "NaCl và K₂O",
+        "HCl và H₂O",
+        "CO₂ và NH₃",
+        "CH₄ và CCl₄"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (NaCl và K₂O)",
+      "exp": "• Na và K là kim loại kiềm điển hình, Cl và O là phi kim điển hình ⇒ hình thành liên kết ion.<br>• Các cặp còn lại gồm các phi kim liên kết với nhau bằng liên kết cộng hóa trị.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét quá trình tạo thành liên kết trong phân tử Magnesium oxide (MgO):",
+      "items": [
+        {
+          "text": "a) Nguyên tử Mg (Z = 12) nhường 2e tạo cation Mg²⁺: Mg -> Mg²⁺ + 2e.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "b) Nguyên tử O (Z = 8) nhận 2e tạo anion O²⁻: O + 2e -> O²⁻.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "c) Cation Mg²⁺ và anion O²⁻ hút nhau bằng lực hút tĩnh điện tạo MgO.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "d) Liên kết trong MgO yếu hơn liên kết trong NaCl do điện tích các ion lớn hơn.",
+          "ans": false,
+          "exp": "Sai. Điện tích càng lớn (±2 so với ±1) thì lực hút tĩnh điện càng mạnh, nhiệt độ nóng chảy MgO (2852 °C) cao hơn nhiều NaCl (801 °C)."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Đặc tính nào sau đây KHÔNG PHẢI là tính chất chung của hợp chất ion?",
+      "opts": [
+        "Dễ bay hơi, có nhiệt độ sôi thấp và có mùi đặc trưng.",
+        "Khá rắn, giòn khi tác dụng lực cơ học.",
+        "Có nhiệt độ nóng chảy cao.",
+        "Tan tốt trong nước tạo dung dịch dẫn điện."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Dễ bay hơi, nhiệt độ sôi thấp)",
+      "exp": "• Hợp chất ion rất khó bay hơi và có nhiệt độ nóng chảy, nhiệt độ sôi rất cao do lực hút tĩnh điện ion rất lớn.<br>• Dễ bay hơi là tính chất của hợp chất cộng hóa trị có liên kết phân tử yếu.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống:<br>Liên kết ion được hình thành do lực hút %%%SLOT_1%%% giữa các ion mang điện tích trái dấu. Tinh thể ion gồm các ion dương và ion âm sắp xếp luân phiên tạo thành mạng tinh thể %%%SLOT_2%%%. Các hợp chất ion dẫn điện khi %%%SLOT_3%%% hoặc khi %%%SLOT_4%%% trong nước.",
+      "options": [
+        "tĩnh điện",
+        "không gian",
+        "nóng chảy",
+        "hòa tan"
+      ],
+      "ans": [
+        "tĩnh điện",
+        "không gian",
+        "nóng chảy",
+        "hòa tan"
+      ],
+      "exp": "• Lực hút tĩnh điện, mạng tinh thể không gian.<br>• Dẫn điện khi nóng chảy hoặc hòa tan trong nước."
+    },
+    {
+      "type": "mcq",
+      "q": "Biết độ âm điện của Na là 0,93 và Cl là 3,16. Hiệu độ âm điện Δχ trong phân tử NaCl là bao nhiêu và thuộc loại liên kết gì?",
+      "opts": [
+        "Δχ = 2,23 (liên kết ion)",
+        "Δχ = 0,85 (liên kết CHT có cực)",
+        "Δχ = 0,20 (liên kết CHT không cực)",
+        "Δχ = 3,16 (liên kết kim loại)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Δχ = 2,23 - liên kết ion)",
+      "exp": "• Hiệu độ âm điện: Δχ = 3,16 - 0,93 = 2,23.<br>• Vì Δχ ≥ 1,7 nên liên kết giữa Na và Cl là liên kết ion.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "11": [
+    {
+      "type": "mcq",
+      "q": "Liên kết cộng hóa trị là liên kết hóa học được hình thành giữa hai nguyên tử bằng:",
+      "opts": [
+        "Một hoặc nhiều cặp electron dùng chung.",
+        "Lực hút tĩnh điện giữa các ion trái dấu.",
+        "Lực hút giữa nguyên tử hydrogen và cặp e chưa chia.",
+        "Sự dịch chuyển tự do của các electron tự do."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Một hoặc nhiều cặp electron dùng chung)",
+      "exp": "• <b>Định nghĩa SGK Hóa 10:</b> Liên kết cộng hóa trị (covalent bond) là liên kết được hình thành giữa hai nguyên tử bằng một hay nhiều cặp electron dùng chung.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Liên kết cộng hóa trị không phân cực được hình thành khi hiệu độ âm điện Δχ giữa hai nguyên tử liên kết thỏa mãn điều kiện nào?",
+      "opts": [
+        "0 ≤ Δχ < 0,4",
+        "0,4 ≤ Δχ < 1,7",
+        "Δχ ≥ 1,7",
+        "Δχ = 2,5"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (0 ≤ Δχ < 0,4)",
+      "exp": "• Theo thang độ âm điện Pauling:<br>• 0 ≤ Δχ < 0,4: Liên kết cộng hóa trị không cực (ví dụ H₂, Cl₂, N₂, CH₄).<br>• 0,4 ≤ Δχ < 1,7: Liên kết cộng hóa trị có cực (ví dụ HCl, H₂O, NH₃).<br>• Δχ ≥ 1,7: Liên kết ion (ví dụ NaCl, KF).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các phân tử: H₂, O₂, N₂:",
+      "items": [
+        {
+          "text": "a) Phân tử H₂ có 1 liên kết đơn (liên kết σ) tạo bởi 1 cặp electron dùng chung.",
+          "ans": true,
+          "exp": "Đúng (H–H)."
+        },
+        {
+          "text": "b) Phân tử O₂ có 1 liên kết đôi gồm 1 liên kết σ và 1 liên kết π.",
+          "ans": true,
+          "exp": "Đúng (O=O)."
+        },
+        {
+          "text": "c) Phân tử N₂ có liên kết ba N≡N rất bền vững gồm 1 liên kết σ và 2 liên kết π.",
+          "ans": true,
+          "exp": "Đúng (năng lượng liên kết 945 kJ/mol giải thích vì sao N₂ trơ ở nhiệt độ thường)."
+        },
+        {
+          "text": "d) Trong phân tử HCl, cặp electron dùng chung lệch về phía nguyên tử Hydrogen.",
+          "ans": false,
+          "exp": "Sai. Chlorine có độ âm điện lớn hơn nên cặp e dùng chung lệch về phía Chlorine."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Liên kết cho – nhận (liên kết phối trí) là trường hợp đặc biệt của liên kết cộng hóa trị, trong đó:",
+      "opts": [
+        "Cặp electron dùng chung chỉ do một nguyên tử đóng góp.",
+        "Mỗi nguyên tử đóng góp 1 electron.",
+        "Cặp electron chuyển hẳn từ nguyên tử này sang nguyên tử khác.",
+        "Không có electron nào tham gia liên kết."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Cặp e dùng chung do 1 nguyên tử đóng góp)",
+      "exp": "• Trong liên kết cho - nhận (kí hiệu A → B): nguyên tử A có cặp electron chưa chia (chất cho) đưa vào dùng chung với nguyên tử B có obitan trống (chất nhận).<br>• Ví dụ ion ammonium NH₄⁺: nguyên tử N trong NH₃ cho cặp e vào obitan trống của H⁺.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép các loại liên kết (Cột A) với đặc điểm cấu tạo xen phủ obitan tương ứng (Cột B):",
+      "pairs": [
+        {
+          "a": "1. Liên kết sigma (σ)",
+          "b": "A. Tạo thành do sự xen phủ trục giữa 2 AO, rất bền vững."
+        },
+        {
+          "a": "2. Liên kết pi (π)",
+          "b": "B. Tạo thành do sự xen phủ bên giữa 2 AO, kém bền hơn liên kết σ."
+        },
+        {
+          "a": "3. Liên kết đơn",
+          "b": "C. Luôn là 1 liên kết σ."
+        },
+        {
+          "a": "4. Liên kết ba",
+          "b": "D. Gồm 1 liên kết σ và 2 liên kết π."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• Xen phủ trục -> liên kết sigma.<br>• Xen phủ bên -> liên kết pi."
+    },
+    {
+      "type": "mcq",
+      "q": "Năng lượng liên kết (Eb) là năng lượng cần thiết để phá vỡ một liên kết hóa học ở thể khí thành các nguyên tử riêng rẽ. Đại lượng Eb đặc trưng cho yếu tố nào?",
+      "opts": [
+        "Độ bền của liên kết hóa học (Eb càng lớn thì liên kết càng bền).",
+        "Độ âm điện của nguyên tử.",
+        "Khối lượng của phân tử.",
+        "Bán kính nguyên tử."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Độ bền của liên kết)",
+      "exp": "• Eb (Bond energy) càng lớn thì liên kết càng bền, phân tử càng khó bị phân hủy nhiệt.<br>• Ví dụ Eb(N≡N) = 945 kJ/mol rất lớn khiến N₂ rất trơ.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các phân tử CO₂, H₂O và CH₄:",
+      "items": [
+        {
+          "text": "a) Phân tử CO₂ có cấu trúc thẳng (O=C=O) nên moment lưỡng cực triệt tiêu, là phân tử không phân cực.",
+          "ans": true,
+          "exp": "Đúng dù liên kết C=O phân cực."
+        },
+        {
+          "text": "b) Phân tử H₂O có cấu trúc góc (khoảng 104,5°) nên là phân tử phân cực mạnh.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "c) Phân tử CH₄ có cấu trúc tứ diện đều đối xứng, là phân tử không phân cực.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "d) Mọi phân tử chứa liên kết cộng hóa trị phân cực đều là phân tử phân cực.",
+          "ans": false,
+          "exp": "Sai. Ví dụ CO₂, CCl₄ chứa liên kết phân cực nhưng phân tử đối xứng hình học nên là phân tử không phân cực."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Trong phân tử ethylene (C₂H₄, H₂C=CH₂), có bao nhiêu liên kết σ và bao nhiêu liên kết π?",
+      "opts": [
+        "5 liên kết σ và 1 liên kết π",
+        "4 liên kết σ và 2 liên kết π",
+        "6 liên kết σ và 0 liên kết π",
+        "3 liên kết σ và 2 liên kết π"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (5 σ và 1 π)",
+      "exp": "• 4 liên kết đơn C–H: 4 liên kết σ.<br>• 1 liên kết đôi C=C: gồm 1 liên kết σ và 1 liên kết π.<br>• Tổng cộng: 4 + 1 = 5 liên kết σ và 1 liên kết π.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống:<br>Sự xen phủ trục giữa các obitan nguyên tử tạo ra liên kết %%%SLOT_1%%%, sự xen phủ bên tạo ra liên kết %%%SLOT_2%%%. Liên kết đơn luôn là liên kết %%%SLOT_3%%%, trong khi liên kết đôi gồm một liên kết σ và một liên kết %%%SLOT_4%%%.",
+      "options": [
+        "sigma (σ)",
+        "pi (π)",
+        "sigma",
+        "pi"
+      ],
+      "ans": [
+        "sigma (σ)",
+        "pi (π)",
+        "sigma",
+        "pi"
+      ],
+      "exp": "• Trục -> sigma.<br>• Bên -> pi.<br>• Đơn = 1 sigma; Đôi = 1 sigma + 1 pi."
+    },
+    {
+      "type": "mcq",
+      "q": "Chất nào sau đây chứa liên kết cộng hóa trị có cực?",
+      "opts": [
+        "HCl (Hydrogen chloride)",
+        "N₂ (Nitrogen)",
+        "H₂ (Hydrogen)",
+        "Cl₂ (Chlorine)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (HCl)",
+      "exp": "• N₂, H₂, Cl₂ là các phân tử đồng hạch giữa hai nguyên tử giống nhau nên Δχ = 0 (CHT không cực).<br>• HCl tạo bởi H (2,20) và Cl (3,16), Δχ = 0,96 thuộc khoảng 0,4 - 1,7 nên là liên kết CHT có cực.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "12": [
+    {
+      "type": "mcq",
+      "q": "Liên kết hydrogen được hình thành giữa nguyên tử hydrogen liên kết với nguyên tử có độ âm điện lớn (N, O, F) với:",
+      "opts": [
+        "Một nguyên tử khác có độ âm điện lớn (N, O, F) còn cặp electron chưa chia.",
+        "Một nguyên tử kim loại kiềm.",
+        "Một nguyên tử carbon mang điện tích âm.",
+        "Bất kì nguyên tử nào khác trong cùng phân tử."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Nguyên tử N, O, F có cặp e chưa chia)",
+      "exp": "• <b>Định nghĩa SGK Hóa 10:</b> Liên kết hydrogen (kí hiệu dấu ba chấm ···) là lực hút tĩnh điện giữa nguyên tử H mang điện tích dương linh động (liên kết với N, O, F) với nguyên tử N, O, F mang điện tích âm có cặp electron chưa chia.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Nhiệt độ sôi của nước (H₂O, 100 °C) cao bất thường so với hydrogen sulfide (H₂S, -60 °C) dù H₂O có khối lượng phân tử nhỏ hơn nhiều (18 so với 34 amu) là do:",
+      "opts": [
+        "Giữa các phân tử H₂O tạo được liên kết hydrogen liên phân tử bền vững.",
+        "Khối lượng riêng của nước lớn hơn.",
+        "Nước có độ nhớt cao hơn.",
+        "Liên kết H–O bền hơn liên kết H–S."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Liên kết hydrogen liên phân tử)",
+      "exp": "• Phân tử H₂O có liên kết hydrogen liên phân tử mạnh mẽ tạo mạng lưới liên kết bền vững, cần cung cấp nhiều nhiệt lượng để phá vỡ nên nhiệt độ sôi cao vọt lên 100 °C.<br>• H₂S không có liên kết hydrogen nên sôi ở nhiệt độ rất thấp (-60 °C).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các ảnh hưởng của liên kết hydrogen đến tính chất vật lí của các chất:",
+      "items": [
+        {
+          "text": "a) Liên kết hydrogen làm tăng nhiệt độ nóng chảy và nhiệt độ sôi của chất.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "b) Các chất có khả năng tạo liên kết hydrogen với nước (như ethanol, đường, acetic acid) thường tan rất tốt trong nước.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "c) Liên kết hydrogen có năng lượng lớn hơn liên kết cộng hóa trị và liên kết ion.",
+          "ans": false,
+          "exp": "Sai. Liên kết hydrogen là lực liên kết yếu (khoảng 10-40 kJ/mol), yếu hơn nhiều so với liên kết cộng hóa trị (200-500 kJ/mol)."
+        },
+        {
+          "text": "d) HF có nhiệt độ sôi cao hơn HCl do giữa các phân tử HF có liên kết hydrogen.",
+          "ans": true,
+          "exp": "Đúng (HF sôi ở 19,5 °C trong khi HCl sôi ở -85 °C)."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Tương tác van der Waals là lực tương tác tĩnh điện yếu giữa các phân tử, được hình thành do:",
+      "opts": [
+        "Sự xuất hiện của các lưỡng cực tạm thời và lưỡng cực cảm ứng giữa các phân tử.",
+        "Sự nhường nhận electron hoàn toàn giữa các nguyên tử.",
+        "Sự dùng chung electron giữa các nguyên tử phi kim.",
+        "Lực hút giữa hạt nhân nguyên tử này với hạt nhân nguyên tử khác."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Lưỡng cực tạm thời và cảm ứng)",
+      "exp": "• Tương tác van der Waals là lực hút giữa các lưỡng cực tạm thời (do electron chuyển động không đều) và các lưỡng cực cảm ứng xung quanh.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép các hiện tượng đời sống (Cột A) với bản chất lực tương tác tương ứng (Cột B):",
+      "pairs": [
+        {
+          "a": "1. Khả năng bám dính của bàn chân thạch sùng (tắc kè) trên tường kính nhẵn",
+          "b": "A. Hàng triệu vi sợi tiếp xúc tạo tương tác van der Waals cực đại."
+        },
+        {
+          "a": "2. Nước sôi ở 100 °C, cao hơn H₂S (-60 °C)",
+          "b": "B. Liên kết hydrogen liên phân tử bền vững giữa các phân tử H₂O."
+        },
+        {
+          "a": "3. Ethanol (C₂H₅OH) tan vô hạn trong nước",
+          "b": "C. Hình thành liên kết hydrogen giữa phân tử ethanol và phân tử nước."
+        },
+        {
+          "a": "4. Nhiệt độ sôi của các khí hiếm tăng dần từ He đến Xe",
+          "b": "D. Khối lượng phân tử và bán kính tăng làm tương tác van der Waals tăng."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• Chân thạch sùng: van der Waals.<br>• Nhiệt độ sôi nước: Liên kết H.<br>• C₂H₅OH tan: Liên kết H với nước.<br>• Khí hiếm sôi: van der Waals tăng theo khối lượng."
+    },
+    {
+      "type": "mcq",
+      "q": "Trong các chất sau, chất nào KHÔNG CÓ liên kết hydrogen liên phân tử?",
+      "opts": [
+        "Methane (CH₄)",
+        "Nước (H₂O)",
+        "Ammonia (NH₃)",
+        "Hydrogen fluoride (HF)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Methane - CH₄)",
+      "exp": "• Trong CH₄, nguyên tử C không có độ âm điện đủ lớn (độ âm điện 2,55) và không còn cặp electron tự do, do đó không tạo được liên kết hydrogen.<br>• H₂O (O-H), NH₃ (N-H), HF (F-H) đều tạo được liên kết hydrogen mạnh.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét xu hướng biến đổi nhiệt độ sôi của các halogen đơn chất: F₂, Cl₂, Br₂, I₂:",
+      "items": [
+        {
+          "text": "a) Từ F₂ đến I₂, khối lượng phân tử và số electron tăng dần.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "b) Tương tác van der Waals giữa các phân tử tăng dần từ F₂ đến I₂.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "c) Nhiệt độ sôi tăng dần: F₂ (khí) < Cl₂ (khí) < Br₂ (lỏng) < I₂ (rắn).",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "d) Nguyên nhân làm nhiệt độ sôi tăng từ F₂ đến I₂ là do liên kết hydrogen mạnh dần.",
+          "ans": false,
+          "exp": "Sai. Halogen đơn chất không có liên kết hydrogen, nhiệt độ sôi tăng là do tương tác van der Waals tăng."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Khối lượng riêng của nước đá nhỏ hơn nước lỏng (nước đá nổi trên mặt nước lỏng) là do nguyên nhân nào sau đây?",
+      "opts": [
+        "Khi đóng băng, các liên kết hydrogen sắp xếp định hướng tạo cấu trúc tinh thể rỗng mở rộng thể tích.",
+        "Nước đá có chứa các bọt khí bên trong.",
+        "Nước lỏng nặng hơn do bay hơi bớt phân tử nhẹ.",
+        "Liên kết cộng hóa trị O–H bị kéo dài ra."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Cấu trúc tinh thể rỗng mở rộng thể tích)",
+      "exp": "• Trong nước đá, mỗi phân tử H₂O liên kết hydrogen với 4 phân tử H₂O khác tạo cấu trúc tinh thể tứ diện mở rỗng, làm thể tích tăng khoảng 9% so với thể lỏng ⇒ khối lượng riêng nhỏ hơn nước lỏng nên nước đá nổi.<br>• Đây là hiện tượng dị thường của nước có ý nghĩa sinh học to lớn đối với sinh vật dưới nước vào mùa đông.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống:<br>Liên kết hydrogen được tạo thành giữa nguyên tử %%%SLOT_1%%% mang một phần điện tích dương với nguyên tử %%%SLOT_2%%% có độ âm điện lớn và còn cặp electron chưa chia. Tương tác van der Waals tăng khi %%%SLOT_3%%% phân tử và kích thước phân tử %%%SLOT_4%%%.",
+      "options": [
+        "hydrogen",
+        "N, O, F",
+        "khối lượng",
+        "tăng"
+      ],
+      "ans": [
+        "hydrogen",
+        "N, O, F",
+        "khối lượng",
+        "tăng"
+      ],
+      "exp": "• Liên kết H: H linh động với N, O, F.<br>• van der Waals tăng theo khối lượng và kích thước phân tử."
+    },
+    {
+      "type": "mcq",
+      "q": "Sắp xếp theo thứ tự độ bền liên kết giảm dần:",
+      "opts": [
+        "Liên kết cộng hóa trị > Liên kết hydrogen > Tương tác van der Waals",
+        "Tương tác van der Waals > Liên kết hydrogen > Liên kết cộng hóa trị",
+        "Liên kết hydrogen > Liên kết cộng hóa trị > Tương tác van der Waals",
+        "Liên kết cộng hóa trị > Tương tác van der Waals > Liên kết hydrogen"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (CHT > H > van der Waals)",
+      "exp": "• Năng lượng liên kết: CHT (vài trăm kJ/mol) >> Liên kết hydrogen (10 - 40 kJ/mol) > Tương tác van der Waals (vài kJ/mol).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "13": [
+    {
+      "type": "mcq",
+      "q": "Dãy chất nào sau đây gồm toàn các chất chỉ chứa liên kết cộng hóa trị?",
+      "opts": [
+        "H₂O, CO₂, NH₃, CH₄",
+        "NaCl, H₂O, CO₂, HCl",
+        "MgO, CaCl₂, K₂O, Al₂O₃",
+        "NH₄Cl, H₂SO₄, NaNO₃, KOH"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (H₂O, CO₂, NH₃, CH₄)",
+      "exp": "• H₂O, CO₂, NH₃, CH₄ đều tạo bởi các phi kim với phi kim ⇒ chỉ chứa liên kết cộng hóa trị.<br>• NaCl, MgO, NH₄Cl... chứa liên kết ion.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Số lượng liên kết σ và liên kết π trong phân tử acetylene (C₂H₂, H–C≡C–H) lần lượt là:",
+      "opts": [
+        "3 liên kết σ và 2 liên kết π",
+        "2 liên kết σ và 3 liên kết π",
+        "4 liên kết σ và 1 liên kết π",
+        "5 liên kết σ và 0 liên kết π"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (3 σ và 2 π)",
+      "exp": "• 2 liên kết đơn C–H: 2 liên kết σ.<br>• 1 liên kết ba C≡C: 1 liên kết σ và 2 liên kết π.<br>• Tổng: 2 + 1 = 3 liên kết σ và 2 liên kết π.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các phát biểu tổng kết về liên kết hóa học:",
+      "items": [
+        {
+          "text": "a) Liên kết ion hình thành do lực hút tĩnh điện giữa cation và anion.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "b) Liên kết CHT hình thành do các cặp electron dùng chung.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "c) Mọi phân tử chứa liên kết CHT có cực đều có nhiệt độ sôi cao hơn hợp chất ion.",
+          "ans": false,
+          "exp": "Sai. Hợp chất ion có t°s cao hơn nhiều do mạng tinh thể ion rất bền."
+        },
+        {
+          "text": "d) Liên kết hydrogen giải thích vì sao nước có nhiệt độ sôi cao và hòa tan tốt ethanol.",
+          "ans": true,
+          "exp": "Đúng."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Biết hiệu độ âm điện Δχ của các phân tử: Cl₂ (0,0); HCl (0,96); NaCl (2,23). Loại liên kết trong ba chất lần lượt là:",
+      "opts": [
+        "CHT không cực, CHT có cực, liên kết ion",
+        "Liên kết ion, CHT có cực, CHT không cực",
+        "CHT có cực, CHT không cực, liên kết ion",
+        "CHT không cực, liên kết ion, CHT có cực"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (CHT không cực, CHT có cực, ion)",
+      "exp": "• Cl₂: Δχ = 0 < 0,4 ⇒ CHT không cực.<br>• HCl: 0,4 ≤ Δχ = 0,96 < 1,7 ⇒ CHT có cực.<br>• NaCl: Δχ = 2,23 ≥ 1,7 ⇒ Liên kết ion.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép chất (Cột A) với loại lực liên kết / tương tác chủ yếu (Cột B):",
+      "pairs": [
+        {
+          "a": "1. Muối ăn NaCl",
+          "b": "A. Liên kết ion."
+        },
+        {
+          "a": "2. Khí Nitrogen N₂",
+          "b": "B. Liên kết cộng hóa trị ba (1σ, 2π)."
+        },
+        {
+          "a": "3. Nước H₂O lỏng",
+          "b": "C. Liên kết hydrogen liên phân tử."
+        },
+        {
+          "a": "4. Khí hiếm Argon lỏng",
+          "b": "D. Tương tác van der Waals."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• NaCl: ion.<br>• N₂: CHT ba.<br>• H₂O: liên kết H.<br>• Ar: van der Waals."
+    },
+    {
+      "type": "mcq",
+      "q": "Phân tử nào sau đây có moment lưỡng cực bằng 0 (phân tử không phân cực) do có cấu tạo đối xứng?",
+      "opts": [
+        "Methane (CH₄, hình tứ diện đều)",
+        "Ammonia (NH₃, hình chóp tam giác)",
+        "Nước (H₂O, hình góc)",
+        "Hydrochloric acid (HCl, phân tử thẳng 2 nguyên tử khác nhau)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Methane - CH₄)",
+      "exp": "• CH₄ có 4 liên kết C-H phân cực hướng về 4 đỉnh của tứ diện đều, tổng vector moment lưỡng cực triệt tiêu hoàn toàn bằng 0 ⇒ phân tử không phân cực.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các hợp chất của kim loại nhóm IA và IIA với phi kim nhóm VIIA:",
+      "items": [
+        {
+          "text": "a) NaF, NaCl, KBr đều là các tinh thể ion.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "b) Dung dịch NaCl trong nước dẫn được dòng điện.",
+          "ans": true,
+          "exp": "Đúng vì phân li thành Na⁺ và Cl⁻."
+        },
+        {
+          "text": "c) Nhiệt độ nóng chảy của NaCl cao hơn 800 °C.",
+          "ans": true,
+          "exp": "Đúng (801 °C)."
+        },
+        {
+          "text": "d) Trong tinh thể NaCl, các phân tử NaCl tồn tại độc lập giống như khí CO₂.",
+          "ans": false,
+          "exp": "Sai. Trong tinh thể ion không tồn tại phân tử riêng lẻ, mà là mạng lưới vô tận các ion Na⁺ và Cl⁻ xen kẽ."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Liên kết nào sau đây bị đứt gãy khi đun sôi nước lỏng chuyển thành hơi nước?",
+      "opts": [
+        "Liên kết hydrogen liên phân tử giữa các phân tử nước.",
+        "Liên kết cộng hóa trị O–H trong phân tử nước.",
+        "Liên kết ion giữa H⁺ và OH⁻.",
+        "Cả liên kết O–H và liên kết hydrogen."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Liên kết hydrogen liên phân tử)",
+      "exp": "• Sự sôi và bay hơi là hiện tượng chuyển thể vật lí, chỉ làm đứt gãy các liên kết hydrogen liên phân tử yếu để giải phóng các phân tử H₂O tự do.<br>• Các liên kết cộng hóa trị O-H trong phân tử nước vẫn hoàn toàn nguyên vẹn.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống:<br>Phân tử N₂ có liên kết ba gồm %%%SLOT_1%%% liên kết σ và %%%SLOT_2%%% liên kết π. Năng lượng liên kết của N₂ rất lớn (%945 kJ/mol) giải thích tính trơ %%%SLOT_3%%% của nitrogen ở nhiệt độ %%%SLOT_4%%%.",
+      "options": [
+        "1",
+        "2",
+        "hóa học",
+        "thường"
+      ],
+      "ans": [
+        "1",
+        "2",
+        "hóa học",
+        "thường"
+      ],
+      "exp": "• 1 sigma, 2 pi.<br>• Trơ hóa học ở nhiệt độ thường."
+    },
+    {
+      "type": "mcq",
+      "q": "Trong các chất sau: HF, HCl, HBr, HI. Chất có nhiệt độ sôi cao nhất là:",
+      "opts": [
+        "HF (do có liên kết hydrogen liên phân tử bền nhất)",
+        "HI",
+        "HBr",
+        "HCl"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (HF)",
+      "exp": "• Nhờ độ âm điện của Fluorine lớn nhất tạo liên kết hydrogen F–H···F rất mạnh, HF sôi ở 19,5 °C.<br>• Các acid còn lại không có liên kết hydrogen, nhiệt độ sôi tăng dần theo van der Waals: HCl (-85 °C) < HBr (-66 °C) < HI (-35 °C) < HF (19,5 °C).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "14": [
+    {
+      "type": "mcq",
+      "q": "Phản ứng oxi hóa – khử là phản ứng hóa học trong đó có sự thay đổi đại lượng nào sau đây?",
+      "opts": [
+        "Số oxi hóa của một số nguyên tố hóa học (có sự chuyển dịch electron).",
+        "Chỉ thay đổi màu sắc của dung dịch.",
+        "Chỉ có sự thay đổi trạng thái tập hợp của các chất.",
+        "Chỉ có sự phân li của các chất thành ion."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Thay đổi số oxi hóa - chuyển electron)",
+      "exp": "• <b>Định nghĩa SGK Hóa 10:</b> Phản ứng oxi hóa – khử là phản ứng hóa học có sự chuyển electron giữa các chất phản ứng, hay phản ứng có sự thay đổi số oxi hóa của một số nguyên tử nguyên tố.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Trong một phản ứng oxi hóa – khử, chất khử (chất bị oxi hóa) là chất có đặc điểm gì?",
+      "opts": [
+        "Chất nhường electron, có số oxi hóa tăng sau phản ứng ('Khử cho').",
+        "Chất nhận electron, có số oxi hóa giảm sau phản ứng ('O nhận').",
+        "Chất không thay đổi số oxi hóa.",
+        "Chỉ là chất đóng vai trò môi trường."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Chất nhường e, số oxi hóa tăng)",
+      "exp": "• Quy tắc ghi nhớ sư phạm: <i>'Khử cho – O nhận'</i>:<br>• Chất khử: nhường e -> số oxi hóa tăng lên sau phản ứng.<br>• Chất oxi hóa: nhận e -> số oxi hóa giảm xuống sau phản ứng.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Cho phản ứng hóa học: Zn + CuSO₄ -> ZnSO₄ + Cu:",
+      "items": [
+        {
+          "text": "a) Zn là chất khử vì số oxi hóa của kẽm tăng từ 0 lên +2.",
+          "ans": true,
+          "exp": "Đúng. Zn nhường 2e: Zn -> Zn²⁺ + 2e."
+        },
+        {
+          "text": "b) Ion Cu²⁺ là chất oxi hóa vì số oxi hóa giảm từ +2 xuống 0.",
+          "ans": true,
+          "exp": "Đúng. Cu²⁺ + 2e -> Cu."
+        },
+        {
+          "text": "c) Quá trình Zn -> Zn²⁺ + 2e là quá trình oxi hóa kẽm.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "d) Gốc SO₄²⁻ tham gia nhường nhận electron trong phản ứng.",
+          "ans": false,
+          "exp": "Sai. Gốc sulfate SO₄²⁻ giữ nguyên số oxi hóa S (+6) và O (-2), chỉ đóng vai trò môi trường tạo muối."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Số oxi hóa của nguyên tố Manganese (Mn) trong hợp chất KMnO₄ (thuốc tím) là bao nhiêu?",
+      "opts": [
+        "+7",
+        "+6",
+        "+4",
+        "+2"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (+7)",
+      "exp": "• Trong KMnO₄: K có số oxi hóa +1, O có số oxi hóa -2.<br>• Ta có: (+1)·1 + x·1 + (-2)·4 = 0 ⇒ 1 + x - 8 = 0 ⇒ x = +7.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép các quá trình (Cột A) với tên gọi tương ứng (Cột B):",
+      "pairs": [
+        {
+          "a": "1. Fe -> Fe³⁺ + 3e",
+          "b": "A. Quá trình oxi hóa sắt (sự oxi hóa)."
+        },
+        {
+          "a": "2. Cl₂ + 2e -> 2Cl⁻",
+          "b": "B. Quá trình khử chlorine (sự khử)."
+        },
+        {
+          "a": "3. Cu²⁺ + 2e -> Cu",
+          "b": "C. Quá trình khử ion đồng (sự khử)."
+        },
+        {
+          "a": "4. 2H⁺ + 2e -> H₂",
+          "b": "D. Quá trình khử ion hydrogen (sự khử)."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• Quá trình nhường e = Quá trình oxi hóa.<br>• Quá trình nhận e = Quá trình khử."
+    },
+    {
+      "type": "mcq",
+      "q": "Cho phương trình phản ứng cân bằng: aFe + bHNO₃ -> cFe(NO₃)₃ + dNO↑ + eH₂O. Tỉ lệ hệ số nguyên tối giản a : d là:",
+      "opts": [
+        "1 : 1",
+        "1 : 2",
+        "2 : 1",
+        "3 : 1"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (1 : 1)",
+      "exp": "• Thăng bằng electron:<br>  Fe⁰ -> Fe⁺³ + 3e  (x1)<br>  N⁺⁵ + 3e -> N⁺² (NO) (x1)<br>• Phương trình cân bằng: Fe + 4HNO₃ -> Fe(NO₃)₃ + NO + 2H₂O.<br>• Hệ số a = 1, d = 1 ⇒ Tỉ lệ a : d = 1 : 1.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các phản ứng sau có phải là phản ứng oxi hóa – khử hay không:",
+      "items": [
+        {
+          "text": "a) CaCO₃ --t°--> CaO + CO₂ không phải là phản ứng oxi hóa khử.",
+          "ans": true,
+          "exp": "Đúng (Ca +2, C +4, O -2 không đổi)."
+        },
+        {
+          "text": "b) 2H₂ + O₂ -> 2H₂O là phản ứng oxi hóa khử.",
+          "ans": true,
+          "exp": "Đúng (H từ 0 lên +1, O từ 0 xuống -2)."
+        },
+        {
+          "text": "c) NaOH + HCl -> NaCl + H₂O là phản ứng trao đổi, không phải oxi hóa khử.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "d) Mọi phản ứng hóa hợp đều là phản ứng oxi hóa – khử.",
+          "ans": false,
+          "exp": "Sai. Ví dụ NH₃ + HCl -> NH₄Cl hay CaO + H₂O -> Ca(OH)₂ là phản ứng hóa hợp nhưng không thay đổi số oxi hóa."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Trong phản ứng: Cl₂ + 2NaOH -> NaCl + NaClO + H₂O. Vai trò của Cl₂ là:",
+      "opts": [
+        "Vừa là chất oxi hóa, vừa là chất khử (phản ứng tự oxi hóa – khử).",
+        "Chỉ là chất oxi hóa.",
+        "Chỉ là chất khử.",
+        "Không phải chất oxi hóa cũng không phải chất khử."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Vừa là chất oxi hóa, vừa là chất khử)",
+      "exp": "• Trong phản ứng trên, nguyên tử Cl⁰ một phần giảm xuống Cl⁻¹ (trong NaCl) -> đóng vai trò chất oxi hóa.<br>• Một phần Cl⁰ tăng lên Cl⁺¹ (trong NaClO) -> đóng vai trò chất khử.<br>• Đây là phản ứng tự oxi hóa – khử (disproportionation).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống quy tắc cân bằng thăng bằng electron:<br>Trong phản ứng oxi hóa – khử, tổng số electron do chất khử %%%SLOT_1%%% phải bằng tổng số electron mà chất oxi hóa %%%SLOT_2%%%. Chất khử có số oxi hóa %%%SLOT_3%%%, chất oxi hóa có số oxi hóa %%%SLOT_4%%%.",
+      "options": [
+        "nhường",
+        "nhận",
+        "tăng",
+        "giảm"
+      ],
+      "ans": [
+        "nhường",
+        "nhận",
+        "tăng",
+        "giảm"
+      ],
+      "exp": "• Định luật bảo toàn electron: Tổng e cho = Tổng e nhận.<br>• Khử tăng, O giảm."
+    },
+    {
+      "type": "mcq",
+      "q": "Cho phản ứng: 3Cu + 8HNO₃ -> 3Cu(NO₃)₂ + 2NO↑ + 4H₂O. Số phân tử HNO₃ đóng vai trò là chất oxi hóa trong phản ứng trên là:",
+      "opts": [
+        "2 phân tử",
+        "8 phân tử",
+        "6 phân tử",
+        "3 phân tử"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (2 phân tử)",
+      "exp": "• Trong 8 phân tử HNO₃ phản ứng:<br>• 2 phân tử bị khử thành NO (N⁺⁵ + 3e -> N⁺²) đóng vai trò chất oxi hóa.<br>• 6 phân tử HNO₃ giữ nguyên số oxi hóa N⁺⁵ trong muối Cu(NO₃)₂ đóng vai trò tạo môi trường.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "15": [
+    {
+      "type": "mcq",
+      "q": "Phản ứng cháy của xăng dầu (hydrocarbon) trong động cơ xe máy, ô tô là một ứng dụng quan trọng của phản ứng nào?",
+      "opts": [
+        "Phản ứng oxi hóa – khử tỏa nhiều nhiệt sinh công.",
+        "Phản ứng trung hòa acid - base.",
+        "Phản ứng trao đổi ion tạo kết tủa.",
+        "Phản ứng phân hủy thu nhiệt."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Phản ứng oxi hóa khử tỏa nhiệt)",
+      "exp": "• Phản ứng đốt cháy: C_xH_y + (x + y/4)O₂ -> xCO₂ + (y/2)H₂O + Q.<br>• Đây là phản ứng oxi hóa - khử tỏa năng lượng lớn làm khí dãn nở đẩy piston sinh công cơ học.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Hiện tượng sắt (iron) trong không khí ẩm bị gỉ sét tạo thành gỉ sắt Fe₂O₃·nH₂O là hiện tượng gì?",
+      "opts": [
+        "Sự ăn mòn kim loại (quá trình oxi hóa – khử tự nhiên phá hủy kim loại).",
+        "Hiện tượng quang hợp.",
+        "Hiện tượng lắng đọng cơ học.",
+        "Sự bay hơi của kim loại."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Sự ăn mòn kim loại)",
+      "exp": "• Sắt bị oxygen và hơi nước oxi hóa chậm thành các oxide và hydroxide sắt (gỉ sét).<br>• Đây là quá trình ăn mòn hóa học và điện hóa gây thiệt hại lớn cho các công trình, cầu cống, tàu bè.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét vai trò của các phản ứng oxi hóa – khử trong đời sống và sản xuất:",
+      "items": [
+        {
+          "text": "a) Quá trình hô hấp tế bào ở người và động vật giải phóng năng lượng ATP nhờ phản ứng oxi hóa glucose.",
+          "ans": true,
+          "exp": "Đúng (C₆H₁₂O₆ + 6O₂ -> 6CO₂ + 6H₂O + Q)."
+        },
+        {
+          "text": "b) Quá trình quang hợp của cây xanh là phản ứng oxi hóa khử thu năng lượng ánh sáng mặt trời.",
+          "ans": true,
+          "exp": "Đúng (6CO₂ + 6H₂O -> C₆H₁₂O₆ + 6O₂)."
+        },
+        {
+          "text": "c) Pin điện hóa và acquy hoạt động dựa trên các phản ứng oxi hóa – khử sinh dòng điện.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "d) Sản xuất gang thép trong lò cao không sử dụng phản ứng oxi hóa – khử.",
+          "ans": false,
+          "exp": "Sai. Khí CO khử oxit sắt (Fe₂O₃ + 3CO -> 2Fe + 3CO₂) là phản ứng oxi hóa - khử cốt lõi."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Biện pháp nào sau đây KHÔNG PHẢI là phương pháp bảo vệ kim loại khỏi sự ăn mòn điện hóa và oxi hóa?",
+      "opts": [
+        "Ngâm kim loại trong dung dịch muối ăn hoặc acid.",
+        "Sơn phủ, mạ kim loại bền (như kẽm, crom, niken) lên bề mặt kim loại.",
+        "Dùng phương pháp bảo vệ điện hóa (gắn khối kẽm vào vỏ tàu biển bằng thép).",
+        "Bôi dầu mỡ lên các chi tiết máy bằng sắt thép sau khi sử dụng."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Ngâm trong dung dịch muối/acid)",
+      "exp": "• Ngâm trong dung dịch chất điện li (muối, acid) làm tốc độ ăn mòn kim loại tăng vọt gấp nhiều lần.<br>• Các biện pháp còn lại là phương pháp phủ bề mặt và bảo vệ catot (điện hóa).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép các ứng dụng thực tiễn (Cột A) với phản ứng oxi hóa – khử tương ứng (Cột B):",
+      "pairs": [
+        {
+          "a": "1. Luyện gang trong lò cao",
+          "b": "A. Khí CO khử quặng hematite: Fe₂O₃ + 3CO -> 2Fe + 3CO₂."
+        },
+        {
+          "a": "2. Khử trùng nước sinh hoạt",
+          "b": "B. Khí Cl₂ hoặc NaClO oxi hóa tiêu diệt vi khuẩn, mầm bệnh."
+        },
+        {
+          "a": "3. Đốt cháy than đá sinh nhiệt",
+          "b": "C. Carbon bị oxi hóa: C + O₂ -> CO₂ + Q."
+        },
+        {
+          "a": "4. Hàn đường ray bằng hỗn hợp tecmit",
+          "b": "D. Nhôm khử oxit sắt: 2Al + Fe₂O₃ -> Al₂O₃ + 2Fe."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• Các ứng dụng kinh điển của phản ứng oxi hóa khử trong công nghiệp."
+    },
+    {
+      "type": "mcq",
+      "q": "Tại sao người ta gắn các tấm kim loại Kẽm (Zinc) vào phần vỏ tàu biển bằng thép tiếp xúc với nước biển?",
+      "opts": [
+        "Vì kẽm có tính khử mạnh hơn sắt nên kẽm bị ăn mòn trước, bảo vệ vỏ thép của tàu (phương pháp bảo vệ điện hóa).",
+        "Vì kẽm làm tăng độ bóng đẹp cho tàu.",
+        "Vì kẽm làm giảm ma sát của nước biển với thân tàu.",
+        "Vì kẽm ngăn cản sự phát triển của rong rêu."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Bảo vệ điện hóa - Kẽm bị ăn mòn thay sắt)",
+      "exp": "• Khi tạo cặp điện cực Zn–Fe ngâm trong nước biển (chất điện li): Zn có thế điện cực âm hơn (tính khử mạnh hơn) đóng vai trò anode bị ăn mòn tan ra (Zn -> Zn²⁺ + 2e), còn Fe đóng vai trò catode được bảo vệ nguyên vẹn.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các hiện tượng thực tiễn liên quan đến phản ứng oxi hóa – khử:",
+      "items": [
+        {
+          "text": "a) Thuốc nổ đen (gồm KNO₃, C và S) nổ là phản ứng oxi hóa – khử tạo lượng lớn khí N₂, CO₂ và SO₂ kèm nhiệt độ cao.",
+          "ans": true,
+          "exp": "Đúng (2KNO₃ + 3C + S -> K₂S + N₂ + 3CO₂)."
+        },
+        {
+          "text": "b) Dùng nước oxy già (H₂O₂) rửa vết thương sát khuẩn nhờ tính oxi hóa của H₂O₂.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "c) Trái cây gọt vỏ để ngoài không khí bị thâm đen do các polyphenol bị enzyme và O₂ không khí oxi hóa.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "d) Rỉ sét kim loại là quá trình khử kim loại thành đơn chất nguyên chất.",
+          "ans": false,
+          "exp": "Sai. Đó là quá trình oxi hóa kim loại thành ion/oxit."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Chất nào sau đây là chất chống oxi hóa (antioxidant) phổ biến có trong rau củ quả giúp bảo vệ cơ thể khỏi các gốc tự do có hại?",
+      "opts": [
+        "Vitamin C (ascorbic acid)",
+        "Sulfuric acid",
+        "Sodium chloride",
+        "Potassium permanganate"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Vitamin C)",
+      "exp": "• Vitamin C, vitamin E, beta-carotene là các chất chống oxi hóa mạnh, chúng dễ dàng nhường electron cho các gốc tự do để vô hiệu hóa tác hại của gốc tự do đối với tế bào.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống:<br>Phản ứng oxi hóa – khử có mặt khắp nơi trong đời sống và sản xuất: từ quá trình %%%SLOT_1%%% của sinh vật, sự %%%SLOT_2%%% nhiên liệu cung cấp năng lượng, sự %%%SLOT_3%%% kim loại gây tổn thất kinh tế cho đến ngành luyện kim thu hồi các %%%SLOT_4%%% quý giá.",
+      "options": [
+        "hô hấp",
+        "cháy",
+        "ăn mòn",
+        "kim loại"
+      ],
+      "ans": [
+        "hô hấp",
+        "cháy",
+        "ăn mòn",
+        "kim loại"
+      ],
+      "exp": "• Hô hấp, cháy, ăn mòn, kim loại."
+    },
+    {
+      "type": "mcq",
+      "q": "Khí gas dùng để đun nấu hàng ngày (LPG) có thành phần chính là:",
+      "opts": [
+        "Propane (C₃H₈) và Butane (C₄H₁₀)",
+        "Methane (CH₄) và Carbon monoxide (CO)",
+        "Hydrogen (H₂) và Oxygen (O₂)",
+        "Acetylene (C₂H₂) và Ethylene (C₂H₄)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Propane và Butane)",
+      "exp": "• LPG (Liquefied Petroleum Gas) gồm propane C₃H₈ và butane C₄H₁₀ được hóa lỏng dưới áp suất.<br>• Khi cháy tỏa lượng nhiệt rất lớn phục vụ đun nấu gia đình và công nghiệp.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "16": [
+    {
+      "type": "mcq",
+      "q": "Cho phản ứng: 2KMnO₄ + 16HCl -> 2KCl + 2MnCl₂ + 5Cl₂↑ + 8H₂O. Tỉ lệ giữa số phân tử HCl đóng vai trò chất khử và số phân tử HCl tham gia phản ứng là:",
+      "opts": [
+        "10 : 16 (tức 5 : 8)",
+        "16 : 16",
+        "2 : 16",
+        "5 : 16"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (10 : 16)",
+      "exp": "• Trong 16 phân tử HCl tham gia:<br>• Tạo 5 phân tử Cl₂ (tương ứng 10 nguyên tử Cl⁻ bị oxi hóa thành Cl₂⁰) ⇒ có 10 phân tử HCl đóng vai trò chất khử.<br>• 6 phân tử HCl còn lại tạo muối KCl và MnCl₂ giữ nguyên số oxi hóa Cl⁻ đóng vai trò tạo môi trường.<br>• Tỉ lệ = 10 : 16 = 5 : 8.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Trong các chất và ion sau: Fe²⁺, Fe³⁺, SO₂, Cl⁻. Chất hoặc ion vừa có tính oxi hóa vừa có tính khử là:",
+      "opts": [
+        "Fe²⁺ và SO₂",
+        "Fe³⁺ và Cl⁻",
+        "Chỉ có Fe²⁺",
+        "Chỉ có SO₂"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Fe²⁺ và SO₂)",
+      "exp": "• Fe²⁺ có số oxi hóa trung gian giữa 0 và +3: có thể tăng lên Fe³⁺ (tính khử) hoặc giảm xuống Fe⁰ (tính oxi hóa).<br>• SO₂ có S (+4) trung gian giữa -2, 0 và +6: có thể tăng lên S⁺⁶ (tính khử) hoặc giảm xuống S⁰ (tính oxi hóa).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các phản ứng nhiệt nhôm: 2Al + Fe₂O₃ --t°--> Al₂O₃ + 2Fe:",
+      "items": [
+        {
+          "text": "a) Al đóng vai trò là chất khử.",
+          "ans": true,
+          "exp": "Đúng (Al⁰ -> Al⁺³)."
+        },
+        {
+          "text": "b) Fe₂O₃ đóng vai trò là chất oxi hóa.",
+          "ans": true,
+          "exp": "Đúng (Fe⁺³ -> Fe⁰)."
+        },
+        {
+          "text": "c) Phản ứng tỏa nhiệt lượng rất lớn (trên 2000 °C) làm sắt sinh ra ở thể lỏng.",
+          "ans": true,
+          "exp": "Đúng (hỗn hợp tecmit dùng để hàn đường ray)."
+        },
+        {
+          "text": "d) Khối lượng electron mà Al nhường gấp đôi khối lượng electron Fe₂O₃ nhận.",
+          "ans": false,
+          "exp": "Sai. Tổng số e cho luôn bằng tổng số e nhận theo định luật bảo toàn e (đều là 6e)."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Cho phản ứng: aFe₃O₄ + bHNO₃ -> cFe(NO₃)₃ + dNO↑ + eH₂O. Tổng hệ số nguyên tối giản (a + b + c + d + e) là:",
+      "opts": [
+        "55",
+        "36",
+        "48",
+        "28"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (55)",
+      "exp": "• Quá trình oxi hóa: 3Fe⁺⁸/³ -> 3Fe⁺³ + 1e  (x3)<br>• Quá trình khử: N⁺⁵ + 3e -> N⁺² (NO)  (x1)<br>• Phương trình cân bằng:<br>  3Fe₃O₄ + 28HNO₃ -> 9Fe(NO₃)₃ + NO + 14H₂O.<br>• Tổng hệ số: a + b + c + d + e = 3 + 28 + 9 + 1 + 14 = 55.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép các phản ứng (Cột A) với loại phản ứng oxi hóa – khử tương ứng (Cột B):",
+      "pairs": [
+        {
+          "a": "1. Cu + 2AgNO₃ -> Cu(NO₃)₂ + 2Ag",
+          "b": "A. Phản ứng oxi hóa – khử giữa các phân tử."
+        },
+        {
+          "a": "2. 2KClO₃ --t°--> 2KCl + 3O₂",
+          "b": "B. Phản ứng oxi hóa – khử nội phân tử (Cl và O trong cùng phân tử)."
+        },
+        {
+          "a": "3. 3S + 6KOH -> 2K₂S + K₂SO₃ + 3H₂O",
+          "b": "C. Phản ứng tự oxi hóa – tự khử (S vừa tăng vừa giảm)."
+        },
+        {
+          "a": "4. BaCl₂ + Na₂SO₄ -> BaSO₄↓ + 2NaCl",
+          "b": "D. Phản ứng trao đổi ion, không phải oxi hóa – khử."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• Phân loại các phản ứng oxi hóa khử và phản ứng trao đổi."
+    },
+    {
+      "type": "mcq",
+      "q": "Xác định số oxi hóa của nguyên tố Chromium (Cr) trong ion dichromate (Cr₂O₇²⁻):",
+      "opts": [
+        "+6",
+        "+3",
+        "+7",
+        "+12"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (+6)",
+      "exp": "• Trong ion đa nguyên tử Cr₂O₇²⁻: tổng số oxi hóa bằng điện tích của ion (-2).<br>• 2·x + 7·(-2) = -2 ⇒ 2x - 14 = -2 ⇒ 2x = 12 ⇒ x = +6.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các nhận định sau về phản ứng oxi hóa khử trong dung dịch:",
+      "items": [
+        {
+          "text": "a) Kim loại mạnh hơn có thể đẩy kim loại yếu hơn ra khỏi dung dịch muối.",
+          "ans": true,
+          "exp": "Đúng (ví dụ Fe + CuSO₄ -> FeSO₄ + Cu)."
+        },
+        {
+          "text": "b) Halogen đứng trước có thể đẩy ion halide đứng sau ra khỏi dung dịch muối (Cl₂ + 2NaBr -> 2NaCl + Br₂).",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "c) Chất khử là chất nhận electron làm giảm số oxi hóa.",
+          "ans": false,
+          "exp": "Sai. Chất khử là chất nhường electron làm tăng số oxi hóa."
+        },
+        {
+          "text": "d) Trong pin điện hóa, ở cực âm (anode) xảy ra quá trình oxi hóa chất khử.",
+          "ans": true,
+          "exp": "Đúng (Anode luôn là nơi xảy ra quá trình oxi hóa)."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Khi cho khí H₂S lội qua dung dịch SO₂ thấy xuất hiện váng màu vàng. Phản ứng xảy ra là: 2H₂S + SO₂ -> 3S↓ + 2H₂O. Tỉ lệ giữa số phân tử chất khử và chất oxi hóa là:",
+      "opts": [
+        "2 : 1",
+        "1 : 2",
+        "3 : 1",
+        "1 : 1"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (2 : 1)",
+      "exp": "• H₂S: S mang số oxi hóa -2 tăng lên 0 ⇒ H₂S là chất khử (hệ số 2).<br>• SO₂: S mang số oxi hóa +4 giảm xuống 0 ⇒ SO₂ là chất oxi hóa (hệ số 1).<br>• Tỉ lệ chất khử : chất oxi hóa = 2 : 1.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống:<br>Phản ứng oxi hóa – khử gồm hai quá trình luôn diễn ra %%%SLOT_1%%%: chất khử nhường electron trong quá trình %%%SLOT_2%%%, còn chất oxi hóa thu nhận electron trong quá trình %%%SLOT_3%%%. Dấu hiệu đặc trưng nhất là sự thay đổi %%%SLOT_4%%% của các nguyên tố.",
+      "options": [
+        "đồng thời",
+        "oxi hóa",
+        "khử",
+        "số oxi hóa"
+      ],
+      "ans": [
+        "đồng thời",
+        "oxi hóa",
+        "khử",
+        "số oxi hóa"
+      ],
+      "exp": "• Diễn ra đồng thời.<br>• Quá trình oxi hóa, quá trình khử.<br>• Thay đổi số oxi hóa."
+    },
+    {
+      "type": "mcq",
+      "q": "Dung dịch nào sau đây dùng để nhận biết khí SO₂ do làm mất màu tím đặc trưng của dung dịch?",
+      "opts": [
+        "Dung dịch thuốc tím KMnO₄ trong môi trường H₂SO₄ loãng",
+        "Dung dịch NaCl",
+        "Dung dịch NaOH không màu",
+        "Dung dịch CuSO₄ màu xanh"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Dung dịch KMnO₄)",
+      "exp": "• Khí SO₂ có tính khử mạnh, khử ion MnO₄⁻ (+7, màu tím) thành ion Mn²⁺ (không màu):<br>5SO₂ + 2KMnO₄ + 2H₂O -> K₂SO₄ + 2MnSO₄ + 2H₂SO₄.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "17": [
+    {
+      "type": "mcq",
+      "q": "Phản ứng tỏa nhiệt là phản ứng hóa học có đặc điểm nào sau đây?",
+      "opts": [
+        "Giải phóng năng lượng dưới dạng nhiệt ra môi trường xung quanh, biến thiên enthalpy ΔrH°₂₉₈ < 0.",
+        "Hấp thụ năng lượng nhiệt từ môi trường, biến thiên enthalpy ΔrH°₂₉₈ > 0.",
+        "Biến thiên enthalpy ΔrH°₂₉₈ = 0.",
+        "Làm nhiệt độ của môi trường xung quanh giảm đi."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Giải phóng nhiệt, ΔrH°₂₉₈ < 0)",
+      "exp": "• <b>Kiến thức SGK Hóa 10:</b><br>• Phản ứng tỏa nhiệt (exothermic): giải phóng nhiệt lượng, làm môi trường xung quanh nóng lên, ΔrH°₂₉₈ < 0.<br>• Phản ứng thu nhiệt (endothermic): hấp thụ nhiệt lượng, làm môi trường xung quanh lạnh đi, ΔrH°₂₉₈ > 0.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Điều kiện chuẩn trong nhiệt hóa học ứng với nhiệt độ và áp suất nào?",
+      "opts": [
+        "298 K (25 °C) và áp suất 1 bar (10⁵ Pa).",
+        "273 K (0 °C) và áp suất 1 atm.",
+        "0 K và áp suất 1 bar.",
+        "298 K và áp suất 1 atm."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (298 K, 25 °C và 1 bar)",
+      "exp": "• Theo IUPAC và SGK GDPT 2018: Điều kiện chuẩn ứng với áp suất 1 bar (đối với chất khí), nồng độ 1 mol/L (đối với dung dịch) và thường chọn nhiệt độ 298 K (25 °C). Kí hiệu kèm chỉ số ° (hoặc ⦵).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các hiện tượng sau thuộc loại tỏa nhiệt hay thu nhiệt:",
+      "items": [
+        {
+          "text": "a) Phản ứng đốt cháy than củi, cồn, khí gas là phản ứng tỏa nhiệt.",
+          "ans": true,
+          "exp": "Đúng (tỏa nhiều nhiệt để sưởi ấm, đun nấu)."
+        },
+        {
+          "text": "b) Quá trình hòa tan viên C sủi vào nước làm cốc nước mát lạnh hơn là quá trình thu nhiệt.",
+          "ans": true,
+          "exp": "Đúng (hấp thụ nhiệt từ nước)."
+        },
+        {
+          "text": "c) Phản ứng nung đá vôi (CaCO₃ --t°--> CaO + CO₂) cần cấp nhiệt liên tục nên là phản ứng thu nhiệt.",
+          "ans": true,
+          "exp": "Đúng (ΔrH°₂₉₈ > 0)."
+        },
+        {
+          "text": "d) Phản ứng tỏa nhiệt có biến thiên enthalpy chuẩn mang giá trị dương.",
+          "ans": false,
+          "exp": "Sai. Tỏa nhiệt mang dấu âm (ΔrH° < 0), thu nhiệt mang dấu dương (ΔrH° > 0)."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Nhiệt tạo thành chuẩn (Enthalpy tạo thành chuẩn, kí hiệu ΔfH°₂₉₈) của một chất là lượng nhiệt kèm theo phản ứng tạo thành 1 mol chất đó từ:",
+      "opts": [
+        "Các đơn chất bền nhất ở điều kiện chuẩn.",
+        "Các hợp chất đơn giản nhất ở điều kiện chuẩn.",
+        "Các nguyên tử ở thể khí.",
+        "Các ion tương ứng trong dung dịch."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Các đơn chất bền nhất ở điều kiện chuẩn)",
+      "exp": "• <b>Định nghĩa:</b> Nhiệt tạo thành chuẩn ΔfH°₂₉₈ là biến thiên enthalpy của phản ứng tạo thành 1 mol chất từ các đơn chất ở dạng bền vững nhất ở điều kiện chuẩn (298 K, 1 bar).<br>• Nhiệt tạo thành chuẩn của các đơn chất bền nhất bằng 0 (ví dụ ΔfH°₂₉₈ của O₂(g), N₂(g), C(graphite) = 0).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép các quá trình (Cột A) với dấu của biến thiên enthalpy tương ứng (Cột B):",
+      "pairs": [
+        {
+          "a": "1. Đốt cháy khí methane: CH₄ + 2O₂ -> CO₂ + 2H₂O",
+          "b": "A. ΔrH°₂₉₈ < 0 (Phản ứng tỏa nhiệt mạnh)."
+        },
+        {
+          "a": "2. Nung đá vôi: CaCO₃ -> CaO + CO₂",
+          "b": "B. ΔrH°₂₉₈ > 0 (Phản ứng thu nhiệt)."
+        },
+        {
+          "a": "3. Đơn chất bền O₂(g) ở 298 K",
+          "b": "C. ΔfH°₂₉₈ = 0 kJ/mol (Quy ước chuẩn)."
+        },
+        {
+          "a": "4. Cho vôi sống vào nước (tôi vôi): CaO + H₂O -> Ca(OH)₂",
+          "b": "D. ΔrH°₂₉₈ < 0 (Tỏa nhiệt dữ dội làm nước sôi)."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• Tỏa nhiệt: ΔH < 0.<br>• Thu nhiệt: ΔH > 0.<br>• Đơn chất bền: ΔfH° = 0."
+    },
+    {
+      "type": "mcq",
+      "q": "Cho phương trình nhiệt hóa học sau:<br>N₂(g) + 3H₂(g) ⇌ 2NH₃(g)   ΔrH°₂₉₈ = -92,22 kJ.<br>Phản ứng tổng hợp ammonia từ N₂ và H₂ là phản ứng:",
+      "opts": [
+        "Tỏa nhiệt, khi tạo thành 2 mol NH₃ giải phóng nhiệt lượng 92,22 kJ.",
+        "Thu nhiệt, khi tạo thành 2 mol NH₃ cần hấp thụ nhiệt lượng 92,22 kJ.",
+        "Tỏa nhiệt, khi tạo thành 1 mol NH₃ giải phóng nhiệt lượng 92,22 kJ.",
+        "Không kèm theo sự thay đổi năng lượng."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Tỏa nhiệt, tạo 2 mol NH₃ giải phóng 92,22 kJ)",
+      "exp": "• Vì ΔrH°₂₉₈ = -92,22 kJ < 0 nên phản ứng là phản ứng tỏa nhiệt.<br>• Theo phương trình, hệ số của NH₃ là 2, nên khi tạo thành 2 mol NH₃ sẽ giải phóng ra môi trường một nhiệt lượng bằng 92,22 kJ.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các nhận định về phương trình nhiệt hóa học:",
+      "items": [
+        {
+          "text": "a) Phương trình nhiệt hóa học luôn phải ghi rõ trạng thái của các chất (s: rắn, l: lỏng, g: khí, aq: dung dịch).",
+          "ans": true,
+          "exp": "Đúng vì enthalpy phụ thuộc vào trạng thái tập hợp."
+        },
+        {
+          "text": "b) Nếu đảo ngược chiều phương trình phản ứng thì giá trị ΔrH° đổi dấu nhưng giữ nguyên độ lớn.",
+          "ans": true,
+          "exp": "Đúng (nếu thuận tỏa nhiệt thì nghịch thu nhiệt lượng tương ứng)."
+        },
+        {
+          "text": "c) Nhiệt tạo thành chuẩn của CO₂(g) là -393,5 kJ/mol có nghĩa phản ứng C(graphite) + O₂(g) -> CO₂(g) tỏa ra 393,5 kJ.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "d) Hợp chất có nhiệt tạo thành chuẩn càng dương thì càng bền vững về mặt nhiệt.",
+          "ans": false,
+          "exp": "Sai. Nhiệt tạo thành chuẩn càng âm (càng tỏa nhiều nhiệt khi tạo thành) thì hợp chất càng bền vững."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Một túi chườm lạnh y tế dùng sơ cứu chấn thương thể thao thường chứa chất nào sau đây hòa tan thu nhiệt mạnh làm giảm đau tức thì?",
+      "opts": [
+        "Ammonium nitrate (NH₄NO₃) hòa tan trong nước thu nhiệt mạnh.",
+        "Sodium hydroxide (NaOH) hòa tan tỏa nhiệt.",
+        "Calcium chloride (CaCl₂) hòa tan tỏa nhiệt.",
+        "Muối ăn (NaCl)."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (NH₄NO₃ hòa tan thu nhiệt)",
+      "exp": "• NH₄NO₃ khi hòa tan trong nước có quá trình phá vỡ mạng tinh thể thu nhiệt rất lớn, làm nhiệt độ dung dịch giảm sâu xuống gần 0 °C, rất thích hợp làm túi chườm lạnh y tế sơ cứu bong gân, chấn thương.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống:<br>Phản ứng tỏa nhiệt là phản ứng %%%SLOT_1%%% nhiệt lượng ra môi trường, có biến thiên enthalpy mang dấu %%%SLOT_2%%%. Phản ứng thu nhiệt là phản ứng %%%SLOT_3%%% nhiệt từ môi trường, có biến thiên enthalpy mang dấu %%%SLOT_4%%%.",
+      "options": [
+        "giải phóng",
+        "âm (< 0)",
+        "hấp thụ",
+        "dương (> 0)"
+      ],
+      "ans": [
+        "giải phóng",
+        "âm (< 0)",
+        "hấp thụ",
+        "dương (> 0)"
+      ],
+      "exp": "• Tỏa nhiệt: giải phóng nhiệt, dấu âm.<br>• Thu nhiệt: hấp thụ nhiệt, dấu dương."
+    },
+    {
+      "type": "mcq",
+      "q": "Biết nhiệt tạo thành chuẩn của H₂O(l) là -285,8 kJ/mol. Khi đốt cháy hoàn toàn 2 g khí H₂(g) trong khí O₂ dư tạo nước lỏng thì nhiệt lượng tỏa ra là bao nhiêu?",
+      "opts": [
+        "285,8 kJ",
+        "571,6 kJ",
+        "142,9 kJ",
+        "28,58 kJ"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (285,8 kJ)",
+      "exp": "• Số mol H₂: n = 2 / 2 = 1 mol.<br>• Phản ứng: H₂(g) + 1/2 O₂(g) -> H₂O(l)   ΔrH°₂₉₈ = ΔfH°₂₉₈[H₂O(l)] = -285,8 kJ.<br>• Đốt cháy 1 mol H₂ tỏa ra đúng 285,8 kJ nhiệt lượng.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "18": [
+    {
+      "type": "mcq",
+      "q": "Biến thiên enthalpy chuẩn của phản ứng ΔrH°₂₉₈ được tính theo nhiệt tạo thành chuẩn của các chất theo công thức nào?",
+      "opts": [
+        "ΔrH°₂₉₈ = ∑ ΔfH°₂₉₈ (sản phẩm) - ∑ ΔfH°₂₉₈ (chất đầu)",
+        "ΔrH°₂₉₈ = ∑ ΔfH°₂₉₈ (chất đầu) - ∑ ΔfH°₂₉₈ (sản phẩm)",
+        "ΔrH°₂₉₈ = ∑ Eb (sản phẩm) - ∑ Eb (chất đầu)",
+        "ΔrH°₂₉₈ = [∑ ΔfH°₂₉₈ (sản phẩm)] / [∑ ΔfH°₂₉₈ (chất đầu)]"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (∑ sản phẩm - ∑ chất đầu)",
+      "exp": "• <b>Công thức SGK Hóa 10:</b><br>• Theo nhiệt tạo thành: ΔrH°₂₉₈ = ∑ n·ΔfH°₂₉₈(sp) - ∑ m·ΔfH°₂₉₈(cđ).<br>• Theo năng lượng liên kết: ΔrH°₂₉₈ = ∑ Eb(cđ) - ∑ Eb(sp).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Cho phản ứng: CH₄(g) + 2O₂(g) -> CO₂(g) + 2H₂O(l). Biết ΔfH°₂₉₈ của CH₄ = -74,8 kJ/mol; CO₂ = -393,5 kJ/mol; H₂O = -285,8 kJ/mol. Biến thiên enthalpy chuẩn của phản ứng là:",
+      "opts": [
+        "-890,3 kJ",
+        "-580,5 kJ",
+        "+890,3 kJ",
+        "-965,1 kJ"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (-890,3 kJ)",
+      "exp": "• Áp dụng công thức:<br>ΔrH°₂₉₈ = [1·(-393,5) + 2·(-285,8)] - [1·(-74,8) + 2·0]<br>= (-393,5 - 571,6) - (-74,8) = -965,1 + 74,8 = -890,3 kJ.<br>• Phản ứng tỏa lượng nhiệt khổng lồ 890,3 kJ trên 1 mol CH₄.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các nhận định về tính toán nhiệt phản ứng theo năng lượng liên kết (Eb):",
+      "items": [
+        {
+          "text": "a) Năng lượng liên kết chỉ áp dụng cho các chất phản ứng và sản phẩm ở thể khí.",
+          "ans": true,
+          "exp": "Đúng theo điều kiện chuẩn của năng lượng liên kết."
+        },
+        {
+          "text": "b) Phản ứng hóa học gồm 2 giai đoạn: phá vỡ liên kết cũ (thu năng lượng) và hình thành liên kết mới (tỏa năng lượng).",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "c) Nếu năng lượng giải phóng khi tạo liên kết mới lớn hơn năng lượng cần để phá liên kết cũ thì phản ứng là tỏa nhiệt (ΔrH° < 0).",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "d) Công thức tính ΔrH° theo năng lượng liên kết là ∑ Eb(sản phẩm) - ∑ Eb(chất đầu).",
+          "ans": false,
+          "exp": "Sai. Công thức đúng là: ∑ Eb(chất đầu) - ∑ Eb(sản phẩm)."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Cho năng lượng liên kết: Eb(H–H) = 436 kJ/mol; Eb(Cl–Cl) = 243 kJ/mol; Eb(H–Cl) = 432 kJ/mol. Biến thiên enthalpy của phản ứng: H₂(g) + Cl₂(g) -> 2HCl(g) là:",
+      "opts": [
+        "-185 kJ",
+        "+185 kJ",
+        "-92,5 kJ",
+        "-247 kJ"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (-185 kJ)",
+      "exp": "• Phá vỡ liên kết ở chất đầu: 1 liên kết H-H và 1 liên kết Cl-Cl: Eb(cđ) = 436 + 243 = 679 kJ.<br>• Hình thành liên kết ở sản phẩm: 2 liên kết H-Cl: Eb(sp) = 2·432 = 864 kJ.<br>• ΔrH°₂₉₈ = Eb(cđ) - Eb(sp) = 679 - 864 = -185 kJ.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép các đại lượng (Cột A) với đơn vị đo tương ứng trong nhiệt hóa học (Cột B):",
+      "pairs": [
+        {
+          "a": "1. Biến thiên enthalpy của phản ứng (ΔrH°₂₉₈)",
+          "b": "A. kJ (hoặc kcal)."
+        },
+        {
+          "a": "2. Nhiệt tạo thành chuẩn (ΔfH°₂₉₈)",
+          "b": "B. kJ/mol."
+        },
+        {
+          "a": "3. Năng lượng liên kết (Eb)",
+          "b": "C. kJ/mol."
+        },
+        {
+          "a": "4. Nhiệt dung riêng của nước",
+          "b": "D. J/(g·K) hoặc J/(g·°C)."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• ΔrH°: kJ.<br>• ΔfH°: kJ/mol.<br>• Eb: kJ/mol.<br>• Nhiệt dung riêng: J/(g·°C)."
+    },
+    {
+      "type": "mcq",
+      "q": "Cho phản ứng: C(s) + H₂O(g) -> CO(g) + H₂(g)   ΔrH°₂₉₈ = +131,3 kJ. Phản ứng này là:",
+      "opts": [
+        "Phản ứng thu nhiệt, cần cung cấp nhiệt lượng 131,3 kJ để chuyển hóa hoàn toàn 1 mol C.",
+        "Phản ứng tỏa nhiệt, giải phóng 131,3 kJ.",
+        "Phản ứng tự diễn ra mãnh liệt ở điều kiện phòng mà không cần đốt nóng.",
+        "Phản ứng không có sự trao đổi nhiệt lượng."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Phản ứng thu nhiệt)",
+      "exp": "• ΔrH°₂₉₈ = +131,3 kJ > 0 ⇒ Phản ứng thu nhiệt, muốn phản ứng xảy ra ta phải duy trì nung nóng ở nhiệt độ cao (khoảng 1000 °C, phản ứng sản xuất khí than ướt).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét ý nghĩa thực tiễn của năng lượng hóa học đối với việc lựa chọn nhiên liệu:",
+      "items": [
+        {
+          "text": "a) Nhiên liệu hóa thạch (than đá, dầu mỏ, khí thiên nhiên) khi cháy đều tỏa nhiệt lớn.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "b) Khí hydrogen (H₂) được xem là nhiên liệu sạch tương lai vì khi cháy tỏa nhiệt rất lớn và chỉ tạo ra H₂O không gây ô nhiễm.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "c) Đốt cháy than đá sinh ra khí CO₂ gây hiệu ứng nhà kính và SO₂ gây mưa acid.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "d) Than đá có năng suất tỏa nhiệt trên 1 gam cao hơn hydrogen.",
+          "ans": false,
+          "exp": "Sai. Hydrogen có nhiệt cháy trên 1 gam cao nhất (khoảng 142 kJ/g, gấp 4-5 lần than đá)."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Biết nhiệt tạo thành chuẩn của CO(g) là -110,5 kJ/mol và CO₂(g) là -393,5 kJ/mol. Biến thiên enthalpy của phản ứng: CO(g) + 1/2 O₂(g) -> CO₂(g) là:",
+      "opts": [
+        "-283,0 kJ",
+        "-504,0 kJ",
+        "+283,0 kJ",
+        "-141,5 kJ"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (-283,0 kJ)",
+      "exp": "• ΔrH°₂₉₈ = ΔfH°(CO₂) - [ΔfH°(CO) + 1/2 ΔfH°(O₂)]<br>= -393,5 - (-110,5 + 0) = -393,5 + 110,5 = -283,0 kJ.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống:<br>Biến thiên enthalpy phản ứng có thể tính bằng hai cách: Dựa vào hiệu số nhiệt %%%SLOT_1%%% của sản phẩm trừ chất đầu: ∑ ΔfH°(sp) - ∑ ΔfH°(cđ); hoặc dựa vào hiệu số năng lượng %%%SLOT_2%%% của chất đầu trừ sản phẩm: ∑ Eb(cđ) - ∑ Eb(sp). Quá trình bẻ gãy liên kết là quá trình %%%SLOT_3%%% nhiệt, còn hình thành liên kết là quá trình %%%SLOT_4%%% nhiệt.",
+      "options": [
+        "tạo thành",
+        "liên kết",
+        "thu",
+        "tỏa"
+      ],
+      "ans": [
+        "tạo thành",
+        "liên kết",
+        "thu",
+        "tỏa"
+      ],
+      "exp": "• Nhiệt tạo thành, năng lượng liên kết.<br>• Bẻ gãy liên kết: thu nhiệt.<br>• Hình thành liên kết: tỏa nhiệt."
+    },
+    {
+      "type": "mcq",
+      "q": "Sơ đồ nào sau đây biểu diễn đúng một phản ứng tỏa nhiệt (ΔH < 0)?",
+      "opts": [
+        "Mức năng lượng (Enthalpy) của các chất phản ứng CAO HƠN mức năng lượng của các sản phẩm.",
+        "Mức năng lượng của các chất phản ứng THẤP HƠN mức năng lượng của các sản phẩm.",
+        "Mức năng lượng của chất phản ứng và sản phẩm bằng nhau.",
+        "Không thể so sánh được mức năng lượng."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Chất phản ứng cao hơn sản phẩm)",
+      "exp": "• Trong phản ứng tỏa nhiệt: Enthalpy giảm (ΔH = H_sp - H_cđ < 0) ⇒ Năng lượng chất đầu cao hơn năng lượng sản phẩm, phần năng lượng dư thừa được giải phóng ra môi trường dưới dạng nhiệt.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "19": [
+    {
+      "type": "mcq",
+      "q": "Tốc độ phản ứng hóa học là đại lượng đặc trưng cho yếu tố nào sau đây?",
+      "opts": [
+        "Độ nhanh hay chậm của một phản ứng hóa học (độ biến thiên nồng độ trong một đơn vị thời gian).",
+        "Nhiệt lượng tỏa ra hay thu vào của phản ứng.",
+        "Khối lượng sản phẩm thu được khi phản ứng kết thúc.",
+        "Chiều chuyển dịch cân bằng của phản ứng."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Độ nhanh hay chậm của phản ứng)",
+      "exp": "• <b>Định nghĩa SGK Hóa 10:</b> Tốc độ phản ứng là đại lượng đặc trưng cho sự biến thiên nồng độ của một trong các chất phản ứng hoặc sản phẩm trong một đơn vị thời gian (giây, phút, giờ...).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Cho phản ứng tổng quát: aA + bB -> cC + dD. Biểu thức tốc độ trung bình của phản ứng theo độ giảm nồng độ của chất phản ứng A trong khoảng thời gian Δt là:",
+      "opts": [
+        "v̄ = - (1/a) · (ΔC_A / Δt)",
+        "v̄ = + (1/a) · (ΔC_A / Δt)",
+        "v̄ = - a · (ΔC_A / Δt)",
+        "v̄ = (ΔC_A) / (a · Δt²)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (v̄ = - (1/a) · (ΔC_A / Δt))",
+      "exp": "• Do chất phản ứng A bị tiêu hao nên nồng độ giảm dần (ΔC_A = C₂ - C₁ < 0). Dấu trừ (-) đặt phía trước để đảm bảo tốc độ phản ứng luôn mang giá trị dương.<br>• Chia cho hệ số tỉ lượng a để tốc độ phản ứng tính theo mọi chất là như nhau.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Cho phản ứng: 2N₂O₅(g) -> 4NO₂(g) + O₂(g). Sau 100 giây, nồng độ N₂O₅ giảm từ 0,020 M xuống còn 0,012 M:",
+      "items": [
+        {
+          "text": "a) Độ biến thiên nồng độ của N₂O₅ là ΔC = 0,012 - 0,020 = -0,008 M.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "b) Tốc độ trung bình của phản ứng tính theo N₂O₅ là v̄ = -(1/2)·(-0,008)/100 = 4·10⁻⁵ M/s.",
+          "ans": true,
+          "exp": "Đúng: 0,008 / (2·100) = 4·10⁻⁵ mol/(L·s)."
+        },
+        {
+          "text": "c) Tốc độ tạo thành khí O₂ trong khoảng thời gian đó là 4·10⁻⁵ M/s.",
+          "ans": true,
+          "exp": "Đúng vì hệ số O₂ là 1 nên v(O₂) = v̄ = 4·10⁻⁵ M/s."
+        },
+        {
+          "text": "d) Tốc độ phản ứng luôn giữ nguyên không đổi từ đầu đến cuối phản ứng.",
+          "ans": false,
+          "exp": "Sai. Nồng độ chất đầu giảm dần nên tốc độ tức thời của phản ứng thường giảm dần theo thời gian."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Theo định luật tác dụng khối lượng (Guldberg & Waage), đối với phản ứng đơn giản: aA + bB -> sản phẩm, tốc độ tức thời của phản ứng tỉ lệ thuận với:",
+      "opts": [
+        "Tích số nồng độ của các chất phản ứng với số mũ bằng hệ số tỉ lượng: v = k · [A]ᵃ · [B]ᵇ.",
+        "Tổng nồng độ của các chất phản ứng: v = k · ([A] + [B]).",
+        "Tỉ số nồng độ: v = k · [A] / [B].",
+        "Nồng độ của các sản phẩm sinh ra."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (v = k · [A]ᵃ · [B]ᵇ)",
+      "exp": "• Định luật tác dụng khối lượng: v = k · C_A^a · C_B^b.<br>• Trong đó k là hằng số tốc độ phản ứng, chỉ phụ thuộc vào bản chất chất phản ứng và nhiệt độ (không phụ thuộc vào nồng độ).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép các khái niệm (Cột A) với ý nghĩa tương ứng trong động hóa học (Cột B):",
+      "pairs": [
+        {
+          "a": "1. Tốc độ trung bình (v̄)",
+          "b": "A. Tốc độ tính trong một khoảng thời gian xác định Δt."
+        },
+        {
+          "a": "2. Tốc độ tức thời (v)",
+          "b": "B. Tốc độ của phản ứng tại một thời điểm xác định."
+        },
+        {
+          "a": "3. Hằng số tốc độ (k)",
+          "b": "C. Tốc độ của phản ứng khi nồng độ các chất phản ứng đều bằng 1 M."
+        },
+        {
+          "a": "4. Va chạm hiệu quả",
+          "b": "D. Va chạm giữa các phân tử có năng lượng đủ lớn và định hướng đúng để tạo liên kết mới."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• Các khái niệm nền tảng của tốc độ phản ứng hóa học."
+    },
+    {
+      "type": "mcq",
+      "q": "Cho phản ứng đơn giản: 2NO(g) + O₂(g) -> 2NO₂(g). Biểu thức định luật tác dụng khối lượng của phản ứng là:",
+      "opts": [
+        "v = k · [NO]² · [O₂]",
+        "v = k · [NO] · [O₂]",
+        "v = k · [NO]² · [O₂]²",
+        "v = k · [NO₂]² / ([NO]² · [O₂])"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (v = k · [NO]² · [O₂])",
+      "exp": "• Phản ứng đơn giản 2NO + O₂ -> 2NO₂ có bậc 2 theo NO và bậc 1 theo O₂.<br>• Do đó: v = k · [NO]² · [O₂].<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét phản ứng đơn giản: CO(g) + Cl₂(g) -> COCl₂(g) có biểu thức tốc độ v = k · [CO] · [Cl₂]:",
+      "items": [
+        {
+          "text": "a) Nếu tăng nồng độ CO lên 2 lần (giữ nguyên nồng độ Cl₂) thì tốc độ phản ứng tăng 2 lần.",
+          "ans": true,
+          "exp": "Đúng vì bậc 1 theo CO."
+        },
+        {
+          "text": "b) Nếu tăng nồng độ cả CO và Cl₂ lên 2 lần thì tốc độ phản ứng tăng 4 lần.",
+          "ans": true,
+          "exp": "Đúng (2 · 2 = 4 lần)."
+        },
+        {
+          "text": "c) Hằng số tốc độ k phụ thuộc vào nhiệt độ.",
+          "ans": true,
+          "exp": "Đúng (k tăng khi nhiệt độ tăng)."
+        },
+        {
+          "text": "d) Đơn vị của tốc độ phản ứng luôn là mol/L.",
+          "ans": false,
+          "exp": "Sai. Đơn vị tốc độ phản ứng là mol/(L·s) hoặc mol/(L·phút), có thứ nguyên nồng độ trên thời gian."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Một phản ứng hóa học xảy ra giữa chất rắn và chất lỏng: CaCO₃(s) + 2HCl(aq) -> CaCl₂(aq) + CO₂(g) + H₂O(l). Biểu thức tốc độ của phản ứng này theo định luật tác dụng khối lượng phụ thuộc vào:",
+      "opts": [
+        "Nồng độ dung dịch HCl (v = k · [HCl]²), nồng độ chất rắn nguyên chất CaCO₃ không xuất hiện trong biểu thức.",
+        "Tích nồng độ cả CaCO₃ và HCl.",
+        "Nồng độ khí CO₂ sinh ra.",
+        "Chỉ phụ thuộc vào thể tích nước."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (v = k · [HCl]², không có chất rắn)",
+      "exp": "• Nồng độ của chất rắn nguyên chất được coi là hằng số và được gộp vào hằng số tốc độ k.<br>• Do đó nồng độ chất rắn không xuất hiện trong biểu thức tốc độ: v = k · [HCl]².<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống:<br>Tốc độ phản ứng là độ biến thiên %%%SLOT_1%%% của một chất trong một đơn vị %%%SLOT_2%%%. Để phản ứng xảy ra, các phân tử phải có %%%SLOT_3%%% hiệu quả với nhau. Hằng số tốc độ k phụ thuộc vào %%%SLOT_4%%% và bản chất của chất phản ứng.",
+      "options": [
+        "nồng độ",
+        "thời gian",
+        "va chạm",
+        "nhiệt độ"
+      ],
+      "ans": [
+        "nồng độ",
+        "thời gian",
+        "va chạm",
+        "nhiệt độ"
+      ],
+      "exp": "• Biến thiên nồng độ / thời gian.<br>• Va chạm hiệu quả.<br>• Hằng số k phụ thuộc nhiệt độ."
+    },
+    {
+      "type": "mcq",
+      "q": "Phản ứng nào sau đây diễn ra với tốc độ nhanh nhất ở điều kiện thường?",
+      "opts": [
+        "Phản ứng trao đổi ion: AgNO₃(aq) + NaCl(aq) -> AgCl↓ + NaNO₃(aq) (kết tủa xuất hiện tức thì)",
+        "Sự ăn mòn sắt tạo gỉ trong không khí ẩm",
+        "Sự lên men đường tạo rượu etylic",
+        "Sự hình thành than đá và dầu mỏ trong lòng đất"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Phản ứng trao đổi ion tạo kết tủa)",
+      "exp": "• Phản ứng trao đổi ion trong dung dịch giữa các ion tự do xảy ra gần như tức thời (tốc độ cực nhanh).<br>• Gỉ sắt xảy ra chậm (vài ngày/tháng); lên men cần vài ngày; tạo than đá mất hàng triệu năm.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "20": [
+    {
+      "type": "mcq",
+      "q": "Có bao nhiêu yếu tố chính ảnh hưởng đến tốc độ của một phản ứng hóa học?",
+      "opts": [
+        "5 yếu tố: Nồng độ, nhiệt độ, áp suất (chất khí), diện tích bề mặt tiếp xúc (chất rắn) và chất xúc tác.",
+        "Chỉ có 2 yếu tố: Nhiệt độ và nồng độ.",
+        "Chỉ có 3 yếu tố: Áp suất, thể tích và khối lượng.",
+        "Chỉ có chất xúc tác."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (5 yếu tố)",
+      "exp": "• 5 yếu tố ảnh hưởng đến tốc độ phản ứng: Nồng độ, Áp suất, Nhiệt độ, Diện tích bề mặt tiếp xúc, Chất xúc tác.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Khi tăng nồng độ của các chất phản ứng, tại sao tốc độ phản ứng lại tăng lên?",
+      "opts": [
+        "Vì số lượng phân tử trên một đơn vị thể tích tăng lên, làm tần số va chạm hiệu quả giữa các phân tử tăng lên.",
+        "Vì năng lượng hoạt hóa của phản ứng bị giảm đi.",
+        "Vì làm cho các phân tử chuyển động nhanh hơn.",
+        "Vì làm phản ứng tỏa nhiều nhiệt hơn."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Tăng tần số va chạm hiệu quả)",
+      "exp": "• Nồng độ tăng ⇒ mật độ phân tử tăng ⇒ số va chạm giữa các phân tử trong 1 đơn vị thời gian tăng lên ⇒ số va chạm hiệu quả tăng ⇒ tốc độ phản ứng tăng.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét ảnh hưởng của diện tích bề mặt tiếp xúc và áp suất:",
+      "items": [
+        {
+          "text": "a) Đập nhỏ đá vôi (dạng bột) phản ứng với acid HCl nhanh hơn nhiều so với để nguyên viên đá vôi lớn.",
+          "ans": true,
+          "exp": "Đúng do diện tích tiếp xúc tăng vọt."
+        },
+        {
+          "text": "b) Than nghiền nhỏ hoặc củi chẻ nhỏ cháy nhanh và mạnh hơn củi cây to.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "c) Tăng áp suất chỉ làm tăng tốc độ của các phản ứng có sự tham gia của chất khí.",
+          "ans": true,
+          "exp": "Đúng (áp suất nén khí làm tăng nồng độ khí)."
+        },
+        {
+          "text": "d) Đối với chất lỏng và chất rắn, việc thay đổi áp suất ảnh hưởng rất lớn đến tốc độ phản ứng.",
+          "ans": false,
+          "exp": "Sai. Chất rắn và lỏng khó nén nên áp suất hầu như không ảnh hưởng đến thể tích và tốc độ."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Theo quy tắc Van't Hoff, khi tăng nhiệt độ lên 10 °C thì tốc độ phản ứng tăng từ 2 đến 4 lần (hệ số nhiệt độ γ = 2 - 4). Nếu một phản ứng có hệ số γ = 3, khi tăng nhiệt độ từ 20 °C lên 50 °C thì tốc độ phản ứng tăng bao nhiêu lần?",
+      "opts": [
+        "27 lần",
+        "9 lần",
+        "30 lần",
+        "81 lần"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (27 lần)",
+      "exp": "• Công thức Van't Hoff: v₂ / v₁ = γ^((T₂ - T₁) / 10).<br>• Với ΔT = 50 - 20 = 30 °C ⇒ (50 - 20) / 10 = 3.<br>• Tỉ số tốc độ: v₂ / v₁ = 3³ = 27 lần.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép các biện pháp thực tế (Cột A) với yếu tố ảnh hưởng tốc độ phản ứng được áp dụng (Cột B):",
+      "pairs": [
+        {
+          "a": "1. Bảo quản thức ăn trong tủ lạnh để lâu thiu hơn",
+          "b": "A. Hạ nhiệt độ để giảm tốc độ phân hủy."
+        },
+        {
+          "a": "2. Thổi không khí vào bếp lò để than cháy rực hơn",
+          "b": "B. Tăng nồng độ chất phản ứng (khí O₂)."
+        },
+        {
+          "a": "3. Dùng nồi áp suất để hầm xương mau nhừ",
+          "b": "C. Tăng áp suất làm tăng nhiệt độ sôi của nước (khoảng 120 °C)."
+        },
+        {
+          "a": "4. Dùng men rượu (enzyme) ủ cơm rượu",
+          "b": "D. Dùng chất xúc tác sinh học làm tăng tốc độ phản ứng."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• Ứng dụng thực tiễn của 5 yếu tố ảnh hưởng đến tốc độ phản ứng."
+    },
+    {
+      "type": "mcq",
+      "q": "Chất xúc tác là chất có tác dụng làm tăng tốc độ phản ứng, đặc điểm nào sau đây của chất xúc tác là ĐÚNG?",
+      "opts": [
+        "Làm giảm năng lượng hoạt hóa của phản ứng và không bị tiêu hao sau phản ứng.",
+        "Làm tăng biến thiên enthalpy ΔH của phản ứng.",
+        "Làm biến đổi phản ứng thu nhiệt thành phản ứng tỏa nhiệt.",
+        "Bị biến đổi hoàn toàn thành chất khác sau khi kết thúc phản ứng."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Giảm năng lượng hoạt hóa, không bị tiêu hao)",
+      "exp": "• Chất xúc tác mở ra một con đường phản ứng mới có năng lượng hoạt hóa (Ea) thấp hơn, giúp nhiều phân tử vượt qua rào cản năng lượng hơn ⇒ tăng tốc độ phản ứng.<br>• Lượng và bản chất hóa học của chất xúc tác không đổi sau phản ứng.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các hiện tượng thực tiễn liên quan đến chất xúc tác và enzyme:",
+      "items": [
+        {
+          "text": "a) MnO₂ là chất xúc tác phân hủy H₂O₂ thành H₂O và O₂ sủi bọt khí mãnh liệt.",
+          "ans": true,
+          "exp": "Đúng (2H₂O₂ --MnO₂--> 2H₂O + O₂)."
+        },
+        {
+          "text": "b) Enzyme trong nước bọt (amylase) xúc tác thủy phân tinh bột thành đường ngay trong khoang miệng.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "c) Bộ chuyển đổi xúc tác trong ống xả xe ô tô giúp biến các khí độc CO, NO thành CO₂ và N₂ không độc.",
+          "ans": true,
+          "exp": "Đúng (xúc tác Pt, Rh, Pd)."
+        },
+        {
+          "text": "d) Chất ức chế (inhibitor) làm tăng tốc độ phản ứng hóa học.",
+          "ans": false,
+          "exp": "Sai. Chất ức chế làm chậm lại hoặc ngăn cản phản ứng xảy ra."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Tại sao khi nướng thịt trên than hoa người ta thường dùng quạt nan hoặc quạt điện thổi vào bếp than?",
+      "opts": [
+        "Để cung cấp liên tục khí O₂, làm tăng nồng độ O₂ tiếp xúc với than giúp than cháy nhanh và nhiệt lượng cao hơn.",
+        "Để thổi tàn tro làm sạch miếng thịt.",
+        "Để làm giảm nhiệt độ của than không bị cháy khét.",
+        "Để tạo áp suất cao xung quanh bếp."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Tăng nồng độ O₂)",
+      "exp": "• Thổi khí làm tăng nồng độ O₂ tại bề mặt than, tăng số va chạm hiệu quả giữa C và O₂ ⇒ than cháy rực hơn tỏa nhiệt mạnh.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống:<br>Tốc độ phản ứng tăng khi: %%%SLOT_1%%% nồng độ chất phản ứng, tăng %%%SLOT_2%%%, tăng %%%SLOT_3%%% bề mặt tiếp xúc chất rắn hoặc sử dụng %%%SLOT_4%%% thích hợp.",
+      "options": [
+        "tăng",
+        "nhiệt độ",
+        "diện tích",
+        "chất xúc tác"
+      ],
+      "ans": [
+        "tăng",
+        "nhiệt độ",
+        "diện tích",
+        "chất xúc tác"
+      ],
+      "exp": "• Tăng nồng độ, tăng nhiệt độ, tăng diện tích tiếp xúc, chất xúc tác."
+    },
+    {
+      "type": "mcq",
+      "q": "Một phản ứng ở 30 °C diễn ra trong 20 phút. Biết hệ số nhiệt độ Van't Hoff của phản ứng là γ = 2. Khi tăng nhiệt độ lên 50 °C thì thời gian phản ứng kết thúc là bao nhiêu?",
+      "opts": [
+        "5 phút",
+        "10 phút",
+        "2,5 phút",
+        "40 phút"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (5 phút)",
+      "exp": "• ΔT = 50 - 30 = 20 °C ⇒ Tốc độ phản ứng tăng: v₂ / v₁ = 2^(20/10) = 2² = 4 lần.<br>• Vì tốc độ phản ứng tăng 4 lần nên thời gian để phản ứng xảy ra hết giảm 4 lần:<br>t₂ = t₁ / 4 = 20 / 4 = 5 phút.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "21": [
+    {
+      "type": "mcq",
+      "q": "Phát biểu nào sau đây về năng lượng hoạt hóa (Ea) là ĐÚNG?",
+      "opts": [
+        "Là năng lượng tối thiểu mà các phân tử va chạm cần có để phản ứng hóa học có thể xảy ra.",
+        "Là nhiệt lượng tỏa ra khi phản ứng kết thúc hoàn toàn.",
+        "Là năng lượng của chất xúc tác cung cấp cho phản ứng.",
+        "Luôn bằng biến thiên enthalpy ΔH của phản ứng."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Năng lượng tối thiểu để phản ứng xảy ra)",
+      "exp": "• Năng lượng hoạt hóa Ea (Activation energy) là rào cản năng lượng tối thiểu. Ea càng nhỏ thì phản ứng xảy ra càng nhanh ở nhiệt độ phòng.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Một phản ứng hóa học ở 20 °C có tốc độ v₁. Để tốc độ phản ứng tăng lên 16 lần, biết hệ số Van't Hoff γ = 2, cần nâng nhiệt độ lên bao nhiêu?",
+      "opts": [
+        "60 °C",
+        "40 °C",
+        "50 °C",
+        "80 °C"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (60 °C)",
+      "exp": "• Ta có: v₂ / v₁ = 16 = 2⁴ = γ^(ΔT / 10).<br>• Với γ = 2 ⇒ ΔT / 10 = 4 ⇒ ΔT = 40 °C.<br>• Nhiệt độ cần nâng lên là: T₂ = T₁ + ΔT = 20 + 40 = 60 °C.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các phát biểu tổng kết về tốc độ phản ứng:",
+      "items": [
+        {
+          "text": "a) Tốc độ trung bình v̄ luôn mang giá trị dương.",
+          "ans": true,
+          "exp": "Đúng (quy ước tốc độ không âm)."
+        },
+        {
+          "text": "b) Khi tăng nhiệt độ, số phân tử có năng lượng vượt qua năng lượng hoạt hóa tăng lên.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "c) Chất xúc tác làm thay đổi chiều chuyển dịch cân bằng của phản ứng thuận nghịch.",
+          "ans": false,
+          "exp": "Sai. Chất xúc tác làm tăng đồng thời tốc độ phản ứng thuận và nghịch như nhau nên không làm dịch chuyển cân bằng, chỉ giúp mau đạt cân bằng."
+        },
+        {
+          "text": "d) Đối với chất khí, nén thể tích giảm đi một nửa tương đương với việc tăng áp suất và nồng độ lên 2 lần.",
+          "ans": true,
+          "exp": "Đúng."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Trong thí nghiệm nghiên cứu tốc độ phản ứng giữa Na₂S₂O₃ và H₂SO₄ loãng (Na₂S₂O₃ + H₂SO₄ -> Na₂SO₄ + S↓ + SO₂↑ + H₂O), người ta đo thời gian từ khi bắt đầu trộn dung dịch đến khi:",
+      "opts": [
+        "Dung dịch trở nên đục do kết tủa lưu huỳnh (S) che khuất vạch dấu chữ thập dưới đáy bình tam giác.",
+        "Toàn bộ chất lỏng bay hơi hết.",
+        "Nhiệt độ dung dịch sôi lên 100 °C.",
+        "Dung dịch chuyển sang màu xanh lam."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Kết tủa lưu huỳnh đục che khuất vạch dấu)",
+      "exp": "• Thí nghiệm kinh điển SGK Hóa 10: Quan sát sự đục của lưu huỳnh (S) kết tủa che khuất dấu chữ thập (+). Thời gian càng ngắn thì tốc độ phản ứng càng lớn.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép các trường hợp thí nghiệm (Cột A) với kết quả tốc độ phản ứng tương đối (Cột B):",
+      "pairs": [
+        {
+          "a": "1. Kẽm hạt + dung dịch HCl 1M ở 25 °C",
+          "b": "A. Phản ứng xảy ra với tốc độ chuẩn."
+        },
+        {
+          "a": "2. Kẽm bột + dung dịch HCl 1M ở 25 °C",
+          "b": "B. Nhanh hơn do diện tích tiếp xúc lớn hơn nhiều."
+        },
+        {
+          "a": "3. Kẽm hạt + dung dịch HCl 2M ở 25 °C",
+          "b": "C. Nhanh hơn do nồng độ acid cao hơn."
+        },
+        {
+          "a": "4. Kẽm hạt + dung dịch HCl 1M ở 60 °C",
+          "b": "D. Nhanh hơn nhiều do nhiệt độ cao hơn."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• So sánh các yếu tố diện tích, nồng độ, nhiệt độ tác động lên phản ứng kim loại + acid."
+    },
+    {
+      "type": "mcq",
+      "q": "Khi thêm vài giọt dung dịch CuSO₄ vào cốc đựng dung dịch H₂SO₄ loãng tác dụng với kẽm Zn, tốc độ thoát khí H₂ tăng vọt dữ dội là do nguyên nhân nào?",
+      "opts": [
+        "Hình thành pin điện hóa Zn–Cu làm xảy ra quá trình ăn mòn điện hóa học rất nhanh.",
+        "CuSO₄ là chất xúc tác đồng thể.",
+        "Dung dịch bị nóng lên do tỏa nhiệt.",
+        "CuSO₄ làm tăng nồng độ H⁺."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Ăn mòn điện hóa Zn–Cu)",
+      "exp": "• Zn đẩy Cu ra khỏi CuSO₄: Zn + Cu²⁺ -> Zn²⁺ + Cu.<br>• Kim loại Cu sinh ra bám vào thanh Zn, cùng tiếp xúc với dung dịch điện li H₂SO₄ tạo thành vô số vi pin điện hóa Zn-Cu. Zn bị ăn mòn điện hóa cực nhanh và khí H₂ thoát ra ồ ạt trên bề mặt đồng.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các biện pháp làm chậm tốc độ phản ứng có hại trong đời sống:",
+      "items": [
+        {
+          "text": "a) Cho gói hút ẩm (silica gel) vào gói bánh kẹo để làm giảm độ ẩm, hạn chế nấm mốc.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "b) Bơm khí trơ (như N₂ hoặc CO₂) vào bao bì khoai tây chiên để đuổi O₂, chống ôi thiu dầu mỡ.",
+          "ans": true,
+          "exp": "Đúng (giảm nồng độ chất oxi hóa O₂)."
+        },
+        {
+          "text": "c) Ngâm thực phẩm trong nước vôi trong để tăng tốc độ phân hủy thối rữa.",
+          "ans": false,
+          "exp": "Sai. Nước vôi hoặc muối sát khuẩn ức chế vi sinh vật phát triển."
+        },
+        {
+          "text": "d) Sơn tĩnh điện phủ lên khung xe máy để cách ly sắt với O₂ và hơi nước ẩm.",
+          "ans": true,
+          "exp": "Đúng."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Chất xúc tác có vai trò gì đối với phản ứng tổng hợp NH₃ từ N₂ và H₂ (phương pháp Haber-Bosch)?",
+      "opts": [
+        "Bột sắt (Fe) làm giảm nhiệt độ cần thiết và tăng tốc độ đạt trạng thái cân bằng.",
+        "Làm tăng lượng NH₃ tối đa thu được ở trạng thái cân bằng.",
+        "Làm phản ứng chuyển thành tỏa nhiệt.",
+        "Làm tiêu hao khí N₂ nhanh hơn H₂."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Xúc tác bột Fe tăng tốc đạt cân bằng)",
+      "exp": "• Xúc tác bột sắt Fe (chứa Al₂O₃, K₂O) giúp phản ứng Haber diễn ra ở nhiệt độ thực tế khoảng 450 °C với tốc độ chấp nhận được mà không cần nhiệt độ quá cao làm cân bằng chuyển dịch ngược lại.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống:<br>Hệ số nhiệt độ Van't Hoff kí hiệu là %%%SLOT_1%%%, cho biết tốc độ phản ứng tăng lên bao nhiêu lần khi nhiệt độ tăng thêm %%%SLOT_2%%% °C. Chất xúc tác làm tăng tốc độ phản ứng bằng cách làm giảm %%%SLOT_3%%% hoạt hóa, nhưng không làm thay đổi biến thiên %%%SLOT_4%%% của phản ứng.",
+      "options": [
+        "γ",
+        "10",
+        "năng lượng",
+        "enthalpy (ΔH)"
+      ],
+      "ans": [
+        "γ",
+        "10",
+        "năng lượng",
+        "enthalpy (ΔH)"
+      ],
+      "exp": "• Hệ số Van't Hoff γ, 10 °C.<br>• Giảm năng lượng hoạt hóa, không đổi enthalpy ΔH."
+    },
+    {
+      "type": "mcq",
+      "q": "Cho phản ứng A + B -> C. Nồng độ ban đầu của A là 1,0 M. Sau 20 giây phản ứng, nồng độ của A còn lại 0,6 M. Tốc độ trung bình của phản ứng theo chất A trong 20 giây đầu là:",
+      "opts": [
+        "0,020 M/s",
+        "0,030 M/s",
+        "0,050 M/s",
+        "0,010 M/s"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (0,020 M/s)",
+      "exp": "• Độ giảm nồng độ: ΔC = 1,0 - 0,6 = 0,4 M.<br>• Thời gian: Δt = 20 s.<br>• Tốc độ trung bình: v̄ = 0,4 / 20 = 0,020 mol/(L·s) (hay 0,020 M/s).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "22": [
+    {
+      "type": "mcq",
+      "q": "Nhóm Halogen là tên gọi của nhóm nguyên tố nào trong bảng tuần hoàn các nguyên tố hóa học?",
+      "opts": [
+        "Nhóm VIIA (gồm Fluorine, Chlorine, Bromine, Iodine, Astatine).",
+        "Nhóm IA (Kim loại kiềm).",
+        "Nhóm IIA (Kim loại kiềm thổ).",
+        "Nhóm VIIIA (Khí hiếm)."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Nhóm VIIA)",
+      "exp": "• <b>Kiến thức SGK Hóa 10:</b> Nhóm Halogen là nhóm VIIA, tên gọi 'halogen' xuất phát từ tiếng Hy Lạp có nghĩa là 'sinh ra muối'.<br>• Gồm các nguyên tố: F (Fluorine), Cl (Chlorine), Br (Bromine), I (Iodine) và At (Astatine phóng xạ).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Cấu hình electron lớp ngoài cùng của các nguyên tử nguyên tố halogen ở trạng thái cơ bản là gì?",
+      "opts": [
+        "ns² np⁵",
+        "ns² np⁶",
+        "ns² np⁴",
+        "ns¹"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (ns² np⁵)",
+      "exp": "• Tất cả các nguyên tử halogen đều có 7 electron ở lớp ngoài cùng với cấu hình ns²np⁵.<br>• Có xu hướng nhận thêm 1 electron để đạt cấu hình octet bền vững của khí hiếm ns²np⁶.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét trạng thái tập hợp và màu sắc của các đơn chất halogen ở điều kiện thường (25 °C, 1 bar):",
+      "items": [
+        {
+          "text": "a) Fluorine (F₂) là chất khí màu lục nhạt, độc.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "b) Chlorine (Cl₂) là chất khí màu vàng lục, mùi hắc, rất độc.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "c) Bromine (Br₂) là chất lỏng màu nâu đỏ, dễ bay hơi, hơi rất độc.",
+          "ans": true,
+          "exp": "Đúng (chất lỏng màu nâu đỏ duy nhất trong các đơn chất phi kim)."
+        },
+        {
+          "text": "d) Iodine (I₂) là chất rắn màu tím đen, có hiện tượng thăng hoa khi đun nóng.",
+          "ans": true,
+          "exp": "Đúng (I₂ rắn chuyển thẳng thành hơi tím không qua thể lỏng)."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Theo chiều từ F₂ đến I₂, tính oxi hóa của các đơn chất halogen biến đổi như thế nào?",
+      "opts": [
+        "Giảm dần từ F₂ đến I₂ (F₂ > Cl₂ > Br₂ > I₂).",
+        "Tăng dần từ F₂ đến I₂.",
+        "Không đổi.",
+        "Cl₂ có tính oxi hóa mạnh hơn F₂."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Giảm dần F₂ > Cl₂ > Br₂ > I₂)",
+      "exp": "• Đi từ trên xuống dưới trong nhóm VIIA, bán kính nguyên tử tăng dần, độ âm điện giảm dần ⇒ khả năng nhận electron giảm ⇒ tính oxi hóa giảm dần: F₂ > Cl₂ > Br₂ > I₂.<br>• F₂ là phi kim có tính oxi hóa mạnh nhất, oxi hóa mãnh liệt nước ngay ở nhiệt độ thường.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép đơn chất halogen (Cột A) với trạng thái và màu sắc tương ứng ở điều kiện thường (Cột B):",
+      "pairs": [
+        {
+          "a": "1. F₂ (Fluorine)",
+          "b": "A. Khí màu lục nhạt."
+        },
+        {
+          "a": "2. Cl₂ (Chlorine)",
+          "b": "B. Khí màu vàng lục, mùi xốc."
+        },
+        {
+          "a": "3. Br₂ (Bromine)",
+          "b": "C. Lỏng màu nâu đỏ, dễ bay hơi."
+        },
+        {
+          "a": "4. I₂ (Iodine)",
+          "b": "D. Rắn màu tím đen, dễ thăng hoa."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• Trạng thái và màu sắc biến đổi tuần hoàn: Khí lục nhạt -> Khí vàng lục -> Lỏng nâu đỏ -> Rắn tím đen."
+    },
+    {
+      "type": "mcq",
+      "q": "Phản ứng nào sau đây chứng minh tính oxi hóa của Chlorine mạnh hơn Bromine?",
+      "opts": [
+        "Cl₂ + 2NaBr -> 2NaCl + Br₂",
+        "Br₂ + 2NaCl -> 2NaBr + Cl₂",
+        "Cl₂ + H₂ -> 2HCl",
+        "Br₂ + H₂ -> 2HBr"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Cl₂ + 2NaBr -> 2NaCl + Br₂)",
+      "exp": "• Halogen mạnh hơn có khả năng oxi hóa ion halide của halogen yếu hơn ra khỏi dung dịch muối.<br>• Cl₂ đẩy được Br⁻ ra khỏi muối NaBr tạo Br₂ màu vàng nâu, chứng tỏ tính oxi hóa Cl₂ > Br₂.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các phản ứng của halogen với nước:",
+      "items": [
+        {
+          "text": "a) F₂ bốc cháy trong nước ở nhiệt độ thường giải phóng khí O₂: 2F₂ + 2H₂O -> 4HF + O₂.",
+          "ans": true,
+          "exp": "Đúng (phản ứng mãnh liệt)."
+        },
+        {
+          "text": "b) Cl₂ tác dụng thuận nghịch với nước tạo nước clo: Cl₂ + H₂O ⇌ HCl + HClO.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "c) Nước clo có tính tẩy màu và sát trùng là do acid HClO có tính oxi hóa rất mạnh.",
+          "ans": true,
+          "exp": "Đúng."
+        },
+        {
+          "text": "d) Dung dịch Iodine trong cồn không có tác dụng sát trùng.",
+          "ans": false,
+          "exp": "Sai. Cồn iod (dung dịch I₂ 5% trong ethanol) là thuốc sát trùng vết thương rất phổ biến."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Hiện tượng một chất rắn khi đun nóng chuyển trực tiếp thành thể hơi mà không qua thể lỏng được gọi là hiện tượng gì (đặc trưng của Iodine I₂)?",
+      "opts": [
+        "Hiện tượng thăng hoa (sublimation).",
+        "Hiện tượng ngưng tụ.",
+        "Hiện tượng nóng chảy.",
+        "Hiện tượng đông đặc."
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Hiện tượng thăng hoa)",
+      "exp": "• Iodine (I₂) có mạng tinh thể phân tử liên kết yếu, khi đun nóng nhẹ thăng hoa trực tiếp thành hơi màu tím; khi gặp lạnh ngưng tụ lại thành tinh thể rắn màu tím đen.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống:<br>Các nguyên tử halogen có %%%SLOT_1%%% electron ở lớp ngoài cùng (ns²np⁵), nên có tính %%%SLOT_2%%% mạnh đặc trưng. Đi từ F đến I, bán kính nguyên tử %%%SLOT_3%%% dần, độ âm điện %%%SLOT_4%%% dần.",
+      "options": [
+        "7",
+        "oxi hóa",
+        "tăng",
+        "giảm"
+      ],
+      "ans": [
+        "7",
+        "oxi hóa",
+        "tăng",
+        "giảm"
+      ],
+      "exp": "• 7 electron, tính oxi hóa mạnh.<br>• Bán kính tăng, độ âm điện giảm."
+    },
+    {
+      "type": "mcq",
+      "q": "Chất nào sau đây dùng để nhận biết hồ tinh bột do tạo thành hợp chất có màu xanh tím đặc trưng?",
+      "opts": [
+        "Dung dịch Iodine (I₂)",
+        "Dung dịch Chlorine (Cl₂)",
+        "Dung dịch Bromine (Br₂)",
+        "Dung dịch Fluorine (F₂)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Dung dịch Iodine - I₂)",
+      "exp": "• Các phân tử I₂ chui vào các xoắn của chuỗi amylose trong tinh bột tạo hợp chất bọc có màu xanh tím đặc trưng.<br>• Khi đun nóng màu xanh biến mất, để nguội lại xuất hiện trở lại.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ],
+  "23": [
+    {
+      "type": "mcq",
+      "q": "Dãy sắp xếp các hydrogen halide theo chiều tính acid TĂNG DẦN trong dung dịch nước là:",
+      "opts": [
+        "HF < HCl < HBr < HI",
+        "HI < HBr < HCl < HF",
+        "HCl < HBr < HI < HF",
+        "HF < HI < HBr < HCl"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (HF < HCl < HBr < HI)",
+      "exp": "• Đi từ HF đến HI, bán kính nguyên tử halogen tăng làm độ dài liên kết H–X tăng và năng lượng liên kết Eb(H–X) giảm dần ⇒ liên kết H–X càng dễ phân li ra H⁺ trong nước ⇒ tính acid tăng dần.<br>• HF là acid yếu, còn HCl, HBr, HI là các acid mạnh (HI là hydrohalic acid mạnh nhất).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "mcq",
+      "q": "Acid nào sau đây có tính chất đặc biệt là ăn mòn được thủy tinh (silicon dioxide SiO₂), dùng để khắc chữ lên thủy tinh?",
+      "opts": [
+        "Hydrofluoric acid (HF)",
+        "Hydrochloric acid (HCl)",
+        "Sulfuric acid (H₂SO₄)",
+        "Nitric acid (HNO₃)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Hydrofluoric acid - HF)",
+      "exp": "• HF hòa tan thủy tinh theo phản ứng: 4HF + SiO₂ -> SiF₄↑ + 2H₂O.<br>• Do đó không thể đựng dung dịch HF trong chai lọ bằng thủy tinh mà phải đựng trong bình bằng nhựa polyethylene (PE).<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các phản ứng nhận biết ion halide (Cl⁻, Br⁻, I⁻) bằng dung dịch bạc nitrat (AgNO₃):",
+      "items": [
+        {
+          "text": "a) Ion Cl⁻ tạo kết tủa trắng AgCl không tan trong acid mạnh.",
+          "ans": true,
+          "exp": "Đúng (Ag⁺ + Cl⁻ -> AgCl↓ trắng)."
+        },
+        {
+          "text": "b) Ion Br⁻ tạo kết tủa vàng nhạt AgBr.",
+          "ans": true,
+          "exp": "Đúng (Ag⁺ + Br⁻ -> AgBr↓ vàng nhạt)."
+        },
+        {
+          "text": "c) Ion I⁻ tạo kết tủa vàng đậm AgI.",
+          "ans": true,
+          "exp": "Đúng (Ag⁺ + I⁻ -> AgI↓ vàng đậm)."
+        },
+        {
+          "text": "d) Ion F⁻ tạo kết tủa đen AgF không tan trong nước.",
+          "ans": false,
+          "exp": "Sai. AgF là chất tan rất tốt trong nước, không tạo kết tủa."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Nước Javel là dung dịch hỗn hợp chứa hai muối nào có tính tẩy màu và sát trùng mạnh?",
+      "opts": [
+        "NaCl và NaClO (Sodium hypochlorite)",
+        "NaCl và NaClO₃",
+        "KCl và KClO",
+        "CaCl₂ và Ca(ClO)₂"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (NaCl và NaClO)",
+      "exp": "• Cho khí Cl₂ tác dụng với dung dịch NaOH ở nhiệt độ phòng:<br>Cl₂ + 2NaOH -> NaCl + NaClO + H₂O.<br>• Muối NaClO có tính oxi hóa rất mạnh nhờ gốc ClO⁻, dùng làm chất tẩy trắng vải sợi và sát trùng nước sinh hoạt.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "match",
+      "q": "Ghép ion halide (Cột A) với hiện tượng khi nhỏ dung dịch AgNO₃ vào dung dịch muối (Cột B):",
+      "pairs": [
+        {
+          "a": "1. Ion F⁻ (NaF)",
+          "b": "A. Không có hiện tượng (AgF tan hoàn toàn)."
+        },
+        {
+          "a": "2. Ion Cl⁻ (NaCl)",
+          "b": "B. Xuất hiện kết tủa màu trắng (AgCl)."
+        },
+        {
+          "a": "3. Ion Br⁻ (NaBr)",
+          "b": "C. Xuất hiện kết tủa màu vàng nhạt (AgBr)."
+        },
+        {
+          "a": "4. Ion I⁻ (NaI)",
+          "b": "D. Xuất hiện kết tủa màu vàng đậm (AgI)."
+        }
+      ],
+      "ans": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "D"
+      },
+      "exp": "• Thuốc thử đặc trưng AgNO₃ phân biệt 4 ion halide."
+    },
+    {
+      "type": "mcq",
+      "q": "Clorua vôi là chất bột màu trắng, xốp, có mùi hắc của clo, có công thức hóa học là:",
+      "opts": [
+        "CaOCl₂ (muối hỗn tạp của ion Ca²⁺ với Cl⁻ và ClO⁻)",
+        "CaCl₂",
+        "Ca(ClO)₂",
+        "CaCO₃"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (CaOCl₂)",
+      "exp": "• Clorua vôi điều chế bằng cách cho Cl₂ tác dụng với vôi tôi ẩm Ca(OH)₂ ở 30 °C:<br>Cl₂ + Ca(OH)₂ -> CaOCl₂ + H₂O.<br>• CaOCl₂ là muối hỗn tạp, có tính sát trùng tẩy trắng mạnh tương tự nước Javel nhưng rẻ tiền hơn.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "tf",
+      "q": "Xét các tính chất hóa học của hydrochloric acid (HCl):",
+      "items": [
+        {
+          "text": "a) Làm quỳ tím chuyển sang màu đỏ.",
+          "ans": true,
+          "exp": "Đúng (tính acid mạnh)."
+        },
+        {
+          "text": "b) Tác dụng với kim loại đứng trước H trong dãy hoạt động hóa học giải phóng khí H₂.",
+          "ans": true,
+          "exp": "Đúng (Fe + 2HCl -> FeCl₂ + H₂)."
+        },
+        {
+          "text": "c) Dung dịch HCl đặc thể hiện tính khử khi tác dụng với các chất oxi hóa mạnh như MnO₂, KMnO₄ sinh khí Cl₂.",
+          "ans": true,
+          "exp": "Đúng (MnO₂ + 4HCl -> MnCl₂ + Cl₂ + 2H₂O)."
+        },
+        {
+          "text": "d) Dung dịch HCl có thể hòa tan được kim loại Đồng (Cu) ở điều kiện thường.",
+          "ans": false,
+          "exp": "Sai. Cu đứng sau H trong dãy hoạt động hóa học nên không tác dụng với HCl."
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Muối iod dùng trong bữa ăn hàng ngày để phòng ngừa bệnh bướu cổ và thiểu năng trí tuệ là muối ăn (NaCl) được trộn thêm một lượng nhỏ chất nào?",
+      "opts": [
+        "KI hoặc KIO₃ (Potassium iodate)",
+        "Iodine nguyên chất (I₂)",
+        "NaI độc hại",
+        "HI"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (KI hoặc KIO₃)",
+      "exp": "• Cơ thể cần iod để tuyến giáp tổng hợp hormone thyroxine. Thiếu iod gây bướu cổ và đần độn.<br>• Người ta trộn một lượng vi lượng muối KI hoặc KIO₃ bền vào muối ăn để bổ sung cho cộng đồng.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    },
+    {
+      "type": "drag",
+      "q": "Điền vào chỗ trống:<br>Để nhận biết các ion halide trong dung dịch, người ta dùng thuốc thử dung dịch %%%SLOT_1%%%. Ion Cl⁻ tạo kết tủa màu %%%SLOT_2%%%, ion Br⁻ tạo kết tủa màu %%%SLOT_3%%% và ion I⁻ tạo kết tủa màu %%%SLOT_4%%%.",
+      "options": [
+        "AgNO₃",
+        "trắng",
+        "vàng nhạt",
+        "vàng đậm"
+      ],
+      "ans": [
+        "AgNO₃",
+        "trắng",
+        "vàng nhạt",
+        "vàng đậm"
+      ],
+      "exp": "• Thuốc thử AgNO₃: Cl⁻ trắng, Br⁻ vàng nhạt, I⁻ vàng đậm."
+    },
+    {
+      "type": "mcq",
+      "q": "Trong dạ dày người, môi trường acid có pH từ 1,5 đến 2,5 giúp tiêu hóa protein và tiêu diệt vi khuẩn có hại là do chất nào tạo nên?",
+      "opts": [
+        "Hydrochloric acid (HCl)",
+        "Sulfuric acid (H₂SO₄)",
+        "Acetic acid (CH₃COOH)",
+        "Nitric acid (HNO₃)"
+      ],
+      "ans": 0,
+      "correctText": "Đáp án A (Hydrochloric acid - HCl)",
+      "exp": "• Dịch vị dạ dày chứa acid HCl với nồng độ khoảng 0,0001 - 0,001 M (pH ≈ 1,5 - 2,5), đóng vai trò hoạt hóa enzyme pepsinogen thành pepsin để tiêu hóa chất đạm.<br>• <b>Kết luận:</b> Chọn đáp án A."
+    }
+  ]
+};

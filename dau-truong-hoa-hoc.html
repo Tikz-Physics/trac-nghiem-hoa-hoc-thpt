@@ -1,0 +1,2558 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Đấu Trường Hoá Học Liên Nhóm • Wireless QR Buzzer Arena</title>
+  <!-- Google Fonts: Plus Jakarta Sans for crisp Vietnamese typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Load Consolidated 85 Lessons Question Bank -->
+  <script src="./arena_questions_data.js"></script>
+  <!-- MQTT Library for real-time wireless websocket buzzer -->
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <style>
+    :root {
+      --bg-dark: #090d16;
+      --bg-card: rgba(17, 24, 39, 0.9);
+      --border-glow: rgba(56, 189, 248, 0.25);
+      --primary: #38bdf8;
+      --accent: #f59e0b;
+      --success: #10b981;
+      --danger: #ef4444;
+      --purple: #a855f7;
+      --pink: #ec4899;
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+      --font-family: 'Plus Jakarta Sans', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    *, button, input, select, textarea {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      font-family: var(--font-family);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    body {
+      font-family: var(--font-family);
+      background: radial-gradient(circle at top, #1e1b4b 0%, #090d16 60%, #030712 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Math and fractions */
+    .math-sym { font-family: 'Cambria Math', 'Times New Roman', serif; font-style: italic; color: inherit; font-weight: 600; }
+    .fraction { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; padding: 0 3px; font-size: 0.92em; line-height: 1.1; margin: 0 2px; color: inherit; }
+    .numerator { border-bottom: 1.6px solid currentColor; padding-bottom: 1px; color: inherit; display: block; font-weight: 700; }
+    .denominator { padding-top: 1px; color: inherit; display: block; font-weight: 700; }
+    .formula-box {
+      background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 10px; padding: 6px 14px; margin: 6px 0; display: inline-flex;
+      align-items: center; gap: 8px; font-size: 1.05rem; font-weight: 700; color: #38bdf8;
+    }
+
+    /* ==========================================================================
+       VIEW 1: SETUP SCREEN (CHỌN LỚP - CHỌN BÀI - KẾT NỐI QR TRƯỚC TRẬN ĐẤU)
+       ========================================================================== */
+    #setupView {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 24px 20px;
+      box-sizing: border-box;
+    }
+
+    .setup-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .setup-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid #f59e0b;
+      color: #fbbf24;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .setup-title {
+      font-family: var(--font-family);
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #f59e0b, #ef4444, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
+    .setup-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-sub);
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: stretch;
+      flex: 1;
+    }
+    @media (max-width: 960px) {
+      .setup-grid { grid-template-columns: 1fr; }
+    }
+
+    .setup-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-glow);
+      border-radius: 22px;
+      padding: 24px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .setup-section-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #f8fafc;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Grade Selector Pills */
+    .grade-selector-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .btn-grade-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 2px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #f8fafc;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      text-align: left;
+    }
+    .btn-grade-pill:hover {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: #38bdf8;
+      transform: translateY(-2px);
+    }
+    .btn-grade-pill.active {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: #38bdf8;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    }
+    .btn-grade-pill.grade-12.active {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: #ef4444;
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.35);
+    }
+
+    .lesson-dropdown-select {
+      width: 100%;
+      background: #0f172a;
+      border: 1.5px solid #38bdf8;
+      color: #f8fafc;
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      outline: none;
+      cursor: pointer;
+    }
+    .lesson-dropdown-select optgroup {
+      background: #1e293b;
+      color: #38bdf8;
+      font-weight: 800;
+    }
+    .lesson-dropdown-select option {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 8px;
+    }
+
+    /* Questions count pills */
+    .count-pills-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .btn-count-pill {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+      font-weight: 800;
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .btn-count-pill:hover { border-color: #38bdf8; color: #fff; }
+    .btn-count-pill.active {
+      background: #38bdf8;
+      color: #030712;
+      border-color: #38bdf8;
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+    }
+
+    /* Launch Battle Button */
+    .btn-launch-battle {
+      width: 100%;
+      padding: 18px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f59e0b, #ef4444, #e11d48);
+      color: #ffffff;
+      border: none;
+      font-family: var(--font-family) !important;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 10px 30px rgba(239, 68, 68, 0.5), 0 0 20px rgba(245, 158, 11, 0.3);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: pulseLaunch 1.8s infinite;
+    }
+    @keyframes pulseLaunch {
+      0%, 100% { transform: scale(1); box-shadow: 0 10px 30px rgba(239, 68, 68, 0.5); }
+      50% { transform: scale(1.02); box-shadow: 0 14px 40px rgba(239, 68, 68, 0.8), 0 0 30px rgba(245, 158, 11, 0.6); }
+    }
+    .btn-launch-battle:hover {
+      transform: translateY(-2px) scale(1.03);
+      filter: brightness(1.15);
+    }
+
+    /* Right Column: QR Hub on Setup Screen */
+    .qr-setup-box {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+    .qr-setup-img-card {
+      background: #ffffff;
+      padding: 14px;
+      border-radius: 16px;
+      display: inline-block;
+      margin: 14px 0;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    }
+    .qr-setup-img-card img {
+      display: block;
+      width: 200px;
+      height: 200px;
+    }
+    .setup-room-pill {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid #f59e0b;
+      font-size: 1.25rem;
+      font-weight: 900;
+      padding: 4px 16px;
+      border-radius: 10px;
+      letter-spacing: 2px;
+      display: inline-block;
+    }
+    .setup-teams-status {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      width: 100%;
+      margin-top: 14px;
+    }
+    .status-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .status-chip.online {
+      border-color: #10b981;
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.15);
+    }
+
+    /* ==========================================================================
+       VIEW 2: BATTLE ARENA (MÀN HÌNH THI ĐẤU MÁY CHIẾU)
+       ========================================================================== */
+    #battleView {
+      display: none;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-header {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #f1f5f9;
+      padding: 6px 12px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .btn-header:hover {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: #38bdf8;
+      transform: translateY(-1px);
+    }
+
+    .arena-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      max-width: 1440px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 14px 18px;
+      gap: 14px;
+    }
+
+    .battle-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 18px;
+      padding: 20px 24px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .round-meta-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .round-tag {
+      padding: 5px 12px;
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .round-1 { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid #38bdf8; }
+    .round-2 { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid #f59e0b; }
+    .round-3 { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid #ef4444; }
+
+    .q-point-pill {
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      color: #fff;
+      font-weight: 900;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .timer-widget {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 4px 12px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .timer-val {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #38bdf8;
+      min-width: 28px;
+      text-align: center;
+    }
+    .timer-val.warning { color: #f59e0b; }
+    .timer-val.danger { color: #ef4444; animation: pulse 0.8s infinite; }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.1); }
+    }
+
+    .question-box { margin-bottom: 18px; }
+    .question-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.5;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+    .question-img-wrap {
+      max-height: 240px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0;
+    }
+    .question-img-wrap svg {
+      max-height: 220px;
+      max-width: 100%;
+      border-radius: 10px;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.5));
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 768px) {
+      .options-grid { grid-template-columns: 1fr; }
+    }
+
+    .option-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: #f1f5f9;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .option-btn:hover:not(.disabled) {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: #38bdf8;
+      transform: translateY(-2px);
+    }
+    .option-prefix {
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #38bdf8;
+      flex-shrink: 0;
+    }
+    .option-btn.correct {
+      background: rgba(16, 185, 129, 0.22) !important;
+      border-color: #10b981 !important;
+      color: #a7f3d0 !important;
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+    }
+    .option-btn.correct .option-prefix { background: #10b981; color: #ffffff; }
+    .option-btn.wrong {
+      background: rgba(239, 68, 68, 0.2) !important;
+      border-color: #ef4444 !important;
+      color: #fecaca !important;
+      opacity: 0.6;
+    }
+    .option-btn.wrong .option-prefix { background: #ef4444; color: #ffffff; }
+
+    /* Buzzer Notification Banner */
+    .buzzer-alert {
+      display: none;
+      background: linear-gradient(90deg, rgba(239, 68, 68, 0.28), rgba(245, 158, 11, 0.28));
+      border: 2px solid #f59e0b;
+      padding: 10px 18px;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      align-items: center;
+      justify-content: space-between;
+      animation: slideDown 0.3s ease-out;
+    }
+    .buzzer-alert.show { display: flex; }
+    .buzzer-team-text {
+      font-size: 1.18rem;
+      font-weight: 900;
+      color: #fbbf24;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-15px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .explanation-box {
+      display: none;
+      background: rgba(15, 23, 42, 0.8);
+      border-left: 4px solid #38bdf8;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-top: 12px;
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+    .explanation-box.show { display: block; }
+    .explanation-title {
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .control-toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 14px;
+    }
+
+    .btn-action {
+      background: linear-gradient(135deg, #1e293b, #334155);
+      color: #f8fafc;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 9px 16px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-action:hover {
+      background: rgba(56, 189, 248, 0.25);
+      border-color: #38bdf8;
+      transform: translateY(-2px);
+    }
+    .btn-action.primary {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      border-color: #38bdf8;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+    }
+    .btn-action.warning {
+      background: linear-gradient(135deg, #d97706, #b45309);
+      border-color: #fbbf24;
+    }
+    .btn-action.danger {
+      background: linear-gradient(135deg, #dc2626, #b91c1c);
+      border-color: #f87171;
+    }
+
+    /* Teams Scoreboard */
+    .teams-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 900px) {
+      .teams-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .team-card {
+      background: var(--bg-card);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 14px;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .team-card.team-1 { border-color: rgba(56, 189, 248, 0.4); }
+    .team-card.team-2 { border-color: rgba(245, 158, 11, 0.4); }
+    .team-card.team-3 { border-color: rgba(16, 185, 129, 0.4); }
+    .team-card.team-4 { border-color: rgba(236, 72, 153, 0.4); }
+
+    .team-card.buzzed {
+      animation: buzzedGlow 0.8s infinite alternate;
+      transform: translateY(-4px);
+    }
+    @keyframes buzzedGlow {
+      from { box-shadow: 0 0 15px currentColor; }
+      to { box-shadow: 0 0 40px currentColor; }
+    }
+
+    .team-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .team-avatar { font-size: 1.6rem; }
+    .team-name { font-size: 1.05rem; font-weight: 800; color: #f8fafc; }
+    .team-rank-badge {
+      background: rgba(255, 255, 255, 0.1);
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 10px;
+      color: #94a3b8;
+    }
+    .team-status-indicator {
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .team-status-indicator.online { color: #34d399; }
+    .team-status-indicator.offline { color: #94a3b8; }
+
+    .team-score {
+      font-size: 2rem;
+      font-weight: 900;
+      text-align: center;
+      margin: 8px 0;
+      color: #ffffff;
+    }
+    .team-badges-row {
+      display: flex;
+      gap: 4px;
+      min-height: 22px;
+      margin-bottom: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .power-badge {
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+    .badge-star { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid #f59e0b; }
+    .badge-shield { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid #38bdf8; }
+
+    .team-controls { display: flex; gap: 4px; }
+    .btn-team-score {
+      flex: 1;
+      padding: 6px 2px;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 0.8rem;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-plus { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .btn-minus { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+    .btn-buzzer-team {
+      width: 100%;
+      margin-top: 6px;
+      padding: 7px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 0.82rem;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid #f59e0b;
+      color: #fbbf24;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    /* ==========================================================================
+       VIEW 3: SMARTPHONE MOBILE BUZZER (CLIENT VIEW)
+       ========================================================================== */
+    #buzzerView {
+      display: none;
+      flex-direction: column;
+      height: 100vh;
+      max-width: 480px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 16px;
+      justify-content: space-between;
+      box-sizing: border-box;
+      touch-action: manipulation;
+    }
+
+    .client-header {
+      text-align: center;
+      padding: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .client-title { font-size: 1.1rem; font-weight: 800; color: #38bdf8; }
+    .client-team-name { font-size: 1.4rem; font-weight: 900; margin: 4px 0; }
+    .client-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border: 1px solid #10b981;
+    }
+
+    .giant-buzzer-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0;
+    }
+    .giant-buzzer-btn {
+      width: 270px;
+      height: 270px;
+      border-radius: 50%;
+      border: 6px solid rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 6px 12px rgba(255, 255, 255, 0.3);
+      transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+      -webkit-tap-highlight-color: transparent;
+    }
+    .giant-buzzer-btn:active { transform: scale(0.92); }
+    
+    .giant-buzzer-btn.locked {
+      background: radial-gradient(circle at 35% 35%, #475569, #1e293b);
+      border-color: #64748b;
+      color: #94a3b8;
+      cursor: not-allowed;
+    }
+    .giant-buzzer-btn.ready {
+      background: radial-gradient(circle at 35% 35%, #f59e0b, #b45309);
+      border-color: #fbbf24;
+      color: #ffffff;
+      box-shadow: 0 0 50px rgba(245, 158, 11, 0.8);
+      animation: pulseGiant 1.1s infinite alternate;
+    }
+    @keyframes pulseGiant {
+      from { transform: scale(1); box-shadow: 0 0 35px rgba(245, 158, 11, 0.6); }
+      to { transform: scale(1.06); box-shadow: 0 0 70px rgba(245, 158, 11, 1); }
+    }
+    .giant-buzzer-btn.won {
+      background: radial-gradient(circle at 35% 35%, #10b981, #047857);
+      border-color: #6ee7b7;
+      color: #ffffff;
+      box-shadow: 0 0 60px rgba(16, 185, 129, 0.9);
+    }
+
+    .buzzer-icon { font-size: 3.8rem; margin-bottom: 6px; }
+    .buzzer-text { font-size: 1.35rem; font-weight: 900; text-transform: uppercase; line-height: 1.2; }
+    .buzzer-subtext { font-size: 0.8rem; font-weight: 600; opacity: 0.85; margin-top: 4px; }
+
+    .team-picker-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .btn-pick-team {
+      background: rgba(255, 255, 255, 0.06);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      border-radius: 14px;
+      padding: 16px;
+      color: #f8fafc;
+      font-size: 1.15rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.2s;
+    }
+
+    /* Modals */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+
+    .modal-box {
+      background: #111827;
+      border: 2px solid #38bdf8;
+      border-radius: 24px;
+      max-width: 620px;
+      width: 100%;
+      padding: 26px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+      text-align: center;
+    }
+
+    .boxes-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .mystery-box-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px dashed rgba(245, 158, 11, 0.5);
+      border-radius: 14px;
+      padding: 20px 8px;
+      font-size: 2.6rem;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .mystery-box-item:hover:not(.opened) {
+      background: rgba(245, 158, 11, 0.2);
+      transform: translateY(-6px) scale(1.05);
+      border-color: #f59e0b;
+    }
+
+    .podium-box {
+      background: #0f172a;
+      border: 2px solid #38bdf8;
+      border-radius: 28px;
+      max-width: 760px;
+      width: 100%;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    .podium-stage {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 14px;
+      margin: 30px 0 20px;
+      height: 260px;
+    }
+    .podium-pillar {
+      border-radius: 14px 14px 0 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 16px;
+      width: 160px;
+    }
+    .pillar-1 { height: 230px; background: linear-gradient(180deg, #f59e0b, #b45309); }
+    .pillar-2 { height: 170px; background: linear-gradient(180deg, #94a3b8, #475569); }
+    .pillar-3 { height: 130px; background: linear-gradient(180deg, #d97706, #78350f); }
+
+    #confettiCanvas { position: fixed; inset: 0; pointer-events: none; z-index: 9999; }
+  </style>
+</head>
+<body>
+
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- ==========================================================================
+       VIEW 1: SETUP SCREEN (CHỌN LỚP - CHỌN BÀI - MÃ QR)
+       ========================================================================== -->
+  <div id="setupView">
+    <div class="setup-header">
+      <div class="setup-badge">⚡ CHẾ ĐỘ THI ĐẤU 4 TỔ DÀNH CHO MÁY CHIẾU</div>
+      <h1 class="setup-title">⚔️ ĐẤU TRƯỜNG HOÁ HỌC LIÊN NHÓM</h1>
+      <p class="setup-subtitle">Chọn khối lớp & bài học để bắt đầu trận đấu tranh tài bấm chuông không dây siêu tốc!</p>
+    </div>
+
+    <div class="setup-grid">
+      <!-- Left Column: Choose Grade & Lesson -->
+      <div class="setup-card">
+        <div>
+          <div class="setup-section-title"><span>1️⃣</span> BƯỚC 1: CHỌN KHỐI LỚP THI ĐẤU</div>
+          <div class="grade-selector-grid">
+            <div class="btn-grade-pill grade-12 active" id="pillG12" onclick="selectSetupGrade(12)">
+              <span style="font-size: 2rem;">🔥</span>
+              <div>
+                <b style="font-size: 1.05rem;">Hoá Học 12</b>
+                <div style="font-size: 0.75rem; color: #94a3b8;">Ester, Lipid, Kim loại & Phức chất (30 bài)</div>
+              </div>
+            </div>
+            <div class="btn-grade-pill grade-11" id="pillG11" onclick="selectSetupGrade(11)">
+              <span style="font-size: 2rem;">🌊</span>
+              <div>
+                <b style="font-size: 1.05rem;">Hoá Học 11</b>
+                <div style="font-size: 0.75rem; color: #94a3b8;">Cân bằng, Nitrogen, Sulfur & Hữu cơ (25 bài)</div>
+              </div>
+            </div>
+            <div class="btn-grade-pill grade-10" id="pillG10" onclick="selectSetupGrade(10)">
+              <span style="font-size: 2rem;">⚛️</span>
+              <div>
+                <b style="font-size: 1.05rem;">Hoá Học 10</b>
+                <div style="font-size: 0.75rem; color: #94a3b8;">Nguyên tử, Bảng tuần hoàn & Halogen (23 bài)</div>
+              </div>
+            </div>
+            <div class="btn-grade-pill" id="pillGAll" onclick="selectSetupGrade('all')">
+              <span style="font-size: 2rem;">🌟</span>
+              <div>
+                <b style="font-size: 1.05rem;">Toàn Diện 3 Khối</b>
+                <div style="font-size: 0.75rem; color: #94a3b8;">Tổng hợp cả 78 bài học 10–11–12</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="setup-section-title"><span>2️⃣</span> BƯỚC 2: CHỌN BÀI HỌC CỤ THỂ</div>
+          <select class="lesson-dropdown-select" id="setupLessonSelect" onchange="onSetupLessonChange()">
+            <!-- Dynamically populated -->
+          </select>
+
+          <div class="setup-section-title"><span>3️⃣</span> BƯỚC 3: SỐ LƯỢNG CÂU HỎI</div>
+          <div class="count-pills-row" id="countPillsContainer">
+            <!-- Dynamically rendered based on selected lesson -->
+          </div>
+          <div id="countInfoBadge" style="font-size: 0.84rem; color: #38bdf8; margin-top: -14px; margin-bottom: 22px; font-weight: 600; line-height: 1.5;"></div>
+        </div>
+
+        <div>
+          <button class="btn-launch-battle" onclick="launchBattleFromSetup()">
+            <span>🚀</span> Bắt Đầu Đấu Trường Ngay ➔
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column: QR Code Direct Connect -->
+      <div class="setup-card">
+        <div class="qr-setup-box">
+          <div class="setup-section-title" style="margin-bottom: 6px;"><span>📱</span> QUÉT MÃ QR BẤM CHUÔNG KHÔNG DÂY</div>
+          <p style="font-size: 0.82rem; color: #cbd5e1;">Học sinh dùng điện thoại (Camera hoặc Zalo) quét mã dưới đây để tham gia bấm chuông:</p>
+          
+          <div style="margin: 10px 0;">
+            <div class="setup-room-pill">PHÒNG: <span id="setupRoomCode">VT88</span></div>
+          </div>
+
+          <div class="qr-setup-img-card">
+            <img id="setupQrImg" src="" alt="Mã QR Bấm Chuông">
+          </div>
+
+          <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 8px;">
+            Mỗi tổ chỉ cần 1 điện thoại đại diện để bấm chuông!
+          </div>
+
+          <div class="setup-teams-status">
+            <div class="status-chip" id="setupStatus1"><span>📐</span> Tổ 1: ⚪ Chờ</div>
+            <div class="status-chip" id="setupStatus2"><span>📏</span> Tổ 2: ⚪ Chờ</div>
+            <div class="status-chip" id="setupStatus3"><span>💡</span> Tổ 3: ⚪ Chờ</div>
+            <div class="status-chip" id="setupStatus4"><span>👑</span> Tổ 4: ⚪ Chờ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       VIEW 2: BATTLE ARENA (MÀN HÌNH THI ĐẤU MÁY CHIẾU)
+       ========================================================================== -->
+  <div id="battleView">
+    <header>
+      <div class="brand-title">
+        <span>⚔️</span> ĐẤU TRƯỜNG HOÁ HỌC LIÊN NHÓM
+        <span style="font-size: 0.8rem; color: #f59e0b; margin-left: 6px;" id="arenaBattleSubTitle">Hoá Học 12</span>
+      </div>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <button class="btn-header" onclick="backToSetupView()">
+          <span>⚙️</span> Đổi Bài Học
+        </button>
+        <button class="btn-header qr-btn" onclick="openQrModal()">
+          <span>📱</span> Mã QR (<span id="roomCodeDisplay">VT88</span>)
+        </button>
+        <button class="btn-header" onclick="toggleFullscreen()">
+          <span>⛶</span> Toàn Màn Hình
+        </button>
+        <button class="btn-header" onclick="resetBattle()">
+          <span>🔄</span> Đấu Lại
+        </button>
+      </div>
+    </header>
+
+    <div class="arena-container">
+      <div class="battle-card">
+        <div class="round-meta-bar">
+          <div class="round-tag round-1" id="roundTag">
+            <span>⚡</span> VÒNG 1: KHỞI ĐỘNG
+          </div>
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <div class="q-point-pill" id="qPointBadge">+20 ĐIỂM</div>
+            <div class="timer-widget">
+              <span>⏱️</span>
+              <span class="timer-val" id="timerVal">20</span>s
+            </div>
+          </div>
+        </div>
+
+        <!-- Buzzer Alert Notification -->
+        <div class="buzzer-alert" id="buzzerAlert">
+          <div class="buzzer-team-text">
+            <span>🔔</span> <span id="buzzerTeamName">TỔ 1 (PYTHAGORAS)</span> ĐÃ BẤM CHUÔNG GIÀNH QUYỀN TRẢ LỜI!
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn-action primary" style="padding: 6px 14px;" onclick="judgeBuzzedTeam(true)">
+              ✓ Đúng (+Điểm)
+            </button>
+            <button class="btn-action danger" style="padding: 6px 14px;" onclick="judgeBuzzedTeam(false)">
+              ✗ Sai (-Điểm & Mở Lại Chuông)
+            </button>
+          </div>
+        </div>
+
+        <!-- Question Display -->
+        <div class="question-box">
+          <div class="question-title" id="qTitle">Đang tải câu hỏi...</div>
+          <div class="question-img-wrap" id="qImgWrap" style="display: none;"></div>
+        </div>
+
+        <!-- 4 Options Grid -->
+        <div class="options-grid" id="optionsGrid"></div>
+
+        <!-- Explanation Box -->
+        <div class="explanation-box" id="explanationBox">
+          <div class="explanation-title"><span>💡</span> GIẢI THÍCH CHI TIẾT TOÁN HỌC:</div>
+          <div id="explanationContent"></div>
+        </div>
+
+        <!-- Control Toolbar for Teacher -->
+        <div class="control-toolbar">
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button class="btn-action primary" id="btnTimer" onclick="toggleTimer()">
+              <span>▶️</span> Tiếp Tục (Space)
+            </button>
+            <button class="btn-action warning" onclick="activateBuzzer()">
+              <span>🔔</span> Mở Chuông Giành Quyền (Phím B)
+            </button>
+            <button class="btn-action" onclick="revealAnswer()">
+              <span>👁️</span> Hiện Đáp Án (Enter)
+            </button>
+            <button class="btn-action" onclick="openMysteryBoxModal()">
+              <span>🎁</span> Hộp Quà Bí Mật
+            </button>
+          </div>
+          <div>
+            <button class="btn-action primary" onclick="nextQuestion()">
+              <span>➡️</span> Câu Tiếp Theo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teams Scoreboard (Bottom Grid) -->
+      <div class="teams-grid" id="teamsGrid"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       VIEW 3: SMARTPHONE TOUCH BUZZER (CLIENT VIEW)
+       ========================================================================== -->
+  <div id="buzzerView">
+    <div id="pickTeamScreen" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+      <div class="client-header" style="margin-bottom: 20px;">
+        <div class="client-title">📱 ĐẤU TRƯỜNG HOÁ HỌC</div>
+        <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 4px;">Phòng: <b id="clientRoomLabel" style="color: #fbbf24;">VT88</b></p>
+      </div>
+      <h3 style="text-align: center; color: #f8fafc; font-size: 1.1rem; margin-bottom: 12px;">CHỌN ĐỘI CỦA BẠN ĐỂ THI ĐẤU:</h3>
+      <div class="team-picker-grid">
+        <button class="btn-pick-team" style="border-color: #38bdf8;" onclick="clientJoinTeam(1, 'TỔ 1 (PYTHAGORAS)', '📐', '#38bdf8')">
+          <span style="font-size: 2rem;">📐</span>
+          <div>
+            <div>TỔ 1 (PYTHAGORAS)</div>
+            <div style="font-size: 0.75rem; color: #94a3b8; font-weight: 500;">Bấm vào để đại diện Tổ 1</div>
+          </div>
+        </button>
+        <button class="btn-pick-team" style="border-color: #f59e0b;" onclick="clientJoinTeam(2, 'TỔ 2 (EUCLID)', '📏', '#f59e0b')">
+          <span style="font-size: 2rem;">📏</span>
+          <div>
+            <div>TỔ 2 (EUCLID)</div>
+            <div style="font-size: 0.75rem; color: #94a3b8; font-weight: 500;">Bấm vào để đại diện Tổ 2</div>
+          </div>
+        </button>
+        <button class="btn-pick-team" style="border-color: #10b981;" onclick="clientJoinTeam(3, 'TỔ 3 (ARCHIMEDES)', '💡', '#10b981')">
+          <span style="font-size: 2rem;">💡</span>
+          <div>
+            <div>TỔ 3 (ARCHIMEDES)</div>
+            <div style="font-size: 0.75rem; color: #94a3b8; font-weight: 500;">Bấm vào để đại diện Tổ 3</div>
+          </div>
+        </button>
+        <button class="btn-pick-team" style="border-color: #ec4899;" onclick="clientJoinTeam(4, 'TỔ 4 (GAUSS)', '👑', '#ec4899')">
+          <span style="font-size: 2rem;">👑</span>
+          <div>
+            <div>TỔ 4 (GAUSS)</div>
+            <div style="font-size: 0.75rem; color: #94a3b8; font-weight: 500;">Bấm vào để đại diện Tổ 4</div>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <div id="activeBuzzerScreen" style="display: none; flex-direction: column; height: 100%; justify-content: space-between;">
+      <div class="client-header">
+        <div class="client-title">📱 ĐẤU TRƯỜNG HOÁ HỌC</div>
+        <div class="client-team-name" id="clientActiveTeamName" style="color: #38bdf8;">📐 TỔ 1 (PYTHAGORAS)</div>
+        <div class="client-status-badge"><span>🟢</span> Đã Kết Nối Máy Chiếu</div>
+      </div>
+
+      <div class="giant-buzzer-wrap">
+        <button class="giant-buzzer-btn locked" id="giantBuzzerBtn" onclick="clientTriggerBuzz()">
+          <div class="buzzer-icon" id="buzzerIcon">⏳</div>
+          <div class="buzzer-text" id="buzzerMainText">CHỜ THẦY/CÔ<br>MỞ CHUÔNG...</div>
+          <div class="buzzer-subtext" id="buzzerSubText">Giữ bình tĩnh và tập trung!</div>
+        </button>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 10px;">
+        <button class="btn-action" style="padding: 6px 12px; font-size: 0.8rem;" onclick="clientSwitchTeam()">
+          🔄 Đổi Đội
+        </button>
+        <div style="font-size: 0.8rem; color: #94a3b8;">Chạm vào màn hình để bấm</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODALS: QR CODE, MYSTERY BOX, VICTORY PODIUM
+       ========================================================================== -->
+  <div class="modal-overlay" id="qrModal">
+    <div class="modal-box">
+      <h2 style="color: #f59e0b; margin-bottom: 6px;">📱 QUÉT MÃ QR BẤM CHUÔNG KHÔNG DÂY</h2>
+      <p style="color: #cbd5e1; font-size: 0.92rem;">Học sinh dùng điện thoại (Camera hoặc Zalo) quét mã dưới đây để tham gia bấm chuông:</p>
+      
+      <div style="margin: 12px 0;">
+        <div class="setup-room-pill">MÃ PHÒNG: <span id="modalRoomCode">VT88</span></div>
+      </div>
+
+      <div class="qr-setup-img-card">
+        <img id="qrImg" src="" alt="Mã QR Bấm Chuông">
+      </div>
+
+      <div style="margin: 8px 0;">
+        <input type="text" id="qrUrlInput" readonly style="width: 100%; background: #1e293b; border: 1px solid #334155; color: #94a3b8; padding: 8px 12px; border-radius: 8px; font-size: 0.8rem; text-align: center;" value="">
+        <button class="btn-action primary" style="margin: 8px auto 0;" onclick="copyQrLink()">
+          📋 Sao Chép Đường Link
+        </button>
+      </div>
+
+      <button class="btn-action" style="margin: 14px auto 0;" onclick="closeModal('qrModal')">Đóng Cửa Sổ</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="mysteryModal">
+    <div class="modal-box">
+      <h2 style="color: #f59e0b; margin-bottom: 8px;">🎁 HỘP QUÀ BÍ MẬT DÀNH CHO ĐỘI CHIẾN THẮNG</h2>
+      <p style="color: #94a3b8; font-size: 0.95rem;">Chọn 1 trong 4 hộp quà may mắn để nhận đặc quyền hoặc điểm thưởng!</p>
+      
+      <div class="boxes-grid">
+        <div class="mystery-box-item" onclick="openBox(0, this)">📦</div>
+        <div class="mystery-box-item" onclick="openBox(1, this)">🎁</div>
+        <div class="mystery-box-item" onclick="openBox(2, this)">💎</div>
+        <div class="mystery-box-item" onclick="openBox(3, this)">🏆</div>
+      </div>
+
+      <div class="mystery-result-box" id="mysteryResult" style="display: none; background: rgba(245, 158, 11, 0.15); border: 1px solid #f59e0b; border-radius: 12px; padding: 14px; font-size: 1.1rem; font-weight: 800; color: #fde68a; margin-top: 14px;"></div>
+
+      <div style="margin-top: 20px;">
+        <button class="btn-action primary" style="margin: 0 auto;" onclick="closeModal('mysteryModal')">Đóng Hộp Quà</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="victoryModal">
+    <div class="podium-box">
+      <h1 style="font-size: 2.2rem; font-weight: 900; background: linear-gradient(135deg, #f59e0b, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        🎉 CHÚC MỪNG ĐỘI VÔ ĐỊCH ĐẤU TRƯỜNG HOÁ HỌC! 🎉
+      </h1>
+      <p style="color: #94a3b8; margin-top: 6px;">Vinh quang thuộc về đội có chiến thuật xuất sắc và bản lĩnh khoa học đỉnh cao!</p>
+
+      <div class="podium-stage">
+        <div class="podium-pillar pillar-2" id="pillar2">
+          <div style="font-size: 2rem;">🥈</div>
+          <div style="font-weight: 800; color: #fff; font-size: 1.1rem;" id="pName2">Tổ 2</div>
+          <div style="font-weight: 900; color: #cbd5e1; font-size: 1.4rem;" id="pScore2">0 đ</div>
+        </div>
+        <div class="podium-pillar pillar-1" id="pillar1">
+          <div style="font-size: 2.8rem; margin-bottom: 4px;">👑</div>
+          <div style="font-size: 2.2rem;">🥇</div>
+          <div style="font-weight: 800; color: #fff; font-size: 1.25rem;" id="pName1">Tổ 1</div>
+          <div style="font-weight: 900; color: #fde68a; font-size: 1.8rem;" id="pScore1">0 đ</div>
+        </div>
+        <div class="podium-pillar pillar-3" id="pillar3">
+          <div style="font-size: 2rem;">🥉</div>
+          <div style="font-weight: 800; color: #fff; font-size: 1rem;" id="pName3">Tổ 3</div>
+          <div style="font-weight: 900; color: #fdba74; font-size: 1.2rem;" id="pScore3">0 đ</div>
+        </div>
+      </div>
+
+      <button class="btn-action primary" style="margin: 0 auto; padding: 12px 32px; font-size: 1.1rem;" onclick="closeModal('victoryModal')">
+        Tiếp Tục Ôn Luyện
+      </button>
+    </div>
+  </div>
+
+  <script>
+    /* ==========================================================================
+       1. ENHANCED WEB AUDIO API SYNTHESIZER (5+ SECONDS ANTHEMS & EXTREME BUZZER)
+       ========================================================================== */
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    function ensureAudio() {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+    }
+
+    // 1.1. EXTREME STIMULATING BUZZER (Âm thanh chuông kích thích, uy lực, bùng nổ)
+    function soundExtremeBuzzer() {
+      ensureAudio();
+      const now = audioCtx.currentTime;
+
+      // Layer 1: Sub punch (Kick transient)
+      const kickOsc = audioCtx.createOscillator();
+      const kickGain = audioCtx.createGain();
+      kickOsc.type = 'sine';
+      kickOsc.frequency.setValueAtTime(220, now);
+      kickOsc.frequency.exponentialRampToValueAtTime(45, now + 0.18);
+      kickGain.gain.setValueAtTime(0.7, now);
+      kickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
+      kickOsc.connect(kickGain);
+      kickGain.connect(audioCtx.destination);
+      kickOsc.start(now);
+      kickOsc.stop(now + 0.22);
+
+      // Layer 2: High Energy Laser Zap Sweep
+      const zapOsc = audioCtx.createOscillator();
+      const zapGain = audioCtx.createGain();
+      zapOsc.type = 'sawtooth';
+      zapOsc.frequency.setValueAtTime(900, now);
+      zapOsc.frequency.linearRampToValueAtTime(1750, now + 0.08);
+      zapOsc.frequency.exponentialRampToValueAtTime(750, now + 0.45);
+      zapGain.gain.setValueAtTime(0.55, now);
+      zapGain.gain.exponentialRampToValueAtTime(0.001, now + 0.55);
+      zapOsc.connect(zapGain);
+      zapGain.connect(audioCtx.destination);
+      zapOsc.start(now);
+      zapOsc.stop(now + 0.55);
+
+      // Layer 3: Metallic Ringing Gong Bell
+      [880, 1320, 1760].forEach((freq, i) => {
+        const ringOsc = audioCtx.createOscillator();
+        const ringGain = audioCtx.createGain();
+        ringOsc.type = 'triangle';
+        ringOsc.frequency.setValueAtTime(freq, now + 0.05);
+        ringGain.gain.setValueAtTime(0.25 / (i + 1), now + 0.05);
+        ringGain.gain.exponentialRampToValueAtTime(0.0001, now + 1.2);
+        ringOsc.connect(ringGain);
+        ringGain.connect(audioCtx.destination);
+        ringOsc.start(now + 0.05);
+        ringOsc.stop(now + 1.2);
+      });
+    }
+
+    // 1.2. OPENING BATTLE ANTHEM (Kéo dài hơn 5 giây: 5.5 giây sôi động, dồn dập)
+    function playOpeningAnthem() {
+      ensureAudio();
+      const now = audioCtx.currentTime;
+
+      // Polyphonic driving rhythm & triumphant brass melody (5.5s)
+      const tempo = 140; // BPM
+      const beat = 60 / tempo; // ~0.428s per beat
+
+      // Melody notes: [freq, startBeat, durationBeats]
+      const notes = [
+        // Bar 1: Driving kickoff
+        [523.25, 0.0, 0.4], [523.25, 0.5, 0.4], [587.33, 1.0, 0.4], [659.25, 1.5, 0.8],
+        // Bar 2: Rising excitement
+        [587.33, 2.5, 0.4], [659.25, 3.0, 0.4], [783.99, 3.5, 1.2],
+        // Bar 3: Dramatic acceleration
+        [880.00, 5.0, 0.4], [987.77, 5.5, 0.4], [1046.50, 6.0, 0.8],
+        // Climax Grand Chords (at beat 7.0 -> ~3.0s to 5.5s)
+        [1046.50, 7.0, 2.5], [1318.51, 7.0, 2.5], [1567.98, 7.0, 2.5]
+      ];
+
+      notes.forEach(([f, start, dur]) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(f, now + start * beat);
+        gain.gain.setValueAtTime(0.28, now + start * beat);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + (start + dur) * beat);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + start * beat);
+        osc.stop(now + (start + dur) * beat);
+      });
+
+      // Bassline pulses
+      for (let i = 0; i < 12; i++) {
+        const bassOsc = audioCtx.createOscillator();
+        const bassGain = audioCtx.createGain();
+        bassOsc.type = 'sawtooth';
+        bassOsc.frequency.setValueAtTime(i < 6 ? 130.81 : (i < 9 ? 164.81 : 196.00), now + i * beat * 0.7);
+        bassGain.gain.setValueAtTime(0.25, now + i * beat * 0.7);
+        bassGain.gain.exponentialRampToValueAtTime(0.001, now + i * beat * 0.7 + 0.25);
+        bassOsc.connect(bassGain);
+        bassGain.connect(audioCtx.destination);
+        bassOsc.start(now + i * beat * 0.7);
+        bassOsc.stop(now + i * beat * 0.7 + 0.25);
+      }
+    }
+
+    // 1.3. CORRECT CELEBRATION (Kéo dài hơn 5 giây: 5.2 giây khải hoàn rực rỡ)
+    function playVictoryFanfare5s() {
+      ensureAudio();
+      const now = audioCtx.currentTime;
+      const fanfareChords = [
+        // Phase 1: Rapid shimmering arpeggio (0s -> 1.5s)
+        { f: 523.25, t: 0.0, d: 0.3 },
+        { f: 659.25, t: 0.15, d: 0.3 },
+        { f: 783.99, t: 0.3, d: 0.3 },
+        { f: 1046.50, t: 0.45, d: 0.5 },
+        { f: 1318.51, t: 0.75, d: 0.6 },
+        { f: 1567.98, t: 1.05, d: 0.8 },
+
+        // Phase 2: Majestic brass anthem (1.8s -> 3.5s)
+        { f: 880.00, t: 1.8, d: 0.4 },
+        { f: 987.77, t: 2.2, d: 0.4 },
+        { f: 1046.50, t: 2.6, d: 0.8 },
+        { f: 1174.66, t: 3.2, d: 0.4 },
+
+        // Phase 3: Grand Climax Fanfare (3.6s -> 5.3s)
+        { f: 1046.50, t: 3.6, d: 1.6 },
+        { f: 1318.51, t: 3.6, d: 1.6 },
+        { f: 1567.98, t: 3.6, d: 1.6 },
+        { f: 2093.00, t: 3.6, d: 1.6 }
+      ];
+
+      fanfareChords.forEach(c => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(c.f, now + c.t);
+        gain.gain.setValueAtTime(0.24, now + c.t);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + c.t + c.d);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + c.t);
+        osc.stop(now + c.t + c.d);
+      });
+    }
+
+    function soundTick() { playTone(850, 0.04, 'square', 0.05); }
+    function soundWrong() {
+      playTone(320, 0.25, 'sawtooth', 0.25);
+      setTimeout(() => playTone(240, 0.4, 'sawtooth', 0.25), 140);
+    }
+    function playTone(freq, duration, type = 'sine', gainVal = 0.2) {
+      ensureAudio();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+      gain.gain.setValueAtTime(gainVal, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + duration);
+    }
+
+    /* ==========================================================================
+       2. LESSONS METADATA (ACCENTED TITLES FOR ALL 85 LESSONS)
+       ========================================================================== */
+    const LESSON_METADATA = {
+  "10": {
+    "CHƯƠNG 1: CẤU TẠO NGUYÊN TỬ": [
+      {
+        "id": "1",
+        "title": "Bài 1: Thành phần của nguyên tử"
+      },
+      {
+        "id": "2",
+        "title": "Bài 2: Nguyên tố hóa học"
+      },
+      {
+        "id": "3",
+        "title": "Bài 3: Cấu trúc lớp vỏ electron nguyên tử"
+      },
+      {
+        "id": "4",
+        "title": "Bài 4: Ôn tập chương 1 (Cấu tạo nguyên tử)"
+      }
+    ],
+    "CHƯƠNG 2: BẢNG TUẦN HOÀN & ĐỊNH LUẬT TUẦN HOÀN": [
+      {
+        "id": "5",
+        "title": "Bài 5: Cấu tạo của bảng tuần hoàn các nguyên tố hóa học"
+      },
+      {
+        "id": "6",
+        "title": "Bài 6: Xu hướng biến đổi tính chất trong bảng tuần hoàn"
+      },
+      {
+        "id": "7",
+        "title": "Bài 7: Định luật tuần hoàn và ý nghĩa bảng tuần hoàn"
+      },
+      {
+        "id": "8",
+        "title": "Bài 8: Ôn tập chương 2 (Bảng tuần hoàn)"
+      }
+    ],
+    "CHƯƠNG 3: LIÊN KẾT HÓA HỌC": [
+      {
+        "id": "9",
+        "title": "Bài 9: Quy tắc octet"
+      },
+      {
+        "id": "10",
+        "title": "Bài 10: Liên kết ion"
+      },
+      {
+        "id": "11",
+        "title": "Bài 11: Liên kết cộng hóa trị"
+      },
+      {
+        "id": "12",
+        "title": "Bài 12: Liên kết hydrogen và tương tác van der Waals"
+      },
+      {
+        "id": "13",
+        "title": "Bài 13: Ôn tập chương 3 (Liên kết hóa học)"
+      }
+    ],
+    "CHƯƠNG 4: PHẢN ỨNG OXI HÓA – KHỬ": [
+      {
+        "id": "14",
+        "title": "Bài 14: Phản ứng oxi hóa – khử"
+      },
+      {
+        "id": "15",
+        "title": "Bài 15: Phản ứng oxi hóa – khử trong thực tiễn"
+      },
+      {
+        "id": "16",
+        "title": "Bài 16: Ôn tập chương 4 (Phản ứng oxi hóa – khử)"
+      }
+    ],
+    "CHƯƠNG 5: NĂNG LƯỢNG HÓA HỌC": [
+      {
+        "id": "17",
+        "title": "Bài 17: Biến thiên enthalpy trong các phản ứng hóa học"
+      },
+      {
+        "id": "18",
+        "title": "Bài 18: Ôn tập chương 5 (Năng lượng hóa học)"
+      }
+    ],
+    "CHƯƠNG 6: TỐC ĐỘ PHẢN ỨNG HÓA HỌC": [
+      {
+        "id": "19",
+        "title": "Bài 19: Tốc độ phản ứng hóa học"
+      },
+      {
+        "id": "20",
+        "title": "Bài 20: Các yếu tố ảnh hưởng đến tốc độ phản ứng"
+      },
+      {
+        "id": "21",
+        "title": "Bài 21: Ôn tập chương 6 (Tốc độ phản ứng)"
+      }
+    ],
+    "CHƯƠNG 7: NGUYÊN TỐ NHÓM HALOGEN": [
+      {
+        "id": "22",
+        "title": "Bài 22: Khái quát về nhóm halogen"
+      },
+      {
+        "id": "23",
+        "title": "Bài 23: Hydrogen halide và một số hợp chất của halogen"
+      }
+    ]
+  },
+  "11": {
+    "CHƯƠNG 1: CÂN BẰNG HÓA HỌC": [
+      {
+        "id": "1",
+        "title": "Bài 1: Khái niệm về cân bằng hóa học"
+      },
+      {
+        "id": "2",
+        "title": "Bài 2: Cân bằng trong dung dịch nước"
+      },
+      {
+        "id": "3",
+        "title": "Bài 3: Ôn tập chương 1 (Cân bằng hóa học)"
+      }
+    ],
+    "CHƯƠNG 2: NITROGEN – SULFUR": [
+      {
+        "id": "4",
+        "title": "Bài 4: Nitrogen"
+      },
+      {
+        "id": "5",
+        "title": "Bài 5: Ammonia và muối ammonium"
+      },
+      {
+        "id": "6",
+        "title": "Bài 6: Một số hợp chất của nitrogen với oxygen"
+      },
+      {
+        "id": "7",
+        "title": "Bài 7: Sulfur và sulfur dioxide"
+      },
+      {
+        "id": "8",
+        "title": "Bài 8: Sulfuric acid và muối sulfate"
+      },
+      {
+        "id": "9",
+        "title": "Bài 9: Ôn tập chương 2 (Nitrogen – Sulfur)"
+      }
+    ],
+    "CHƯƠNG 3: ĐẠI CƯƠNG HÓA HỌC HỮU CƠ": [
+      {
+        "id": "10",
+        "title": "Bài 10: Hợp chất hữu cơ và hóa học hữu cơ"
+      },
+      {
+        "id": "11",
+        "title": "Bài 11: Phương pháp tách biệt và tinh chế hợp chất hữu cơ"
+      },
+      {
+        "id": "12",
+        "title": "Bài 12: Công thức phân tử hợp chất hữu cơ"
+      },
+      {
+        "id": "13",
+        "title": "Bài 13: Cấu tạo hóa học hợp chất hữu cơ"
+      },
+      {
+        "id": "14",
+        "title": "Bài 14: Ôn tập chương 3 (Đại cương hóa học hữu cơ)"
+      }
+    ],
+    "CHƯƠNG 4: HYDROCARBON": [
+      {
+        "id": "15",
+        "title": "Bài 15: Alkane"
+      },
+      {
+        "id": "16",
+        "title": "Bài 16: Hydrocarbon không no (Alkene – Alkyne)"
+      },
+      {
+        "id": "17",
+        "title": "Bài 17: Arene (Hydrocarbon thơm)"
+      },
+      {
+        "id": "18",
+        "title": "Bài 18: Ôn tập chương 4 (Hydrocarbon)"
+      }
+    ],
+    "CHƯƠNG 5: DẪN XUẤT HALOGEN – ALCOHOL – PHENOL": [
+      {
+        "id": "19",
+        "title": "Bài 19: Dẫn xuất halogen"
+      },
+      {
+        "id": "20",
+        "title": "Bài 20: Alcohol"
+      },
+      {
+        "id": "21",
+        "title": "Bài 21: Phenol"
+      },
+      {
+        "id": "22",
+        "title": "Bài 22: Ôn tập chương 5 (Dẫn xuất halogen – Alcohol – Phenol)"
+      }
+    ],
+    "CHƯƠNG 6: HỢP CHẤT CARBONYL – CARBOXYLIC ACID": [
+      {
+        "id": "23",
+        "title": "Bài 23: Hợp chất carbonyl (Aldehyde – Ketone)"
+      },
+      {
+        "id": "24",
+        "title": "Bài 24: Carboxylic acid"
+      },
+      {
+        "id": "25",
+        "title": "Bài 25: Ôn tập chương 6 (Hợp chất carbonyl – Carboxylic acid)"
+      }
+    ]
+  },
+  "12": {
+    "CHƯƠNG I: ESTER – LIPID": [
+      {
+        "id": "1",
+        "title": "Bài 1: Ester – Lipid"
+      },
+      {
+        "id": "2",
+        "title": "Bài 2: Xà phòng và chất giặt rửa"
+      },
+      {
+        "id": "3",
+        "title": "Bài 3: Ôn tập chương 1 (Ester – Lipid)"
+      }
+    ],
+    "CHƯƠNG II: CARBOHYDRATE": [
+      {
+        "id": "4",
+        "title": "Bài 4: Giới thiệu về carbohydrate. Glucose và fructose"
+      },
+      {
+        "id": "5",
+        "title": "Bài 5: Saccharose và maltose"
+      },
+      {
+        "id": "6",
+        "title": "Bài 6: Tinh bột và cellulose"
+      },
+      {
+        "id": "7",
+        "title": "Bài 7: Ôn tập chương 2 (Carbohydrate)"
+      }
+    ],
+    "CHƯƠNG III: HỢP CHẤT CHỨA NITROGEN": [
+      {
+        "id": "8",
+        "title": "Bài 8: Amine"
+      },
+      {
+        "id": "9",
+        "title": "Bài 9: Amino acid và peptide"
+      },
+      {
+        "id": "10",
+        "title": "Bài 10: Protein và enzyme"
+      },
+      {
+        "id": "11",
+        "title": "Bài 11: Ôn tập chương 3 (Hợp chất chứa nitrogen)"
+      }
+    ],
+    "CHƯƠNG IV: POLYMER": [
+      {
+        "id": "12",
+        "title": "Bài 12: Đại cương về polymer"
+      },
+      {
+        "id": "13",
+        "title": "Bài 13: Vật liệu polymer"
+      },
+      {
+        "id": "14",
+        "title": "Bài 14: Ôn tập chương 4 (Polymer)"
+      }
+    ],
+    "CHƯƠNG V: PIN ĐIỆN VÀ ĐIỆN PHÂN": [
+      {
+        "id": "15",
+        "title": "Bài 15: Thế điện cực và nguồn điện hoá học"
+      },
+      {
+        "id": "16",
+        "title": "Bài 16: Điện phân"
+      },
+      {
+        "id": "17",
+        "title": "Bài 17: Ôn tập chương 5 (Pin điện và điện phân)"
+      }
+    ],
+    "CHƯƠNG VI: ĐẠI CƯƠNG VỀ KIM LOẠI": [
+      {
+        "id": "18",
+        "title": "Bài 18: Cấu tạo và liên kết trong tinh thể kim loại"
+      },
+      {
+        "id": "19",
+        "title": "Bài 19: Tính chất vật lí và tính chất hoá học của kim loại"
+      },
+      {
+        "id": "20",
+        "title": "Bài 20: Kim loại trong tự nhiên và phương pháp tách kim loại"
+      },
+      {
+        "id": "21",
+        "title": "Bài 21: Hợp kim"
+      },
+      {
+        "id": "22",
+        "title": "Bài 22: Sự ăn mòn kim loại"
+      },
+      {
+        "id": "23",
+        "title": "Bài 23: Ôn tập chương 6 (Đại cương về kim loại)"
+      }
+    ],
+    "CHƯƠNG VII: NGUYÊN TỐ NHÓM IA VÀ NHÓM IIA": [
+      {
+        "id": "24",
+        "title": "Bài 24: Nguyên tố nhóm IA"
+      },
+      {
+        "id": "25",
+        "title": "Bài 25: Nguyên tố nhóm IIA"
+      },
+      {
+        "id": "26",
+        "title": "Bài 26: Ôn tập chương 7 (Nguyên tố nhóm IA và nhóm IIA)"
+      }
+    ],
+    "CHƯƠNG VIII: DÃY KIM LOẠI CHUYỂN TIẾP THỨ NHẤT VÀ PHỨC CHẤT": [
+      {
+        "id": "27",
+        "title": "Bài 27: Đại cương về kim loại chuyển tiếp dãy thứ nhất"
+      },
+      {
+        "id": "28",
+        "title": "Bài 28: Sơ lược về phức chất"
+      },
+      {
+        "id": "29",
+        "title": "Bài 29: Một số tính chất và ứng dụng của phức chất"
+      },
+      {
+        "id": "30",
+        "title": "Bài 30: Ôn tập chương 8 (Kim loại chuyển tiếp và phức chất)"
+      }
+    ]
+  }
+};
+
+    /* ==========================================================================
+       3. REAL-TIME QR BUZZER WIRELESS ENGINE (MQTT + BROADCAST CHANNEL)
+       ========================================================================== */
+    const urlParams = new URLSearchParams(window.location.search);
+    const isClientBuzzer = urlParams.get('role') === 'buzzer';
+    let roomCode = urlParams.get('room') || generateRoomCode();
+    const topic = 'hoahoc-arena/' + roomCode;
+
+    const bc = ('BroadcastChannel' in window) ? new BroadcastChannel('hoahoc_arena_' + roomCode) : null;
+    let mqttClient = null;
+
+    function generateRoomCode() {
+      const num = Math.floor(1000 + Math.random() * 9000);
+      return 'VT' + num;
+    }
+
+    function initRealtime() {
+      try {
+        if (typeof mqtt !== 'undefined') {
+          mqttClient = mqtt.connect('wss://broker.emqx.io:8084/mqtt', {
+            clientId: 'arena_' + (isClientBuzzer ? 'c_' : 'h_') + Math.random().toString(16).substring(2, 8),
+            clean: true,
+            connectTimeout: 4000
+          });
+
+          mqttClient.on('connect', () => {
+            mqttClient.subscribe(topic);
+          });
+
+          mqttClient.on('message', (t, msg) => {
+            try {
+              const data = JSON.parse(msg.toString());
+              handleIncomingMessage(data);
+            } catch(e) {}
+          });
+        }
+      } catch(e) {}
+
+      if (bc) {
+        bc.onmessage = e => handleIncomingMessage(e.data);
+      }
+    }
+
+    function broadcastMsg(data) {
+      if (bc) bc.postMessage(data);
+      if (mqttClient && mqttClient.connected) {
+        mqttClient.publish(topic, JSON.stringify(data));
+      }
+    }
+
+    function handleIncomingMessage(data) {
+      if (!data) return;
+      if (isClientBuzzer) {
+        if (data.action === 'ARM_BUZZER') clientOnBuzzerArmed(data.excluded || []);
+        else if (data.action === 'LOCK_BUZZER') clientOnBuzzerLocked(data.winnerId, data.winnerName);
+        else if (data.action === 'RESET_BUZZER') clientOnBuzzerReset();
+      } else {
+        if (data.action === 'CLIENT_JOIN') hostOnClientJoin(data.teamId);
+        else if (data.action === 'CLIENT_BUZZ') hostOnClientBuzz(data.teamId, data.teamName);
+      }
+    }
+
+    /* ==========================================================================
+       4. SETUP SCREEN CONTROLLER (CHỌN LỚP, BÀI, SỐ CÂU)
+       ========================================================================== */
+    let selectedGrade = 12;
+    let selectedLessonId = 'all';
+    let selectedQCount = 10;
+
+    function initSetupScreen() {
+      document.getElementById('setupRoomCode').innerText = roomCode;
+      document.getElementById('modalRoomCode').innerText = roomCode;
+      document.getElementById('roomCodeDisplay').innerText = roomCode;
+
+      // QR Image URL
+      const buzzerUrl = window.location.origin + window.location.pathname + '?role=buzzer&room=' + roomCode;
+      const qrApiUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=' + encodeURIComponent(buzzerUrl);
+      document.getElementById('setupQrImg').src = qrApiUrl;
+      document.getElementById('qrImg').src = qrApiUrl;
+      document.getElementById('qrUrlInput').value = buzzerUrl;
+
+      // Default Grade 12
+      selectSetupGrade(12);
+    }
+
+    function selectSetupGrade(grade) {
+      selectedGrade = grade;
+      ['pillG12', 'pillG11', 'pillG10', 'pillGAll'].forEach(id => {
+        document.getElementById(id).classList.remove('active');
+      });
+      if (grade === 12) document.getElementById('pillG12').classList.add('active');
+      else if (grade === 11) document.getElementById('pillG11').classList.add('active');
+      else if (grade === 10) document.getElementById('pillG10').classList.add('active');
+      else document.getElementById('pillGAll').classList.add('active');
+
+      // Populate lesson dropdown
+      const select = document.getElementById('setupLessonSelect');
+      select.innerHTML = '';
+
+      if (grade === 'all') {
+        select.innerHTML = '<option value="all">🌟 Toàn Bộ Chương Trình (Tổng hợp cả 3 khối 10 - 11 - 12)</option>';
+        selectedLessonId = 'all';
+        updateQuestionCountPills();
+        return;
+      }
+
+      // Default all of grade
+      const optAll = document.createElement('option');
+      optAll.value = 'all';
+      optAll.innerText = `🌟 Toàn bộ các bài học Hoá Học ${grade} (Đảo ngẫu nhiên)`;
+      select.appendChild(optAll);
+
+      const meta = LESSON_METADATA[grade] || {};
+      for (let ch in meta) {
+        const grp = document.createElement('optgroup');
+        grp.label = ch;
+        meta[ch].forEach(item => {
+          const opt = document.createElement('option');
+          opt.value = item.id;
+          opt.innerText = item.title;
+          grp.appendChild(opt);
+        });
+        select.appendChild(grp);
+      }
+      selectedLessonId = 'all';
+      updateQuestionCountPills();
+    }
+
+    function onSetupLessonChange() {
+      selectedLessonId = document.getElementById('setupLessonSelect').value;
+      updateQuestionCountPills();
+    }
+
+    function updateQuestionCountPills() {
+      const container = document.getElementById('countPillsContainer');
+      const badge = document.getElementById('countInfoBadge');
+      if (!container) return;
+
+      if (selectedLessonId !== 'all') {
+        // Single lesson selected: exactly 10 questions SGK!
+        if (selectedQCount > 10) selectedQCount = 10;
+        if (selectedQCount !== 5 && selectedQCount !== 10) selectedQCount = 10;
+
+        container.innerHTML = `
+          <div class="btn-count-pill ${selectedQCount === 5 ? 'active' : ''}" onclick="selectQuestionCount(5, this)">5 Câu (Nhanh ⚡)</div>
+          <div class="btn-count-pill ${selectedQCount === 10 ? 'active' : ''}" onclick="selectQuestionCount(10, this)">10 Câu (Toàn Bộ Bài Học 🎯)</div>
+        `;
+        if (badge) {
+          badge.innerHTML = `💡 <span>Bài học này có <b>10 câu hỏi</b> chuẩn SGK. Đã tự động giới hạn số câu để không bị chọn nhầm vượt quá.</span>`;
+        }
+      } else {
+        // Multiple lessons / whole grade / all 3 grades
+        if (![5, 10, 15, 20, 30].includes(selectedQCount)) selectedQCount = 10;
+
+        const totalAvail = selectedGrade === 'all' ? 780 : (selectedGrade === 10 ? 230 : (selectedGrade === 11 ? 250 : 300));
+        const scopeText = selectedGrade === 'all' ? 'cả 3 khối 10 - 11 - 12 (78 bài)' : `toàn bộ các chương Khối ${selectedGrade}`;
+
+        container.innerHTML = `
+          <div class="btn-count-pill ${selectedQCount === 5 ? 'active' : ''}" onclick="selectQuestionCount(5, this)">5 Câu (Nhanh)</div>
+          <div class="btn-count-pill ${selectedQCount === 10 ? 'active' : ''}" onclick="selectQuestionCount(10, this)">10 Câu (Chuẩn)</div>
+          <div class="btn-count-pill ${selectedQCount === 15 ? 'active' : ''}" onclick="selectQuestionCount(15, this)">15 Câu</div>
+          <div class="btn-count-pill ${selectedQCount === 20 ? 'active' : ''}" onclick="selectQuestionCount(20, this)">20 Câu</div>
+          <div class="btn-count-pill ${selectedQCount === 30 ? 'active' : ''}" onclick="selectQuestionCount(30, this)">30 Câu (Đại Chiến)</div>
+        `;
+        if (badge) {
+          badge.innerHTML = `🌟 <span>Đã nạp <b>${totalAvail} câu hỏi</b> từ ${scopeText}. Thầy Cô có thể chọn số câu tuỳ ý.</span>`;
+        }
+      }
+    }
+
+    function selectQuestionCount(cnt, el) {
+      selectedQCount = cnt;
+      document.querySelectorAll('.btn-count-pill').forEach(b => b.classList.remove('active'));
+      if (el) el.classList.add('active');
+    }
+
+    function launchBattleFromSetup() {
+      const select = document.getElementById('setupLessonSelect');
+      selectedLessonId = select.value;
+
+      // Update Subtitle
+      const titleLabel = selectedLessonId === 'all' 
+        ? (selectedGrade === 'all' ? 'Toàn Diện 3 Khối' : `Khối ${selectedGrade} (Toàn bộ)`)
+        : `Lớp ${selectedGrade} • Bài ${selectedLessonId}`;
+      document.getElementById('arenaBattleSubTitle').innerText = titleLabel;
+
+      // Play 5.5s Opening Anthem!
+      playOpeningAnthem();
+
+      // Switch to Battle View
+      document.getElementById('setupView').style.display = 'none';
+      document.getElementById('battleView').style.display = 'flex';
+
+      // Load questions & start!
+      loadQuestionsForBattle(selectedGrade, selectedLessonId, selectedQCount);
+      renderTeams();
+      loadQuestion(0);
+      setupKeyboardListeners();
+    }
+
+    function backToSetupView() {
+      stopTimer();
+      document.getElementById('battleView').style.display = 'none';
+      document.getElementById('setupView').style.display = 'flex';
+    }
+
+    /* ==========================================================================
+       5. HOST GAME PLAY (MÀN HÌNH THI ĐẤU)
+       ========================================================================== */
+    let battleQuestions = [];
+    let currentQIdx = 0;
+    let timerInterval = null;
+    let timeLeft = 20;
+    let isTimerRunning = false;
+    let isBuzzerArmed = false;
+    let buzzedTeamId = null;
+
+    let teams = [
+      { id: 1, name: "TỔ 1 (PYTHAGORAS)", score: 100, avatar: "📐", color: "#38bdf8", isOnline: false, hasShield: false, hasStar: false },
+      { id: 2, name: "TỔ 2 (EUCLID)", score: 100, avatar: "📏", color: "#f59e0b", isOnline: false, hasShield: false, hasStar: false },
+      { id: 3, name: "TỔ 3 (ARCHIMEDES)", score: 100, avatar: "💡", color: "#10b981", isOnline: false, hasShield: false, hasStar: false },
+      { id: 4, name: "TỔ 4 (GAUSS)", score: 100, avatar: "👑", color: "#ec4899", isOnline: false, hasShield: false, hasStar: false }
+    ];
+
+    const mysteryRewards = [
+      { text: "🌟 Ngôi Sao Hy Vọng: Nhân đôi số điểm câu tiếp theo!", effect: t => t.hasStar = true },
+      { text: "🛡️ Khiên Bảo Vệ: Miễn nhiễm bị trừ điểm nếu trả lời sai ở câu sau!", effect: t => t.hasShield = true },
+      { text: "⚡ Tia Sét Tri Thức: Nhận ngay +30 điểm thưởng trực tiếp!", effect: t => t.score += 30 },
+      { text: "🎁 Quà May Mắn: Nhận ngay +20 điểm thưởng!", effect: t => t.score += 20 }
+    ];
+
+    function loadQuestionsForBattle(grade, lessonKey, count) {
+      battleQuestions = [];
+      if (typeof ARENA_QUESTIONS !== 'undefined') {
+        if (grade === 'all') {
+          [10, 11, 12].forEach(g => {
+            const gData = ARENA_QUESTIONS[g] || {};
+            for (let l in gData) battleQuestions.push(...gData[l]);
+          });
+        } else {
+          const gData = ARENA_QUESTIONS[grade] || {};
+          if (lessonKey === 'all') {
+            for (let l in gData) battleQuestions.push(...gData[l]);
+          } else if (gData[lessonKey]) {
+            battleQuestions = [...gData[lessonKey]];
+          }
+        }
+      }
+
+      if (battleQuestions.length === 0) {
+        battleQuestions = [
+          { q: "Đơn vị chuẩn của nhiệt nóng chảy riêng λ trong hệ SI là gì?", opts: ["J/kg", "J/(kg·K)", "J", "cal/g"], ans: 0, exp: "Nhiệt nóng chảy riêng λ = Q/m có đơn vị là J/kg." },
+          { q: "Theo định luật Boyle, khi thể tích giảm 3 lần ở nhiệt độ không đổi thì áp suất:", opts: ["Tăng 3 lần", "Giảm 3 lần", "Không đổi", "Tăng 9 lần"], ans: 0, exp: "Áp suất tỉ lệ nghịch với thể tích." }
+        ];
+      }
+
+      const maxAvail = battleQuestions.length;
+      const finalCount = Math.min(count, maxAvail);
+      battleQuestions = shuffleArray(battleQuestions).slice(0, finalCount);
+    }
+
+    function shuffleArray(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function renderTeams() {
+      const grid = document.getElementById('teamsGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      
+      const sorted = [...teams].sort((a, b) => b.score - a.score);
+
+      teams.forEach(team => {
+        const rank = sorted.findIndex(t => t.id === team.id) + 1;
+        const card = document.createElement('div');
+        card.className = `team-card team-${team.id}`;
+        card.id = `teamCard_${team.id}`;
+        if (buzzedTeamId === team.id) card.classList.add('buzzed');
+
+        card.innerHTML = `
+          <div>
+            <div class="team-header">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="team-avatar">${team.avatar}</span>
+                <div>
+                  <span class="team-name">${team.name}</span>
+                  <div class="team-status-indicator ${team.isOnline ? 'online' : 'offline'}">
+                    <span>${team.isOnline ? '🟢' : '⚪'}</span> ${team.isOnline ? 'Điện thoại kết nối' : 'Chờ quét QR'}
+                  </div>
+                </div>
+              </div>
+              <span class="team-rank-badge">HẠNG #${rank}</span>
+            </div>
+            <div class="team-score">${team.score}</div>
+            <div class="team-badges-row">
+              ${team.hasStar ? '<span class="power-badge badge-star">⭐ x2 Điểm</span>' : ''}
+              ${team.hasShield ? '<span class="power-badge badge-shield">🛡️ Khiên</span>' : ''}
+            </div>
+          </div>
+          <div>
+            <div class="team-controls">
+              <button class="btn-team-score btn-plus" onclick="adjustScore(${team.id}, 10)">+10</button>
+              <button class="btn-team-score btn-plus" onclick="adjustScore(${team.id}, 20)">+20</button>
+              <button class="btn-team-score btn-minus" onclick="adjustScore(${team.id}, -10)">-10</button>
+            </div>
+            <button class="btn-buzzer-team" onclick="triggerBuzzer(${team.id})">
+              🔔 Giành Chuông (Phím ${team.id})
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function loadQuestion(idx) {
+      if (idx >= battleQuestions.length) {
+        openVictoryPodium();
+        return;
+      }
+      currentQIdx = idx;
+      const q = battleQuestions[idx];
+
+      isBuzzerArmed = false;
+      buzzedTeamId = null;
+      document.getElementById('buzzerAlert').classList.remove('show');
+      document.getElementById('explanationBox').classList.remove('show');
+      stopTimer();
+
+      broadcastMsg({ action: 'RESET_BUZZER' });
+
+      const round = idx < Math.ceil(battleQuestions.length * 0.3) ? 1 : (idx < Math.ceil(battleQuestions.length * 0.7) ? 2 : 3);
+      const points = round === 1 ? 20 : (round === 2 ? 30 : 40);
+
+      const roundTag = document.getElementById('roundTag');
+      roundTag.className = `round-tag round-${round}`;
+      roundTag.innerHTML = `<span>⚡</span> VÒNG ${round}: ${round === 1 ? 'KHỞI ĐỘNG' : (round === 2 ? 'TĂNG TỐC' : 'VỀ ĐÍCH')}`;
+
+      document.getElementById('qPointBadge').innerText = `+${points} ĐIỂM`;
+      document.getElementById('qTitle').innerHTML = `Câu ${idx + 1}/${battleQuestions.length}: ${q.q}`;
+
+      const imgWrap = document.getElementById('qImgWrap');
+      if (q.svgGraph) {
+        imgWrap.innerHTML = q.svgGraph;
+        imgWrap.style.display = 'flex';
+      } else {
+        imgWrap.style.display = 'none';
+      }
+
+      const grid = document.getElementById('optionsGrid');
+      grid.innerHTML = '';
+      const prefixes = ['A', 'B', 'C', 'D'];
+      (q.opts || []).forEach((opt, oIdx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.id = `optBtn_${oIdx}`;
+        btn.innerHTML = `
+          <div class="option-prefix">${prefixes[oIdx]}</div>
+          <div style="flex: 1; line-height: 1.4;">${opt}</div>
+        `;
+        btn.onclick = () => selectOption(oIdx);
+        grid.appendChild(btn);
+      });
+
+      timeLeft = round === 1 ? 20 : (round === 2 ? 15 : 30);
+      updateTimerDisplay();
+      renderTeams();
+    }
+
+    function selectOption(oIdx) {
+      const q = battleQuestions[currentQIdx];
+      const optBtn = document.getElementById(`optBtn_${oIdx}`);
+      if (!optBtn) return;
+
+      if (oIdx === q.ans) {
+        optBtn.classList.add('correct');
+        playVictoryFanfare5s(); // 5+ SECONDS VICTORY SOUND
+        triggerConfetti(60);
+        if (buzzedTeamId) {
+          const team = teams.find(t => t.id === buzzedTeamId);
+          const pts = currentQIdx < 3 ? 20 : (currentQIdx < 7 ? 30 : 40);
+          let earned = pts;
+          if (team.hasStar) { earned *= 2; team.hasStar = false; }
+          team.score += earned;
+          renderTeams();
+        }
+      } else {
+        optBtn.classList.add('wrong');
+        soundWrong();
+        if (buzzedTeamId) {
+          const team = teams.find(t => t.id === buzzedTeamId);
+          const pts = currentQIdx < 3 ? 20 : (currentQIdx < 7 ? 30 : 40);
+          if (!team.hasShield) {
+            team.score = Math.max(0, team.score - Math.floor(pts / 2));
+          } else {
+            team.hasShield = false;
+          }
+          renderTeams();
+        }
+      }
+      revealAnswer();
+    }
+
+    function revealAnswer() {
+      const q = battleQuestions[currentQIdx];
+      const correctBtn = document.getElementById(`optBtn_${q.ans}`);
+      if (correctBtn) correctBtn.classList.add('correct');
+
+      const expBox = document.getElementById('explanationBox');
+      document.getElementById('explanationContent').innerHTML = q.exp || 'Đã xác nhận kết quả!';
+      expBox.classList.add('show');
+      stopTimer();
+    }
+
+    function activateBuzzer() {
+      isBuzzerArmed = true;
+      buzzedTeamId = null;
+      document.getElementById('buzzerAlert').classList.remove('show');
+      renderTeams();
+      startTimer();
+
+      broadcastMsg({ action: 'ARM_BUZZER' });
+    }
+
+    function triggerBuzzer(teamId) {
+      if (buzzedTeamId !== null) return;
+      buzzedTeamId = teamId;
+      isBuzzerArmed = false;
+      stopTimer();
+      
+      // TRIGGER EXTREME STIMULATING BUZZER SOUND!
+      soundExtremeBuzzer();
+
+      const team = teams.find(t => t.id === teamId);
+      document.getElementById('buzzerTeamName').innerText = team.name;
+      document.getElementById('buzzerAlert').classList.add('show');
+      renderTeams();
+
+      broadcastMsg({ action: 'LOCK_BUZZER', winnerId: team.id, winnerName: team.name });
+    }
+
+    function judgeBuzzedTeam(isCorrect) {
+      const pts = currentQIdx < 3 ? 20 : (currentQIdx < 7 ? 30 : 40);
+      if (buzzedTeamId) {
+        const team = teams.find(t => t.id === buzzedTeamId);
+        if (isCorrect) {
+          let earned = pts;
+          if (team.hasStar) { earned *= 2; team.hasStar = false; }
+          team.score += earned;
+          playVictoryFanfare5s(); // 5+ SECONDS VICTORY
+          triggerConfetti(60);
+          revealAnswer();
+        } else {
+          if (!team.hasShield) {
+            team.score = Math.max(0, team.score - Math.floor(pts / 2));
+          } else {
+            team.hasShield = false;
+          }
+          soundWrong();
+          document.getElementById('buzzerAlert').classList.remove('show');
+          const lastBuzzed = buzzedTeamId;
+          buzzedTeamId = null;
+          isBuzzerArmed = true;
+          startTimer();
+          broadcastMsg({ action: 'ARM_BUZZER', excluded: [lastBuzzed] });
+        }
+        renderTeams();
+      }
+    }
+
+    function hostOnClientJoin(teamId) {
+      const team = teams.find(t => t.id === teamId);
+      if (team) {
+        team.isOnline = true;
+        renderTeams();
+        const chip = document.getElementById('setupStatus' + teamId);
+        if (chip) {
+          chip.classList.add('online');
+          chip.innerHTML = `${team.avatar} Tổ ${team.id}: 🟢 Đã kết nối`;
+        }
+      }
+    }
+
+    function hostOnClientBuzz(teamId, teamName) {
+      if (isBuzzerArmed && buzzedTeamId === null) {
+        triggerBuzzer(teamId);
+      }
+    }
+
+    function toggleTimer() {
+      if (isTimerRunning) stopTimer();
+      else startTimer();
+    }
+    function startTimer() {
+      isTimerRunning = true;
+      document.getElementById('btnTimer').innerHTML = '<span>⏸️</span> Tạm Dừng (Space)';
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        soundTick();
+        updateTimerDisplay();
+        if (timeLeft <= 0) {
+          stopTimer();
+          soundWrong();
+        }
+      }, 1000);
+    }
+    function stopTimer() {
+      isTimerRunning = false;
+      clearInterval(timerInterval);
+      document.getElementById('btnTimer').innerHTML = '<span>▶️</span> Tiếp Tục (Space)';
+    }
+    function updateTimerDisplay() {
+      const timerEl = document.getElementById('timerVal');
+      timerEl.innerText = timeLeft;
+      timerEl.className = 'timer-val';
+      if (timeLeft <= 5) timerEl.classList.add('danger');
+      else if (timeLeft <= 10) timerEl.classList.add('warning');
+    }
+
+    function adjustScore(teamId, delta) {
+      const team = teams.find(t => t.id === teamId);
+      if (team) {
+        team.score += delta;
+        renderTeams();
+        if (delta > 0) playTone(784, 0.2, 'triangle', 0.3);
+        else soundWrong();
+      }
+    }
+
+    function nextQuestion() {
+      loadQuestion(currentQIdx + 1);
+    }
+
+    function openQrModal() { document.getElementById('qrModal').classList.add('open'); }
+    function copyQrLink() {
+      const input = document.getElementById('qrUrlInput');
+      input.select();
+      document.execCommand('copy');
+      alert('Đã sao chép đường link!');
+    }
+    function openMysteryBoxModal() {
+      const resBox = document.getElementById('mysteryResult');
+      resBox.style.display = 'none';
+      document.querySelectorAll('.mystery-box-item').forEach(b => b.classList.remove('opened'));
+      document.getElementById('mysteryModal').classList.add('open');
+    }
+    function openBox(idx, el) {
+      if (el.classList.contains('opened')) return;
+      el.classList.add('opened');
+      playTone(880, 0.3, 'triangle', 0.4);
+      triggerConfetti();
+      const reward = mysteryRewards[idx % mysteryRewards.length];
+      if (buzzedTeamId) {
+        const team = teams.find(t => t.id === buzzedTeamId);
+        reward.effect(team);
+        renderTeams();
+      }
+      const resBox = document.getElementById('mysteryResult');
+      resBox.innerHTML = `🎉 ${reward.text}`;
+      resBox.style.display = 'block';
+    }
+
+    function openVictoryPodium() {
+      playVictoryFanfare5s(); // 5+ SECONDS VICTORY
+      triggerConfetti(100);
+      const sorted = [...teams].sort((a, b) => b.score - a.score);
+      document.getElementById('pName1').innerText = sorted[0].name;
+      document.getElementById('pScore1').innerText = sorted[0].score + ' đ';
+      document.getElementById('pName2').innerText = sorted[1].name;
+      document.getElementById('pScore2').innerText = sorted[1].score + ' đ';
+      document.getElementById('pName3').innerText = sorted[2].name;
+      document.getElementById('pScore3').innerText = sorted[2].score + ' đ';
+      document.getElementById('victoryModal').classList.add('open');
+    }
+
+    function resetBattle() {
+      teams.forEach(t => {
+        t.score = 100;
+        t.hasStar = false;
+        t.hasShield = false;
+      });
+      loadQuestionsForBattle(selectedGrade, selectedLessonId, selectedQCount);
+      loadQuestion(0);
+    }
+
+    function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
+      else document.exitFullscreen().catch(() => {});
+    }
+
+    function setupKeyboardListeners() {
+      window.addEventListener('keydown', e => {
+        if (e.key === ' ' || e.code === 'Space') { e.preventDefault(); toggleTimer(); }
+        else if (e.key === 'Enter') { revealAnswer(); }
+        else if (e.key === 'b' || e.key === 'B') { activateBuzzer(); }
+        else if (['1', '2', '3', '4'].includes(e.key)) { triggerBuzzer(parseInt(e.key)); }
+      });
+    }
+
+    /* ==========================================================================
+       6. CLIENT MOBILE BUZZER CONTROLLER
+       ========================================================================== */
+    let myTeamId = null;
+    let myTeamName = '';
+    let myTeamColor = '#38bdf8';
+    let clientBuzzerState = 'LOCKED';
+
+    function initClient() {
+      document.getElementById('setupView').style.display = 'none';
+      document.getElementById('battleView').style.display = 'none';
+      document.getElementById('buzzerView').style.display = 'flex';
+      document.getElementById('clientRoomLabel').innerText = roomCode;
+
+      const urlTeam = urlParams.get('team');
+      if (urlTeam) {
+        const teamObj = teams.find(t => t.id === parseInt(urlTeam));
+        if (teamObj) {
+          clientJoinTeam(teamObj.id, teamObj.name, teamObj.avatar, teamObj.color);
+          if (urlParams.get('state') === 'ready') {
+            clientOnBuzzerArmed();
+          }
+        }
+      } else {
+        const savedTeam = localStorage.getItem('VT_ARENA_TEAM_' + roomCode);
+        if (savedTeam) {
+          const t = JSON.parse(savedTeam);
+          clientJoinTeam(t.id, t.name, t.avatar, t.color);
+        }
+      }
+    }
+
+    function clientJoinTeam(id, name, avatar, color) {
+      myTeamId = id;
+      myTeamName = name;
+      myTeamColor = color;
+      localStorage.setItem('VT_ARENA_TEAM_' + roomCode, JSON.stringify({ id, name, avatar, color }));
+
+      document.getElementById('pickTeamScreen').style.display = 'none';
+      document.getElementById('activeBuzzerScreen').style.display = 'flex';
+      document.getElementById('clientActiveTeamName').innerText = `${avatar} ${name}`;
+      document.getElementById('clientActiveTeamName').style.color = color;
+
+      broadcastMsg({ action: 'CLIENT_JOIN', teamId: id });
+    }
+
+    function clientSwitchTeam() {
+      localStorage.removeItem('VT_ARENA_TEAM_' + roomCode);
+      document.getElementById('activeBuzzerScreen').style.display = 'none';
+      document.getElementById('pickTeamScreen').style.display = 'flex';
+    }
+
+    function clientOnBuzzerArmed(excluded = []) {
+      const btn = document.getElementById('giantBuzzerBtn');
+      if (excluded.includes(myTeamId)) {
+        btn.className = 'giant-buzzer-btn locked';
+        document.getElementById('buzzerIcon').innerText = '🔒';
+        document.getElementById('buzzerMainText').innerText = 'BỊ TRỪ ĐIỂM';
+        document.getElementById('buzzerSubText').innerText = 'Nhường quyền cho đội khác!';
+        clientBuzzerState = 'LOST';
+      } else {
+        btn.className = 'giant-buzzer-btn ready';
+        document.getElementById('buzzerIcon').innerText = '🔔';
+        document.getElementById('buzzerMainText').innerHTML = 'BẤM NGAY!<br>GIÀNH QUYỀN';
+        document.getElementById('buzzerSubText').innerText = 'Chạm thật nhanh vào đây!';
+        clientBuzzerState = 'READY';
+        if (navigator.vibrate) navigator.vibrate([70]);
+      }
+    }
+
+    function clientOnBuzzerLocked(winnerId, winnerName) {
+      const btn = document.getElementById('giantBuzzerBtn');
+      if (winnerId === myTeamId) {
+        btn.className = 'giant-buzzer-btn won';
+        document.getElementById('buzzerIcon').innerText = '🎉';
+        document.getElementById('buzzerMainText').innerHTML = 'ĐÃ GIÀNH QUYỀN!';
+        document.getElementById('buzzerSubText').innerText = 'Mời tổ bạn trả lời!';
+        clientBuzzerState = 'WON';
+        playVictoryFanfare5s();
+        triggerConfetti(40);
+        if (navigator.vibrate) navigator.vibrate([100, 50, 150]);
+      } else {
+        btn.className = 'giant-buzzer-btn locked';
+        document.getElementById('buzzerIcon').innerText = '🔒';
+        document.getElementById('buzzerMainText').innerText = winnerName.split(' ')[0] + ' ĐÃ BẤM!';
+        document.getElementById('buzzerSubText').innerText = 'Đang nghe đối thủ trả lời...';
+        clientBuzzerState = 'LOST';
+      }
+    }
+
+    function clientOnBuzzerReset() {
+      const btn = document.getElementById('giantBuzzerBtn');
+      btn.className = 'giant-buzzer-btn locked';
+      document.getElementById('buzzerIcon').innerText = '⏳';
+      document.getElementById('buzzerMainText').innerHTML = 'CHỜ THẦY/CÔ<br>MỞ CHUÔNG...';
+      document.getElementById('buzzerSubText').innerText = 'Giữ bình tĩnh và tập trung!';
+      clientBuzzerState = 'LOCKED';
+    }
+
+    function clientTriggerBuzz() {
+      if (clientBuzzerState !== 'READY') return;
+      soundExtremeBuzzer();
+      if (navigator.vibrate) navigator.vibrate([100]);
+
+      broadcastMsg({ action: 'CLIENT_BUZZ', teamId: myTeamId, teamName: myTeamName, timestamp: Date.now() });
+    }
+
+    /* Confetti Engine */
+    const canvas = document.getElementById('confettiCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function triggerConfetti(count = 50) {
+      const colors = ['#38bdf8', '#f59e0b', '#10b981', '#ec4899', '#a855f7'];
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: canvas.width / 2 + (Math.random() - 0.5) * 200,
+          y: canvas.height * 0.4,
+          vx: (Math.random() - 0.5) * 12,
+          vy: (Math.random() - 0.8) * 14,
+          size: Math.random() * 8 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rotation: Math.random() * 360,
+          rotSpeed: (Math.random() - 0.5) * 10
+        });
+      }
+    }
+    function renderConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p, idx) => {
+        p.x += p.vx; p.y += p.vy; p.vy += 0.35; p.rotation += p.rotSpeed;
+        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate((p.rotation * Math.PI) / 180);
+        ctx.fillStyle = p.color; ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+        ctx.restore();
+        if (p.y > canvas.height) particles.splice(idx, 1);
+      });
+      requestAnimationFrame(renderConfetti);
+    }
+    renderConfetti();
+
+    /* App Start */
+    window.addEventListener('DOMContentLoaded', () => {
+      initRealtime();
+      if (isClientBuzzer) {
+        initClient();
+      } else {
+        initSetupScreen();
+        if (urlParams.get('test') === 'battle') {
+          setTimeout(() => {
+            launchBattleFromSetup();
+          }, 300);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#070a14">
+  <title>Chuông Bấm Đấu Trường Hoá Học • Wireless Buzzer</title>
+  
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- MQTT Library for real-time wireless websocket buzzer -->
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+
+  <style>
+    :root {
+      --bg: #070a14;
+      --card-bg: rgba(18, 25, 44, 0.95);
+      --primary: #38bdf8;
+      --success: #10b981;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+      --font-family: 'Plus Jakarta Sans', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    }
+
+    *, button, input, select, textarea {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-user-select: none;
+      font-family: var(--font-family);
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      overflow: hidden;
+      background: radial-gradient(circle at top, #1e1b4b 0%, #090d16 60%, #030712 100%);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* TOP STATUS BAR */
+    .buzzer-header {
+      padding: env(safe-area-inset-top, 12px) 16px 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 20;
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      background: linear-gradient(135deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .header-room {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #38bdf8;
+      letter-spacing: 0.5px;
+    }
+    .btn-reselect {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #cbd5e1;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* MAIN CONTAINER */
+    .buzzer-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      position: relative;
+    }
+
+    /* VIEW 1: ENTER ROOM CODE (IF NOT IN URL) */
+    #viewEnterRoom {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 360px;
+      text-align: center;
+    }
+    .input-room {
+      width: 100%;
+      background: rgba(30, 41, 59, 0.8);
+      border: 2px solid #38bdf8;
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 800;
+      text-align: center;
+      padding: 12px;
+      border-radius: 16px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin: 16px 0;
+      outline: none;
+    }
+    .btn-connect {
+      width: 100%;
+      background: linear-gradient(135deg, #38bdf8, #2563eb);
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 16px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    /* VIEW 2: PICK TEAM */
+    #viewPickTeam {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      max-width: 420px;
+    }
+    .pick-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .pick-sub {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .team-options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .btn-team-pick {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-radius: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      background: var(--card-bg);
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.15s, border-color 0.15s;
+    }
+    .btn-team-pick:active {
+      transform: scale(0.97);
+    }
+    .btn-team-pick.t1 { border-color: rgba(56, 189, 248, 0.4); }
+    .btn-team-pick.t2 { border-color: rgba(245, 158, 11, 0.4); }
+    .btn-team-pick.t3 { border-color: rgba(16, 185, 129, 0.4); }
+    .btn-team-pick.t4 { border-color: rgba(236, 72, 153, 0.4); }
+    .btn-team-pick .team-info-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-team-pick .team-avatar { font-size: 1.8rem; }
+    .btn-team-pick .team-name { font-size: 1.05rem; font-weight: 800; }
+    .btn-team-pick .team-arrow { font-size: 1.2rem; color: #64748b; }
+
+    /* VIEW 3: ACTIVE BUZZER */
+    #viewActiveBuzzer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      max-width: 500px;
+      padding: 10px 0 env(safe-area-inset-bottom, 16px) 0;
+    }
+    .active-team-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      border-radius: 30px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.95rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    /* GIANT BUZZER BUTTON */
+    .giant-buzzer-container {
+      width: 100%;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 0;
+    }
+    .giant-buzzer-btn {
+      width: min(78vw, 320px);
+      height: min(78vw, 320px);
+      border-radius: 50%;
+      border: none;
+      outline: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+      -webkit-tap-highlight-color: transparent;
+    }
+    .giant-buzzer-btn:active {
+      transform: scale(0.92);
+    }
+
+    /* BUZZER STATES */
+    /* 1. LOCKED / WAITING */
+    .giant-buzzer-btn.locked {
+      background: radial-gradient(circle at 35% 35%, #334155, #0f172a);
+      border: 8px solid rgba(148, 163, 184, 0.3);
+      color: #94a3b8;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+    }
+    .giant-buzzer-btn.locked .buzzer-icon { font-size: 3.5rem; opacity: 0.6; }
+    .giant-buzzer-btn.locked .buzzer-main-text { font-size: 1.15rem; font-weight: 800; color: #cbd5e1; margin-top: 6px; }
+    .giant-buzzer-btn.locked .buzzer-sub-text { font-size: 0.8rem; color: #64748b; margin-top: 4px; }
+
+    /* 2. READY / ARMED (PULSATING GREEN) */
+    .giant-buzzer-btn.ready {
+      background: radial-gradient(circle at 35% 35%, #34d399, #059669);
+      border: 8px solid #a7f3d0;
+      color: #ffffff;
+      animation: pulseGreen 1.2s infinite ease-in-out;
+      box-shadow: 0 0 50px rgba(16, 185, 129, 0.7);
+    }
+    @keyframes pulseGreen {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 40px rgba(16, 185, 129, 0.6); }
+      50% { transform: scale(1.04); box-shadow: 0 0 70px rgba(16, 185, 129, 0.95); }
+    }
+    .giant-buzzer-btn.ready .buzzer-icon { font-size: 4rem; animation: shakeBell 0.6s infinite alternate; }
+    @keyframes shakeBell {
+      0% { transform: rotate(-15deg); }
+      100% { transform: rotate(15deg); }
+    }
+    .giant-buzzer-btn.ready .buzzer-main-text { font-size: 1.5rem; font-weight: 900; letter-spacing: 0.5px; text-shadow: 0 2px 4px rgba(0,0,0,0.4); }
+    .giant-buzzer-btn.ready .buzzer-sub-text { font-size: 0.85rem; font-weight: 700; color: #ecfdf5; margin-top: 4px; }
+
+    /* 3. WON (GOLDEN / CYAN) */
+    .giant-buzzer-btn.won {
+      background: radial-gradient(circle at 35% 35%, #38bdf8, #2563eb);
+      border: 8px solid #bae6fd;
+      color: #ffffff;
+      box-shadow: 0 0 60px rgba(56, 189, 248, 0.9);
+    }
+    .giant-buzzer-btn.won .buzzer-icon { font-size: 4rem; }
+    .giant-buzzer-btn.won .buzzer-main-text { font-size: 1.35rem; font-weight: 900; }
+    .giant-buzzer-btn.won .buzzer-sub-text { font-size: 0.85rem; font-weight: 700; color: #e0f2fe; }
+
+    /* 4. LOST / OTHER TEAM BUZZED */
+    .giant-buzzer-btn.lost {
+      background: radial-gradient(circle at 35% 35%, #ef4444, #991b1b);
+      border: 8px solid rgba(254, 202, 202, 0.4);
+      color: #ffffff;
+      box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4);
+    }
+    .giant-buzzer-btn.lost .buzzer-icon { font-size: 3.5rem; }
+    .giant-buzzer-btn.lost .buzzer-main-text { font-size: 1.15rem; font-weight: 900; }
+    .giant-buzzer-btn.lost .buzzer-sub-text { font-size: 0.8rem; color: #fecaca; }
+
+    /* FOOTER HINT */
+    .buzzer-footer-hint {
+      text-align: center;
+      font-size: 0.78rem;
+      color: #64748b;
+      padding: 0 16px;
+    }
+
+    #confettiCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="confettiCanvas"></canvas>
+
+  <header class="buzzer-header">
+    <div class="header-logo">
+      <span>🧪</span>
+      <span>ĐẤU TRƯỜNG HOÁ HỌC</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-room" id="headerRoomBadge">HOA----</div>
+      <button class="btn-reselect" onclick="clientSwitchTeam()" title="Đổi tổ">Đổi Tổ</button>
+    </div>
+  </header>
+
+  <main class="buzzer-main">
+    <!-- 1. VIEW ENTER ROOM CODE -->
+    <div id="viewEnterRoom">
+      <div style="font-size: 2.8rem; margin-bottom: 8px;">📲</div>
+      <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 6px;">Nhập Mã Phòng</h2>
+      <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 12px;">Nhìn mã phòng 4 chữ số trên màn hình máy chiếu</p>
+      <input type="text" class="input-room" id="inputRoomCode" placeholder="HOA1234" maxlength="8" />
+      <button class="btn-connect" onclick="connectWithInputRoom()">VÀO PHÒNG THI ĐẤU ➔</button>
+    </div>
+
+    <!-- 2. VIEW PICK TEAM -->
+    <div id="viewPickTeam">
+      <h2 class="pick-title">CHỌN TỔ CỦA BẠN</h2>
+      <p class="pick-sub">Chọn đúng tổ được phân công để cùng tính điểm</p>
+      <div class="team-options-grid">
+        <div class="btn-team-pick t1" onclick="clientJoinTeam(1, 'TỔ 1 (MENDELEEV)', '🧪', '#38bdf8')">
+          <div class="team-info-left">
+            <span class="team-avatar">🧪</span>
+            <span class="team-name" style="color: #38bdf8;">TỔ 1 (MENDELEEV)</span>
+          </div>
+          <span class="team-arrow">➔</span>
+        </div>
+        <div class="btn-team-pick t2" onclick="clientJoinTeam(2, 'TỔ 2 (LAVOISIER)', '🔥', '#f59e0b')">
+          <div class="team-info-left">
+            <span class="team-avatar">🔥</span>
+            <span class="team-name" style="color: #f59e0b;">TỔ 2 (LAVOISIER)</span>
+          </div>
+          <span class="team-arrow">➔</span>
+        </div>
+        <div class="btn-team-pick t3" onclick="clientJoinTeam(3, 'TỔ 3 (MARIE CURIE)', '⚛️', '#10b981')">
+          <div class="team-info-left">
+            <span class="team-avatar">⚛️</span>
+            <span class="team-name" style="color: #10b981;">TỔ 3 (MARIE CURIE)</span>
+          </div>
+          <span class="team-arrow">➔</span>
+        </div>
+        <div class="btn-team-pick t4" onclick="clientJoinTeam(4, 'TỔ 4 (PAULING)', '💎', '#ec4899')">
+          <div class="team-info-left">
+            <span class="team-avatar">💎</span>
+            <span class="team-name" style="color: #ec4899;">TỔ 4 (PAULING)</span>
+          </div>
+          <span class="team-arrow">➔</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. VIEW ACTIVE BUZZER -->
+    <div id="viewActiveBuzzer" style="display: none;">
+      <div class="active-team-chip">
+        <span id="activeTeamAvatar">🧪</span>
+        <span id="activeTeamName">TỔ 1 (MENDELEEV)</span>
+      </div>
+
+      <div class="giant-buzzer-container">
+        <button class="giant-buzzer-btn locked" id="giantBuzzerBtn" onclick="clientTriggerBuzz()">
+          <div class="buzzer-icon" id="buzzerIcon">⏳</div>
+          <div class="buzzer-main-text" id="buzzerMainText">CHỜ MỞ CHUÔNG...</div>
+          <div class="buzzer-sub-text" id="buzzerSubText">Sẵn sàng phản xạ thật nhanh!</div>
+        </button>
+      </div>
+
+      <div class="buzzer-footer-hint">
+        ⚡ <b>Mẹo thi đấu:</b> Khi giáo viên đọc xong câu hỏi và mở chuông, nút sẽ chuyển sang <b>MÀU XANH</b>. Chạm thật nhanh để giành quyền trả lời!
+      </div>
+    </div>
+  </main>
+
+  <script>
+    /* Web Audio Engine */
+    let audioCtx = null;
+    function ensureAudio() {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+    }
+
+    // Gameshow 3-tier Buzzer Sound
+    function soundExtremeBuzzer() {
+      ensureAudio();
+      const now = audioCtx.currentTime;
+      // 1. Sub-punch kick
+      const kickOsc = audioCtx.createOscillator();
+      const kickGain = audioCtx.createGain();
+      kickOsc.type = 'sine';
+      kickOsc.frequency.setValueAtTime(220, now);
+      kickOsc.frequency.exponentialRampToValueAtTime(45, now + 0.18);
+      kickGain.gain.setValueAtTime(0.7, now);
+      kickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+      kickOsc.connect(kickGain); kickGain.connect(audioCtx.destination);
+      kickOsc.start(now); kickOsc.stop(now + 0.2);
+
+      // 2. Laser sweep
+      const laserOsc = audioCtx.createOscillator();
+      const laserGain = audioCtx.createGain();
+      laserOsc.type = 'sawtooth';
+      laserOsc.frequency.setValueAtTime(900, now);
+      laserOsc.frequency.linearRampToValueAtTime(1750, now + 0.08);
+      laserOsc.frequency.exponentialRampToValueAtTime(750, now + 0.25);
+      laserGain.gain.setValueAtTime(0.55, now);
+      laserGain.gain.exponentialRampToValueAtTime(0.001, now + 0.28);
+      laserOsc.connect(laserGain); laserGain.connect(audioCtx.destination);
+      laserOsc.start(now); laserOsc.stop(now + 0.28);
+
+      // 3. Metallic gong bell
+      [880, 1320, 1760].forEach((freq, i) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now);
+        const g = 0.28 / (i + 1);
+        gain.gain.setValueAtTime(g, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.2);
+        osc.connect(gain); gain.connect(audioCtx.destination);
+        osc.start(now); osc.stop(now + 1.2);
+      });
+    }
+
+    function playVictoryFanfare5s() {
+      ensureAudio();
+      const now = audioCtx.currentTime;
+      const notes = [
+        { f: 523.25, t: 0.0, d: 0.3 },
+        { f: 659.25, t: 0.15, d: 0.3 },
+        { f: 783.99, t: 0.3, d: 0.3 },
+        { f: 1046.50, t: 0.45, d: 0.6 },
+        { f: 1318.51, t: 0.75, d: 0.8 },
+        { f: 880.00, t: 1.4, d: 0.4 },
+        { f: 1046.50, t: 1.8, d: 0.8 },
+        { f: 1318.51, t: 2.4, d: 1.5 },
+        { f: 1567.98, t: 2.4, d: 1.5 }
+      ];
+      notes.forEach(n => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(n.f, now + n.t);
+        gain.gain.setValueAtTime(0.25, now + n.t);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + n.t + n.d);
+        osc.connect(gain); gain.connect(audioCtx.destination);
+        osc.start(now + n.t); osc.stop(now + n.t + n.d);
+      });
+    }
+
+    /* Communication & State */
+    const urlParams = new URLSearchParams(window.location.search);
+    let roomCode = (urlParams.get('room') || '').trim().toUpperCase();
+    let myTeamId = null;
+    let myTeamName = '';
+    let myTeamColor = '#38bdf8';
+    let clientBuzzerState = 'LOCKED';
+
+    let mqttClient = null;
+    let bc = null;
+    let topic = '';
+
+    function initNetwork() {
+      if (!roomCode) {
+        showView('viewEnterRoom');
+        return;
+      }
+
+      document.getElementById('headerRoomBadge').innerText = roomCode;
+      topic = 'hoahoc-arena/' + roomCode;
+      bc = ('BroadcastChannel' in window) ? new BroadcastChannel('hoahoc_arena_' + roomCode) : null;
+      if (bc) {
+        bc.onmessage = e => handleIncoming(e.data);
+      }
+
+      try {
+        if (typeof mqtt !== 'undefined') {
+          mqttClient = mqtt.connect('wss://broker.emqx.io:8084/mqtt', {
+            clientId: 'arena_buzzer_' + Math.random().toString(16).substring(2, 8),
+            clean: true,
+            connectTimeout: 4000
+          });
+          mqttClient.on('connect', () => {
+            mqttClient.subscribe(topic);
+            if (myTeamId) broadcastMsg({ action: 'CLIENT_JOIN', teamId: myTeamId });
+          });
+          mqttClient.on('message', (t, msg) => {
+            try { handleIncoming(JSON.parse(msg.toString())); } catch(e) {}
+          });
+        }
+      } catch(e) {}
+
+      // Check query param team or saved team
+      const qTeam = urlParams.get('team');
+      if (qTeam) {
+        const teamsMap = {
+          1: { name: 'TỔ 1 (MENDELEEV)', avatar: '🧪', color: '#38bdf8' },
+          2: { name: 'TỔ 2 (LAVOISIER)', avatar: '🔥', color: '#f59e0b' },
+          3: { name: 'TỔ 3 (MARIE CURIE)', avatar: '⚛️', color: '#10b981' },
+          4: { name: 'TỔ 4 (PAULING)', avatar: '💎', color: '#ec4899' }
+        };
+        const t = teamsMap[parseInt(qTeam)];
+        if (t) {
+          clientJoinTeam(parseInt(qTeam), t.name, t.avatar, t.color);
+          return;
+        }
+      }
+
+      const savedTeam = localStorage.getItem('HOA_ARENA_TEAM_' + roomCode);
+      if (savedTeam) {
+        try {
+          const t = JSON.parse(savedTeam);
+          clientJoinTeam(t.id, t.name, t.avatar, t.color);
+          return;
+        } catch(e) {}
+      }
+      showView('viewPickTeam');
+    }
+
+    function connectWithInputRoom() {
+      const inp = document.getElementById('inputRoomCode').value.trim().toUpperCase();
+      if (!inp) { alert('Vui lòng nhập mã phòng!'); return; }
+      roomCode = inp;
+      initNetwork();
+    }
+
+    function showView(viewId) {
+      document.getElementById('viewEnterRoom').style.display = 'none';
+      document.getElementById('viewPickTeam').style.display = 'none';
+      document.getElementById('viewActiveBuzzer').style.display = 'none';
+      document.getElementById(viewId).style.display = 'flex';
+    }
+
+    function broadcastMsg(data) {
+      if (bc) bc.postMessage(data);
+      if (mqttClient && mqttClient.connected) {
+        mqttClient.publish(topic, JSON.stringify(data));
+      }
+    }
+
+    function handleIncoming(data) {
+      if (!data) return;
+      if (data.action === 'ARM_BUZZER') onBuzzerArmed(data.excluded || []);
+      else if (data.action === 'LOCK_BUZZER') onBuzzerLocked(data.winnerId, data.winnerName);
+      else if (data.action === 'RESET_BUZZER') onBuzzerReset();
+    }
+
+    function clientJoinTeam(id, name, avatar, color) {
+      myTeamId = id;
+      myTeamName = name;
+      myTeamColor = color;
+      localStorage.setItem('HOA_ARENA_TEAM_' + roomCode, JSON.stringify({ id, name, avatar, color }));
+
+      document.getElementById('activeTeamAvatar').innerText = avatar;
+      document.getElementById('activeTeamName').innerText = name;
+      document.getElementById('activeTeamName').style.color = color;
+      showView('viewActiveBuzzer');
+
+      broadcastMsg({ action: 'CLIENT_JOIN', teamId: id });
+    }
+
+    function clientSwitchTeam() {
+      localStorage.removeItem('HOA_ARENA_TEAM_' + roomCode);
+      showView('viewPickTeam');
+    }
+
+    function onBuzzerArmed(excluded = []) {
+      const btn = document.getElementById('giantBuzzerBtn');
+      if (excluded.includes(myTeamId)) {
+        btn.className = 'giant-buzzer-btn lost';
+        document.getElementById('buzzerIcon').innerText = '🔒';
+        document.getElementById('buzzerMainText').innerText = 'BỊ TRỪ ĐIỂM';
+        document.getElementById('buzzerSubText').innerText = 'Nhường quyền cho đội khác!';
+        clientBuzzerState = 'LOST';
+      } else {
+        btn.className = 'giant-buzzer-btn ready';
+        document.getElementById('buzzerIcon').innerText = '🔔';
+        document.getElementById('buzzerMainText').innerHTML = 'BẤM NGAY!<br>GIÀNH QUYỀN';
+        document.getElementById('buzzerSubText').innerText = 'Chạm thật nhanh vào đây!';
+        clientBuzzerState = 'READY';
+        if (navigator.vibrate) navigator.vibrate([70]);
+      }
+    }
+
+    function onBuzzerLocked(winnerId, winnerName) {
+      const btn = document.getElementById('giantBuzzerBtn');
+      if (winnerId === myTeamId) {
+        btn.className = 'giant-buzzer-btn won';
+        document.getElementById('buzzerIcon').innerText = '🎉';
+        document.getElementById('buzzerMainText').innerHTML = 'ĐÃ GIÀNH QUYỀN!';
+        document.getElementById('buzzerSubText').innerText = 'Mời tổ bạn trả lời!';
+        clientBuzzerState = 'WON';
+        playVictoryFanfare5s();
+        triggerConfetti(45);
+        if (navigator.vibrate) navigator.vibrate([100, 50, 150]);
+      } else {
+        btn.className = 'giant-buzzer-btn lost';
+        document.getElementById('buzzerIcon').innerText = '🔒';
+        document.getElementById('buzzerMainText').innerText = (winnerName || 'ĐỐI THỦ').split(' ')[0] + ' ĐÃ BẤM!';
+        document.getElementById('buzzerSubText').innerText = 'Đang nghe đối thủ trả lời...';
+        clientBuzzerState = 'LOST';
+      }
+    }
+
+    function onBuzzerReset() {
+      const btn = document.getElementById('giantBuzzerBtn');
+      btn.className = 'giant-buzzer-btn locked';
+      document.getElementById('buzzerIcon').innerText = '⏳';
+      document.getElementById('buzzerMainText').innerHTML = 'CHỜ THẦY/CÔ<br>MỞ CHUÔNG...';
+      document.getElementById('buzzerSubText').innerText = 'Giữ bình tĩnh và tập trung!';
+      clientBuzzerState = 'LOCKED';
+    }
+
+    function clientTriggerBuzz() {
+      if (clientBuzzerState !== 'READY') return;
+      soundExtremeBuzzer();
+      if (navigator.vibrate) navigator.vibrate([100]);
+
+      broadcastMsg({
+        action: 'CLIENT_BUZZ',
+        teamId: myTeamId,
+        teamName: myTeamName,
+        timestamp: Date.now()
+      });
+    }
+
+    /* Confetti Engine */
+    const canvas = document.getElementById('confettiCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function triggerConfetti(count = 40) {
+      const colors = ['#38bdf8', '#f59e0b', '#10b981', '#ec4899', '#a855f7'];
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: canvas.width / 2 + (Math.random() - 0.5) * 160,
+          y: canvas.height * 0.45,
+          vx: (Math.random() - 0.5) * 10,
+          vy: (Math.random() - 0.8) * 12,
+          size: Math.random() * 8 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rotation: Math.random() * 360,
+          rotSpeed: (Math.random() - 0.5) * 10
+        });
+      }
+    }
+    function renderConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p, idx) => {
+        p.x += p.vx; p.y += p.vy; p.vy += 0.35; p.rotation += p.rotSpeed;
+        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate((p.rotation * Math.PI) / 180);
+        ctx.fillStyle = p.color; ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+        ctx.restore();
+        if (p.y > canvas.height) particles.splice(idx, 1);
+      });
+      requestAnimationFrame(renderConfetti);
+    }
+    renderConfetti();
+
+    window.addEventListener('DOMContentLoaded', initNetwork);
+  </script>
+</body>
+</html>

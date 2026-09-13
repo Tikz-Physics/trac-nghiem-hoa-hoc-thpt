@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes" />
+  <title>Hệ Thống Trắc Nghiệm Tương Tác Hoá Học THPT | Thầy Trần Mạnh Tùng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#070a14" />
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <link rel="apple-touch-icon" href="./icon.svg">
+  <style>
+    :root {
+      --bg: #070a14;
+      --surface: rgba(18, 25, 44, 0.85);
+      --border: rgba(255, 255, 255, 0.12);
+      --primary: #38bdf8;
+      --accent1: #818cf8;
+      --accent2: #34d399;
+      --accent3: #f43f5e;
+      --text: #ffffff;
+      --text-sub: #94a3b8;
+      --font-family: 'Plus Jakarta Sans', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    }
+    *, button, input, select, textarea {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-family) !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #070a14 70%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px 40px;
+    }
+    .header-banner {
+      text-align: center;
+      max-width: 960px;
+      margin-bottom: 28px;
+    }
+    .badge-teacher {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 6px 18px;
+      border-radius: 999px;
+      color: #38bdf8;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      font-weight: 900;
+      line-height: 1.25;
+      background: linear-gradient(135deg, #ffffff 0%, #bae6fd 60%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    .sub-title {
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+      color: var(--text-sub);
+      line-height: 1.5;
+    }
+
+    /* PWA Install & Offline Styles */
+    .pwa-controls-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 18px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-pwa-install {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 22px;
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 0.92rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
+      transition: all 0.25s ease;
+      animation: pwaPulse 2.5s infinite;
+    }
+    .btn-pwa-install:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 8px 25px rgba(56, 189, 248, 0.6);
+    }
+    @keyframes pwaPulse {
+      0%, 100% { box-shadow: 0 0 15px rgba(56, 189, 248, 0.3); }
+      50% { box-shadow: 0 0 25px rgba(56, 189, 248, 0.7); }
+    }
+    .offline-status-badge {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid #f59e0b;
+      color: #fbbf24;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: 999px;
+    }
+    .offline-status-badge.active { display: inline-flex; }
+
+    /* Arena Feature Card */
+    .arena-feature-card {
+      width: 100%;
+      max-width: 1080px;
+      background: radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.18) 0%, rgba(15, 23, 42, 0.85) 60%), #0f172a;
+      border: 1.5px solid rgba(245, 158, 11, 0.45);
+      border-radius: 22px;
+      padding: 24px 30px;
+      margin-bottom: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(245, 158, 11, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    @media (max-width: 800px) {
+      .arena-feature-card { flex-direction: column; align-items: stretch; text-align: center; }
+    }
+    .arena-badge {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid #f59e0b;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .arena-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #f59e0b, #ef4444, #f43f5e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .arena-desc {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+      max-width: 680px;
+    }
+    .btn-enter-arena {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #000000;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 1.05rem;
+      padding: 14px 26px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-shrink: 0;
+      box-shadow: 0 8px 22px rgba(245, 158, 11, 0.45);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-enter-arena:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 12px 28px rgba(245, 158, 11, 0.65);
+      filter: brightness(1.1);
+    }
+
+    /* 3 Grades Grid */
+    .grades-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 22px;
+      width: 100%;
+      max-width: 1080px;
+      margin-bottom: 36px;
+    }
+    .grade-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      color: inherit;
+    }
+    .grade-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+    .grade-card.card-10:hover { border-color: #38bdf8; box-shadow: 0 15px 35px rgba(56, 189, 248, 0.25); }
+    .grade-card.card-11:hover { border-color: #34d399; box-shadow: 0 15px 35px rgba(52, 211, 153, 0.25); }
+    .grade-card.card-12:hover { border-color: #f43f5e; box-shadow: 0 15px 35px rgba(244, 63, 94, 0.25); }
+
+    .grade-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .grade-pill {
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .card-10 .grade-pill { background: rgba(56, 189, 248, 0.18); color: #38bdf8; }
+    .card-11 .grade-pill { background: rgba(52, 211, 153, 0.18); color: #34d399; }
+    .card-12 .grade-pill { background: rgba(244, 63, 94, 0.18); color: #f43f5e; }
+
+    .grade-icon { font-size: 2.2rem; }
+    .grade-title { font-size: 1.5rem; font-weight: 900; margin-bottom: 6px; }
+    .grade-desc { font-size: 0.88rem; color: var(--text-sub); line-height: 1.5; margin-bottom: 18px; flex: 1; }
+
+    .stats-row {
+      display: flex;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+    }
+    .stat-item { flex: 1; text-align: center; }
+    .stat-num { font-size: 1.2rem; font-weight: 800; color: #f8fafc; }
+    .stat-label { font-size: 0.72rem; color: var(--text-sub); font-weight: 600; text-transform: uppercase; }
+
+    .grade-btn-group {
+      display: flex;
+      gap: 10px;
+    }
+    .btn-enter {
+      flex: 1.4;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-align: center;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      border: none;
+      text-decoration: none;
+    }
+    .card-10 .btn-enter { background: linear-gradient(135deg, #0284c7, #38bdf8); color: #ffffff; }
+    .card-11 .btn-enter { background: linear-gradient(135deg, #059669, #34d399); color: #ffffff; }
+    .card-12 .btn-enter { background: linear-gradient(135deg, #e11d48, #f43f5e); color: #ffffff; }
+    .btn-enter:hover { filter: brightness(1.15); transform: translateY(-1px); }
+
+    .btn-view-lessons {
+      flex: 1;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #e2e8f0;
+      transition: all 0.2s ease;
+    }
+    .btn-view-lessons:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Features section */
+    .features-card {
+      width: 100%;
+      max-width: 1080px;
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 28px;
+    }
+    .features-card h2 { font-size: 1.2rem; font-weight: 800; color: #38bdf8; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+    .feature-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .feature-box b { color: #f8fafc; display: block; font-size: 0.95rem; margin-bottom: 6px; }
+    .feature-box p { font-size: 0.84rem; color: var(--text-sub); line-height: 1.5; }
+
+    /* Guide section */
+    .guide-card {
+      width: 100%;
+      max-width: 1080px;
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9));
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 20px;
+      padding: 24px;
+      text-align: left;
+    }
+    .guide-card h3 { font-size: 1.15rem; color: #38bdf8; font-weight: 800; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .guide-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .guide-step { background: rgba(0, 0, 0, 0.3); border-radius: 12px; padding: 14px 16px; font-size: 0.86rem; line-height: 1.55; color: #cbd5e1; }
+    .guide-step b { color: #ffffff; }
+
+    footer { margin-top: 36px; font-size: 0.85rem; color: #64748b; text-align: center; line-height: 1.6; }
+
+    /* Modal Styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-card {
+      background: #0f172a;
+      border: 1.5px solid rgba(56, 189, 248, 0.4);
+      border-radius: 22px;
+      max-width: 780px;
+      width: 100%;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85);
+      overflow: hidden;
+    }
+    .modal-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-title { font-size: 1.25rem; font-weight: 800; color: #f8fafc; }
+    .btn-close { background: none; border: none; font-size: 1.6rem; color: #94a3b8; cursor: pointer; }
+    
+    .modal-controls {
+      padding: 14px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .search-input {
+      flex: 1;
+      min-width: 220px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 10px 14px;
+      color: #fff;
+      font-size: 0.9rem;
+      outline: none;
+    }
+    .search-input:focus { border-color: #38bdf8; }
+
+    .filter-tabs { display: flex; gap: 6px; }
+    .filter-tab {
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .filter-tab.active { background: #38bdf8; color: #0f172a; border-color: #38bdf8; }
+
+    .modal-body {
+      padding: 16px 24px;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .lesson-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 10px;
+    }
+    .lesson-link-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px 14px;
+      text-decoration: none;
+      color: #f8fafc;
+      font-size: 0.88rem;
+      font-weight: 600;
+      line-height: 1.4;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s;
+    }
+    .lesson-link-card:hover {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: #38bdf8;
+      transform: translateX(4px);
+    }
+    .lesson-badge-pill {
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 6px;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+    .badge-g10 { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
+    .badge-g11 { background: rgba(52, 211, 153, 0.2); color: #34d399; }
+    .badge-g12 { background: rgba(244, 63, 94, 0.2); color: #f43f5e; }
+  </style>
+</head>
+<body>
+
+  <div class="header-banner">
+    <div class="badge-teacher">👨‍🏫 Thầy Trần Mạnh Tùng • Bộ Sách Kết Nối Tri Thức Với Cuộc Sống</div>
+    <h1>HỆ THỐNG TRẮC NGHIỆM TƯƠNG TÁC HOÁ HỌC THPT</h1>
+    <p class="sub-title">Chương trình GDPT 2018 – Đầy đủ 78 bài học • 780 câu hỏi đánh giá năng lực<br>Chuẩn hoá 4 định dạng mới của Bộ GD&ĐT 2025 • Tối ưu 100% cho mọi thiết bị di động & máy tính</p>
+  
+    <div class="pwa-controls-row">
+      <button class="btn-pwa-install" id="btnPwaInstall" onclick="handlePwaInstallClick()">
+        <span>📲</span> Cài Đặt App (Dùng Offline 100%)
+      </button>
+      <div class="offline-status-badge" id="offlineBadge">
+        <span>⚡</span> Đang chạy chế độ Ngoại Tuyến (Offline)
+      </div>
+    </div>
+  </div>
+
+  <!-- Arena Feature Card -->
+  <div class="arena-feature-card">
+    <div class="arena-info">
+      <div class="arena-badge">🔥 TÍNH NĂNG MỚI • HOẠT ĐỘNG NHÓM TRÊN LỚP</div>
+      <h2 class="arena-title">⚔️ ĐẤU TRƯỜNG HOÁ HỌC LIÊN NHÓM (THI ĐẤU 4 TỔ)</h2>
+      <p class="arena-desc">Mô hình Gameshow tương tác chuyên dụng cho Máy chiếu & Bảng tương tác thông minh. Học sinh dùng điện thoại quét mã QR để bấm chuông không dây siêu tốc, tích hợp trọn bộ 78 bài học chuẩn SGK mới.</p>
+    </div>
+    <a href="./dau-truong-hoa-hoc.html" class="btn-enter-arena">
+      <span>⚡</span> Vào Đấu Trường Ngay ➔
+    </a>
+  </div>
+
+  <!-- 3 Grades Grid -->
+  <div class="grades-grid">
+    <!-- Grade 10 -->
+    <div class="grade-card card-10">
+      <div class="grade-header">
+        <span class="grade-pill">Chương Trình Mới</span>
+        <span class="grade-icon">🧪</span>
+      </div>
+      <div class="grade-title">Hoá Học 10</div>
+      <div class="grade-desc">Cấu tạo nguyên tử, bảng tuần hoàn, liên kết hoá học, phản ứng oxi hoá – khử, năng lượng hoá học, tốc độ phản ứng hoá học, nguyên tố nhóm halogen.</div>
+      <div class="stats-row">
+        <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">Chương</div></div>
+        <div class="stat-item"><div class="stat-num">23</div><div class="stat-label">Bài học</div></div>
+        <div class="stat-item"><div class="stat-num">230</div><div class="stat-label">Câu hỏi</div></div>
+      </div>
+      <div class="grade-btn-group">
+        <a href="./lop10/" class="btn-enter">Vào Học Master Hub ➔</a>
+        <button class="btn-view-lessons" onclick="openLessonsModal('10')">📂 Danh Sách Bài</button>
+      </div>
+    </div>
+
+    <!-- Grade 11 -->
+    <div class="grade-card card-11">
+      <div class="grade-header">
+        <span class="grade-pill">Chương Trình Mới</span>
+        <span class="grade-icon">⚗️</span>
+      </div>
+      <div class="grade-title">Hoá Học 11</div>
+      <div class="grade-desc">Cân bằng hoá học, nitrogen – sulfur, đại cương hoá học hữu cơ, hydrocarbon, dẫn xuất halogen – alcohol – phenol, hợp chất carbonyl – carboxylic acid.</div>
+      <div class="stats-row">
+        <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Chương</div></div>
+        <div class="stat-item"><div class="stat-num">25</div><div class="stat-label">Bài học</div></div>
+        <div class="stat-item"><div class="stat-num">250</div><div class="stat-label">Câu hỏi</div></div>
+      </div>
+      <div class="grade-btn-group">
+        <a href="./lop11/" class="btn-enter">Vào Học Master Hub ➔</a>
+        <button class="btn-view-lessons" onclick="openLessonsModal('11')">📂 Danh Sách Bài</button>
+      </div>
+    </div>
+
+    <!-- Grade 12 -->
+    <div class="grade-card card-12">
+      <div class="grade-header">
+        <span class="grade-pill">Chương Trình Mới</span>
+        <span class="grade-icon">🔬</span>
+      </div>
+      <div class="grade-title">Hoá Học 12</div>
+      <div class="grade-desc">Ester – lipid, carbohydrate, hợp chất chứa nitrogen, polymer, pin điện & điện phân, đại cương kim loại, kim loại nhóm IA & IIA, kim loại chuyển tiếp & phức chất.</div>
+      <div class="stats-row">
+        <div class="stat-item"><div class="stat-num">8</div><div class="stat-label">Chương</div></div>
+        <div class="stat-item"><div class="stat-num">30</div><div class="stat-label">Bài học</div></div>
+        <div class="stat-item"><div class="stat-num">300</div><div class="stat-label">Câu hỏi</div></div>
+      </div>
+      <div class="grade-btn-group">
+        <a href="./lop12/" class="btn-enter">Vào Học Master Hub ➔</a>
+        <button class="btn-view-lessons" onclick="openLessonsModal('12')">📂 Danh Sách Bài</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="features-card">
+    <h2><span>🌟</span> ĐẶC ĐIỂM NỔI BẬT CỦA HỆ THỐNG</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <b>🎯 4 Dạng Đánh Giá Năng Lực</b>
+        <p>Đầy đủ Trắc nghiệm 4 lựa chọn, Đúng/Sai chùm 4 ý phân hoá thang điểm Bộ GD&ĐT, Ghép đôi logic bản chất hoá học và Điền khuyết từ khoá khép kín.</p>
+      </div>
+      <div class="feature-box">
+        <b>⚔️ Đấu Trường Bấm Chuông QR</b>
+        <p>Thi đấu liên nhóm 4 tổ tốc độ cao qua điện thoại di động không dây, độ trễ tín hiệu dưới 50ms, âm thanh gameshow và khúc ca xuất trận hào hùng.</p>
+      </div>
+      <div class="feature-box">
+        <b>📱 Offline PWA 100%</b>
+        <p>Cài đặt trực tiếp lên màn hình chính điện thoại, máy tính bảng hoặc laptop. Chạy 100% không cần mạng Internet sau lần truy cập đầu tiên.</p>
+      </div>
+      <div class="feature-box">
+        <b>📊 Bảng Học Bạ Lưu Tiến Độ</b>
+        <p>Ghi nhớ tự động điểm số cao nhất của từng bài học trên thiết bị học sinh, hỗ trợ đổi tên giáo viên linh hoạt trên thanh Header.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Guide Section -->
+  <div class="guide-card">
+    <h3><span>📖</span> HƯỚNG DẪN HỌC TẬP HIỆU QUẢ</h3>
+    <div class="guide-columns">
+      <div class="guide-step">
+        <b>1. Chế độ Luyện Tập:</b> Học sinh chủ động làm từng câu, bấm "Kiểm tra kết quả" để xem ngay đáp án đúng, âm thanh phản hồi và lời giải chi tiết 3 bước tư duy hoá học.
+      </div>
+      <div class="guide-step">
+        <b>2. Chế độ Thi Thử 10 Phút:</b> Tự động bấm giờ đếm ngược kỹ thuật số, làm trọn vẹn 10 câu ngẫu nhiên và xem Bảng Rà Soát Chi Tiết đối chiếu từng câu sau khi nộp bài.
+      </div>
+      <div class="guide-step">
+        <b>3. Đấu Trường Lớp Học:</b> Thầy Cô chiếu màn hình lớn lên máy chiếu, 4 tổ trưởng dùng điện thoại quét mã QR bấm chuông tranh tài hấp dẫn trong các tiết ôn tập.
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Biên soạn & Thiết kế Sư phạm: <b>Thầy Trần Mạnh Tùng</b> • Môn Hoá Học THPT</p>
+    <p>Hệ thống trắc nghiệm tương tác offline • Bộ sách Kết nối tri thức với cuộc sống</p>
+  </footer>
+
+  <!-- Modal Lessons List -->
+  <div class="modal-overlay" id="lessonsModal" onclick="handleModalOverlayClick(event)">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title" id="modalTitle">Danh Sách Bài Học</div>
+        <button class="btn-close" onclick="closeLessonsModal()">&times;</button>
+      </div>
+      <div class="modal-controls">
+        <input type="text" class="search-input" id="modalSearchInput" placeholder="🔍 Tìm kiếm bài học theo tên..." oninput="filterModalLessons()" />
+        <div class="filter-tabs">
+          <button class="filter-tab active" id="tabAll" onclick="filterModalGrade('all')">Tất cả (78)</button>
+          <button class="filter-tab" id="tab10" onclick="filterModalGrade('10')">Hoá 10 (23)</button>
+          <button class="filter-tab" id="tab11" onclick="filterModalGrade('11')">Hoá 11 (25)</button>
+          <button class="filter-tab" id="tab12" onclick="filterModalGrade('12')">Hoá 12 (30)</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="lesson-grid" id="modalLessonsGrid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const ALL_LESSONS = [{"grade": "10", "id": 1, "title": "Bài 1: Thành phần của nguyên tử", "url": "./lop10/Bai_01_Thanh_Phan_Cua_Nguyen_Tu.html"}, {"grade": "10", "id": 2, "title": "Bài 2: Nguyên tố hóa học", "url": "./lop10/Bai_02_Nguyen_To_Hoa_Hoc.html"}, {"grade": "10", "id": 3, "title": "Bài 3: Cấu trúc lớp vỏ electron nguyên tử", "url": "./lop10/Bai_03_Cau_Truc_Lop_Vo_Electron.html"}, {"grade": "10", "id": 4, "title": "Bài 4: Ôn tập chương 1 (Cấu tạo nguyên tử)", "url": "./lop10/Bai_04_On_Tap_Chuong_1.html"}, {"grade": "10", "id": 5, "title": "Bài 5: Cấu tạo của bảng tuần hoàn các nguyên tố hóa học", "url": "./lop10/Bai_05_Cau_Tao_Bang_Tuan_Hoan.html"}, {"grade": "10", "id": 6, "title": "Bài 6: Xu hướng biến đổi tính chất trong bảng tuần hoàn", "url": "./lop10/Bai_06_Xu_Huong_Bien_Doi_Tinh_Chat.html"}, {"grade": "10", "id": 7, "title": "Bài 7: Định luật tuần hoàn và ý nghĩa bảng tuần hoàn", "url": "./lop10/Bai_07_Dinh_Luat_Tuan_Hoan_Y_Nghia.html"}, {"grade": "10", "id": 8, "title": "Bài 8: Ôn tập chương 2 (Bảng tuần hoàn)", "url": "./lop10/Bai_08_On_Tap_Chuong_2.html"}, {"grade": "10", "id": 9, "title": "Bài 9: Quy tắc octet", "url": "./lop10/Bai_09_Quy_Tac_Octet.html"}, {"grade": "10", "id": 10, "title": "Bài 10: Liên kết ion", "url": "./lop10/Bai_10_Lien_Ket_Ion.html"}, {"grade": "10", "id": 11, "title": "Bài 11: Liên kết cộng hóa trị", "url": "./lop10/Bai_11_Lien_Ket_Cong_Hoa_Tri.html"}, {"grade": "10", "id": 12, "title": "Bài 12: Liên kết hydrogen và tương tác van der Waals", "url": "./lop10/Bai_12_Lien_Ket_Hydrogen_Van_Der_Waals.html"}, {"grade": "10", "id": 13, "title": "Bài 13: Ôn tập chương 3 (Liên kết hóa học)", "url": "./lop10/Bai_13_On_Tap_Chuong_3.html"}, {"grade": "10", "id": 14, "title": "Bài 14: Phản ứng oxi hóa – khử", "url": "./lop10/Bai_14_Phan_Ung_Oxi_Hoa_Khu.html"}, {"grade": "10", "id": 15, "title": "Bài 15: Phản ứng oxi hóa – khử trong thực tiễn", "url": "./lop10/Bai_15_Phan_Ung_Oxi_Hoa_Khu_Thuc_Tien.html"}, {"grade": "10", "id": 16, "title": "Bài 16: Ôn tập chương 4 (Phản ứng oxi hóa – khử)", "url": "./lop10/Bai_16_On_Tap_Chuong_4.html"}, {"grade": "10", "id": 17, "title": "Bài 17: Biến thiên enthalpy trong các phản ứng hóa học", "url": "./lop10/Bai_17_Bien_Thien_Enthalpy.html"}, {"grade": "10", "id": 18, "title": "Bài 18: Ôn tập chương 5 (Năng lượng hóa học)", "url": "./lop10/Bai_18_On_Tap_Chuong_5.html"}, {"grade": "10", "id": 19, "title": "Bài 19: Tốc độ phản ứng hóa học", "url": "./lop10/Bai_19_Toc_Do_Phan_Ung.html"}, {"grade": "10", "id": 20, "title": "Bài 20: Các yếu tố ảnh hưởng đến tốc độ phản ứng", "url": "./lop10/Bai_20_Yeu_To_Anh_Huong_Toc_Do.html"}, {"grade": "10", "id": 21, "title": "Bài 21: Ôn tập chương 6 (Tốc độ phản ứng)", "url": "./lop10/Bai_21_On_Tap_Chuong_6.html"}, {"grade": "10", "id": 22, "title": "Bài 22: Khái quát về nhóm halogen", "url": "./lop10/Bai_22_Nhom_Halogen.html"}, {"grade": "10", "id": 23, "title": "Bài 23: Hydrogen halide và một số hợp chất của halogen", "url": "./lop10/Bai_23_Hydrogen_Halide_Hop_Chat.html"}, {"grade": "11", "id": 1, "title": "Bài 1: Khái niệm về cân bằng hóa học", "url": "./lop11/Bai_01_Khai_Niem_Ve_Can_Bang_Hoa_Hoc.html"}, {"grade": "11", "id": 2, "title": "Bài 2: Cân bằng trong dung dịch nước", "url": "./lop11/Bai_02_Can_Bang_Trong_Dung_Dich_Nuoc.html"}, {"grade": "11", "id": 3, "title": "Bài 3: Ôn tập chương 1 (Cân bằng hóa học)", "url": "./lop11/Bai_03_On_Tap_Chuong_1.html"}, {"grade": "11", "id": 4, "title": "Bài 4: Nitrogen", "url": "./lop11/Bai_04_Nitrogen.html"}, {"grade": "11", "id": 5, "title": "Bài 5: Ammonia và muối ammonium", "url": "./lop11/Bai_05_Ammonia_Va_Muoi_Ammonium.html"}, {"grade": "11", "id": 6, "title": "Bài 6: Một số hợp chất của nitrogen với oxygen", "url": "./lop11/Bai_06_Mot_So_Hop_Chat_Cua_Nitrogen_Voi_Oxygen.html"}, {"grade": "11", "id": 7, "title": "Bài 7: Sulfur và sulfur dioxide", "url": "./lop11/Bai_07_Sulfur_Va_Sulfur_Dioxide.html"}, {"grade": "11", "id": 8, "title": "Bài 8: Sulfuric acid và muối sulfate", "url": "./lop11/Bai_08_Sulfuric_Acid_Va_Muoi_Sulfate.html"}, {"grade": "11", "id": 9, "title": "Bài 9: Ôn tập chương 2 (Nitrogen – Sulfur)", "url": "./lop11/Bai_09_On_Tap_Chuong_2.html"}, {"grade": "11", "id": 10, "title": "Bài 10: Hợp chất hữu cơ và hóa học hữu cơ", "url": "./lop11/Bai_10_Hop_Chat_Huu_Co_Va_Hoa_Hoc_Huu_Co.html"}, {"grade": "11", "id": 11, "title": "Bài 11: Phương pháp tách biệt và tinh chế hợp chất hữu cơ", "url": "./lop11/Bai_11_Phuong_Phap_Tach_Biet_Va_Tinh_Che.html"}, {"grade": "11", "id": 12, "title": "Bài 12: Công thức phân tử hợp chất hữu cơ", "url": "./lop11/Bai_12_Cong_Thuc_Phan_Tu_Hop_Chat_Huu_Co.html"}, {"grade": "11", "id": 13, "title": "Bài 13: Cấu tạo hóa học hợp chất hữu cơ", "url": "./lop11/Bai_13_Cau_Tao_Hoa_Hoc_Hop_Chat_Huu_Co.html"}, {"grade": "11", "id": 14, "title": "Bài 14: Ôn tập chương 3 (Đại cương hóa học hữu cơ)", "url": "./lop11/Bai_14_On_Tap_Chuong_3.html"}, {"grade": "11", "id": 15, "title": "Bài 15: Alkane", "url": "./lop11/Bai_15_Alkane.html"}, {"grade": "11", "id": 16, "title": "Bài 16: Hydrocarbon không no (Alkene – Alkyne)", "url": "./lop11/Bai_16_Hydrocarbon_Khong_No.html"}, {"grade": "11", "id": 17, "title": "Bài 17: Arene (Hydrocarbon thơm)", "url": "./lop11/Bai_17_Arene.html"}, {"grade": "11", "id": 18, "title": "Bài 18: Ôn tập chương 4 (Hydrocarbon)", "url": "./lop11/Bai_18_On_Tap_Chuong_4.html"}, {"grade": "11", "id": 19, "title": "Bài 19: Dẫn xuất halogen", "url": "./lop11/Bai_19_Dan_Xuat_Halogen.html"}, {"grade": "11", "id": 20, "title": "Bài 20: Alcohol", "url": "./lop11/Bai_20_Alcohol.html"}, {"grade": "11", "id": 21, "title": "Bài 21: Phenol", "url": "./lop11/Bai_21_Phenol.html"}, {"grade": "11", "id": 22, "title": "Bài 22: Ôn tập chương 5 (Dẫn xuất halogen – Alcohol – Phenol)", "url": "./lop11/Bai_22_On_Tap_Chuong_5.html"}, {"grade": "11", "id": 23, "title": "Bài 23: Hợp chất carbonyl (Aldehyde – Ketone)", "url": "./lop11/Bai_23_Hop_Chat_Carbonyl.html"}, {"grade": "11", "id": 24, "title": "Bài 24: Carboxylic acid", "url": "./lop11/Bai_24_Carboxylic_Acid.html"}, {"grade": "11", "id": 25, "title": "Bài 25: Ôn tập chương 6 (Hợp chất carbonyl – Carboxylic acid)", "url": "./lop11/Bai_25_On_Tap_Chuong_6.html"}, {"grade": "12", "id": 1, "title": "Bài 1: Ester – Lipid", "url": "./lop12/Bai_01_Ester_Lipid.html"}, {"grade": "12", "id": 2, "title": "Bài 2: Xà phòng và chất giặt rửa", "url": "./lop12/Bai_02_Xa_Phong_Va_Chat_Giat_Rua.html"}, {"grade": "12", "id": 3, "title": "Bài 3: Ôn tập chương 1 (Ester – Lipid)", "url": "./lop12/Bai_03_On_Tap_Chuong_1.html"}, {"grade": "12", "id": 4, "title": "Bài 4: Giới thiệu về carbohydrate. Glucose và fructose", "url": "./lop12/Bai_04_Gioi_Thieu_Carbohydrate_Glucose_Fructose.html"}, {"grade": "12", "id": 5, "title": "Bài 5: Saccharose và maltose", "url": "./lop12/Bai_05_Saccharose_Va_Maltose.html"}, {"grade": "12", "id": 6, "title": "Bài 6: Tinh bột và cellulose", "url": "./lop12/Bai_06_Tinh_Bot_Va_Cellulose.html"}, {"grade": "12", "id": 7, "title": "Bài 7: Ôn tập chương 2 (Carbohydrate)", "url": "./lop12/Bai_07_On_Tap_Chuong_2.html"}, {"grade": "12", "id": 8, "title": "Bài 8: Amine", "url": "./lop12/Bai_08_Amine.html"}, {"grade": "12", "id": 9, "title": "Bài 9: Amino acid và peptide", "url": "./lop12/Bai_09_Amino_Acid_Va_Peptide.html"}, {"grade": "12", "id": 10, "title": "Bài 10: Protein và enzyme", "url": "./lop12/Bai_10_Protein_Va_Enzyme.html"}, {"grade": "12", "id": 11, "title": "Bài 11: Ôn tập chương 3 (Hợp chất chứa nitrogen)", "url": "./lop12/Bai_11_On_Tap_Chuong_3.html"}, {"grade": "12", "id": 12, "title": "Bài 12: Đại cương về polymer", "url": "./lop12/Bai_12_Dai_Cuong_Ve_Polymer.html"}, {"grade": "12", "id": 13, "title": "Bài 13: Vật liệu polymer", "url": "./lop12/Bai_13_Vat_Lieu_Polymer.html"}, {"grade": "12", "id": 14, "title": "Bài 14: Ôn tập chương 4 (Polymer)", "url": "./lop12/Bai_14_On_Tap_Chuong_4.html"}, {"grade": "12", "id": 15, "title": "Bài 15: Thế điện cực và nguồn điện hoá học", "url": "./lop12/Bai_15_The_Dien_Cuc_Va_Nguon_Dien_Hoa_Hoc.html"}, {"grade": "12", "id": 16, "title": "Bài 16: Điện phân", "url": "./lop12/Bai_16_Dien_Phan.html"}, {"grade": "12", "id": 17, "title": "Bài 17: Ôn tập chương 5 (Pin điện và điện phân)", "url": "./lop12/Bai_17_On_Tap_Chuong_5.html"}, {"grade": "12", "id": 18, "title": "Bài 18: Cấu tạo và liên kết trong tinh thể kim loại", "url": "./lop12/Bai_18_Cau_Tao_Va_Lien_Ket_Trong_Tinh_The_Kim_Loai.html"}, {"grade": "12", "id": 19, "title": "Bài 19: Tính chất vật lí và tính chất hoá học của kim loại", "url": "./lop12/Bai_19_Tinh_Chat_Vat_Li_Va_Hoa_Hoc_Cua_Kim_Loai.html"}, {"grade": "12", "id": 20, "title": "Bài 20: Kim loại trong tự nhiên và phương pháp tách kim loại", "url": "./lop12/Bai_20_Kim_Loai_Trong_Tu_Nhien_Va_Phuong_Phap_Tach_Kim_Loai.html"}, {"grade": "12", "id": 21, "title": "Bài 21: Hợp kim", "url": "./lop12/Bai_21_Hop_Kim.html"}, {"grade": "12", "id": 22, "title": "Bài 22: Sự ăn mòn kim loại", "url": "./lop12/Bai_22_Su_An_Mon_Kim_Loai.html"}, {"grade": "12", "id": 23, "title": "Bài 23: Ôn tập chương 6 (Đại cương về kim loại)", "url": "./lop12/Bai_23_On_Tap_Chuong_6.html"}, {"grade": "12", "id": 24, "title": "Bài 24: Nguyên tố nhóm IA", "url": "./lop12/Bai_24_Nguyen_To_Nhom_IA.html"}, {"grade": "12", "id": 25, "title": "Bài 25: Nguyên tố nhóm IIA", "url": "./lop12/Bai_25_Nguyen_To_Nhom_IIA.html"}, {"grade": "12", "id": 26, "title": "Bài 26: Ôn tập chương 7 (Nguyên tố nhóm IA và nhóm IIA)", "url": "./lop12/Bai_26_On_Tap_Chuong_7.html"}, {"grade": "12", "id": 27, "title": "Bài 27: Đại cương về kim loại chuyển tiếp dãy thứ nhất", "url": "./lop12/Bai_27_Dai_Cuong_Ve_Kim_Loai_Chuyen_Tiep_Day_Thu_Nhat.html"}, {"grade": "12", "id": 28, "title": "Bài 28: Sơ lược về phức chất", "url": "./lop12/Bai_28_So_Luoc_Ve_Phuc_Chat.html"}, {"grade": "12", "id": 29, "title": "Bài 29: Một số tính chất và ứng dụng của phức chất", "url": "./lop12/Bai_29_Mot_So_Tinh_Chat_Va_Ung_Dung_Cua_Phuc_Chat.html"}, {"grade": "12", "id": 30, "title": "Bài 30: Ôn tập chương 8 (Kim loại chuyển tiếp và phức chất)", "url": "./lop12/Bai_30_On_Tap_Chuong_8.html"}];
+    let currentModalGrade = 'all';
+
+    function openLessonsModal(grade) {
+      currentModalGrade = grade || 'all';
+      updateFilterTabs();
+      document.getElementById('modalSearchInput').value = '';
+      renderModalLessons();
+      document.getElementById('lessonsModal').classList.add('open');
+    }
+
+    function closeLessonsModal() {
+      document.getElementById('lessonsModal').classList.remove('open');
+    }
+
+    function handleModalOverlayClick(e) {
+      if (e.target.id === 'lessonsModal') closeLessonsModal();
+    }
+
+    function filterModalGrade(grade) {
+      currentModalGrade = grade;
+      updateFilterTabs();
+      renderModalLessons();
+    }
+
+    function updateFilterTabs() {
+      ['all', '10', '11', '12'].forEach(g => {
+        const el = document.getElementById('tab' + (g === 'all' ? 'All' : g));
+        if (el) {
+          if (g === currentModalGrade) el.classList.add('active');
+          else el.classList.remove('active');
+        }
+      });
+      const titles = {
+        'all': 'Trọn Bộ 78 Bài Học Hoá Học THPT',
+        '10': 'Chương Trình Hoá Học 10 (23 Bài Học)',
+        '11': 'Chương Trình Hoá Học 11 (25 Bài Học)',
+        '12': 'Chương Trình Hoá Học 12 (30 Bài Học)'
+      };
+      document.getElementById('modalTitle').innerText = titles[currentModalGrade] || 'Danh Sách Bài Học';
+    }
+
+    function filterModalLessons() {
+      renderModalLessons();
+    }
+
+    function renderModalLessons() {
+      const query = (document.getElementById('modalSearchInput').value || '').toLowerCase().trim();
+      const grid = document.getElementById('modalLessonsGrid');
+      grid.innerHTML = '';
+
+      const filtered = ALL_LESSONS.filter(item => {
+        const matchGrade = (currentModalGrade === 'all' || item.grade === currentModalGrade);
+        const matchQuery = !query || item.title.toLowerCase().includes(query);
+        return matchGrade && matchQuery;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div style="color:#94a3b8; padding:20px; text-align:center; grid-column:1/-1;">Không tìm thấy bài học phù hợp.</div>';
+        return;
+      }
+
+      filtered.forEach(item => {
+        const card = document.createElement('a');
+        card.className = 'lesson-link-card';
+        card.href = item.url;
+        card.innerHTML = `
+          <span class="lesson-badge-pill badge-g${item.grade}">Lớp ${item.grade}</span>
+          <span>${item.title}</span>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('openModal')) {
+      openLessonsModal(urlParams.get('openModal'));
+    }
+
+    // PWA & Service Worker
+    let deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const btn = document.getElementById('btnPwaInstall');
+      if (btn) btn.style.display = 'inline-flex';
+    });
+
+    function handlePwaInstallClick() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(() => { deferredPrompt = null; });
+      } else {
+        alert('Để cài đặt ứng dụng, Thầy Cô và các em hãy bấm vào nút Chia sẻ (iOS Safari) hoặc biểu tượng 3 chấm (Android Chrome) rồi chọn "Thêm vào Màn hình chính" nhé!');
+      }
+    }
+
+    window.addEventListener('online', () => {
+      document.getElementById('offlineBadge').classList.remove('active');
+    });
+    window.addEventListener('offline', () => {
+      document.getElementById('offlineBadge').classList.add('active');
+    });
+    if (!navigator.onLine) {
+      document.getElementById('offlineBadge').classList.add('active');
+    }
+
+    if ('caches' in window) {
+      caches.keys().then(keys => {
+        keys.forEach(k => {
+          if (k !== 'hoa-thpt-cache-v1') caches.delete(k);
+        });
+      }).catch(() => {});
+    }
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => {
+            reg.update();
+          })
+          .catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>

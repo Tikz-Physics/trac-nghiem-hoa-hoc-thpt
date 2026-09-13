@@ -1,0 +1,2478 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#070a14" />
+  <title>Hoá Học 12 - Bài 5: Saccharose và maltose | Thầy Trần Mạnh Tùng</title>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="apple-touch-icon" href="./icon-192.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="./icon-512.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    
+    :root {
+      --primary: #4f46e5;
+      --secondary: #06b6d4;
+      --bg: #070a14;
+      --surface: rgba(18, 25, 44, 0.94);
+      --surface-border: rgba(255, 255, 255, 0.14);
+      --text: #ffffff;
+      --text-sub: #cbd5e1;
+      --success: #10b981;
+      --success-bg: rgba(16, 185, 129, 0.22);
+      --error: #ef4444;
+      --error-bg: rgba(239, 68, 68, 0.22);
+      --color-0: #f43f5e;
+      --color-1: #8b5cf6;
+      --color-2: #eab308;
+      --color-3: #14b8a6;
+      --font-scale: 1.0;
+      --font-family: 'Plus Jakarta Sans', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    sub, sup { font-size: 0.74em; line-height: 0; position: relative; vertical-align: baseline; color: inherit; }
+    sup { top: -0.42em; }
+    sub { bottom: -0.22em; }
+
+    *, button, input, select, textarea { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-family); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-tap-highlight-color: transparent; }
+
+    /* FONT SCALE CONTROLS */
+    .font-scale-group {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      overflow: hidden;
+      gap: 1px;
+    }
+    .btn-font-scale {
+      background: transparent;
+      border: none;
+      color: #cbd5e1;
+      padding: 3px 8px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    .btn-font-scale:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+    .font-scale-badge {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #38bdf8;
+      padding: 0 4px;
+      min-width: 36px;
+      text-align: center;
+      user-select: none;
+    }
+
+    /* BASE LAYOUT: FULLSCREEN WITHOUT SCROLLING ON DESKTOP, IPAD, LANDSCAPE MOBILE */
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at 10% 10%, rgba(79, 70, 229, 0.28), transparent 45%),
+        radial-gradient(circle at 90% 90%, rgba(6, 182, 212, 0.22), transparent 45%);
+      background-attachment: fixed;
+      color: var(--text);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      height: 100vh;
+      height: 100dvh;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      padding: env(safe-area-inset-top, 6px) env(safe-area-inset-right, 12px) env(safe-area-inset-bottom, 6px) env(safe-area-inset-left, 12px);
+      overflow: hidden;
+    }
+
+    /* SLIM HEADER RIBBON */
+    header {
+      background: var(--surface);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--surface-border);
+      border-radius: 12px;
+      padding: 6px 12px;
+      margin-bottom: 6px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+      flex-shrink: 0;
+    }
+
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(6, 182, 212, 0.45) rgba(255, 255, 255, 0.04);
+      padding-bottom: 3px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .header-bar.is-dragging {
+      cursor: grabbing !important;
+      cursor: -webkit-grabbing !important;
+    }
+    .header-bar::-webkit-scrollbar {
+      height: 4px;
+    }
+    .header-bar::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 4px;
+    }
+    .header-bar::-webkit-scrollbar-thumb {
+      background: rgba(6, 182, 212, 0.45);
+      border-radius: 4px;
+    }
+    .header-bar::-webkit-scrollbar-thumb:hover {
+      background: rgba(6, 182, 212, 0.75);
+    }
+
+    .header-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: nowrap;
+      flex-shrink: 0;
+    }
+
+    .teacher-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.35), rgba(6, 182, 212, 0.35));
+      border: 1px solid rgba(129, 140, 248, 0.5);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #38bdf8;
+      cursor: pointer;
+      transition: 0.15s;
+      user-select: none;
+    }
+    .teacher-badge:hover {
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.5), rgba(6, 182, 212, 0.5));
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+    }
+    .btn-edit-pen {
+      font-size: 0.75rem;
+      opacity: 0.7;
+      margin-left: 2px;
+    }
+
+    .lesson-select {
+      background: #1e293b;
+      color: #fff;
+      border: 1.5px solid #06b6d4;
+      border-radius: 8px;
+      padding: 4px 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      outline: none;
+      max-width: clamp(250px, 28vw, 360px);
+    }
+    .lesson-select option { background: #0f172a; color: #fff; }
+
+    .lesson-title-badge {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #fff;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-btn-hub {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #94a3b8;
+      text-decoration: none;
+      transition: 0.15s;
+    }
+    .nav-btn-hub:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+    /* Mode tabs & Timer */
+    .mode-tabs { display: flex; gap: 4px; }
+    .btn-mode {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(30, 41, 59, 0.6);
+      color: #cbd5e1;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    .btn-mode.active {
+      background: linear-gradient(135deg, #4f46e5, #06b6d4);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .exam-timer-wrap { display: none; align-items: center; gap: 6px; }
+    .exam-timer-wrap.active { display: inline-flex; }
+    .timer-display {
+      font-family: monospace;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #38bdf8;
+      background: rgba(15, 23, 42, 0.9);
+      padding: 2px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+    }
+    .timer-display.danger { color: #f43f5e; border-color: #f43f5e; animation: pulseRed 1s infinite; }
+    @keyframes pulseRed { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    .timer-select {
+      background: #1e293b;
+      color: #f8fafc;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      padding: 2px 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* Mini-map */
+    .mini-map-wrap {
+      display: flex;
+      gap: 3px;
+      align-items: center;
+    }
+    .map-btn {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(30, 41, 59, 0.7);
+      color: #94a3b8;
+      font-weight: 700;
+      font-size: 0.76rem;
+      cursor: pointer;
+      transition: 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .map-btn:hover { background: rgba(255, 255, 255, 0.15); color: #fff; }
+    .map-btn.current { border-color: #38bdf8; color: #38bdf8; outline: 2px solid rgba(56, 189, 248, 0.5); }
+    .map-btn.answered { background: rgba(99, 102, 241, 0.35); border-color: #818cf8; color: #fff; }
+    .map-btn.res-correct { background: var(--success); color: #fff; border-color: var(--success); }
+    .map-btn.res-wrong { background: var(--error); color: #fff; border-color: var(--error); }
+
+    /* Right actions */
+    .btn-quick-nav {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #cbd5e1;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+    }
+    .btn-quick-nav:hover { background: rgba(6, 182, 212, 0.25); color: #fff; border-color: #06b6d4; }
+    .btn-quick-nav.dash-btn {
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.3), rgba(6, 182, 212, 0.3));
+      border-color: rgba(56, 189, 248, 0.4);
+      color: #38bdf8;
+    }
+    .btn-quick-nav.pwa-install-btn {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.35), rgba(5, 150, 105, 0.45));
+      border-color: rgba(52, 211, 153, 0.6);
+      color: #6ee7b7;
+      animation: pwaPulse 2.5s infinite ease-in-out;
+    }
+    @keyframes pwaPulse {
+      0%, 100% { box-shadow: 0 0 0 rgba(16, 185, 129, 0); }
+      50% { box-shadow: 0 0 10px rgba(16, 185, 129, 0.5); }
+    }
+
+    /* Progress line */
+    .progress-bar-wrap {
+      width: 100%;
+      height: 3px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      margin-top: 5px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #6366f1, #06b6d4);
+      transition: width 0.25s ease;
+    }
+
+    /* MAIN QUIZ VIEWPORT - CENTERED & COMPACT WITHOUT WASTED SPACE */
+    #quizContainer {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-y: auto;
+      padding: 8px 4px;
+    }
+
+    .quiz-card {
+      background: var(--surface);
+      backdrop-filter: blur(20px);
+      border: 1.5px solid var(--surface-border);
+      border-radius: 20px;
+      padding: 22px 28px;
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      width: 100%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      max-height: calc(100vh - 84px);
+      overflow-y: auto;
+      animation: cardAppear 0.2s ease-out;
+    }
+    @keyframes cardAppear { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Unified Layout: for questions without graph */
+    .quiz-card-unified {
+      max-width: 960px;
+    }
+
+    /* Split Layout: for questions with SVG graph */
+    /* Split Layout: for questions with SVG graph */
+    .quiz-card-split {
+      max-width: 1240px;
+      width: 100%;
+    }
+
+    .quiz-split-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: stretch;
+      width: 100%;
+      height: 100%;
+    }
+
+    .quiz-pane-left {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 0;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .quiz-pane-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      min-height: 0;
+      overflow-y: auto;
+      padding-right: 4px;
+      gap: 12px;
+    }
+
+    .q-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #38bdf8;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      flex-shrink: 0;
+    }
+    .q-meta-badge {
+      background: rgba(56, 189, 248, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 3px 12px;
+      border-radius: 999px;
+      color: #38bdf8;
+    }
+    .q-meta-score {
+      background: rgba(16, 185, 129, 0.16);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      padding: 3px 12px;
+      border-radius: 999px;
+      color: #34d399;
+      font-weight: 800;
+    }
+    .q-title {
+      font-size: calc(clamp(1.02rem, 1.35vw, 1.25rem) * var(--font-scale));
+      font-weight: 700;
+      line-height: 1.55;
+      margin-bottom: 18px;
+      color: #f8fafc;
+      flex-shrink: 0;
+    }
+
+    /* CSS Formula Engine */
+    .math-sym { font-family: 'Cambria Math', 'Times New Roman', serif; font-style: italic; color: inherit; font-weight: 600; }
+    .fraction { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; padding: 0 3px; font-size: 0.92em; line-height: 1.1; margin: 0 2px; color: inherit; }
+    .numerator { border-bottom: 1.6px solid currentColor; padding-bottom: 1px; color: inherit; display: block; font-weight: 700; }
+    .denominator { padding-top: 1px; color: inherit; display: block; font-weight: 700; }
+    .formula-box {
+      background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 10px; padding: 6px 14px; margin: 6px 0; display: inline-flex;
+      align-items: center; gap: 8px; font-size: 1.05rem; font-weight: 700; color: #38bdf8;
+    }
+    .nuclide {
+      display: inline-flex; align-items: center; vertical-align: middle;
+      font-style: normal; font-weight: 700; margin: 0 3px;
+    }
+    .nuclide .scripts {
+      display: inline-flex; flex-direction: column; font-size: 0.72em; line-height: 1.05;
+      text-align: right; margin-right: 2px; font-weight: 800; color: currentColor;
+    }
+    .nuclide .sym { font-size: 1.05em; font-weight: 800; color: inherit; }
+
+    /* Graph container */
+    /* Graph container: dynamic expansion based on available empty space */
+    .graph-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 8px;
+      width: 100%;
+      flex: 1;
+      min-height: 250px;
+    }
+    .graph-box {
+      background: rgba(10, 14, 26, 0.9);
+      border: 1.5px solid rgba(6, 182, 212, 0.4);
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5), inset 0 0 15px rgba(6, 182, 212, 0.08);
+      width: 100%;
+      height: 100%;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .graph-box svg {
+      width: 100%;
+      height: 100%;
+      max-height: 52vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .mcq-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    @media (min-width: 1100px) {
+      .mcq-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .mcq-btn {
+      background: rgba(255,255,255,0.04);
+      border: 1.5px solid rgba(255,255,255,0.12);
+      color: var(--text);
+      padding: 12px 16px;
+      border-radius: 12px;
+      text-align: left;
+      font-size: calc(0.94rem * var(--font-scale));
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.48;
+      transition: all 0.15s ease;
+    }
+    .mcq-btn:hover:not(.disabled) { background: rgba(255, 255, 255, 0.08); border-color: var(--secondary); transform: translateY(-1px); }
+    .mcq-btn.selected { background: rgba(79, 70, 229, 0.25); border-color: var(--primary); box-shadow: 0 0 12px rgba(79, 70, 229, 0.4); }
+    .mcq-btn.correct { background: var(--success-bg) !important; border-color: var(--success) !important; color: #a7f3d0; }
+    .mcq-btn.wrong { background: var(--error-bg) !important; border-color: var(--error) !important; color: #fecaca; }
+    .opt-key {
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #38bdf8;
+      font-size: 0.84rem;
+      flex-shrink: 0;
+    }
+
+    /* True/False Layout */
+    .tf-table { display: flex; flex-direction: column; gap: 8px; }
+    .tf-row { 
+      background: rgba(255,255,255,0.03); border: 1.5px solid rgba(255,255,255,0.1); border-radius: 10px; 
+      padding: 8px 12px; display: flex; flex-direction: column; gap: 6px; transition: 0.15s; 
+    }
+    @media (min-width: 680px) {
+      .tf-row { flex-direction: row; align-items: center; justify-content: space-between; }
+      .tf-stmt-text { flex: 1; padding-right: 10px; }
+    }
+    .tf-stmt-text { font-size: calc(0.88rem * var(--font-scale)); line-height: 1.45; }
+    .tf-btns { display: flex; gap: 6px; flex-shrink: 0; }
+    .tf-btn { 
+      padding: 5px 12px; border-radius: 6px; font-size: 0.82rem; font-weight: 700; cursor: pointer; 
+      border: 1.5px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #cbd5e1; transition: 0.15s; 
+    }
+    .tf-btn:hover:not(.disabled) { background: rgba(255,255,255,0.12); color: #fff; }
+    .tf-btn.selected-t { background: rgba(16, 185, 129, 0.25); border-color: var(--success); color: #6ee7b7; }
+    .tf-btn.selected-f { background: rgba(239, 68, 68, 0.25); border-color: var(--error); color: #fca5a5; }
+    .tf-btn.correct-eval { background: var(--success); border-color: var(--success); color: #fff; }
+    .tf-btn.wrong-eval { background: var(--error); border-color: var(--error); color: #fff; }
+
+    /* Match Pairs */
+    .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
+    .match-col { display: flex; flex-direction: column; gap: 8px; }
+    .match-card {
+      background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.12); border-radius: 10px;
+      padding: 8px 12px; font-size: 0.86rem; cursor: pointer; transition: 0.15s; line-height: 1.4;
+    }
+    .match-card:hover:not(.disabled) { background: rgba(255,255,255,0.08); border-color: var(--secondary); }
+    .match-card.active-select { border-color: #38bdf8; background: rgba(56, 189, 248, 0.2); box-shadow: 0 0 10px rgba(56, 189, 248, 0.3); }
+
+    /* Drag & Drop Word Bank */
+    .fill-sentence { font-size: 0.92rem; line-height: 2.1; margin-bottom: 12px; background: rgba(0,0,0,0.3); padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+    .blank-slot { display: inline-block; min-width: 100px; height: 30px; padding: 0 10px; margin: 0 3px; border-bottom: 2px dashed #06b6d4; background: rgba(6,182,212,0.16); text-align: center; font-weight: 800; color: #a5f3fc; cursor: pointer; vertical-align: middle; border-radius: 6px 6px 0 0; transition: 0.15s; }
+    .blank-slot.active { background: rgba(6,182,212,0.35); border-bottom: 2px solid #fff; }
+    .word-bank { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px; background: rgba(0,0,0,0.35); border-radius: 12px; }
+    .word-chip { background: #4f46e5; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 0.84rem; cursor: pointer; border: none; color: #fff; transition: 0.15s; }
+    .word-chip.active-chip { outline: 2.5px solid #fff; transform: scale(1.05); }
+    .word-chip.used { opacity: 0.25; pointer-events: none; }
+
+    /* Actions */
+    .quiz-actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 18px;
+      gap: 10px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      flex-shrink: 0;
+      width: 100%;
+    }
+    .btn-action {
+      background: linear-gradient(135deg, #4f46e5, #06b6d4);
+      border: 1px solid transparent;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      user-select: none;
+    }
+    .btn-action:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(79, 70, 229, 0.55); }
+    .btn-action:disabled { opacity: 0.45; cursor: not-allowed; box-shadow: none; }
+    .btn-action.btn-secondary { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); color: #cbd5e1; box-shadow: none; }
+    .btn-action.btn-secondary:hover { background: rgba(255,255,255,0.15); color: #fff; }
+    .btn-action.btn-next-step { background: linear-gradient(135deg, #10b981, #06b6d4); box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35); }
+    .btn-action.btn-submit-exam { background: linear-gradient(135deg, #f43f5e, #ec4899); box-shadow: 0 4px 14px rgba(244, 63, 94, 0.35); }
+
+    /* Explanation panel */
+    .explanation-panel {
+      margin-top: 6px;
+      background: linear-gradient(180deg, rgba(13, 22, 42, 0.95), rgba(9, 14, 28, 0.98));
+      border: 1.5px solid #06b6d4;
+      border-radius: 12px;
+      padding: 10px 14px;
+      box-shadow: 0 8px 25px rgba(6, 182, 212, 0.25);
+      animation: expandPanel 0.25s ease-out;
+    }
+    @keyframes expandPanel { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    .answer-badge-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(6, 182, 212, 0.25));
+      border: 1.5px solid var(--success);
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #a7f3d0;
+      margin-bottom: 8px;
+    }
+    .answer-badge-card.partial { border-color: #f59e0b; color: #fde68a; background: rgba(245, 158, 11, 0.2); }
+    .answer-badge-card.wrong { border-color: var(--error); color: #fecaca; background: rgba(239, 68, 68, 0.2); }
+
+    .exp-title-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #38bdf8;
+      font-size: 0.92rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 4px;
+    }
+    /* Explanation zoom controls */
+    .exp-zoom-controls {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      user-select: none;
+    }
+    .btn-exp-zoom {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #94a3b8;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      line-height: 1.4;
+    }
+    .btn-exp-zoom:hover {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: #38bdf8;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+    .btn-exp-zoom:active { transform: scale(0.96); }
+    .btn-exp-expand {
+      background: rgba(6, 182, 212, 0.18);
+      border-color: #06b6d4;
+      color: #38bdf8;
+      padding: 3px 10px;
+    }
+    .btn-exp-expand:hover {
+      background: #06b6d4;
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.5);
+    }
+    .exp-zoom-level {
+      font-size: 0.74rem;
+      color: #38bdf8;
+      font-weight: 700;
+      min-width: 36px;
+      text-align: center;
+    }
+
+    /* Explanation body text scale */
+    .exp-body-content {
+      font-size: calc(0.9rem * var(--font-scale) * var(--exp-font-scale, 1));
+      line-height: 1.68;
+      color: #f1f5f9;
+      transition: font-size 0.15s ease;
+    }
+    .exp-body-content b { color: #38bdf8; }
+    .exp-body-content .math-sym { color: #38bdf8; }
+
+    /* Zoomed modal state for explanation panel */
+    .explanation-panel.is-zoomed {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(880px, 92vw);
+      max-height: 85vh;
+      z-index: 10000;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85), 0 0 0 100vmax rgba(4, 7, 15, 0.82);
+      border: 2px solid #38bdf8;
+      border-radius: 16px;
+      padding: 22px 26px;
+      overflow-y: auto;
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      animation: zoomInExp 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .explanation-panel.is-zoomed .exp-title-row {
+      font-size: 1.1rem;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      border-bottom: 1.5px solid rgba(56, 189, 248, 0.3);
+    }
+    .explanation-panel.is-zoomed .answer-badge-card {
+      font-size: 1.05rem;
+      padding: 7px 14px;
+      margin-bottom: 12px;
+    }
+    .explanation-panel.is-zoomed .exp-body-content {
+      font-size: calc(1.08rem * var(--font-scale) * var(--exp-font-scale, 1));
+      line-height: 1.85;
+    }
+    @keyframes zoomInExp {
+      from { opacity: 0; transform: translate(-50%, -46%) scale(0.96); }
+      to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    }
+
+    /* Result Card */
+    .result-card {
+      display: none;
+      background: var(--surface);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--surface-border);
+      border-radius: 16px;
+      padding: 16px 20px;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+      animation: cardAppear 0.3s ease-out;
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+    }
+    .score-circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.25), rgba(79, 70, 229, 0.25));
+      border: 2.5px solid #38bdf8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+    }
+    .score-circle div { font-size: 1.8rem; font-weight: 800; color: #fff; line-height: 1; }
+    .score-circle span { font-size: 0.72rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; margin-top: 2px; }
+
+    /* Review Table */
+    .review-table-wrap {
+      overflow-x: auto;
+      max-height: 45vh;
+      margin: 12px 0;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .review-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.84rem; }
+    .review-table th { background: rgba(15, 23, 42, 0.95); padding: 8px 12px; color: #38bdf8; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.12); position: sticky; top: 0; z-index: 2; }
+    .review-table td { padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); }
+
+    /* App Modals */
+    .app-modal {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(7, 10, 20, 0.85); backdrop-filter: blur(16px);
+      z-index: 10000; display: flex; align-items: center; justify-content: center;
+      padding: 16px;
+    }
+    .modal-card {
+      background: rgba(18, 25, 44, 0.98); border: 1.5px solid rgba(56, 189, 248, 0.35);
+      border-radius: 20px; padding: 22px; width: 100%; max-width: 480px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.7); animation: modalZoom 0.2s ease-out;
+    }
+    @keyframes modalZoom { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+    .modal-header h3 { font-size: 1.15rem; color: #fff; font-weight: 800; margin: 0; }
+    .btn-close-modal { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #cbd5e1; border-radius: 8px; padding: 4px 10px; cursor: pointer; font-weight: 700; }
+    .btn-close-modal:hover { background: rgba(239,68,68,0.3); color: #fff; border-color: #f87171; }
+    .custom-input {
+      width: 100%; background: rgba(0,0,0,0.4); border: 1.5px solid rgba(6,182,212,0.4);
+      border-radius: 10px; padding: 10px 14px; color: #fff; font-size: 0.95rem; font-weight: 600;
+      outline: none; transition: 0.2s;
+    }
+    .custom-input:focus { border-color: #38bdf8; box-shadow: 0 0 12px rgba(56,189,248,0.3); }
+    .btn-modal-pri {
+      background: linear-gradient(135deg, #4f46e5, #06b6d4); border: none; color: #fff;
+      padding: 9px 18px; border-radius: 10px; font-weight: 700; font-size: 0.9rem; cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-modal-pri:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(6,182,212,0.4); }
+    .btn-modal-sec {
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); color: #cbd5e1;
+      padding: 9px 14px; border-radius: 10px; font-weight: 600; font-size: 0.88rem; cursor: pointer;
+    }
+    .btn-modal-sec:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+    /* Dashboard Modal (Master Hub) */
+    .dashboard-modal {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(7, 10, 20, 0.88); backdrop-filter: blur(16px);
+      z-index: 9990; display: flex; align-items: center; justify-content: center;
+      padding: 16px; overflow-y: auto;
+    }
+    .dashboard-content {
+      background: rgba(18, 25, 44, 0.97); border: 1.5px solid rgba(56, 189, 248, 0.3);
+      border-radius: 22px; padding: clamp(16px, 3vw, 28px); width: 100%; max-width: 1150px;
+      max-height: 90vh; overflow-y: auto; box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+    }
+    .dashboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+    .dashboard-header h2 { font-size: clamp(1.1rem, 2vw, 1.5rem); color: #fff; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .dash-summary-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 16px; }
+    .dash-stat-card {
+      background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px; padding: 12px; text-align: center;
+    }
+    .dash-stat-val { font-size: 1.5rem; font-weight: 800; color: #38bdf8; margin-bottom: 2px; }
+    .dash-stat-lbl { font-size: 0.8rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; }
+    .dash-chapters-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 900px) { .dash-chapters-grid { grid-template-columns: 1fr 1fr; } }
+    .dash-chapter-box {
+      background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px; padding: 12px;
+    }
+    .dash-ch-title { font-size: 0.9rem; font-weight: 800; color: #38bdf8; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 4px; }
+    .dash-lesson-list { display: flex; flex-direction: column; gap: 6px; }
+    .dash-lesson-item {
+      display: flex; justify-content: space-between; align-items: center; gap: 8px;
+      background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 6px 10px; border-radius: 8px; cursor: pointer; transition: 0.15s;
+    }
+    .dash-lesson-item:hover { background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.3); transform: translateX(3px); }
+    .dash-lesson-title { font-size: 0.85rem; font-weight: 600; color: #e2e8f0; flex: 1; }
+    .dash-score-badge {
+      padding: 3px 8px; border-radius: 6px; font-weight: 800; font-size: 0.8rem; flex-shrink: 0;
+    }
+    .dash-score-badge.gold { background: rgba(16, 185, 129, 0.25); color: #34d399; border: 1px solid #10b981; }
+    .dash-score-badge.blue { background: rgba(6, 182, 212, 0.25); color: #38bdf8; border: 1px solid #06b6d4; }
+    .dash-score-badge.amber { background: rgba(245, 158, 11, 0.25); color: #fbbf24; border: 1px solid #f59e0b; }
+    .dash-score-badge.rose { background: rgba(244, 63, 94, 0.25); color: #fb7185; border: 1px solid #f43f5e; }
+    .dash-score-badge.none { background: rgba(255,255,255,0.06); color: #64748b; border: 1px solid rgba(255,255,255,0.1); }
+
+    /* Custom scrollbars */
+    .quiz-pane-left::-webkit-scrollbar,
+    .quiz-pane-right::-webkit-scrollbar,
+    .result-card::-webkit-scrollbar,
+    .review-table-wrap::-webkit-scrollbar,
+    .modal-body::-webkit-scrollbar,
+    .dashboard-content::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .quiz-pane-left::-webkit-scrollbar-thumb,
+    .quiz-pane-right::-webkit-scrollbar-thumb,
+    .result-card::-webkit-scrollbar-thumb,
+    .review-table-wrap::-webkit-scrollbar-thumb,
+    .modal-body::-webkit-scrollbar-thumb,
+    .dashboard-content::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.2);
+      border-radius: 999px;
+    }
+
+    /* MEDIA QUERY: PORTRAIT MOBILE (VERTICAL SCROLL UNLOCKED) */
+    @media (orientation: portrait) and (max-width: 850px) {
+      html, body {
+        height: auto !important;
+        min-height: 100vh;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+      }
+      .container {
+        height: auto !important;
+        overflow: visible !important;
+        padding: 8px 6px 30px !important;
+      }
+      header { margin-bottom: 8px; }
+      .header-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .header-group {
+        justify-content: space-between;
+        width: 100%;
+      }
+      .lesson-select { max-width: 100%; flex: 1; }
+      #quizContainer {
+        height: auto !important;
+        overflow: visible !important;
+      }
+      .quiz-card {
+        height: auto !important;
+        overflow: visible !important;
+        padding: 12px;
+      }
+      .quiz-split-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        overflow: visible !important;
+        gap: 12px;
+      }
+      .quiz-pane-left, .quiz-pane-right {
+        height: auto !important;
+        overflow: visible !important;
+        padding-right: 0 !important;
+      }
+      .graph-box { max-height: none !important; }
+      .graph-box svg { max-height: 260px !important; }
+      .result-card {
+        height: auto !important;
+        overflow: visible !important;
+      }
+      .review-table-wrap { max-height: none !important; }
+    }
+
+    /* MEDIA QUERY: LANDSCAPE MOBILE (SUPER-COMPACT NON-SCROLLING) */
+    @media (orientation: landscape) and (max-height: 520px) {
+      .container { padding: 3px 6px !important; }
+      header { padding: 4px 8px; margin-bottom: 4px; }
+      .teacher-badge { font-size: 0.76rem; padding: 2px 8px; }
+      .lesson-select { font-size: 0.78rem; padding: 3px 6px; max-width: 240px; }
+      .btn-mode { font-size: 0.75rem; padding: 2px 6px; }
+      .timer-display { font-size: 0.9rem; padding: 1px 5px; }
+      .map-btn { width: 22px; height: 22px; font-size: 0.7rem; border-radius: 4px; }
+      .btn-quick-nav { font-size: 0.74rem; padding: 3px 6px; }
+      .quiz-card { padding: 8px 10px; }
+      .q-title { font-size: 0.88rem; line-height: 1.35; margin-bottom: 6px; }
+      .graph-box { max-height: 32vh; padding: 4px; }
+      .graph-box svg { max-height: 30vh; }
+      .mcq-btn { padding: 5px 8px; font-size: 0.82rem; }
+      .opt-key { width: 20px; height: 20px; font-size: 0.72rem; }
+      .tf-row { padding: 4px 8px; }
+      .tf-stmt-text { font-size: 0.82rem; }
+      .tf-btn { padding: 3px 8px; font-size: 0.75rem; }
+      .btn-action { padding: 5px 12px; font-size: 0.8rem; }
+      .score-circle { width: 70px; height: 70px; }
+      .score-circle div { font-size: 1.4rem; }
+    }
+
+    #confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; }
+  
+  </style>
+</head>
+<body>
+  <canvas id="confettiCanvas"></canvas>
+
+  <div class="container">
+    <header>
+      <div class="header-bar">
+        <!-- Left: Hub link, Teacher badge, Lesson title -->
+        <div class="header-group">
+          <a href="./index.html" class="nav-btn-hub">← Hub Lớp 12</a>
+          <div class="teacher-badge" id="teacherBadge" onclick="openTeacherModal()" title="Nhấp để thay đổi tên giáo viên">
+            <span>👨‍🏫</span>
+            <span id="teacherNameDisplay">Thầy Trần Mạnh Tùng</span>
+            <span class="btn-edit-pen">✏️</span>
+          </div>
+          <div class="font-scale-group" title="Tăng/giảm kích cỡ chữ">
+            <button class="btn-font-scale" onclick="changeFontScale(-1)" title="Giảm cỡ chữ (A-)">A-</button>
+            <span class="font-scale-badge" id="fontScaleDisplay">100%</span>
+            <button class="btn-font-scale" onclick="changeFontScale(1)" title="Tăng cỡ chữ (A+)">A+</button>
+          </div>
+          <div class="lesson-title-badge">HOÁ HỌC 12 - Bài 5: Saccharose và maltose</div>
+        </div>
+
+        <!-- Center: Mode Switcher & Mini-map -->
+        <div class="header-group">
+          <div class="mode-tabs">
+            <button class="btn-mode active" id="btnModePractice" onclick="setQuizMode('practice')">📘 Luyện Tập</button>
+            <button class="btn-mode" id="btnModeExam" onclick="setQuizMode('exam')">⏱️ Thi Thử</button>
+            <a href="./Dau_Truong_Hoa_Hoc_Lien_Nhom.html" class="btn-mode" style="background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff; text-decoration: none; display: inline-flex; align-items: center; border: none;" title="Chế độ thi đấu nhóm 4 tổ bằng QR Buzzer">⚔️ Đấu Trường</a>
+          </div>
+          <div class="exam-timer-wrap" id="examTimerWrap">
+            <select class="timer-select" id="timerDurationSelect" onchange="changeExamDuration(this.value)">
+              <option value="10">10P</option>
+              <option value="15" selected>15P</option>
+              <option value="20">20P</option>
+              <option value="30">30P</option>
+            </select>
+            <div class="timer-display" id="timerDisplay">15:00</div>
+          </div>
+          <div class="mini-map-wrap" id="miniMapWrap"></div>
+        </div>
+
+      </div>
+
+      <div class="progress-bar-wrap">
+        <div class="progress-fill" id="progressBar"></div>
+      </div>
+    </header>
+
+    <!-- Quiz Content Container -->
+    <div id="quizContainer"></div>
+
+    <!-- Kết quả bài kiểm tra -->
+    <div class="result-card" id="resultCard">
+      <div class="score-circle">
+        <div id="finalScore">0.0</div>
+        <span>Thang 10</span>
+      </div>
+      <h2 style="font-size: clamp(1.2rem, 2vw, 1.6rem); margin-bottom: 8px;" id="resultTitle">Hoàn thành bài kiểm tra!</h2>
+      <p style="color: #94a3b8; font-size: 0.95rem; max-width: 600px; margin: 0 auto 16px; line-height: 1.5;" id="resultComment"></p>
+      
+      <!-- Bảng chi tiết từng câu trong chế độ thi thử -->
+      <div id="examReviewContainer" style="display:none; text-align:left; margin: 12px 0;"></div>
+
+      <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <button class="btn-action" onclick="restartLesson()">Làm lại bài này ⟲</button>
+        <a href="./index.html" class="btn-action btn-next-step" style="text-decoration:none;">Về Cổng Tổng Hợp ➔</a>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Modal Thay Đổi Tên Giáo Viên -->
+  <div class="app-modal" id="teacherModal" style="display:none;" onclick="if(event.target===this) closeTeacherModal()">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3>👨‍🏫 Thay Đổi Tên Giáo Viên</h3>
+        <button class="btn-close-modal" onclick="closeTeacherModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="color:#94a3b8; font-size:0.88rem; margin-bottom:12px; line-height:1.5;">
+          Nhập tên Thầy / Cô để hiển thị trên tiêu đề bài thi, lời giải chi tiết và trong báo cáo học tập của học sinh:
+        </p>
+        <input type="text" id="teacherNameInput" class="custom-input" placeholder="Ví dụ: Thầy Trần Mạnh Tùng, Cô Nguyễn Thị Lan..." />
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px; gap:10px;">
+          <button class="btn-modal-sec" onclick="resetTeacherName()">Đặt lại mặc định</button>
+          <button class="btn-modal-pri" onclick="saveTeacherName()">Lưu & Áp Dụng 💾</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+  <script>
+    const LESSON_ID = 5;
+    const RAW_QUESTIONS = [
+  {
+    "type": "mcq",
+    "q": "Saccharose (đường mía) là disaccharide được cấu tạo từ một gốc α-glucose và một gốc β-fructose liên kết với nhau qua loại liên kết nào?",
+    "opts": [
+      "Liên kết α-1,2-glycoside",
+      "Liên kết α-1,4-glycoside",
+      "Liên kết β-1,4-glycoside",
+      "Liên kết peptide –CO–NH–"
+    ],
+    "ans": 0,
+    "correctText": "Đáp án A (Liên kết α-1,2-glycoside)",
+    "exp": "• <b>Cấu tạo phân tử saccharose:</b> Phân tử saccharose liên kết từ C1 (nhóm –OH hemiacetal) của gốc α-glucose với C2 (nhóm –OH hemiketal) của gốc β-fructose qua cầu nối nguyên tử oxygen: liên kết α-1,2-glycoside.<br>• Vì cả 2 nhóm chức tạo tính khử đều đã tham gia tạo liên kết glycoside nên saccharose không còn nhóm –CHO tự do và không mở vòng được → không có tính khử.<br>• <b>Kết luận:</b> Chọn đáp án A.",
+    "svgGraph": "<svg viewBox=\"0 0 520 230\" width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\">\n  <rect width=\"100%\" height=\"100%\" fill=\"#070a14\" rx=\"12\"/>\n  <text x=\"260\" y=\"28\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"14.5\" font-weight=\"800\">CẤU TRÚC PHÂN TỬ SACCHAROSE (C₁₂H₂₂O₁₁)</text>\n  <!-- Glucose unit -->\n  <g transform=\"translate(80, 110)\">\n    <polygon points=\"0,-35 40,-18 40,25 0,42 -40,25 -40,-18\" fill=\"rgba(14,165,233,0.18)\" stroke=\"#38bdf8\" stroke-width=\"2\"/>\n    <text x=\"0\" y=\"5\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"bold\">α-Glucose</text>\n    <circle cx=\"40\" cy=\"-18\" r=\"4\" fill=\"#fbbf24\"/>\n    <text x=\"40\" y=\"-26\" text-anchor=\"middle\" fill=\"#fbbf24\" font-size=\"10\">C1</text>\n  </g>\n  <!-- Glycosidic Bridge O -->\n  <g transform=\"translate(190, 92)\">\n    <line x1=\"-70\" y1=\"0\" x2=\"-15\" y2=\"20\" stroke=\"#fbbf24\" stroke-width=\"2.5\"/>\n    <line x1=\"15\" y1=\"20\" x2=\"70\" y2=\"0\" stroke=\"#fbbf24\" stroke-width=\"2.5\"/>\n    <circle cx=\"0\" cy=\"20\" r=\"12\" fill=\"#070a14\" stroke=\"#f43f5e\" stroke-width=\"2.2\"/>\n    <text x=\"0\" y=\"25\" text-anchor=\"middle\" fill=\"#f43f5e\" font-size=\"12\" font-weight=\"bold\">O</text>\n    <text x=\"0\" y=\"48\" text-anchor=\"middle\" fill=\"#fbbf24\" font-size=\"10.5\" font-weight=\"bold\">Cầu α-1,2-glycoside</text>\n  </g>\n  <!-- Fructose unit (5-membered ring) -->\n  <g transform=\"translate(340, 110)\">\n    <polygon points=\"0,-35 42,-5 26,38 -26,38 -42,-5\" fill=\"rgba(52,211,153,0.18)\" stroke=\"#10b981\" stroke-width=\"2\"/>\n    <text x=\"0\" y=\"5\" text-anchor=\"middle\" fill=\"#34d399\" font-size=\"12\" font-weight=\"bold\">β-Fructose</text>\n    <circle cx=\"-42\" cy=\"-5\" r=\"4\" fill=\"#fbbf24\"/>\n    <text x=\"-48\" y=\"-12\" text-anchor=\"end\" fill=\"#fbbf24\" font-size=\"10\">C2</text>\n  </g>\n  <!-- Property callout -->\n  <rect x=\"25\" y=\"172\" width=\"470\" height=\"42\" rx=\"6\" fill=\"rgba(30,41,59,0.7)\" stroke=\"rgba(255,255,255,0.12)\"/>\n  <text x=\"260\" y=\"190\" text-anchor=\"middle\" fill=\"#f8fafc\" font-size=\"11.5\">Không còn nhóm –OH hemiacetal tự do → <tspan fill=\"#f43f5e\" font-weight=\"bold\">KHÔNG TRÁNG BẠC</tspan></text>\n  <text x=\"260\" y=\"206\" text-anchor=\"middle\" fill=\"#38bdf8\" font-size=\"10.5\">Thuỷ phân sinh ra cả α-glucose và β-fructose (đường nghịch đảo)</text>\n</svg>"
+  },
+  {
+    "type": "mcq",
+    "q": "Tại sao dung dịch saccharose tinh khiết KHÔNG tham gia phản ứng tráng bạc với thuốc thử Tollens?",
+    "opts": [
+      "Trong phân tử không còn nhóm –OH hemiacetal tự do nên không thể mở vòng để tạo nhóm aldehyde –CHO.",
+      "Saccharose có khối lượng phân tử quá lớn cản trở tiếp xúc với ion Ag⁺.",
+      "Saccharose bị ion Ag⁺ kết tủa làm trơ hoá bề mặt.",
+      "Saccharose chỉ tác dụng với chất oxi hoá ở môi trường acid mạnh."
+    ],
+    "ans": 0,
+    "correctText": "Đáp án A (Không còn nhóm –OH hemiacetal)",
+    "exp": "• <b>Bản chất hóa học:</b> Trong phân tử saccharose, cả nhóm –OH hemiacetal của gốc glucose và nhóm –OH hemiketal của gốc fructose đều đã liên kết qua cầu oxygen C1–O–C2.<br>• Do đó phân tử không thể mở vòng dạng mạch hở để tạo nhóm –CHO có tính khử, dẫn đến không tráng bạc và không khử Cu(OH)<sub>2</sub>.<br>• <b>Kết luận:</b> Chọn đáp án A."
+  },
+  {
+    "type": "mcq",
+    "q": "Maltose (đường mạch nha) khác với saccharose ở đặc điểm cấu tạo và tính chất nào sau đây?",
+    "opts": [
+      "Maltose được cấu tạo từ 2 gốc α-glucose và có khả năng tráng bạc với thuốc thử Tollens.",
+      "Maltose không phản ứng được với Cu(OH)₂ ở nhiệt độ thường.",
+      "Maltose không bị thuỷ phân trong môi trường acid.",
+      "Maltose có công thức phân tử là C₆H₁₂O₆."
+    ],
+    "ans": 0,
+    "correctText": "Đáp án A (2 gốc α-glucose và có tráng bạc)",
+    "exp": "• <b>Bản chất hóa học:</b> Phân tử maltose gồm 2 gốc α-glucose liên kết với nhau qua liên kết α-1,4-glycoside.<br>• Gốc glucose thứ hai vẫn còn 1 nhóm –OH hemiacetal tự do ở C1 nên trong dung dịch có thể mở vòng tạo nhóm –CHO.<br>• Vì vậy maltose có tính khử: tham gia phản ứng tráng bạc và khử Cu(OH)<sub>2</sub> đun nóng thành Cu<sub>2</sub>O đỏ gạch.<br>• <b>Kết luận:</b> Chọn đáp án A."
+  },
+  {
+    "type": "tf",
+    "q": "Tiến hành thuỷ phân hoàn toàn saccharose trong môi trường acid đun nóng (sau đó trung hoà acid bằng dung dịch kiềm) rồi chia làm 2 phần, xét tính Đúng/Sai:",
+    "stmts": [
+      "Hỗn hợp sau phản ứng thuỷ phân chứa số mol glucose bằng số mol fructose.",
+      "Hỗn hợp các chất sau thuỷ phân (đường nghịch đảo) có khả năng tham gia phản ứng tráng bạc tạo kết tủa kim loại Ag.",
+      "Nếu không trung hoà acid trước khi thêm thuốc thử Tollens thì phản ứng tráng bạc vẫn diễn ra bình thường với hiệu suất cao.",
+      "Phản ứng thuỷ phân saccharose có thể xúc tác bằng enzyme sucrase (invertase) ở nhiệt độ phòng."
+    ],
+    "ans": [
+      true,
+      true,
+      false,
+      true
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Sai | d) Đúng",
+    "exp": "• <b>Ý a [Đúng]:</b> C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> + H<sub>2</sub>O ⎯(H+, t°)→ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> (glucose) + C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> (fructose) với tỉ lệ mol 1:1.<br>• <b>Ý b [Đúng]:</b> Cả glucose và fructose sinh ra đều có phản ứng tráng bạc.<br>• <b>Ý c [Sai]:</b> Thuốc thử Tollens hoạt động trong môi trường kiềm NH<sub>3</sub>; nếu còn acid dư sẽ trung hoà NH<sub>3</sub> và phá vỡ phức bạc, làm phản ứng tráng bạc không xảy ra.<br>• <b>Ý d [Đúng]:</b> Enzyme sucrase xúc tác đặc hiệu phản ứng thuỷ phân saccharose."
+  },
+  {
+    "type": "match",
+    "q": "Ghép từng loại nguyên liệu / cây trồng (Cột A) với loại disaccharide tương ứng được chiết xuất hoặc sản xuất chủ yếu (Cột B):",
+    "colA": [
+      "Cây mía, củ cải đường, hoa thốt nốt",
+      "Mầm lúa mạch lên men (mạch nha)",
+      "Đường phèn, đường cát trắng tinh luyện",
+      "Mật ong tự nhiên để lâu kết tinh"
+    ],
+    "colB": [
+      "Saccharose độ tinh khiết cao (> 99,5%)",
+      "Nguồn nguyên liệu tự nhiên giàu saccharose nhất",
+      "Hỗn hợp kết tinh của fructose và glucose",
+      "Maltose (đường mạch nha)"
+    ],
+    "ans": [
+      1,
+      3,
+      0,
+      2
+    ],
+    "correctText": "1 - B | 2 - D | 3 - A | 4 - C",
+    "exp": "• <b>1 - B:</b> Mía và củ cải đường là nguồn cung cấp saccharose chủ yếu cho nhân loại.<br>• <b>2 - D:</b> Mầm lúa mạch thuỷ phân tinh bột sinh ra maltose.<br>• <b>3 - A:</b> Đường tinh luyện công nghiệp là saccharose độ sạch cao.<br>• <b>4 - C:</b> Mật ong tự nhiên giàu hỗn hợp monosaccharide."
+  },
+  {
+    "type": "drag",
+    "q": "Điền các từ khóa chính xác vào vị trí trống về phản ứng thuỷ phân và tính chất của saccharose:",
+    "text": "Saccharose có công thức phân tử là [blank]. Khi hoà tan vào nước, saccharose hoà tan Cu(OH)₂ ở nhiệt độ thường tạo phức màu [blank]. Khi đun nóng với acid vô cơ loãng, 1 phân tử saccharose bị thuỷ phân thành 1 phân tử [blank] và 1 phân tử [blank].",
+    "words": [
+      "C₁₂H₂₂O₁₁",
+      "C₆H₁₂O₆",
+      "xanh lam",
+      "đỏ gạch",
+      "glucose",
+      "fructose",
+      "maltose"
+    ],
+    "ans": [
+      0,
+      2,
+      4,
+      5
+    ],
+    "correctText": "1: C₁₂H₂₂O₁₁ | 2: xanh lam | 3: glucose | 4: fructose",
+    "exp": "• CTPT saccharose: C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>.<br>• Hoà tan Cu(OH)<sub>2</sub> tạo dung dịch xanh lam đặc trưng của polyalcohol.<br>• Thuỷ phân hoàn toàn tạo hỗn hợp đồng phân glucose và fructose."
+  },
+  {
+    "type": "mcq",
+    "q": "Thuỷ phân hoàn toàn 34,2 gam saccharose trong môi trường acid với hiệu suất 100%, sau đó trung hoà acid rồi cho toàn bộ sản phẩm tác dụng với thuốc thử Tollens dư đun nóng. Khối lượng bạc kim loại thu được tối đa là bao nhiêu (cho C=12, H=1, O=16, Ag=108)?",
+    "opts": [
+      "43,2 gam",
+      "21,6 gam",
+      "10,8 gam",
+      "32,4 gam"
+    ],
+    "ans": 0,
+    "correctText": "Đáp án A (43,2 gam)",
+    "exp": "• <b>Tính toán:</b><br>Số mol saccharose: n = 34,2 / 342 = 0,1 mol.<br>C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> + H<sub>2</sub>O → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> (glucose: 0,1 mol) + C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> (fructose: 0,1 mol).<br>Khi tráng bạc trong môi trường kiềm NH<sub>3</sub>:<br>1 mol glucose → 2 mol Ag (0,1 mol → 0,2 mol Ag)<br>1 mol fructose → 2 mol Ag (0,1 mol → 0,2 mol Ag)<br>Tổng số mol Ag sinh ra = 0,2 + 0,2 = 0,4 mol.<br>Khối lượng Ag = 0,4 · 108 = 43,2 gam.<br>• <b>Kết luận:</b> Chọn đáp án A."
+  },
+  {
+    "type": "mcq",
+    "q": "Thuật ngữ 'đường nghịch đảo' (invert sugar) dùng để chỉ hỗn hợp sản phẩm thu được sau quá trình nào sau đây?",
+    "opts": [
+      "Thuỷ phân saccharose bằng acid hoặc enzyme, làm góc quay cực đổi từ quay phải sang quay trái.",
+      "Oxi hoá glucose bằng nước bromine.",
+      "Lên men tinh bột thành ethanol.",
+      "Đun nóng glucose để tạo thành caramel."
+    ],
+    "ans": 0,
+    "correctText": "Đáp án A (Thuỷ phân saccharose đổi góc quay cực)",
+    "exp": "• <b>Bản chất hóa học:</b> Saccharose có góc quay cực riêng quay sang phải (+66,5°).<br>• Khi bị thuỷ phân tạo ra hỗn hợp glucose (quay phải +52,7°) và fructose (quay trái mạnh -92,4°).<br>• Kết quả là dung dịch hỗn hợp quay cực sang trái (-20°), đảo ngược hướng quay cực ban đầu, nên được gọi là đường nghịch đảo.<br>• <b>Kết luận:</b> Chọn đáp án A."
+  },
+  {
+    "type": "tf",
+    "q": "Xét các phát biểu về ứng dụng thực tiễn của saccharose và maltose trong công nghiệp thực phẩm:",
+    "stmts": [
+      "Saccharose được sử dụng rộng rãi làm chất tạo ngọt trong sản xuất bánh kẹo, đồ hộp, nước giải khát và làm thuốc điều vị trong y học.",
+      "Maltose được sản xuất bằng cách dùng enzyme amylase thuỷ phân tinh bột gạo nếp, dùng làm kẹo mạch nha truyền thống.",
+      "Saccharose tráng bạc tốt hơn glucose nên thường được dùng làm ruột phích nước nóng trong công nghiệp.",
+      "Saccharose là nguyên liệu để sản xuất cồn sinh học và mì chính (monosodium glutamate) qua phương pháp lên men vi sinh."
+    ],
+    "ans": [
+      true,
+      true,
+      false,
+      true
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Sai | d) Đúng",
+    "exp": "• <b>Ý a [Đúng]:</b> Ứng dụng phổ biến của đường ăn mía.<br>• <b>Ý b [Đúng]:</b> Mạch nha truyền thống làm từ gạo nếp và mầm mạ lúa.<br>• <b>Ý c [Sai]:</b> Saccharose không hề có phản ứng tráng bạc; để tráng ruột phích người ta dùng glucose hoặc saccharose đã qua thuỷ phân trước.<br>• <b>Ý d [Đúng]:</b> Rỉ đường mía là nguồn carbon rẻ tiền để lên men sản xuất acid glutamic và ethanol."
+  },
+  {
+    "type": "mcq",
+    "q": "Để phân biệt hai dung dịch không màu đựng trong hai lọ riêng biệt mất nhãn: Saccharose và Maltose, thuốc thử duy nhất cần dùng là gì?",
+    "opts": [
+      "Dung dịch AgNO<sub>3</sub> trong NH<sub>3</sub> đun nóng (hoặc Cu(OH)<sub>2</sub> đun nóng)",
+      "Dung dịch Cu(OH)<sub>2</sub> ở nhiệt độ phòng",
+      "Quỳ tím",
+      "Dung dịch phenolphthalein"
+    ],
+    "ans": 0,
+    "correctText": "Đáp án A (Thuốc thử Tollens hoặc Cu(OH)₂ đun nóng)",
+    "exp": "• <b>Hiện tượng nhận biết:</b><br>- Dung dịch AgNO<sub>3</sub> trong NH<sub>3</sub> đun nóng: Maltose sinh kết tủa bạc bám sáng bóng thành ống nghiệm; Saccharose không có hiện tượng gì.<br>- Cả hai chất đều hoà tan Cu(OH)<sub>2</sub> ở nhiệt độ thường tạo dung dịch xanh lam nên không thể phân biệt ở nhiệt độ thường.<br>• <b>Kết luận:</b> Chọn đáp án A."
+  }
+];
+
+    
+// SafeStorage Engine for Mobile & file:// compatibility (Fallback to memory if localStorage is restricted)
+    const SafeStorage = {
+      _mem: {},
+      getItem(key) {
+        try {
+          const val = window.SafeStorage.getItem(key);
+          return val !== null ? val : (this._mem[key] !== undefined ? this._mem[key] : null);
+        } catch (e) {
+          return this._mem[key] !== undefined ? this._mem[key] : null;
+        }
+      },
+      setItem(key, val) {
+        const str = String(val);
+        try {
+          window.SafeStorage.setItem(key, str);
+        } catch (e) {}
+        this._mem[key] = str;
+      },
+      removeItem(key) {
+        try {
+          window.SafeStorage.removeItem(key);
+        } catch (e) {}
+        delete this._mem[key];
+      }
+    };
+
+    // Web Audio API
+    const AudioEngine = {
+      ctx: null,
+      init() {
+        try {
+          if (!this.ctx) {
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            if (AudioContext) this.ctx = new AudioContext();
+          }
+          if (this.ctx && this.ctx.state === 'suspended') {
+            this.ctx.resume();
+          }
+        } catch(e) {}
+      },
+      playClick() {
+        this.init();
+        const now = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(450, now);
+        osc.frequency.exponentialRampToValueAtTime(900, now + 0.05);
+        gain.gain.setValueAtTime(0.22, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.05);
+      },
+      playCorrect() {
+        this.init();
+        const now = this.ctx.currentTime;
+        // 5-Note Triumphant Victory Arpeggio + Bell Shimmer Harmonics (1.4s duration)
+        const notes = [
+          { freq: 523.25, t: 0.00, dur: 0.32 }, // C5
+          { freq: 659.25, t: 0.12, dur: 0.32 }, // E5
+          { freq: 783.99, t: 0.24, dur: 0.36 }, // G5
+          { freq: 987.77, t: 0.36, dur: 0.40 }, // B5
+          { freq: 1046.50, t: 0.48, dur: 0.92 }  // C6 (ringing sustain!)
+        ];
+
+        notes.forEach(n => {
+          const osc1 = this.ctx.createOscillator();
+          const osc2 = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+
+          osc1.type = 'triangle';
+          osc1.frequency.setValueAtTime(n.freq, now + n.t);
+
+          osc2.type = 'sine';
+          osc2.frequency.setValueAtTime(n.freq * 2, now + n.t);
+
+          gain.gain.setValueAtTime(0.20, now + n.t);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + n.t + n.dur);
+
+          osc1.connect(gain);
+          osc2.connect(gain);
+          gain.connect(this.ctx.destination);
+
+          osc1.start(now + n.t);
+          osc1.stop(now + n.t + n.dur);
+          osc2.start(now + n.t);
+          osc2.stop(now + n.t + n.dur);
+        });
+
+        // High shimmer chime
+        const chime = this.ctx.createOscillator();
+        const chimeGain = this.ctx.createGain();
+        chime.type = 'sine';
+        chime.frequency.setValueAtTime(1567.98, now + 0.55); // G6
+        chimeGain.gain.setValueAtTime(0.12, now + 0.55);
+        chimeGain.gain.exponentialRampToValueAtTime(0.001, now + 1.38);
+        chime.connect(chimeGain);
+        chimeGain.connect(this.ctx.destination);
+        chime.start(now + 0.55);
+        chime.stop(now + 1.38);
+      },
+      playWrong() {
+        this.init();
+        const now = this.ctx.currentTime;
+        // Friendly playful descent wah-wah (0.9s duration)
+        const notes = [
+          { fStart: 349.23, fEnd: 329.63, t: 0.00, dur: 0.26 }, // F4 -> E4
+          { fStart: 311.13, fEnd: 293.66, t: 0.22, dur: 0.28 }, // Eb4 -> D4
+          { fStart: 277.18, fEnd: 246.94, t: 0.46, dur: 0.42 }  // C#4 -> B3
+        ];
+
+        notes.forEach(n => {
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(n.fStart, now + n.t);
+          osc.frequency.exponentialRampToValueAtTime(n.fEnd, now + n.t + n.dur * 0.85);
+
+          gain.gain.setValueAtTime(0.20, now + n.t);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + n.t + n.dur);
+
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(now + n.t);
+          osc.stop(now + n.t + n.dur);
+        });
+      },
+      playWin() {
+        this.init();
+        const now = this.ctx.currentTime;
+        // Grand victory fanfare (2.8s duration)
+        const melody = [
+          { freq: 392.00, t: 0.00, dur: 0.16 }, // G4
+          { freq: 523.25, t: 0.14, dur: 0.18 }, // C5
+          { freq: 659.25, t: 0.28, dur: 0.18 }, // E5
+          { freq: 783.99, t: 0.42, dur: 0.35 }, // G5
+          { freq: 659.25, t: 0.72, dur: 0.16 }, // E5
+          { freq: 783.99, t: 0.86, dur: 0.42 }  // G5
+        ];
+
+        melody.forEach(n => {
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(n.freq, now + n.t);
+          gain.gain.setValueAtTime(0.26, now + n.t);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + n.t + n.dur);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(now + n.t);
+          osc.stop(now + n.t + n.dur);
+        });
+
+        // Sustained 4-note victory chord (C4, G4, E5, C6)
+        const chord = [261.63, 392.00, 659.25, 1046.50];
+        chord.forEach((f, idx) => {
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = idx === 3 ? 'sine' : 'triangle';
+          osc.frequency.setValueAtTime(f, now + 1.25);
+          gain.gain.setValueAtTime(0.24, now + 1.25);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 2.75);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(now + 1.25);
+          osc.stop(now + 2.80);
+        });
+      }
+    };
+
+// Unlock Web Audio on first mobile touch or click
+    if (typeof window !== 'undefined') {
+      ['touchstart', 'touchend', 'click'].forEach(evt => {
+        window.addEventListener(evt, function unlockAudio() {
+          try { AudioEngine.init(); } catch(e) {}
+          window.removeEventListener(evt, unlockAudio);
+        }, { passive: true, once: true });
+      });
+    }
+
+    // Font Scale Engine
+    const FONT_SCALES = [
+      { label: '90%', scale: 0.90 },
+      { label: '100%', scale: 1.00 },
+      { label: '115%', scale: 1.15 },
+      { label: '130%', scale: 1.30 }
+    ];
+    let currentScaleIdx = 1;
+
+    function initFontScale() {
+      try {
+        const saved = SafeStorage.getItem('HOA12_FONT_SCALE_IDX');
+        if (saved !== null && !isNaN(parseInt(saved, 10))) {
+          currentScaleIdx = Math.max(0, Math.min(FONT_SCALES.length - 1, parseInt(saved, 10)));
+        }
+      } catch(e) {}
+      applyFontScale();
+    }
+
+    function changeFontScale(delta) {
+      AudioEngine.playClick();
+      currentScaleIdx = Math.max(0, Math.min(FONT_SCALES.length - 1, currentScaleIdx + delta));
+      try {
+        SafeStorage.setItem('HOA12_FONT_SCALE_IDX', currentScaleIdx);
+      } catch(e) {}
+      applyFontScale();
+    }
+
+    function applyFontScale() {
+      const item = FONT_SCALES[currentScaleIdx];
+      document.documentElement.style.setProperty('--font-scale', item.scale);
+      const display = document.getElementById('fontScaleDisplay');
+      if (display) display.textContent = item.label;
+    }
+
+    // Horizontal Wheel & Drag Scroll for Header Bar
+    function initHeaderScroll() {
+      const headerBars = document.querySelectorAll('.header-bar');
+      headerBars.forEach(bar => {
+        // Map vertical mouse wheel to horizontal scroll
+        bar.addEventListener('wheel', (e) => {
+          if (bar.scrollWidth > bar.clientWidth) {
+            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+              e.preventDefault();
+              bar.scrollLeft += e.deltaY;
+            }
+          }
+        }, { passive: false });
+
+        // Mouse Drag to Scroll
+        let isDown = false;
+        let startX = 0;
+        let scrollLeft = 0;
+
+        bar.addEventListener('mousedown', (e) => {
+          if (e.target.closest('button, select, a, input, .teacher-badge')) return;
+          isDown = true;
+          bar.classList.add('is-dragging');
+          startX = e.pageX - bar.offsetLeft;
+          scrollLeft = bar.scrollLeft;
+        });
+
+        window.addEventListener('mouseup', () => {
+          if (isDown) {
+            isDown = false;
+            bar.classList.remove('is-dragging');
+          }
+        });
+
+        bar.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - bar.offsetLeft;
+          const walk = (x - startX) * 1.5;
+          bar.scrollLeft = scrollLeft - walk;
+        });
+      });
+    }
+
+    // Canvas Confetti
+    function fireConfetti() {
+      const canvas = document.getElementById('confettiCanvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const pieces = [];
+      const colors = ['#6366f1', '#06b6d4', '#10b981', '#f59e0b', '#ec4899'];
+      for (let i = 0; i < 80; i++) {
+        pieces.push({
+          x: canvas.width / 2,
+          y: canvas.height / 2,
+          vx: (Math.random() - 0.5) * 16,
+          vy: (Math.random() - 0.7) * 16,
+          size: Math.random() * 7 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rotation: Math.random() * 360,
+          rotSpeed: (Math.random() - 0.5) * 10
+        });
+      }
+
+      let frame = 0;
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        pieces.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.vy += 0.35;
+          p.rotation += p.rotSpeed;
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate((p.rotation * Math.PI) / 180);
+          ctx.fillStyle = p.color;
+          ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+          ctx.restore();
+        });
+        frame++;
+        if (frame < 100) requestAnimationFrame(animate);
+        else ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+      animate();
+    }
+
+    // Fisher-Yates Shuffling
+    function cloneAndShuffleQuestions(source) {
+      const cloned = JSON.parse(JSON.stringify(source));
+      cloned.forEach(q => {
+        if (q.type === 'mcq') {
+          const originalCorrectOpt = q.opts[q.ans];
+          const items = q.opts.map((opt, i) => ({ text: opt, isCorrect: i === q.ans }));
+          for (let i = items.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [items[i], items[j]] = [items[j], items[i]];
+          }
+          q.opts = items.map(it => it.text);
+          q.ans = items.findIndex(it => it.isCorrect);
+          q.correctText = 'Phương án ' + String.fromCharCode(65 + q.ans) + ': ' + originalCorrectOpt;
+        }
+      });
+      return cloned;
+    }
+
+    // Teacher Name Management
+    let teacherName = 'Thầy Trần Mạnh Tùng';
+    function initTeacherName() {
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const paramTeacher = urlParams.get('teacher');
+        if (paramTeacher && paramTeacher.trim()) {
+          teacherName = paramTeacher.trim();
+          SafeStorage.setItem('HOA12_CUSTOM_TEACHER', teacherName);
+        } else {
+          const saved = SafeStorage.getItem('HOA12_CUSTOM_TEACHER');
+          if (saved && saved.trim()) teacherName = saved.trim();
+        }
+      } catch (e) {}
+      updateTeacherDisplay();
+    }
+
+    function updateTeacherDisplay() {
+      const el = document.getElementById('teacherNameDisplay');
+      if (el) el.textContent = teacherName;
+      document.querySelectorAll('.teacher-name-exp').forEach(item => {
+        item.textContent = teacherName;
+      });
+      if (document.title.includes('|')) {
+        const parts = document.title.split('|');
+        document.title = parts[0].trim() + ' | ' + teacherName;
+      }
+    }
+
+    function openTeacherModal() {
+      AudioEngine.playClick();
+      const input = document.getElementById('teacherNameInput');
+      if (input) input.value = teacherName;
+      document.getElementById('teacherModal').style.display = 'flex';
+      if (input) setTimeout(() => input.focus(), 100);
+    }
+
+    function closeTeacherModal() {
+      document.getElementById('teacherModal').style.display = 'none';
+    }
+
+    function saveTeacherName() {
+      AudioEngine.playClick();
+      const input = document.getElementById('teacherNameInput');
+      if (input && input.value.trim()) {
+        teacherName = input.value.trim();
+        SafeStorage.setItem('HOA12_CUSTOM_TEACHER', teacherName);
+        updateTeacherDisplay();
+        closeTeacherModal();
+      }
+    }
+
+    function resetTeacherName() {
+      AudioEngine.playClick();
+      teacherName = 'Thầy Trần Mạnh Tùng';
+      SafeStorage.setItem('HOA12_CUSTOM_TEACHER', teacherName);
+      updateTeacherDisplay();
+      closeTeacherModal();
+    }
+
+  
+    
+    function getTypeName(type) {
+      switch(type) {
+        case 'mcq': return 'Trắc nghiệm nhiều lựa chọn';
+        case 'tf': return 'Trắc nghiệm Đúng / Sai';
+        case 'match': return 'Ghép nối thông tin tương ứng';
+        case 'drag': return 'Điền từ khuyết';
+        default: return '';
+      }
+    }
+
+    /* MCQ */
+    function renderMCQ(q, idx) {
+      let html = '<div class="mcq-grid">';
+      const letters = ['A', 'B', 'C', 'D'];
+      q.opts.forEach((opt, optIdx) => {
+        let cls = 'mcq-btn';
+        if (examUserAnswers[idx] && examUserAnswers[idx].val === optIdx) {
+          cls += ' selected';
+        }
+        html += '<button class="' + cls + '" id="mcqOpt' + optIdx + '" onclick="selectMCQ(' + optIdx + ')">' +
+          '<div class="opt-key">' + letters[optIdx] + '</div>' +
+          '<div>' + opt + '</div>' +
+        '</button>';
+      });
+      html += '</div>';
+      return html;
+    }
+
+    function selectMCQ(optIdx) {
+      AudioEngine.playClick();
+      mcqSelected = optIdx;
+      document.querySelectorAll('.mcq-btn').forEach((b, i) => {
+        b.classList.toggle('selected', i === optIdx);
+      });
+      if (quizMode === 'exam') {
+        saveExamAnswer(currentQ, optIdx);
+      }
+    }
+
+    /* TF */
+    function renderTF(q, idx) {
+      let html = '<div class="tf-table">';
+      const subLabels = ['a)', 'b)', 'c)', 'd)'];
+      q.stmts.forEach((st, sIdx) => {
+        const stmtText = (typeof st === 'string') ? st : (st.t || '');
+        const savedVal = (examUserAnswers[idx] && examUserAnswers[idx].val) ? examUserAnswers[idx].val[sIdx] : null;
+        html += '<div class="tf-row" id="tfRow' + sIdx + '">' +
+          '<div class="tf-stmt-text"><b>' + subLabels[sIdx] + '</b> ' + stmtText + '</div>' +
+          '<div class="tf-btns">' +
+            '<button class="tf-btn ' + (savedVal === true ? 'selected-t' : '') + '" id="btnT' + sIdx + '" onclick="selectTF(' + sIdx + ', true)">ĐÚNG</button>' +
+            '<button class="tf-btn ' + (savedVal === false ? 'selected-f' : '') + '" id="btnF' + sIdx + '" onclick="selectTF(' + sIdx + ', false)">SAI</button>' +
+          '</div>' +
+        '</div>';
+      });
+      html += '</div>';
+      return html;
+    }
+
+    function selectTF(stmtIdx, val) {
+      AudioEngine.playClick();
+      tfState[stmtIdx] = val;
+      const btnT = document.getElementById('btnT' + stmtIdx);
+      const btnF = document.getElementById('btnF' + stmtIdx);
+      if (btnT) btnT.classList.toggle('selected-t', val === true);
+      if (btnF) btnF.classList.toggle('selected-f', val === false);
+
+      if (quizMode === 'exam') {
+        saveExamAnswer(currentQ, [...tfState]);
+      }
+    }
+
+    /* Match */
+    function renderMatch(q, idx) {
+      let html = '<div class="match-grid">' +
+        '<div class="match-col"><div style="color:#38bdf8; font-weight:800; font-size:0.82rem; margin-bottom:2px;">CỘT A (Đại lượng / Đặc điểm)</div>';
+      q.colA.forEach((item, i) => {
+        const cleanItem = String(item).replace(/^s*d+[.)]s*/, '');
+        html += '<div class="match-card" id="matchA' + i + '" onclick="clickMatchLeft(' + i + ')"><b>' + (i+1) + '.</b> ' + cleanItem + '</div>';
+      });
+      html += '</div><div class="match-col"><div style="color:#06b6d4; font-weight:800; font-size:0.82rem; margin-bottom:2px;">CỘT B (Ý nghĩa / Đơn vị)</div>';
+      q.colB.forEach((item, i) => {
+        const letters = ['A', 'B', 'C', 'D', 'E'];
+        const cleanItem = String(item).replace(/^s*[A-E][.)]s*/, '');
+        html += '<div class="match-card" id="matchB' + i + '" onclick="clickMatchRight(' + i + ')"><b>' + letters[i] + '.</b> ' + cleanItem + '</div>';
+      });
+      html += '</div></div>';
+      return html;
+    }
+
+    function clickMatchLeft(idx) {
+      AudioEngine.playClick();
+      if (matchPairs[idx] !== undefined) {
+        delete matchPairs[idx];
+        refreshMatchUI();
+        if (quizMode === 'exam') saveExamAnswer(currentQ, {...matchPairs});
+        return;
+      }
+      matchA = idx;
+      refreshMatchUI();
+      if (matchB !== null) finalizePair();
+    }
+
+    function clickMatchRight(idx) {
+      AudioEngine.playClick();
+      for (const [k, v] of Object.entries(matchPairs)) {
+        if (v === idx) {
+          delete matchPairs[k];
+          refreshMatchUI();
+          if (quizMode === 'exam') saveExamAnswer(currentQ, {...matchPairs});
+          return;
+        }
+      }
+      matchB = idx;
+      refreshMatchUI();
+      if (matchA !== null) finalizePair();
+    }
+
+    function finalizePair() {
+      matchPairs[matchA] = matchB;
+      matchA = null;
+      matchB = null;
+      refreshMatchUI();
+      if (quizMode === 'exam') saveExamAnswer(currentQ, {...matchPairs});
+    }
+
+    function refreshMatchUI() {
+      const colors = ['#f43f5e', '#8b5cf6', '#eab308', '#14b8a6', '#06b6d4'];
+      document.querySelectorAll('.match-card').forEach(el => {
+        el.classList.remove('active-select');
+        el.style.borderColor = 'rgba(255,255,255,0.12)';
+        el.style.backgroundColor = 'rgba(255,255,255,0.04)';
+      });
+
+      if (matchA !== null) {
+        const el = document.getElementById('matchA' + matchA);
+        if (el) el.classList.add('active-select');
+      }
+      if (matchB !== null) {
+        const el = document.getElementById('matchB' + matchB);
+        if (el) el.classList.add('active-select');
+      }
+
+      let colorIdx = 0;
+      for (const [left, right] of Object.entries(matchPairs)) {
+        const color = colors[colorIdx % colors.length];
+        const elA = document.getElementById('matchA' + left);
+        const elB = document.getElementById('matchB' + right);
+        if (elA) {
+          elA.style.borderColor = color;
+          elA.style.backgroundColor = color + '28';
+        }
+        if (elB) {
+          elB.style.borderColor = color;
+          elB.style.backgroundColor = color + '28';
+        }
+        colorIdx++;
+      }
+    }
+
+    /* Drag */
+    function renderDrag(q, idx) {
+      let sentenceHtml = q.sentence || q.text || '';
+      // Step 1: Pre-tokenize placeholders into unique tokens to eliminate substring nesting collisions
+      for (let i = 0; i < q.ans.length; i++) {
+        const p1 = '___' + i + '___';
+        const p2 = '[' + i + ']';
+        const p3 = '[blank]';
+        const tok = '%%%SLOT_' + i + '%%%';
+        if (sentenceHtml.includes(p1)) {
+          sentenceHtml = sentenceHtml.replace(p1, tok);
+        } else if (sentenceHtml.includes(p2)) {
+          sentenceHtml = sentenceHtml.replace(p2, tok);
+        } else if (sentenceHtml.includes(p3)) {
+          sentenceHtml = sentenceHtml.replace(p3, tok);
+        }
+      }
+
+      // Step 2: Replace tokens with slot HTML using (1), (2), (3) notation
+      for (let i = 0; i < q.ans.length; i++) {
+        const val = dragFilled[i] ? dragFilled[i] : '(' + (i + 1) + ')';
+        const activeCls = dragFilled[i] ? ' active' : '';
+        const slotHtml = '<span class="blank-slot' + activeCls + '" id="slot' + i + '" onclick="clickDragBlank(' + i + ')">' + val + '</span>';
+        sentenceHtml = sentenceHtml.replace('%%%SLOT_' + i + '%%%', slotHtml);
+      }
+
+      let html = '<div class="fill-sentence">' + sentenceHtml + '</div>' +
+        '<div style="font-size:0.84rem; color:#94a3b8; font-weight:600; margin-bottom:6px;">💡 Chạm một từ khóa bên dưới, sau đó chạm vào vị trí khuyết để điền:</div>' +
+        '<div class="word-bank">';
+      q.words.forEach((w, i) => {
+        const isUsed = dragFilled.includes(w);
+        html += '<button class="word-chip ' + (isUsed ? 'used' : '') + '" id="wordChip' + i + '" onclick="clickDragWord(\'' + w.replace(/'/g, "\\'") + '\', ' + i + ')">' + w + '</button>';
+      });
+      html += '</div>';
+      return html;
+    }
+
+    function clickDragWord(word, chipIdx) {
+      AudioEngine.playClick();
+      dragActiveWord = word;
+      document.querySelectorAll('.word-chip').forEach(c => c.classList.remove('active-chip'));
+      const chip = document.getElementById('wordChip' + chipIdx);
+      if (chip) chip.classList.add('active-chip');
+    }
+
+    function clickDragBlank(slotIdx) {
+      AudioEngine.playClick();
+      if (dragFilled[slotIdx]) {
+        dragFilled[slotIdx] = null;
+        refreshDragUI();
+        if (quizMode === 'exam') saveExamAnswer(currentQ, [...dragFilled]);
+        return;
+      }
+      if (dragActiveWord) {
+        dragFilled[slotIdx] = dragActiveWord;
+        dragActiveWord = null;
+        document.querySelectorAll('.word-chip').forEach(c => c.classList.remove('active-chip'));
+        refreshDragUI();
+        if (quizMode === 'exam') saveExamAnswer(currentQ, [...dragFilled]);
+      }
+    }
+
+    function refreshDragUI() {
+      const q = questions[currentQ];
+      if (!q || q.type !== 'drag') return;
+      for (let i = 0; i < q.ans.length; i++) {
+        const slot = document.getElementById('slot' + i);
+        if (slot) {
+          slot.textContent = dragFilled[i] ? dragFilled[i] : '(' + (i + 1) + ')';
+          slot.classList.toggle('active', !!dragFilled[i]);
+        }
+      }
+      q.words.forEach((w, i) => {
+        const chip = document.getElementById('wordChip' + i);
+        if (chip) {
+          const isUsed = dragFilled.includes(w);
+          chip.classList.toggle('used', isUsed);
+          if (isUsed && dragActiveWord === w) dragActiveWord = null;
+        }
+      });
+    }
+
+    /* Save user answers in Exam Mode */
+    function saveExamAnswer(qIdx, val) {
+      const q = questions[qIdx];
+      let score = 0;
+      let isFullyCorrect = false;
+
+      if (q.type === 'mcq') {
+        isFullyCorrect = (val === q.ans);
+        score = isFullyCorrect ? 1.0 : 0.0;
+      } else if (q.type === 'tf') {
+        let correctCount = 0;
+        q.stmts.forEach((st, sIdx) => {
+          const expected = (q.ans && Array.isArray(q.ans)) ? q.ans[sIdx] : (st.a !== undefined ? st.a : null);
+          if (val[sIdx] === expected) correctCount++;
+        });
+        if (correctCount === 1) score = 0.1;
+        else if (correctCount === 2) score = 0.25;
+        else if (correctCount === 3) score = 0.5;
+        else if (correctCount === 4) score = 1.0;
+        isFullyCorrect = (correctCount === 4);
+      } else if (q.type === 'match') {
+        let correctPairs = 0;
+        for (const [k, v] of Object.entries(val)) {
+          const kIdx = parseInt(k);
+          if (q.ans && q.ans[kIdx] !== undefined) {
+            if (q.ans[kIdx] === v || (q.colB && q.colB[v] === q.ans[kIdx])) correctPairs++;
+          }
+        }
+        score = (correctPairs / q.colA.length) * 1.0;
+        isFullyCorrect = (correctPairs === q.colA.length);
+      } else if (q.type === 'drag') {
+        let correctSlots = 0;
+        q.ans.forEach((ansTarget, aIdx) => {
+          const expectedWord = (typeof ansTarget === 'number' && q.words) ? q.words[ansTarget] : ansTarget;
+          if (val[aIdx] === expectedWord) correctSlots++;
+        });
+        score = (correctSlots / q.ans.length) * 1.0;
+        isFullyCorrect = (correctSlots === q.ans.length);
+      }
+
+      examUserAnswers[qIdx] = { val, score, isFullyCorrect, rawQ: q };
+      renderMiniMap();
+    }
+
+    /* Check Answer in Practice Mode */
+    function renderExplanationHTML(q, badgeClass, statusIcon) {
+      let expText = q.exp || '';
+      if (q.type === 'mcq' && typeof q.ans === 'number') {
+        const correctLetter = ['A', 'B', 'C', 'D'][q.ans] || 'A';
+        expText = expText.replace(/Chọn đáp án [A-D]/g, 'Chọn đáp án ' + correctLetter);
+      }
+      return '<div class="explanation-panel" id="expPanel">' +
+        '<div class="answer-badge-card ' + badgeClass + '">' +
+          '<span>' + statusIcon + '</span>' +
+          '<span style="border-left: 2px solid rgba(255,255,255,0.2); padding-left: 10px;">ĐÁP ÁN: ' + q.correctText + '</span>' +
+        '</div>' +
+        '<div class="exp-title-row">' +
+          '<span>💡 Lời giải chi tiết từ <span class="teacher-name-exp">' + teacherName + '</span>:</span>' +
+          '<div class="exp-zoom-controls">' +
+            '<button type="button" class="btn-exp-zoom" onclick="changeExpFontSize(-1)" title="Thu nhỏ cỡ chữ (A-)">A-</button>' +
+            '<span class="exp-zoom-level" id="expZoomLevelDisplay">' + Math.round(EXP_FONT_SCALES[expScaleIdx] * 100) + '%</span>' +
+            '<button type="button" class="btn-exp-zoom" onclick="changeExpFontSize(1)" title="Phóng to cỡ chữ (A+)">A+</button>' +
+            '<button type="button" class="btn-exp-zoom btn-exp-expand" id="btnExpExpand" onclick="toggleExpZoom(event)" title="Phóng to / Thu nhỏ toàn màn hình">' +
+              '<span id="expExpandIcon">⛶</span> <span id="expExpandLabel">Phóng to</span>' +
+            '</button>' +
+          '</div>' +
+        '</div>' +
+        '<div class="exp-body-content" id="expBodyContent">' + expText + '</div>' +
+      '</div>';
+    }
+
+    function checkAnswer(idx) {
+      const q = questions[idx];
+      let earned = 0;
+      let isFullyCorrect = false;
+
+      if (q.type === 'mcq') {
+        if (mcqSelected === null) {
+          alert('Em vui lòng chọn một phương án trước khi kiểm tra!');
+          return;
+        }
+        document.querySelectorAll('.mcq-btn').forEach(b => b.classList.add('disabled'));
+        isFullyCorrect = (mcqSelected === q.ans);
+        earned = isFullyCorrect ? 1.0 : 0.0;
+        document.getElementById('mcqOpt' + q.ans).classList.add('correct');
+        if (!isFullyCorrect) {
+          document.getElementById('mcqOpt' + mcqSelected).classList.add('wrong');
+        }
+      } else if (q.type === 'tf') {
+        if (tfState.some(v => v === null)) {
+          alert('Em hãy chọn Đúng hoặc Sai cho tất cả 4 nhận định!');
+          return;
+        }
+        document.querySelectorAll('.tf-btn').forEach(b => b.classList.add('disabled'));
+        let correctCount = 0;
+        q.stmts.forEach((st, sIdx) => {
+          const userVal = tfState[sIdx];
+          const expected = (q.ans && Array.isArray(q.ans)) ? q.ans[sIdx] : (st.a !== undefined ? st.a : null);
+          const isItemCorrect = (userVal === expected);
+          if (isItemCorrect) correctCount++;
+          const targetBtn = userVal ? document.getElementById('btnT' + sIdx) : document.getElementById('btnF' + sIdx);
+          if (targetBtn) targetBtn.classList.add(isItemCorrect ? 'correct-eval' : 'wrong-eval');
+        });
+
+        if (correctCount === 1) earned = 0.1;
+        else if (correctCount === 2) earned = 0.25;
+        else if (correctCount === 3) earned = 0.5;
+        else if (correctCount === 4) earned = 1.0;
+        isFullyCorrect = (correctCount === 4);
+      } else if (q.type === 'match') {
+        if (Object.keys(matchPairs).length < q.colA.length) {
+          alert('Em hãy ghép đầy đủ các cặp ở Cột A với Cột B!');
+          return;
+        }
+        let correctPairs = 0;
+        for (const [k, v] of Object.entries(matchPairs)) {
+          const kIdx = parseInt(k);
+          if (q.ans && q.ans[kIdx] !== undefined) {
+            if (q.ans[kIdx] === v || (q.colB && q.colB[v] === q.ans[kIdx])) correctPairs++;
+          }
+        }
+        earned = (correctPairs / q.colA.length) * 1.0;
+        isFullyCorrect = (correctPairs === q.colA.length);
+      } else if (q.type === 'drag') {
+        if (dragFilled.some(v => !v)) {
+          alert('Em hãy điền đầy đủ các vị trí còn khuyết!');
+          return;
+        }
+        let correctSlots = 0;
+        q.ans.forEach((ansTarget, aIdx) => {
+          const expectedWord = (typeof ansTarget === 'number' && q.words) ? q.words[ansTarget] : ansTarget;
+          if (dragFilled[aIdx] === expectedWord) correctSlots++;
+        });
+        earned = (correctSlots / q.ans.length) * 1.0;
+        isFullyCorrect = (correctSlots === q.ans.length);
+      }
+
+      totalPoints += earned;
+      examUserAnswers[idx] = { val: (q.type === 'mcq' ? mcqSelected : (q.type === 'tf' ? [...tfState] : (q.type === 'match' ? {...matchPairs} : [...dragFilled]))), score: earned, isFullyCorrect, rawQ: q };
+
+      if (isFullyCorrect) AudioEngine.playCorrect();
+      else AudioEngine.playWrong();
+
+      renderMiniMap();
+
+      let badgeClass = isFullyCorrect ? '' : (earned > 0 ? 'partial' : 'wrong');
+      let statusIcon = isFullyCorrect ? '🎉 Chính xác (+1.0 điểm)' : (earned > 0 ? '⚠️ Đúng một phần (+' + earned.toFixed(2) + ' điểm)' : '❌ Chưa chính xác (+0.0 điểm)');
+
+      const expHtml = renderExplanationHTML(q, badgeClass, statusIcon);
+
+      document.getElementById('explanationPlaceholder').innerHTML = expHtml;
+      applyExpFontSize();
+      const nextText = (idx < questions.length - 1) ? 'Tiếp tục sang câu sau ➔' : 'Xem tổng kết kết quả 🏆';
+      const nextAction = (idx < questions.length - 1) ? 'nextQuestion()' : 'showResults()';
+      document.getElementById('actionWrap').innerHTML = '<button class="btn-action btn-next-step" onclick="' + nextAction + '">' + nextText + '</button>';
+    }
+
+    function restorePracticeExplanation(idx, record) {
+      const q = questions[idx];
+      let badgeClass = record.isFullyCorrect ? '' : (record.score > 0 ? 'partial' : 'wrong');
+      let statusIcon = record.isFullyCorrect ? '🎉 Chính xác (+1.0 điểm)' : (record.score > 0 ? '⚠️ Đúng một phần (+' + record.score.toFixed(2) + ' điểm)' : '❌ Chưa chính xác (+0.0 điểm)');
+
+      const expHtml = renderExplanationHTML(q, badgeClass, statusIcon);
+
+      document.getElementById('explanationPlaceholder').innerHTML = expHtml;
+      applyExpFontSize();
+      const nextText = (idx < questions.length - 1) ? 'Tiếp tục sang câu sau ➔' : 'Xem tổng kết kết quả 🏆';
+      const nextAction = (idx < questions.length - 1) ? 'nextQuestion()' : 'showResults()';
+      document.getElementById('actionWrap').innerHTML = '<button class="btn-action btn-next-step" onclick="' + nextAction + '">' + nextText + '</button>';
+    }
+
+    function prevQuestion() {
+      AudioEngine.playClick();
+      if (currentQ > 0) {
+        currentQ--;
+        renderQuestion(currentQ);
+      }
+    }
+
+    function nextQuestion() {
+      AudioEngine.playClick();
+      currentQ++;
+      if (currentQ < questions.length) {
+        renderQuestion(currentQ);
+      } else {
+        if (quizMode === 'practice') {
+          showResults();
+        } else {
+          confirmSubmitExam();
+        }
+      }
+    }
+
+    // Explanation Zoom Engine
+    const EXP_FONT_SCALES = [0.85, 1.00, 1.15, 1.30, 1.50];
+    let expScaleIdx = 1;
+
+    function initExpZoom() {
+      try {
+        const saved = SafeStorage.getItem('VT_EXP_FONT_SCALE');
+        if (saved !== null && !isNaN(parseInt(saved, 10))) {
+          expScaleIdx = Math.max(0, Math.min(EXP_FONT_SCALES.length - 1, parseInt(saved, 10)));
+        }
+      } catch(e) {}
+      applyExpFontSize();
+    }
+
+    function changeExpFontSize(delta) {
+      AudioEngine.playClick();
+      expScaleIdx = Math.max(0, Math.min(EXP_FONT_SCALES.length - 1, expScaleIdx + delta));
+      try {
+        SafeStorage.setItem('VT_EXP_FONT_SCALE', expScaleIdx);
+      } catch(e) {}
+      applyExpFontSize();
+    }
+
+    function applyExpFontSize() {
+      const scale = EXP_FONT_SCALES[expScaleIdx];
+      document.documentElement.style.setProperty('--exp-font-scale', scale);
+      const display = document.getElementById('expZoomLevelDisplay');
+      if (display) display.textContent = Math.round(scale * 100) + '%';
+    }
+
+    function toggleExpZoom(e) {
+      if (e) e.stopPropagation();
+      AudioEngine.playClick();
+      const panel = document.getElementById('expPanel');
+      if (!panel) return;
+      const isZoomed = panel.classList.toggle('is-zoomed');
+      const icon = document.getElementById('expExpandIcon');
+      const label = document.getElementById('expExpandLabel');
+      if (isZoomed) {
+        if (icon) icon.textContent = '🗗';
+        if (label) label.textContent = 'Thu nhỏ';
+      } else {
+        if (icon) icon.textContent = '⛶';
+        if (label) label.textContent = 'Phóng to';
+      }
+    }
+
+    document.addEventListener('click', (e) => {
+      const panel = document.getElementById('expPanel');
+      if (panel && panel.classList.contains('is-zoomed')) {
+        if (!panel.contains(e.target)) {
+          toggleExpZoom();
+        }
+      }
+    });
+
+    function initKeyboardNavigation() {
+      window.addEventListener('keydown', (e) => {
+        // Ignore navigation when typing in form inputs or dropdowns
+        const activeEl = document.activeElement;
+        const tag = activeEl ? activeEl.tagName.toLowerCase() : '';
+        if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+
+        if (e.key === 'Escape') {
+          const panel = document.getElementById('expPanel');
+          if (panel && panel.classList.contains('is-zoomed')) {
+            e.preventDefault();
+            toggleExpZoom();
+            return;
+          }
+        }
+
+        // Ignore if modal is open
+        const teacherModal = document.getElementById('teacherModal');
+        if (teacherModal && teacherModal.style.display === 'flex') return;
+
+        // Ignore if result card or dashboard/exam review is open
+        const resCard = document.getElementById('resultCard');
+        if (resCard && resCard.style.display === 'block') return;
+        const revContainer = document.getElementById('examReviewContainer');
+        if (revContainer && revContainer.style.display === 'block') return;
+
+        // ArrowUp or ArrowLeft: Previous question
+        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+          e.preventDefault();
+          if (currentQ > 0) {
+            prevQuestion();
+          }
+        }
+        // ArrowDown or ArrowRight: Next question
+        else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+          e.preventDefault();
+          if (currentQ < questions.length - 1) {
+            nextQuestion();
+          } else if (quizMode === 'practice') {
+            const expPh = document.getElementById('explanationPlaceholder');
+            if (expPh && expPh.innerHTML.trim() !== '') {
+              showResults();
+            }
+          }
+        }
+      });
+    }
+
+    function confirmSubmitExam() {
+      const answeredCount = Object.keys(examUserAnswers).length;
+      if (answeredCount < questions.length) {
+        if (!confirm('Em mới trả lời ' + answeredCount + '/' + questions.length + ' câu. Em có chắc chắn muốn nộp bài thi ngay không?')) {
+          return;
+        }
+      } else {
+        if (!confirm('Em đã hoàn thành trọn vẹn 10 câu. Em muốn nộp bài thi để xem kết quả ngay?')) {
+          return;
+        }
+      }
+      submitExam();
+    }
+
+    function submitExam() {
+      clearInterval(examTimer);
+      totalPoints = 0;
+      for (let i = 0; i < questions.length; i++) {
+        const item = examUserAnswers[i];
+        if (item) totalPoints += item.score;
+      }
+      showResults();
+    }
+  
+
+    let questions = [];
+    let currentQ = 0;
+    let totalPoints = 0;
+    let quizMode = 'practice';
+    let examDurationMinutes = 15;
+    let examTimer = null;
+    let examSecondsLeft = 15 * 60;
+    let examUserAnswers = {};
+    const container = document.getElementById('quizContainer');
+
+    let mcqSelected = null;
+    let tfState = [];
+    let matchA = null; let matchB = null; let matchPairs = {};
+    let dragActiveWord = null; let dragFilled = [];
+
+    function setQuizMode(mode) {
+      AudioEngine.playClick();
+      quizMode = mode;
+      document.getElementById('btnModePractice').classList.toggle('active', mode === 'practice');
+      document.getElementById('btnModeExam').classList.toggle('active', mode === 'exam');
+      document.getElementById('examTimerWrap').classList.toggle('active', mode === 'exam');
+      if (mode === 'exam') startExamTimer();
+      else clearInterval(examTimer);
+      restartLesson();
+    }
+
+    function changeExamDuration(mins) {
+      examDurationMinutes = parseInt(mins);
+      if (quizMode === 'exam') {
+        startExamTimer();
+        restartLesson();
+      }
+    }
+
+    function startExamTimer() {
+      clearInterval(examTimer);
+      examSecondsLeft = examDurationMinutes * 60;
+      updateTimerUI();
+      examTimer = setInterval(() => {
+        examSecondsLeft--;
+        updateTimerUI();
+        if (examSecondsLeft <= 0) {
+          clearInterval(examTimer);
+          alert('⏰ Đã hết thời gian làm bài! Hệ thống đang tự động nộp bài thi của em.');
+          submitExam();
+        }
+      }, 1000);
+    }
+
+    function updateTimerUI() {
+      const display = document.getElementById('timerDisplay');
+      if (!display) return;
+      const m = Math.floor(examSecondsLeft / 60);
+      const s = examSecondsLeft % 60;
+      display.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+      display.classList.toggle('danger', examSecondsLeft < 60);
+    }
+
+    function renderMiniMap() {
+      const mapWrap = document.getElementById('miniMapWrap');
+      if (!mapWrap) return;
+      let html = '';
+      questions.forEach((q, idx) => {
+        let cls = 'map-btn';
+        if (idx === currentQ) cls += ' current';
+        if (quizMode === 'exam') {
+          if (examUserAnswers[idx] !== undefined) cls += ' answered';
+        } else {
+          const ansRecord = examUserAnswers[idx];
+          if (ansRecord) {
+            cls += ansRecord.score >= 0.99 ? ' res-correct' : ' res-wrong';
+          }
+        }
+        html += '<button class="' + cls + '" onclick="jumpToQuestion(' + idx + ')">' + (idx + 1) + '</button>';
+      });
+      mapWrap.innerHTML = html;
+    }
+
+    function jumpToQuestion(idx) {
+      AudioEngine.playClick();
+      currentQ = idx;
+      renderQuestion(currentQ);
+    }
+
+    function renderQuestion(idx) {
+      document.getElementById('resultCard').style.display = 'none';
+      renderMiniMap();
+
+      const q = questions[idx];
+      if (!q) return;
+
+      let interactionHtml = '';
+      if (q.type === 'mcq') interactionHtml = renderMCQ(q, idx);
+      else if (q.type === 'tf') interactionHtml = renderTF(q, idx);
+      else if (q.type === 'match') interactionHtml = renderMatch(q, idx);
+      else if (q.type === 'drag') interactionHtml = renderDrag(q, idx);
+
+      let actionButtonsHtml = '';
+      if (quizMode === 'practice') {
+        actionButtonsHtml = '<button class="btn-action" id="btnSubmit" onclick="checkAnswer(' + idx + ')">Kiểm tra kết quả 🎯</button>';
+      } else {
+        actionButtonsHtml = '<div style="display:flex; gap:6px;">' +
+          (idx > 0 ? '<button class="btn-action btn-secondary" onclick="prevQuestion()">◀ Trước</button>' : '') +
+          (idx < questions.length - 1 ? '<button class="btn-action btn-secondary" onclick="nextQuestion()">Sau ▶</button>' : '') +
+        '</div>' +
+        '<button class="btn-action btn-submit-exam" onclick="confirmSubmitExam()">Nộp bài thi 🏁</button>';
+      }
+
+      let svgHtml = '';
+      if (q.svgGraph) {
+        let svgCode = q.svgGraph;
+        const svgMatch = svgCode.match(/<svg[\s\S]*<\/svg>/i);
+        if (svgMatch) svgCode = svgMatch[0];
+        svgHtml = '<div class="graph-container"><div class="graph-box">' + svgCode + '</div></div>';
+      }
+
+      const hasSvg = !!svgHtml;
+      let html = '';
+      if (hasSvg) {
+        html = '<div class="quiz-card quiz-card-split" id="qCard">' +
+          '<div class="quiz-split-grid">' +
+            '<div class="quiz-pane-left">' +
+              '<div class="q-meta">' +
+                '<span class="q-meta-badge">Câu ' + (idx + 1) + '/' + questions.length + ' • ' + getTypeName(q.type) + '</span>' +
+                '<span class="q-meta-score">1.0 Điểm</span>' +
+              '</div>' +
+              '<div class="q-title">' + q.q + '</div>' +
+              svgHtml +
+            '</div>' +
+            '<div class="quiz-pane-right">' +
+              '<div class="q-interaction-wrap">' + interactionHtml + '</div>' +
+              '<div class="quiz-actions" id="actionWrap">' + actionButtonsHtml + '</div>' +
+              '<div id="explanationPlaceholder"></div>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      } else {
+        html = '<div class="quiz-card quiz-card-unified" id="qCard">' +
+          '<div class="q-meta">' +
+            '<span class="q-meta-badge">Câu ' + (idx + 1) + '/' + questions.length + ' • ' + getTypeName(q.type) + '</span>' +
+            '<span class="q-meta-score">1.0 Điểm</span>' +
+          '</div>' +
+          '<div class="q-title">' + q.q + '</div>' +
+          '<div class="q-interaction-wrap">' + interactionHtml + '</div>' +
+          '<div class="quiz-actions" id="actionWrap">' + actionButtonsHtml + '</div>' +
+          '<div id="explanationPlaceholder"></div>' +
+        '</div>';
+      }
+
+      container.innerHTML = html;
+      initQuestionState(idx);
+      updateProgress();
+    }
+
+    function initQuestionState(idx) {
+      const saved = examUserAnswers[idx];
+      if (saved) {
+        if (questions[idx].type === 'mcq') mcqSelected = saved.val;
+        else if (questions[idx].type === 'tf') tfState = [...saved.val];
+        else if (questions[idx].type === 'match') matchPairs = {...saved.val};
+        else if (questions[idx].type === 'drag') dragFilled = [...saved.val];
+      } else {
+        mcqSelected = null;
+        tfState = questions[idx].type === 'tf' ? new Array(questions[idx].stmts.length).fill(null) : [];
+        matchA = null; matchB = null; matchPairs = {};
+        dragActiveWord = null;
+        dragFilled = questions[idx].type === 'drag' ? new Array(questions[idx].ans.length).fill(null) : [];
+      }
+
+      if (saved && quizMode === 'practice') {
+        restorePracticeExplanation(idx, saved);
+      }
+    }
+
+    function updateProgress() {
+      document.getElementById('progressBar').style.width = ((currentQ / questions.length) * 100) + '%';
+    }
+
+    function showResults() {
+      container.innerHTML = '';
+      document.getElementById('progressBar').style.width = '100%';
+      document.getElementById('finalScore').textContent = totalPoints.toFixed(1);
+
+      try {
+        const key = 'HOA12_LESSON_SCORE_' + LESSON_ID;
+        const oldScore = parseFloat(SafeStorage.getItem(key) || '0');
+        if (totalPoints > oldScore) {
+          SafeStorage.setItem(key, totalPoints.toFixed(2));
+        }
+      } catch(e) {}
+
+      if (quizMode === 'exam') {
+        renderExamReview();
+      }
+
+      const title = document.getElementById('resultTitle');
+      const cmt = document.getElementById('resultComment');
+
+      AudioEngine.playWin();
+      fireConfetti();
+
+      if (totalPoints >= 9.0) {
+        title.textContent = 'Xuất sắc tuyệt đối! 🌟';
+        cmt.textContent = teacherName + ' biểu dương em! Em đã làm chủ hoàn hảo bài học Hoá Học 12 với tư duy sắc bén và năng lực hoá học vượt trội!';
+      } else if (totalPoints >= 7.0) {
+        title.textContent = 'Lực học rất tốt! 👏';
+        cmt.textContent = 'Em nắm rất chắc lý thuyết và phương pháp tính toán. Hãy rà soát thêm câu Đúng/Sai và đồ thị để đạt điểm 10 tuyệt đối!';
+      } else if (totalPoints >= 5.0) {
+        title.textContent = 'Đạt yêu cầu căn bản! 🎯';
+        cmt.textContent = 'Em đã hiểu các khái niệm cơ bản. Hãy xem lại kỹ lời giải chi tiết của ' + teacherName + ' để củng cố các câu còn nhầm lẫn nhé!';
+      } else {
+        title.textContent = 'Cần củng cố thêm lý thuyết! 📚';
+        cmt.textContent = 'Em hãy làm lại bài thử thách một lần nữa để thành thạo kiến thức nhé!';
+      }
+
+      document.getElementById('resultCard').style.display = 'block';
+    }
+
+    function renderExamReview() {
+      const revWrap = document.getElementById('examReviewContainer');
+      revWrap.style.display = 'block';
+
+      let html = '<h3 style="color:#38bdf8; font-size:1.05rem; margin-bottom:8px; font-weight:800;">📋 Bảng Rà Soát Chi Tiết 10 Câu Thi:</h3>' +
+        '<div class="review-table-wrap">' +
+          '<table class="review-table">' +
+            '<thead>' +
+              '<tr>' +
+                '<th>Câu</th>' +
+                '<th>Dạng bài</th>' +
+                '<th>Kết quả</th>' +
+                '<th>Điểm</th>' +
+                '<th>Đáp án chuẩn</th>' +
+              '</tr>' +
+            '</thead>' +
+            '<tbody>';
+
+      questions.forEach((q, i) => {
+        const item = examUserAnswers[i];
+        const score = item ? item.score : 0;
+        const resText = item ? (item.isFullyCorrect ? '<span style="color:#10b981; font-weight:800;">Chính xác</span>' : (item.score > 0 ? '<span style="color:#f59e0b; font-weight:700;">Đúng 1 phần</span>' : '<span style="color:#ef4444; font-weight:700;">Sai</span>')) : '<span style="color:#64748b;">Bỏ trống</span>';
+
+        html += '<tr>' +
+          '<td><b>Câu ' + (i + 1) + '</b></td>' +
+          '<td>' + getTypeName(q.type) + '</td>' +
+          '<td>' + resText + '</td>' +
+          '<td><b>+' + score.toFixed(2) + '</b></td>' +
+          '<td><span style="color:#38bdf8; font-weight:700;">' + q.correctText + '</span></td>' +
+        '</tr>';
+      });
+
+      html += '</tbody></table></div>';
+      revWrap.innerHTML = html;
+    }
+
+    function restartLesson() {
+      document.getElementById('resultCard').style.display = 'none';
+      document.getElementById('examReviewContainer').style.display = 'none';
+      currentQ = 0;
+      totalPoints = 0;
+      examUserAnswers = {};
+      questions = cloneAndShuffleQuestions(RAW_QUESTIONS);
+      if (quizMode === 'exam') startExamTimer();
+      renderQuestion(0);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initFontScale();
+      initTeacherName();
+      initHeaderScroll();
+      initKeyboardNavigation();
+      initExpZoom();
+      restartLesson();
+
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js').catch(() => {});
+        });
+      }
+
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('autoTest') === 'correct') {
+        setTimeout(() => { selectMCQ(questions[0].ans); checkAnswer(0); }, 400);
+      }
+    });
+  </script>
+</body>
+</html>
