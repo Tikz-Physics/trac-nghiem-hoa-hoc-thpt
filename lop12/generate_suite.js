@@ -1903,15 +1903,15 @@ function getQuestionRenderersJS() {
         const revContainer = document.getElementById('examReviewContainer');
         if (revContainer && revContainer.style.display === 'block') return;
 
-        // ArrowUp or ArrowLeft: Previous question
-        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        // ArrowLeft: Lùi về câu trước (prevQuestion)
+        if (e.key === 'ArrowLeft') {
           e.preventDefault();
           if (currentQ > 0) {
             prevQuestion();
           }
         }
-        // ArrowDown or ArrowRight: Next question
-        else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        // ArrowRight: Tiến tới câu sau (nextQuestion)
+        else if (e.key === 'ArrowRight') {
           e.preventDefault();
           if (currentQ < questions.length - 1) {
             nextQuestion();
@@ -1922,7 +1922,53 @@ function getQuestionRenderersJS() {
             }
           }
         }
+        // ArrowUp: Lùi về bài trước (prevLesson)
+        else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          prevLesson();
+        }
+        // ArrowDown: Tiến tới bài sau (nextLesson)
+        else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          nextLesson();
+        }
       });
+    }
+
+    function prevLesson() {
+      if (quizMode === 'exam') {
+        const answered = Object.keys(examUserAnswers).length;
+        if (answered > 0 && !confirm('Em đang làm bài thi thử dở dang. Em có chắc chắn muốn chuyển về bài học trước không?')) {
+          return;
+        }
+      }
+      const select = document.getElementById('lessonDropdown');
+      if (select && select.selectedIndex > 0) {
+        select.selectedIndex--;
+        if (typeof changeLesson === 'function') {
+          changeLesson(select.value);
+        }
+      } else if (window.PREV_LESSON_URL) {
+        window.location.href = window.PREV_LESSON_URL;
+      }
+    }
+
+    function nextLesson() {
+      if (quizMode === 'exam') {
+        const answered = Object.keys(examUserAnswers).length;
+        if (answered > 0 && !confirm('Em đang làm bài thi thử dở dang. Em có chắc chắn muốn chuyển sang bài học tiếp theo không?')) {
+          return;
+        }
+      }
+      const select = document.getElementById('lessonDropdown');
+      if (select && select.selectedIndex < select.options.length - 1) {
+        select.selectedIndex++;
+        if (typeof changeLesson === 'function') {
+          changeLesson(select.value);
+        }
+      } else if (window.NEXT_LESSON_URL) {
+        window.location.href = window.NEXT_LESSON_URL;
+      }
     }
 
     function confirmSubmitExam() {
@@ -2242,7 +2288,7 @@ function buildMasterHub() {
       if (currentLessonId < 30) {
         changeLesson(currentLessonId + 1);
       } else {
-        alert('Chúc mừng em đã hoàn thành tất cả 25 bài học của toàn bộ 8 Chương Hoá Học 12!');
+        alert('Chúc mừng em đã hoàn thành tất cả 30 bài học của toàn bộ 8 Chương Hoá Học 12!');
       }
     }
 
@@ -2565,7 +2611,7 @@ function buildMasterHub() {
 }
 
 // 2. GENERATE STANDALONE FILE
-function buildStandaloneFile(filename, lessonId, lessonTitle, questions) {
+function buildStandaloneFile(filename, lessonId, lessonTitle, questions, prevUrl, nextUrl) {
   const html = `<!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -2664,6 +2710,10 @@ function buildStandaloneFile(filename, lessonId, lessonTitle, questions) {
   <script>
     const LESSON_ID = ${lessonId};
     const RAW_QUESTIONS = ${JSON.stringify(questions, null, 2)};
+    const PREV_LESSON_URL = ${prevUrl ? JSON.stringify(prevUrl) : 'null'};
+    const NEXT_LESSON_URL = ${nextUrl ? JSON.stringify(nextUrl) : 'null'};
+    window.PREV_LESSON_URL = PREV_LESSON_URL;
+    window.NEXT_LESSON_URL = NEXT_LESSON_URL;
 
     ${getBaseJS()}
     ${getQuestionRenderersJS()}
@@ -2965,9 +3015,13 @@ console.log('1. Building Master Hub...');
 buildMasterHub();
 
 console.log('2. Building 30 Standalone files...');
-lessonsInfo.forEach(item => {
+lessonsInfo.forEach((item, idx) => {
   const qs = lessonsData[String(item.id)];
-  buildStandaloneFile(item.filename, item.id, item.title, qs);
+  const prevItem = idx > 0 ? lessonsInfo[idx - 1] : null;
+  const nextItem = idx < lessonsInfo.length - 1 ? lessonsInfo[idx + 1] : null;
+  const prevUrl = prevItem ? `./${prevItem.filename}` : null;
+  const nextUrl = nextItem ? `./${nextItem.filename}` : null;
+  buildStandaloneFile(item.filename, item.id, item.title, qs, prevUrl, nextUrl);
 });
 
 console.log('=== BUILD COMPLETED SUCCESSFULLY! ===');

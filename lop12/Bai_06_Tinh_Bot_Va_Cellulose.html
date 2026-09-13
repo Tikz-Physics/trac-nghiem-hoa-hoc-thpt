@@ -1238,6 +1238,10 @@
     "exp": "• <b>Bản chất hóa học:</b> Sợi bông là cellulose nguyên chất (gần 98%), khi cháy giống như đốt giấy: ngọn lửa vàng, cháy êm dịu, khói nhẹ, tro mịn xốp, không có mùi khét.<br>• Còn tơ tằm là protein (chứa N, S) khi cháy bốc mùi khét đặc trưng của tóc hoặc lông vũ cháy và vón cục tròn màu đen giòn.<br>• <b>Kết luận:</b> Chọn đáp án A."
   }
 ];
+    const PREV_LESSON_URL = "./Bai_05_Saccharose_Va_Maltose.html";
+    const NEXT_LESSON_URL = "./Bai_07_On_Tap_Chuong_2.html";
+    window.PREV_LESSON_URL = PREV_LESSON_URL;
+    window.NEXT_LESSON_URL = NEXT_LESSON_URL;
 
     
 // SafeStorage Engine for Mobile & file:// compatibility (Fallback to memory if localStorage is restricted)
@@ -2142,15 +2146,15 @@
         const revContainer = document.getElementById('examReviewContainer');
         if (revContainer && revContainer.style.display === 'block') return;
 
-        // ArrowUp or ArrowLeft: Previous question
-        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        // ArrowLeft: Lùi về câu trước (prevQuestion)
+        if (e.key === 'ArrowLeft') {
           e.preventDefault();
           if (currentQ > 0) {
             prevQuestion();
           }
         }
-        // ArrowDown or ArrowRight: Next question
-        else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        // ArrowRight: Tiến tới câu sau (nextQuestion)
+        else if (e.key === 'ArrowRight') {
           e.preventDefault();
           if (currentQ < questions.length - 1) {
             nextQuestion();
@@ -2161,7 +2165,53 @@
             }
           }
         }
+        // ArrowUp: Lùi về bài trước (prevLesson)
+        else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          prevLesson();
+        }
+        // ArrowDown: Tiến tới bài sau (nextLesson)
+        else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          nextLesson();
+        }
       });
+    }
+
+    function prevLesson() {
+      if (quizMode === 'exam') {
+        const answered = Object.keys(examUserAnswers).length;
+        if (answered > 0 && !confirm('Em đang làm bài thi thử dở dang. Em có chắc chắn muốn chuyển về bài học trước không?')) {
+          return;
+        }
+      }
+      const select = document.getElementById('lessonDropdown');
+      if (select && select.selectedIndex > 0) {
+        select.selectedIndex--;
+        if (typeof changeLesson === 'function') {
+          changeLesson(select.value);
+        }
+      } else if (window.PREV_LESSON_URL) {
+        window.location.href = window.PREV_LESSON_URL;
+      }
+    }
+
+    function nextLesson() {
+      if (quizMode === 'exam') {
+        const answered = Object.keys(examUserAnswers).length;
+        if (answered > 0 && !confirm('Em đang làm bài thi thử dở dang. Em có chắc chắn muốn chuyển sang bài học tiếp theo không?')) {
+          return;
+        }
+      }
+      const select = document.getElementById('lessonDropdown');
+      if (select && select.selectedIndex < select.options.length - 1) {
+        select.selectedIndex++;
+        if (typeof changeLesson === 'function') {
+          changeLesson(select.value);
+        }
+      } else if (window.NEXT_LESSON_URL) {
+        window.location.href = window.NEXT_LESSON_URL;
+      }
     }
 
     function confirmSubmitExam() {

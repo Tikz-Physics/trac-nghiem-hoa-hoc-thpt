@@ -1238,6 +1238,10 @@
     "exp": "• <b>Phân tích tổ hợp:</b><br>Tripeptide chứa cả Gly và Ala gồm 2 trường hợp:<br>1. Có 2 gốc Gly và 1 gốc Ala: Gly–Gly–Ala, Gly–Ala–Gly, Ala–Gly–Gly (3 chất).<br>2. Có 1 gốc Gly và 2 gốc Ala: Ala–Ala–Gly, Ala–Gly–Ala, Gly–Ala–Ala (3 chất).<br>Tổng cộng có 3 + 3 = 6 đồng phân tripeptide.<br>• <b>Kết luận:</b> Chọn đáp án A."
   }
 ];
+    const PREV_LESSON_URL = "./Bai_08_Amine.html";
+    const NEXT_LESSON_URL = "./Bai_10_Protein_Va_Enzyme.html";
+    window.PREV_LESSON_URL = PREV_LESSON_URL;
+    window.NEXT_LESSON_URL = NEXT_LESSON_URL;
 
     
 // SafeStorage Engine for Mobile & file:// compatibility (Fallback to memory if localStorage is restricted)
@@ -2142,15 +2146,15 @@
         const revContainer = document.getElementById('examReviewContainer');
         if (revContainer && revContainer.style.display === 'block') return;
 
-        // ArrowUp or ArrowLeft: Previous question
-        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        // ArrowLeft: Lùi về câu trước (prevQuestion)
+        if (e.key === 'ArrowLeft') {
           e.preventDefault();
           if (currentQ > 0) {
             prevQuestion();
           }
         }
-        // ArrowDown or ArrowRight: Next question
-        else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        // ArrowRight: Tiến tới câu sau (nextQuestion)
+        else if (e.key === 'ArrowRight') {
           e.preventDefault();
           if (currentQ < questions.length - 1) {
             nextQuestion();
@@ -2161,7 +2165,53 @@
             }
           }
         }
+        // ArrowUp: Lùi về bài trước (prevLesson)
+        else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          prevLesson();
+        }
+        // ArrowDown: Tiến tới bài sau (nextLesson)
+        else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          nextLesson();
+        }
       });
+    }
+
+    function prevLesson() {
+      if (quizMode === 'exam') {
+        const answered = Object.keys(examUserAnswers).length;
+        if (answered > 0 && !confirm('Em đang làm bài thi thử dở dang. Em có chắc chắn muốn chuyển về bài học trước không?')) {
+          return;
+        }
+      }
+      const select = document.getElementById('lessonDropdown');
+      if (select && select.selectedIndex > 0) {
+        select.selectedIndex--;
+        if (typeof changeLesson === 'function') {
+          changeLesson(select.value);
+        }
+      } else if (window.PREV_LESSON_URL) {
+        window.location.href = window.PREV_LESSON_URL;
+      }
+    }
+
+    function nextLesson() {
+      if (quizMode === 'exam') {
+        const answered = Object.keys(examUserAnswers).length;
+        if (answered > 0 && !confirm('Em đang làm bài thi thử dở dang. Em có chắc chắn muốn chuyển sang bài học tiếp theo không?')) {
+          return;
+        }
+      }
+      const select = document.getElementById('lessonDropdown');
+      if (select && select.selectedIndex < select.options.length - 1) {
+        select.selectedIndex++;
+        if (typeof changeLesson === 'function') {
+          changeLesson(select.value);
+        }
+      } else if (window.NEXT_LESSON_URL) {
+        window.location.href = window.NEXT_LESSON_URL;
+      }
     }
 
     function confirmSubmitExam() {

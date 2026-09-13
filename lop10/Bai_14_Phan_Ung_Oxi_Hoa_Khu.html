@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="theme-color" content="#070a14" />
-  <title>Hoá Học 12 - Bài 14: Phản ứng oxi hóa – khử | Thầy Trần Mạnh Tùng</title>
+  <title>Hoá Học 10 - Bài 14: Phản ứng oxi hóa – khử | Thầy Trần Mạnh Tùng</title>
   <link rel="manifest" href="./manifest.json" />
   <link rel="apple-touch-icon" href="./icon-192.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
@@ -1303,6 +1303,10 @@
     "exp": "• Trong 8 phân tử HNO₃ phản ứng:<br>• 2 phân tử bị khử thành NO (N⁺⁵ + 3e -> N⁺²) đóng vai trò chất oxi hóa.<br>• 6 phân tử HNO₃ giữ nguyên số oxi hóa N⁺⁵ trong muối Cu(NO₃)₂ đóng vai trò tạo môi trường.<br>• <b>Kết luận:</b> Chọn đáp án A."
   }
 ];
+    const PREV_LESSON_URL = "./Bai_13_On_Tap_Chuong_3.html";
+    const NEXT_LESSON_URL = "./Bai_15_Phan_Ung_Oxi_Hoa_Khu_Thuc_Tien.html";
+    window.PREV_LESSON_URL = PREV_LESSON_URL;
+    window.NEXT_LESSON_URL = NEXT_LESSON_URL;
 
     
 // SafeStorage Engine for Mobile & file:// compatibility (Fallback to memory if localStorage is restricted)
@@ -2207,15 +2211,15 @@
         const revContainer = document.getElementById('examReviewContainer');
         if (revContainer && revContainer.style.display === 'block') return;
 
-        // ArrowUp or ArrowLeft: Previous question
-        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        // ArrowLeft: Lùi về câu trước (prevQuestion)
+        if (e.key === 'ArrowLeft') {
           e.preventDefault();
           if (currentQ > 0) {
             prevQuestion();
           }
         }
-        // ArrowDown or ArrowRight: Next question
-        else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        // ArrowRight: Tiến tới câu sau (nextQuestion)
+        else if (e.key === 'ArrowRight') {
           e.preventDefault();
           if (currentQ < questions.length - 1) {
             nextQuestion();
@@ -2226,7 +2230,53 @@
             }
           }
         }
+        // ArrowUp: Lùi về bài trước (prevLesson)
+        else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          prevLesson();
+        }
+        // ArrowDown: Tiến tới bài sau (nextLesson)
+        else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          nextLesson();
+        }
       });
+    }
+
+    function prevLesson() {
+      if (quizMode === 'exam') {
+        const answered = Object.keys(examUserAnswers).length;
+        if (answered > 0 && !confirm('Em đang làm bài thi thử dở dang. Em có chắc chắn muốn chuyển về bài học trước không?')) {
+          return;
+        }
+      }
+      const select = document.getElementById('lessonDropdown');
+      if (select && select.selectedIndex > 0) {
+        select.selectedIndex--;
+        if (typeof changeLesson === 'function') {
+          changeLesson(select.value);
+        }
+      } else if (window.PREV_LESSON_URL) {
+        window.location.href = window.PREV_LESSON_URL;
+      }
+    }
+
+    function nextLesson() {
+      if (quizMode === 'exam') {
+        const answered = Object.keys(examUserAnswers).length;
+        if (answered > 0 && !confirm('Em đang làm bài thi thử dở dang. Em có chắc chắn muốn chuyển sang bài học tiếp theo không?')) {
+          return;
+        }
+      }
+      const select = document.getElementById('lessonDropdown');
+      if (select && select.selectedIndex < select.options.length - 1) {
+        select.selectedIndex++;
+        if (typeof changeLesson === 'function') {
+          changeLesson(select.value);
+        }
+      } else if (window.NEXT_LESSON_URL) {
+        window.location.href = window.NEXT_LESSON_URL;
+      }
     }
 
     function confirmSubmitExam() {
@@ -2457,7 +2507,7 @@
 
       if (totalPoints >= 9.0) {
         title.textContent = 'Xuất sắc tuyệt đối! 🌟';
-        cmt.textContent = teacherName + ' biểu dương em! Em đã làm chủ hoàn hảo bài học Hoá Học 12 với tư duy sắc bén và năng lực hoá học vượt trội!';
+        cmt.textContent = teacherName + ' biểu dương em! Em đã làm chủ hoàn hảo bài học Hoá Học 10 với tư duy sắc bén và năng lực hoá học vượt trội!';
       } else if (totalPoints >= 7.0) {
         title.textContent = 'Lực học rất tốt! 👏';
         cmt.textContent = 'Em nắm rất chắc lý thuyết và phương pháp tính toán. Hãy rà soát thêm câu Đúng/Sai và đồ thị để đạt điểm 10 tuyệt đối!';

@@ -1238,6 +1238,10 @@
     "exp": "• <b>Tính toán:</b><br>Số nguyên tử carbon trong phân tử amine = n(CO<sub>2</sub>) / n(amine) = 0,2 / 0,1 = 2.<br>Amine no đơn chức mạch hở có CTPT C<sub>n</sub>H<sub>2n+3</sub>N.<br>Với n = 2 → C<sub>2</sub>H<sub>7</sub>N (gồm ethylamine CH<sub>3</sub>CH<sub>2</sub>NH<sub>2</sub> và dimethylamine (CH<sub>3</sub>)<sub>2</sub>NH).<br>• <b>Kết luận:</b> Chọn đáp án A."
   }
 ];
+    const PREV_LESSON_URL = "./Bai_07_On_Tap_Chuong_2.html";
+    const NEXT_LESSON_URL = "./Bai_09_Amino_Acid_Va_Peptide.html";
+    window.PREV_LESSON_URL = PREV_LESSON_URL;
+    window.NEXT_LESSON_URL = NEXT_LESSON_URL;
 
     
 // SafeStorage Engine for Mobile & file:// compatibility (Fallback to memory if localStorage is restricted)
@@ -2142,15 +2146,15 @@
         const revContainer = document.getElementById('examReviewContainer');
         if (revContainer && revContainer.style.display === 'block') return;
 
-        // ArrowUp or ArrowLeft: Previous question
-        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        // ArrowLeft: Lùi về câu trước (prevQuestion)
+        if (e.key === 'ArrowLeft') {
           e.preventDefault();
           if (currentQ > 0) {
             prevQuestion();
           }
         }
-        // ArrowDown or ArrowRight: Next question
-        else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        // ArrowRight: Tiến tới câu sau (nextQuestion)
+        else if (e.key === 'ArrowRight') {
           e.preventDefault();
           if (currentQ < questions.length - 1) {
             nextQuestion();
@@ -2161,7 +2165,53 @@
             }
           }
         }
+        // ArrowUp: Lùi về bài trước (prevLesson)
+        else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          prevLesson();
+        }
+        // ArrowDown: Tiến tới bài sau (nextLesson)
+        else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          nextLesson();
+        }
       });
+    }
+
+    function prevLesson() {
+      if (quizMode === 'exam') {
+        const answered = Object.keys(examUserAnswers).length;
+        if (answered > 0 && !confirm('Em đang làm bài thi thử dở dang. Em có chắc chắn muốn chuyển về bài học trước không?')) {
+          return;
+        }
+      }
+      const select = document.getElementById('lessonDropdown');
+      if (select && select.selectedIndex > 0) {
+        select.selectedIndex--;
+        if (typeof changeLesson === 'function') {
+          changeLesson(select.value);
+        }
+      } else if (window.PREV_LESSON_URL) {
+        window.location.href = window.PREV_LESSON_URL;
+      }
+    }
+
+    function nextLesson() {
+      if (quizMode === 'exam') {
+        const answered = Object.keys(examUserAnswers).length;
+        if (answered > 0 && !confirm('Em đang làm bài thi thử dở dang. Em có chắc chắn muốn chuyển sang bài học tiếp theo không?')) {
+          return;
+        }
+      }
+      const select = document.getElementById('lessonDropdown');
+      if (select && select.selectedIndex < select.options.length - 1) {
+        select.selectedIndex++;
+        if (typeof changeLesson === 'function') {
+          changeLesson(select.value);
+        }
+      } else if (window.NEXT_LESSON_URL) {
+        window.location.href = window.NEXT_LESSON_URL;
+      }
     }
 
     function confirmSubmitExam() {
