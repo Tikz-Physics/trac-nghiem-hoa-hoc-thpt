@@ -1127,7 +1127,21 @@
         "ans": false,
         "exp": "Sai. Gốc sulfate SO₄²⁻ giữ nguyên số oxi hóa S (+6) và O (-2), chỉ đóng vai trò môi trường tạo muối."
       }
-    ]
+    ],
+    "stmts": [
+      "Zn là chất khử vì số oxi hóa của kẽm tăng từ 0 lên +2.",
+      "Ion Cu²⁺ là chất oxi hóa vì số oxi hóa giảm từ +2 xuống 0.",
+      "Quá trình Zn -> Zn²⁺ + 2e là quá trình oxi hóa kẽm.",
+      "Gốc SO₄²⁻ tham gia nhường nhận electron trong phản ứng."
+    ],
+    "ans": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng. Zn nhường 2e: Zn -> Zn²⁺ + 2e.<br>• <b>Ý b) [Đúng]:</b> Đúng. Cu²⁺ + 2e -> Cu.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Gốc sulfate SO₄²⁻ giữ nguyên số oxi hóa S (+6) và O (-2), chỉ đóng vai trò môi trường tạo muối."
   },
   {
     "type": "mcq",
@@ -1163,13 +1177,26 @@
         "b": "D. Quá trình khử ion hydrogen (sự khử)."
       }
     ],
-    "ans": {
-      "1": "A",
-      "2": "B",
-      "3": "C",
-      "4": "D"
-    },
-    "exp": "• Quá trình nhường e = Quá trình oxi hóa.<br>• Quá trình nhận e = Quá trình khử."
+    "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• Quá trình nhường e = Quá trình oxi hóa.<br>• Quá trình nhận e = Quá trình khử.",
+    "colA": [
+      "Fe -> Fe³⁺ + 3e",
+      "Cl₂ + 2e -> 2Cl⁻",
+      "Cu²⁺ + 2e -> Cu",
+      "2H⁺ + 2e -> H₂"
+    ],
+    "colB": [
+      "Quá trình oxi hóa sắt (sự oxi hóa).",
+      "Quá trình khử chlorine (sự khử).",
+      "Quá trình khử ion đồng (sự khử).",
+      "Quá trình khử ion hydrogen (sự khử)."
+    ],
+    "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
   },
   {
     "type": "mcq",
@@ -1208,7 +1235,21 @@
         "ans": false,
         "exp": "Sai. Ví dụ NH₃ + HCl -> NH₄Cl hay CaO + H₂O -> Ca(OH)₂ là phản ứng hóa hợp nhưng không thay đổi số oxi hóa."
       }
-    ]
+    ],
+    "stmts": [
+      "CaCO₃ --t°--> CaO + CO₂ không phải là phản ứng oxi hóa khử.",
+      "2H₂ + O₂ -> 2H₂O là phản ứng oxi hóa khử.",
+      "NaOH + HCl -> NaCl + H₂O là phản ứng trao đổi, không phải oxi hóa khử.",
+      "Mọi phản ứng hóa hợp đều là phản ứng oxi hóa – khử."
+    ],
+    "ans": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng (Ca +2, C +4, O -2 không đổi).<br>• <b>Ý b) [Đúng]:</b> Đúng (H từ 0 lên +1, O từ 0 xuống -2).<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Ví dụ NH₃ + HCl -> NH₄Cl hay CaO + H₂O -> Ca(OH)₂ là phản ứng hóa hợp nhưng không thay đổi số oxi hóa."
   },
   {
     "type": "mcq",
@@ -1225,7 +1266,7 @@
   },
   {
     "type": "drag",
-    "q": "Điền vào chỗ trống quy tắc cân bằng thăng bằng electron:<br>Trong phản ứng oxi hóa – khử, tổng số electron do chất khử %%%SLOT_1%%% phải bằng tổng số electron mà chất oxi hóa %%%SLOT_2%%%. Chất khử có số oxi hóa %%%SLOT_3%%%, chất oxi hóa có số oxi hóa %%%SLOT_4%%%.",
+    "q": "Điền vào chỗ trống quy tắc cân bằng thăng bằng electron:",
     "options": [
       "nhường",
       "nhận",
@@ -1233,12 +1274,20 @@
       "giảm"
     ],
     "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• Định luật bảo toàn electron: Tổng e cho = Tổng e nhận.<br>• Khử tăng, O giảm.",
+    "words": [
       "nhường",
       "nhận",
       "tăng",
       "giảm"
     ],
-    "exp": "• Định luật bảo toàn electron: Tổng e cho = Tổng e nhận.<br>• Khử tăng, O giảm."
+    "text": "Trong phản ứng oxi hóa – khử, tổng số electron do chất khử [blank] phải bằng tổng số electron mà chất oxi hóa [blank]. Chất khử có số oxi hóa [blank], chất oxi hóa có số oxi hóa [blank].",
+    "correctText": "1: nhường | 2: nhận | 3: tăng | 4: giảm"
   },
   {
     "type": "mcq",

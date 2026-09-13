@@ -1127,7 +1127,21 @@
         "ans": true,
         "exp": "Đúng: 2·3² = 18 e."
       }
-    ]
+    ],
+    "stmts": [
+      "Đường kính nguyên tử lớn hơn đường kính hạt nhân khoảng 10.000 lần.",
+      "Khối lượng nguyên tử coi như bằng khối lượng hạt nhân.",
+      "Các đồng vị có cùng số neutron nhưng khác số proton.",
+      "Lớp M (n = 3) có tối đa 18 electron và chứa 3 phân lớp 3s, 3p, 3d."
+    ],
+    "ans": [
+      true,
+      true,
+      false,
+      true
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Sai | d) Đúng",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng (10⁻¹⁰ m so với 10⁻¹⁴ m).<br>• <b>Ý b) [Đúng]:</b> Đúng do me quá bé.<br>• <b>Ý c) [Sai]:</b> Sai. Cùng proton, khác neutron.<br>• <b>Ý d) [Đúng]:</b> Đúng: 2·3² = 18 e."
   },
   {
     "type": "mcq",
@@ -1163,13 +1177,26 @@
         "b": "D. Phi kim nhóm IVA (Silicon)."
       }
     ],
-    "ans": {
-      "1": "A",
-      "2": "B",
-      "3": "C",
-      "4": "D"
-    },
-    "exp": "• 1-3 e lớp ngoài cùng: Kim loại.<br>• 5-7 e: Phi kim.<br>• 8 e (hoặc 2e ở He): Khí hiếm.<br>• 4 e: Có thể là kim loại hoặc phi kim (C, Si là phi kim; Sn, Pb là kim loại)."
+    "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• 1-3 e lớp ngoài cùng: Kim loại.<br>• 5-7 e: Phi kim.<br>• 8 e (hoặc 2e ở He): Khí hiếm.<br>• 4 e: Có thể là kim loại hoặc phi kim (C, Si là phi kim; Sn, Pb là kim loại).",
+    "colA": [
+      "3s¹",
+      "3s² 3p⁵",
+      "2s² 2p⁶",
+      "3s² 3p²"
+    ],
+    "colB": [
+      "Kim loại điển hình (nhóm IA).",
+      "Phi kim điển hình (nhóm VIIA - Halogen).",
+      "Khí hiếm bền vững (Neon).",
+      "Phi kim nhóm IVA (Silicon)."
+    ],
+    "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
   },
   {
     "type": "mcq",
@@ -1208,7 +1235,21 @@
         "ans": false,
         "exp": "Sai. Na⁺ đã nhường 1e nên chỉ còn 10e, ít hơn Na (11e)."
       }
-    ]
+    ],
+    "stmts": [
+      "X là một phi kim mạnh, Y là một kim loại mạnh.",
+      "Hợp chất tạo bởi X và Y là NaCl có liên kết ion.",
+      "Cấu hình electron của anion Cl⁻ giống với khí hiếm Argon (Ar).",
+      "Cation Na⁺ có nhiều electron hơn nguyên tử Na."
+    ],
+    "ans": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng. Cl có 7e lớp ngoài cùng, Na có 1e lớp ngoài cùng.<br>• <b>Ý b) [Đúng]:</b> Đúng. Na nhường 1e cho Cl tạo Na⁺ và Cl⁻ hút nhau bằng lực tĩnh điện.<br>• <b>Ý c) [Đúng]:</b> Đúng. Cl⁻ có 18e: [Ar].<br>• <b>Ý d) [Sai]:</b> Sai. Na⁺ đã nhường 1e nên chỉ còn 10e, ít hơn Na (11e)."
   },
   {
     "type": "mcq",
@@ -1225,7 +1266,7 @@
   },
   {
     "type": "drag",
-    "q": "Hoàn thành đoạn văn sau:<br>Nguyên tử được cấu tạo gồm hạt nhân mang điện tích %%%SLOT_1%%% và vỏ electron mang điện tích %%%SLOT_2%%%. Khối lượng của nguyên tử xấp xỉ bằng tổng khối lượng của %%%SLOT_3%%% và %%%SLOT_4%%% trong hạt nhân.",
+    "q": "Hoàn thành đoạn văn sau:",
     "options": [
       "dương",
       "âm",
@@ -1233,12 +1274,20 @@
       "neutron"
     ],
     "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• Điện tích: Hạt nhân dương, vỏ âm.<br>• Khối lượng: p + n (neutron).",
+    "words": [
       "dương",
       "âm",
       "proton",
       "neutron"
     ],
-    "exp": "• Điện tích: Hạt nhân dương, vỏ âm.<br>• Khối lượng: p + n (neutron)."
+    "text": "Nguyên tử được cấu tạo gồm hạt nhân mang điện tích [blank] và vỏ electron mang điện tích [blank]. Khối lượng của nguyên tử xấp xỉ bằng tổng khối lượng của [blank] và [blank] trong hạt nhân.",
+    "correctText": "1: dương | 2: âm | 3: proton | 4: neutron"
   },
   {
     "type": "mcq",

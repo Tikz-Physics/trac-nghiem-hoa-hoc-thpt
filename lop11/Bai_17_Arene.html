@@ -1127,7 +1127,21 @@
         "ans": false,
         "exp": "Sai. Toluene chỉ làm mất màu dung dịch KMnO₄ khi đun nóng (oxi hóa nhóm -CH₃ thành -COOK)."
       }
-    ]
+    ],
+    "stmts": [
+      "Benzene phản ứng với Br₂ khan khi có xúc tác bột sắt Fe đun nóng tạo bromobenzene: C₆H₆ + Br₂ --Fe, t°--> C₆H₅Br + HBr.",
+      "Nitro hóa benzene bằng hỗn hợp HNO₃ đặc và H₂SO₄ đặc tạo nitrobenzene C₆H₅NO₂ (chất lỏng màu vàng, mùi hạnh nhân).",
+      "Nhóm alkyl (-CH₃) trên vòng benzene của toluene định hướng phản ứng thế ưu tiên vào vị trí ortho và para.",
+      "Toluene làm mất màu dung dịch KMnO₄ ngay ở nhiệt độ thường giống ethylene."
+    ],
+    "ans": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng (xúc tác Fe tạo FeBr₃).<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng (nhóm đẩy electron hoạt hóa nhân thơm).<br>• <b>Ý d) [Sai]:</b> Sai. Toluene chỉ làm mất màu dung dịch KMnO₄ khi đun nóng (oxi hóa nhóm -CH₃ thành -COOK)."
   },
   {
     "type": "mcq",
@@ -1163,13 +1177,26 @@
         "b": "D. Chất rắn màu trắng thăng hoa, dùng xua đuổi gián, côn trùng và chống ẩm mốc tủ quần áo."
       }
     ],
-    "ans": {
-      "1": "A",
-      "2": "B",
-      "3": "C",
-      "4": "D"
-    },
-    "exp": "• Ứng dụng thực tế của các hydrocarbon thơm phổ biến."
+    "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• Ứng dụng thực tế của các hydrocarbon thơm phổ biến.",
+    "colA": [
+      "Benzene (C₆H₆)",
+      "Toluene (C₆H₅CH₃)",
+      "Styrene (C₆H₅–CH=CH₂)",
+      "Naphthalene (Băng phiến)"
+    ],
+    "colB": [
+      "Dung môi công nghiệp và nguyên liệu tổng hợp styrene, phenol, nylon.",
+      "Dung môi pha sơn, mực in và sản xuất thuốc nổ TNT (2,4,6-trinitrotoluene).",
+      "Trùng hợp sản xuất nhựa xốp Polystyrene (PS) cách nhiệt, hộp xốp.",
+      "Chất rắn màu trắng thăng hoa, dùng xua đuổi gián, côn trùng và chống ẩm mốc tủ quần áo."
+    ],
+    "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
   },
   {
     "type": "mcq",
@@ -1208,7 +1235,21 @@
         "ans": false,
         "exp": "Sai. Hơi benzene rất độc, gây ức chế tủy xương và là chất gây ung thư máu (bạch cầu) đã được chứng minh."
       }
-    ]
+    ],
+    "stmts": [
+      "Dưới tác dụng của ánh sáng tử ngoại, benzene cộng với Cl₂ tạo thuốc trừ sâu 666 (hexachlorocyclohexane C₆H₆Cl₆).",
+      "Dẫn khí H₂ qua benzene có xúc tác Ni nung nóng thu được cyclohexane (C₆H₁₂).",
+      "Thuốc trừ sâu 666 hiện nay đã bị cấm sử dụng vì độc tính cao và tồn dư sinh học lâu dài trong đất, nước.",
+      "Benzene rất an toàn cho sức khỏe con người và có thể dùng làm nước rửa tay."
+    ],
+    "ans": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng (C₆H₆ + 3Cl₂ --as--> C₆H₆Cl₆).<br>• <b>Ý b) [Đúng]:</b> Đúng (C₆H₆ + 3H₂ --Ni, t°--> C₆H₁₂).<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Hơi benzene rất độc, gây ức chế tủy xương và là chất gây ung thư máu (bạch cầu) đã được chứng minh."
   },
   {
     "type": "mcq",
@@ -1225,7 +1266,7 @@
   },
   {
     "type": "drag",
-    "q": "Điền vào chỗ trống:<br>Benzene có công thức phân tử là %%%SLOT_1%%%, có tính thơm đặc trưng: %%%SLOT_2%%% tham gia phản ứng thế, %%%SLOT_3%%% tham gia phản ứng cộng và bền vững với các chất oxi hóa. Khi nitro hóa toluene thu được thuốc nổ %%%SLOT_4%%%.",
+    "q": "Điền vào chỗ trống:",
     "options": [
       "C₆H₆",
       "dễ",
@@ -1233,12 +1274,20 @@
       "TNT"
     ],
     "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• C₆H₆, dễ thế, khó cộng, thuốc nổ TNT.",
+    "words": [
       "C₆H₆",
       "dễ",
       "khó",
       "TNT"
     ],
-    "exp": "• C₆H₆, dễ thế, khó cộng, thuốc nổ TNT."
+    "text": "Benzene có công thức phân tử là [blank], có tính thơm đặc trưng: [blank] tham gia phản ứng thế, [blank] tham gia phản ứng cộng và bền vững với các chất oxi hóa. Khi nitro hóa toluene thu được thuốc nổ [blank].",
+    "correctText": "1: C₆H₆ | 2: dễ | 3: khó | 4: TNT"
   },
   {
     "type": "mcq",

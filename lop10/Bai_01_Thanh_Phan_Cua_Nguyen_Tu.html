@@ -1127,7 +1127,21 @@
         "ans": true,
         "exp": "Đúng. Điện tích nguyên tử bằng 0 nên số p (+) = số e (-)."
       }
-    ]
+    ],
+    "stmts": [
+      "Hầu hết không gian trong nguyên tử là không gian rỗng.",
+      "Khối lượng của nguyên tử tập trung chủ yếu ở hạt nhân.",
+      "Hạt nhân nguyên tử mang điện tích âm do chứa electron.",
+      "Trong mọi nguyên tử trung hòa về điện, số proton luôn bằng số electron."
+    ],
+    "ans": [
+      true,
+      true,
+      false,
+      true
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Sai | d) Đúng",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng. Thí nghiệm bắn phá lá vàng của Rutherford chứng minh nguyên tử có cấu tạo rỗng.<br>• <b>Ý b) [Đúng]:</b> Đúng. Khối lượng electron rất nhỏ (chưa đến 0,05% khối lượng nguyên tử).<br>• <b>Ý c) [Sai]:</b> Sai. Hạt nhân mang điện tích dương do chứa proton, electron nằm ở lớp vỏ.<br>• <b>Ý d) [Đúng]:</b> Đúng. Điện tích nguyên tử bằng 0 nên số p (+) = số e (-)."
   },
   {
     "type": "mcq",
@@ -1163,13 +1177,26 @@
         "b": "D. Mang điện tích dương, chiếm phần lớn khối lượng nguyên tử."
       }
     ],
-    "ans": {
-      "1": "A",
-      "2": "B",
-      "3": "C",
-      "4": "D"
-    },
-    "exp": "• Proton mang điện tích dương +1, khối lượng xấp xỉ 1 amu.<br>• Neutron không mang điện, khối lượng xấp xỉ 1 amu.<br>• Electron mang điện tích âm -1, khối lượng rất nhỏ ≈ 0,00055 amu.<br>• Hạt nhân gồm p và n, mang điện tích +Z."
+    "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• Proton mang điện tích dương +1, khối lượng xấp xỉ 1 amu.<br>• Neutron không mang điện, khối lượng xấp xỉ 1 amu.<br>• Electron mang điện tích âm -1, khối lượng rất nhỏ ≈ 0,00055 amu.<br>• Hạt nhân gồm p và n, mang điện tích +Z.",
+    "colA": [
+      "Proton (p)",
+      "Neutron (n)",
+      "Electron (e)",
+      "Hạt nhân"
+    ],
+    "colB": [
+      "Mang điện tích +1 (+1,602·10⁻¹⁹ C), khối lượng ≈ 1 amu.",
+      "Không mang điện, khối lượng ≈ 1 amu.",
+      "Mang điện tích -1 (-1,602·10⁻¹⁹ C), khối lượng ≈ 0,00055 amu.",
+      "Mang điện tích dương, chiếm phần lớn khối lượng nguyên tử."
+    ],
+    "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
   },
   {
     "type": "mcq",
@@ -1208,7 +1235,21 @@
         "ans": false,
         "exp": "Sai. Electron có khối lượng rất nhỏ (≈ 0,00055 amu), nhỏ hơn proton khoảng 1836 lần."
       }
-    ]
+    ],
+    "stmts": [
+      "1 amu bằng 1/12 khối lượng của một nguyên tử carbon-12.",
+      "1 amu xấp xỉ bằng 1,6605·10⁻²⁷ kg.",
+      "Proton và neutron đều có khối lượng xấp xỉ bằng 1 amu.",
+      "Khối lượng electron lớn hơn khối lượng proton nên electron quyết định khối lượng nguyên tử."
+    ],
+    "ans": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng theo định nghĩa quốc tế về đơn vị amu.<br>• <b>Ý b) [Đúng]:</b> Đúng. 1 amu ≈ 1,66054·10⁻²⁴ g = 1,66054·10⁻²⁷ kg.<br>• <b>Ý c) [Đúng]:</b> Đúng. m_p ≈ 1,0073 amu; m_n ≈ 1,0087 amu.<br>• <b>Ý d) [Sai]:</b> Sai. Electron có khối lượng rất nhỏ (≈ 0,00055 amu), nhỏ hơn proton khoảng 1836 lần."
   },
   {
     "type": "mcq",
@@ -1225,7 +1266,7 @@
   },
   {
     "type": "drag",
-    "q": "Điền các từ khóa thích hợp vào chỗ trống:<br>Nguyên tử trung hòa về điện nên số %%%SLOT_1%%% bằng số %%%SLOT_2%%%. Khối lượng nguyên tử hầu như tập trung toàn bộ ở %%%SLOT_3%%%, trong khi lớp vỏ %%%SLOT_4%%% chiếm hầu hết thể tích của nguyên tử.",
+    "q": "Điền các từ khóa thích hợp vào chỗ trống:",
     "options": [
       "proton",
       "electron",
@@ -1233,12 +1274,20 @@
       "nguyên tử"
     ],
     "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• Số p = Số e để trung hòa điện.<br>• Hạt nhân tập trung gần 99,95% khối lượng.<br>• Vỏ electron chuyển động tạo không gian rỗng chiếm thể tích nguyên tử.",
+    "words": [
       "proton",
       "electron",
       "hạt nhân",
       "nguyên tử"
     ],
-    "exp": "• Số p = Số e để trung hòa điện.<br>• Hạt nhân tập trung gần 99,95% khối lượng.<br>• Vỏ electron chuyển động tạo không gian rỗng chiếm thể tích nguyên tử."
+    "text": "Nguyên tử trung hòa về điện nên số [blank] bằng số [blank]. Khối lượng nguyên tử hầu như tập trung toàn bộ ở [blank], trong khi lớp vỏ [blank] chiếm hầu hết thể tích của nguyên tử.",
+    "correctText": "1: proton | 2: electron | 3: hạt nhân | 4: nguyên tử"
   },
   {
     "type": "mcq",

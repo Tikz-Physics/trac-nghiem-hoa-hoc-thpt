@@ -1127,7 +1127,21 @@
         "ans": false,
         "exp": "Sai. Nồng độ chất đầu giảm dần nên tốc độ tức thời của phản ứng thường giảm dần theo thời gian."
       }
-    ]
+    ],
+    "stmts": [
+      "Độ biến thiên nồng độ của N₂O₅ là ΔC = 0,012 - 0,020 = -0,008 M.",
+      "Tốc độ trung bình của phản ứng tính theo N₂O₅ là v̄ = -(1/2)·(-0,008)/100 = 4·10⁻⁵ M/s.",
+      "Tốc độ tạo thành khí O₂ trong khoảng thời gian đó là 4·10⁻⁵ M/s.",
+      "Tốc độ phản ứng luôn giữ nguyên không đổi từ đầu đến cuối phản ứng."
+    ],
+    "ans": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng.<br>• <b>Ý b) [Đúng]:</b> Đúng: 0,008 / (2·100) = 4·10⁻⁵ mol/(L·s).<br>• <b>Ý c) [Đúng]:</b> Đúng vì hệ số O₂ là 1 nên v(O₂) = v̄ = 4·10⁻⁵ M/s.<br>• <b>Ý d) [Sai]:</b> Sai. Nồng độ chất đầu giảm dần nên tốc độ tức thời của phản ứng thường giảm dần theo thời gian."
   },
   {
     "type": "mcq",
@@ -1163,13 +1177,26 @@
         "b": "D. Va chạm giữa các phân tử có năng lượng đủ lớn và định hướng đúng để tạo liên kết mới."
       }
     ],
-    "ans": {
-      "1": "A",
-      "2": "B",
-      "3": "C",
-      "4": "D"
-    },
-    "exp": "• Các khái niệm nền tảng của tốc độ phản ứng hóa học."
+    "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• Các khái niệm nền tảng của tốc độ phản ứng hóa học.",
+    "colA": [
+      "Tốc độ trung bình (v̄)",
+      "Tốc độ tức thời (v)",
+      "Hằng số tốc độ (k)",
+      "Va chạm hiệu quả"
+    ],
+    "colB": [
+      "Tốc độ tính trong một khoảng thời gian xác định Δt.",
+      "Tốc độ của phản ứng tại một thời điểm xác định.",
+      "Tốc độ của phản ứng khi nồng độ các chất phản ứng đều bằng 1 M.",
+      "Va chạm giữa các phân tử có năng lượng đủ lớn và định hướng đúng để tạo liên kết mới."
+    ],
+    "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
   },
   {
     "type": "mcq",
@@ -1208,7 +1235,21 @@
         "ans": false,
         "exp": "Sai. Đơn vị tốc độ phản ứng là mol/(L·s) hoặc mol/(L·phút), có thứ nguyên nồng độ trên thời gian."
       }
-    ]
+    ],
+    "stmts": [
+      "Nếu tăng nồng độ CO lên 2 lần (giữ nguyên nồng độ Cl₂) thì tốc độ phản ứng tăng 2 lần.",
+      "Nếu tăng nồng độ cả CO và Cl₂ lên 2 lần thì tốc độ phản ứng tăng 4 lần.",
+      "Hằng số tốc độ k phụ thuộc vào nhiệt độ.",
+      "Đơn vị của tốc độ phản ứng luôn là mol/L."
+    ],
+    "ans": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng vì bậc 1 theo CO.<br>• <b>Ý b) [Đúng]:</b> Đúng (2 · 2 = 4 lần).<br>• <b>Ý c) [Đúng]:</b> Đúng (k tăng khi nhiệt độ tăng).<br>• <b>Ý d) [Sai]:</b> Sai. Đơn vị tốc độ phản ứng là mol/(L·s) hoặc mol/(L·phút), có thứ nguyên nồng độ trên thời gian."
   },
   {
     "type": "mcq",
@@ -1225,7 +1266,7 @@
   },
   {
     "type": "drag",
-    "q": "Điền vào chỗ trống:<br>Tốc độ phản ứng là độ biến thiên %%%SLOT_1%%% của một chất trong một đơn vị %%%SLOT_2%%%. Để phản ứng xảy ra, các phân tử phải có %%%SLOT_3%%% hiệu quả với nhau. Hằng số tốc độ k phụ thuộc vào %%%SLOT_4%%% và bản chất của chất phản ứng.",
+    "q": "Điền vào chỗ trống:",
     "options": [
       "nồng độ",
       "thời gian",
@@ -1233,12 +1274,20 @@
       "nhiệt độ"
     ],
     "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• Biến thiên nồng độ / thời gian.<br>• Va chạm hiệu quả.<br>• Hằng số k phụ thuộc nhiệt độ.",
+    "words": [
       "nồng độ",
       "thời gian",
       "va chạm",
       "nhiệt độ"
     ],
-    "exp": "• Biến thiên nồng độ / thời gian.<br>• Va chạm hiệu quả.<br>• Hằng số k phụ thuộc nhiệt độ."
+    "text": "Tốc độ phản ứng là độ biến thiên [blank] của một chất trong một đơn vị [blank]. Để phản ứng xảy ra, các phân tử phải có [blank] hiệu quả với nhau. Hằng số tốc độ k phụ thuộc vào [blank] và bản chất của chất phản ứng.",
+    "correctText": "1: nồng độ | 2: thời gian | 3: va chạm | 4: nhiệt độ"
   },
   {
     "type": "mcq",

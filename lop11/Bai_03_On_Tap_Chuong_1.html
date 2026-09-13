@@ -1127,7 +1127,21 @@
         "ans": false,
         "exp": "Sai. CO₂ tạo acid H₂CO₃ làm nồng độ H⁺ tăng và pH giảm xuống dưới 7 (khoảng 5,5)."
       }
-    ]
+    ],
+    "stmts": [
+      "Dung dịch có pH = 3 có nồng độ [H⁺] gấp 10 lần dung dịch có pH = 4.",
+      "Đất chua là đất có pH < 6,5, người ta thường bón vôi (CaO hoặc Ca(OH)₂) để khử chua cho đất.",
+      "Máu người bình thường có pH duy trì ổn định trong khoảng 7,35 - 7,45 nhờ hệ đệm sinh học.",
+      "Hòa tan khí CO₂ vào nước cất làm tăng pH của nước lên trên 7."
+    ],
+    "ans": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng (10⁻³ M so với 10⁻⁴ M).<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. CO₂ tạo acid H₂CO₃ làm nồng độ H⁺ tăng và pH giảm xuống dưới 7 (khoảng 5,5)."
   },
   {
     "type": "mcq",
@@ -1163,13 +1177,26 @@
         "b": "D. pH > 7 (môi trường base khá mạnh, quỳ hóa xanh)."
       }
     ],
-    "ans": {
-      "1": "A",
-      "2": "B",
-      "3": "C",
-      "4": "D"
-    },
-    "exp": "• Hiện tượng thủy phân của muối theo bản chất ion acid/base liên hợp."
+    "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• Hiện tượng thủy phân của muối theo bản chất ion acid/base liên hợp.",
+    "colA": [
+      "NaCl (tạo bởi base mạnh và acid mạnh)",
+      "NH₄Cl (tạo bởi base yếu và acid mạnh)",
+      "CH₃COONa (tạo bởi acid yếu và base mạnh)",
+      "Na₂CO₃ (muối của acid rất yếu H₂CO₃)"
+    ],
+    "colB": [
+      "pH = 7 (môi trường trung tính).",
+      "pH < 7 (môi trường acid do NH₄⁺ thủy phân tạo H⁺).",
+      "pH > 7 (môi trường base do CH₃COO⁻ nhận H⁺ tạo OH⁻).",
+      "pH > 7 (môi trường base khá mạnh, quỳ hóa xanh)."
+    ],
+    "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
   },
   {
     "type": "mcq",
@@ -1208,7 +1235,21 @@
         "ans": true,
         "exp": "Đúng."
       }
-    ]
+    ],
+    "stmts": [
+      "Quá trình hòa tan và lắng đọng đá vôi tạo hang động nhũ đá là cân bằng: CaCO₃ + CO₂ + H₂O ⇌ Ca(HCO₃)₂.",
+      "Sự tạo phức của hemoglobin với khí O₂ và CO trong máu là các cân bằng hóa học cạnh tranh.",
+      "Nhiệt độ tăng luôn làm tăng giá trị hằng số cân bằng K_C của mọi phản ứng.",
+      "Biểu thức K_C chỉ phụ thuộc vào nhiệt độ và bản chất của phản ứng."
+    ],
+    "ans": [
+      true,
+      true,
+      false,
+      true
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Sai | d) Đúng",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng (chiều thuận hòa tan đá vôi tạo hang, chiều nghịch kết tinh tạo thạch nhũ).<br>• <b>Ý b) [Đúng]:</b> Đúng (CO liên kết chặt hơn O₂ khoảng 200 lần gây ngộ độc khí than).<br>• <b>Ý c) [Sai]:</b> Sai. Chỉ làm tăng K_C của phản ứng thu nhiệt (ΔH > 0), và làm giảm K_C của phản ứng tỏa nhiệt (ΔH < 0).<br>• <b>Ý d) [Đúng]:</b> Đúng."
   },
   {
     "type": "mcq",
@@ -1225,7 +1266,7 @@
   },
   {
     "type": "drag",
-    "q": "Điền vào chỗ trống:<br>Hằng số cân bằng nồng độ K_C cho biết mức độ xảy ra của phản ứng %%%SLOT_1%%%. Chuẩn độ acid – base dựa trên phản ứng %%%SLOT_2%%% giữa ion H⁺ và ion OH⁻. Điểm mà tại đó lượng acid và lượng base vừa đủ tác dụng hết với nhau gọi là điểm %%%SLOT_3%%%, được nhận biết bằng chất %%%SLOT_4%%%.",
+    "q": "Điền vào chỗ trống:",
     "options": [
       "thuận nghịch",
       "trung hòa",
@@ -1233,12 +1274,20 @@
       "chỉ thị màu"
     ],
     "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• Phản ứng thuận nghịch.<br>• Phản ứng trung hòa.<br>• Điểm tương đương, chất chỉ thị màu.",
+    "words": [
       "thuận nghịch",
       "trung hòa",
       "tương đương",
       "chỉ thị màu"
     ],
-    "exp": "• Phản ứng thuận nghịch.<br>• Phản ứng trung hòa.<br>• Điểm tương đương, chất chỉ thị màu."
+    "text": "Hằng số cân bằng nồng độ K_C cho biết mức độ xảy ra của phản ứng [blank]. Chuẩn độ acid – base dựa trên phản ứng [blank] giữa ion H⁺ và ion OH⁻. Điểm mà tại đó lượng acid và lượng base vừa đủ tác dụng hết với nhau gọi là điểm [blank], được nhận biết bằng chất [blank].",
+    "correctText": "1: thuận nghịch | 2: trung hòa | 3: tương đương | 4: chỉ thị màu"
   },
   {
     "type": "mcq",

@@ -1127,7 +1127,21 @@
         "ans": false,
         "exp": "Sai. Benzene không làm mất màu nước bromine."
       }
-    ]
+    ],
+    "stmts": [
+      "Đốt cháy hoàn toàn alkane luôn thu được n_H₂O > n_CO₂.",
+      "Đốt cháy hoàn toàn alkyne luôn thu được n_CO₂ > n_H₂O.",
+      "Nhiệt phân methane ở 1500 °C làm lạnh nhanh thu được acetylene: 2CH₄ --1500°C--> C₂H₂ + 3H₂.",
+      "Benzene làm mất màu nước bromine giống như ethylene."
+    ],
+    "ans": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng (CnH2n+2 -> nCO₂ + (n+1)H₂O).<br>• <b>Ý b) [Đúng]:</b> Đúng (CnH2n-2 -> nCO₂ + (n-1)H₂O).<br>• <b>Ý c) [Đúng]:</b> Đúng (phương pháp công nghiệp điều chế C₂H₂ hiện đại).<br>• <b>Ý d) [Sai]:</b> Sai. Benzene không làm mất màu nước bromine."
   },
   {
     "type": "mcq",
@@ -1163,13 +1177,26 @@
         "b": "D. Cấu trúc lục giác đều phẳng, hệ 6e π liên hợp thơm."
       }
     ],
-    "ans": {
-      "1": "A",
-      "2": "B",
-      "3": "C",
-      "4": "D"
-    },
-    "exp": "• 4 cấu trúc kinh điển của 4 nhóm hydrocarbon cơ bản."
+    "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• 4 cấu trúc kinh điển của 4 nhóm hydrocarbon cơ bản.",
+    "colA": [
+      "Methane (CH₄)",
+      "Ethylene (C₂H₄)",
+      "Acetylene (C₂H₂)",
+      "Benzene (C₆H₆)"
+    ],
+    "colB": [
+      "Cấu trúc tứ diện đều, 4 liên kết đơn C–H.",
+      "Cấu trúc phẳng, 1 liên kết đôi C=C (1σ, 1π).",
+      "Cấu trúc đường thẳng, 1 liên kết ba C≡C (1σ, 2π).",
+      "Cấu trúc lục giác đều phẳng, hệ 6e π liên hợp thơm."
+    ],
+    "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
   },
   {
     "type": "mcq",
@@ -1208,7 +1235,21 @@
         "ans": false,
         "exp": "Sai. Rác thải nhựa PE, PP mất hàng trăm năm mới phân hủy, gây ra 'ô nhiễm trắng' và vi nhựa nghiêm trọng."
       }
-    ]
+    ],
+    "stmts": [
+      "Đốt cháy xăng dầu sinh ra khí CO₂ là nguyên nhân hàng đầu gây hiệu ứng nhà kính và biến đổi khí hậu toàn cầu.",
+      "Sự cố tràn dầu trên biển tạo màng dầu mỏng ngăn cản sự trao đổi oxy giữa không khí và nước biển, hủy diệt sinh vật biển và chim biển.",
+      "Nhiên liệu sinh học (như xăng E5 chứa 5% bio-ethanol) giúp giảm phát thải khí độc hại và thân thiện với môi trường hơn.",
+      "Rác thải đồ nhựa nylon làm từ PE, PP có khả năng tự phân hủy sinh học nhanh chóng trong đất sau 1 tuần."
+    ],
+    "ans": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng.<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Rác thải nhựa PE, PP mất hàng trăm năm mới phân hủy, gây ra 'ô nhiễm trắng' và vi nhựa nghiêm trọng."
   },
   {
     "type": "mcq",
@@ -1225,7 +1266,7 @@
   },
   {
     "type": "drag",
-    "q": "Điền vào chỗ trống:<br>Hydrocarbon no chỉ chứa liên kết %%%SLOT_1%%%, phản ứng đặc trưng là phản ứng %%%SLOT_2%%%. Hydrocarbon không no chứa liên kết %%%SLOT_3%%%, phản ứng đặc trưng là phản ứng %%%SLOT_4%%%. Arene có vòng benzen thể hiện tính thơm.",
+    "q": "Điền vào chỗ trống:",
     "options": [
       "đơn",
       "thế",
@@ -1233,12 +1274,20 @@
       "cộng"
     ],
     "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• Liên kết đơn, phản ứng thế, liên kết bội, phản ứng cộng.",
+    "words": [
       "đơn",
       "thế",
       "bội (đôi, ba)",
       "cộng"
     ],
-    "exp": "• Liên kết đơn, phản ứng thế, liên kết bội, phản ứng cộng."
+    "text": "Hydrocarbon no chỉ chứa liên kết [blank], phản ứng đặc trưng là phản ứng [blank]. Hydrocarbon không no chứa liên kết [blank], phản ứng đặc trưng là phản ứng [blank]. Arene có vòng benzen thể hiện tính thơm.",
+    "correctText": "1: đơn | 2: thế | 3: bội (đôi, ba) | 4: cộng"
   },
   {
     "type": "mcq",

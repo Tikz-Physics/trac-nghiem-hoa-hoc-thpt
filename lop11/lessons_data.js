@@ -51,7 +51,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Chất xúc tác chỉ làm tăng tốc độ đạt đến cân bằng mà không làm thay đổi K_C và vị trí cân bằng."
         }
-      ]
+      ],
+      "stmts": [
+        "Khi làm thay đổi một trong các yếu tố nồng độ, nhiệt độ, áp suất thì cân bằng chuyển dịch theo chiều chống lại sự thay đổi đó.",
+        "Khi tăng nhiệt độ, cân bằng luôn chuyển dịch theo chiều phản ứng thu nhiệt (chiều có ΔH > 0).",
+        "Khi tăng áp suất chung của hệ, cân bằng chuyển dịch theo chiều làm giảm số mol khí.",
+        "Chất xúc tác làm thay đổi giá trị của hằng số cân bằng K_C."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng theo nguyên lí Le Chatelier.<br>• <b>Ý b) [Đúng]:</b> Đúng (thu bớt nhiệt lượng để hạ nhiệt độ).<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Chất xúc tác chỉ làm tăng tốc độ đạt đến cân bằng mà không làm thay đổi K_C và vị trí cân bằng."
     },
     {
       "type": "mcq",
@@ -87,13 +101,26 @@ const LESSONS_DATA = {
           "b": "D. Cân bằng không bị dịch chuyển."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Phản ứng thu nhiệt (ΔH > 0): Tăng t° dịch chuyển sang phải (tạo NO₂ màu nâu đỏ).<br>• Tăng áp suất dịch chuyển về phía ít mol khí hơn (sang trái)."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Phản ứng thu nhiệt (ΔH > 0): Tăng t° dịch chuyển sang phải (tạo NO₂ màu nâu đỏ).<br>• Tăng áp suất dịch chuyển về phía ít mol khí hơn (sang trái).",
+      "colA": [
+        "Đun nóng bình (tăng nhiệt độ)",
+        "Ngâm bình vào nước đá (hạ nhiệt độ)",
+        "Nén piston (tăng áp suất)",
+        "Cho thêm chất xúc tác"
+      ],
+      "colB": [
+        "Cân bằng dịch theo chiều thuận (màu nâu đỏ đậm lên).",
+        "Cân bằng dịch theo chiều nghịch (màu nâu nhạt dần).",
+        "Cân bằng dịch theo chiều nghịch (giảm số mol khí từ 2 về 1).",
+        "Cân bằng không bị dịch chuyển."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -132,7 +159,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Thêm khí trơ ở thể tích không đổi không làm thay đổi nồng độ các chất phản ứng nên cân bằng không đổi."
         }
-      ]
+      ],
+      "stmts": [
+        "Số mol khí ở hai vế phương trình bằng nhau (1 + 1 = 2).",
+        "Khi thay đổi áp suất của hệ, cân bằng không bị chuyển dịch.",
+        "Hằng số cân bằng K_C = [HI]² / ([H₂] · [I₂]).",
+        "Thêm khí trơ Argon vào bình ở thể tích không đổi làm cân bằng chuyển dịch theo chiều thuận."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng.<br>• <b>Ý b) [Đúng]:</b> Đúng (do số mol khí 2 vế bằng nhau: Δn = 0).<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Thêm khí trơ ở thể tích không đổi không làm thay đổi nồng độ các chất phản ứng nên cân bằng không đổi."
     },
     {
       "type": "mcq",
@@ -149,7 +190,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Phản ứng thuận nghịch là phản ứng xảy ra theo %%%SLOT_1%%% chiều trái ngược nhau trong cùng điều kiện. Cân bằng hóa học là cân bằng %%%SLOT_2%%%. Khi một hệ đang ở trạng thái cân bằng chịu một tác động từ bên ngoài, cân bằng sẽ chuyển dịch theo chiều làm %%%SLOT_3%%% tác động đó theo nguyên lí %%%SLOT_4%%%.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "hai",
         "động",
@@ -157,12 +198,20 @@ const LESSONS_DATA = {
         "Le Chatelier"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Hai chiều trái ngược, cân bằng động.<br>• Giảm tác động bên ngoài theo nguyên lí Le Chatelier.",
+      "words": [
         "hai",
         "động",
         "giảm",
         "Le Chatelier"
       ],
-      "exp": "• Hai chiều trái ngược, cân bằng động.<br>• Giảm tác động bên ngoài theo nguyên lí Le Chatelier."
+      "text": "Phản ứng thuận nghịch là phản ứng xảy ra theo [blank] chiều trái ngược nhau trong cùng điều kiện. Cân bằng hóa học là cân bằng [blank]. Khi một hệ đang ở trạng thái cân bằng chịu một tác động từ bên ngoài, cân bằng sẽ chuyển dịch theo chiều làm [blank] tác động đó theo nguyên lí [blank].",
+      "correctText": "1: hai | 2: động | 3: giảm | 4: Le Chatelier"
     },
     {
       "type": "mcq",
@@ -230,7 +279,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Sinh ra ion OH⁻ làm dung dịch có tính base, quỳ tím hóa xanh."
         }
-      ]
+      ],
+      "stmts": [
+        "Phân tử NH₃ nhận proton (H⁺) từ H₂O nên đóng vai trò là base.",
+        "Phân tử H₂O nhường proton (H⁺) cho NH₃ nên đóng vai trò là acid.",
+        "Ion NH₄⁺ là acid liên hợp của base NH₃.",
+        "Dung dịch NH₃ có môi trường acid làm quỳ tím hóa đỏ."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng theo Brønsted - Lowry.<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng (NH₄⁺ có khả năng cho lại H⁺).<br>• <b>Ý d) [Sai]:</b> Sai. Sinh ra ion OH⁻ làm dung dịch có tính base, quỳ tím hóa xanh."
     },
     {
       "type": "mcq",
@@ -266,13 +329,26 @@ const LESSONS_DATA = {
           "b": "D. pH ≈ 1,5 - 2,5 (acid mạnh nhờ HCl)."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• HCl 0,01 M: [H⁺] = 10⁻² M -> pH = 2.<br>• Nước cất: pH = 7.<br>• NaOH 0,01 M: [OH⁻] = 10⁻² M -> pOH = 2 -> pH = 12.<br>• Dạ dày: pH 1,5 - 2,5."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• HCl 0,01 M: [H⁺] = 10⁻² M -> pH = 2.<br>• Nước cất: pH = 7.<br>• NaOH 0,01 M: [OH⁻] = 10⁻² M -> pOH = 2 -> pH = 12.<br>• Dạ dày: pH 1,5 - 2,5.",
+      "colA": [
+        "Dung dịch HCl 0,01 M",
+        "Nước cất nguyên chất",
+        "Dung dịch NaOH 0,01 M",
+        "Dịch vị dạ dày người"
+      ],
+      "colB": [
+        "pH = 2 (môi trường acid mạnh).",
+        "pH = 7 (môi trường trung tính).",
+        "pH = 12 (môi trường base mạnh).",
+        "pH ≈ 1,5 - 2,5 (acid mạnh nhờ HCl)."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -311,7 +387,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Phenolphthalein không đổi màu (vẫn không màu) trong môi trường acid."
         }
-      ]
+      ],
+      "stmts": [
+        "Giấy quỳ tím chuyển sang màu đỏ trong môi trường acid (pH < 7).",
+        "Giấy quỳ tím chuyển sang màu xanh trong môi trường base (pH > 7).",
+        "Dung dịch phenolphthalein không màu chuyển sang màu hồng đậm trong môi trường base (pH > 8,3).",
+        "Dung dịch phenolphthalein chuyển sang màu đỏ rực trong môi trường acid."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng.<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Phenolphthalein không đổi màu (vẫn không màu) trong môi trường acid."
     },
     {
       "type": "mcq",
@@ -328,7 +418,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Theo thuyết Brønsted – Lowry, acid là chất %%%SLOT_1%%% proton H⁺, base là chất %%%SLOT_2%%% proton H⁺. Tích số ion của nước ở 25 °C là K_w = [H⁺] · [OH⁻] = %%%SLOT_3%%%. Thang đo pH tiện dụng thường có giá trị từ %%%SLOT_4%%%.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "cho",
         "nhận",
@@ -336,12 +426,20 @@ const LESSONS_DATA = {
         "0 đến 14"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Acid cho, base nhận.<br>• K_w = 10⁻¹⁴.<br>• Thang pH từ 0 đến 14.",
+      "words": [
         "cho",
         "nhận",
         "10⁻¹⁴",
         "0 đến 14"
       ],
-      "exp": "• Acid cho, base nhận.<br>• K_w = 10⁻¹⁴.<br>• Thang pH từ 0 đến 14."
+      "text": "Theo thuyết Brønsted – Lowry, acid là chất [blank] proton H⁺, base là chất [blank] proton H⁺. Tích số ion của nước ở 25 °C là K_w = [H⁺] · [OH⁻] = [blank]. Thang đo pH tiện dụng thường có giá trị từ [blank].",
+      "correctText": "1: cho | 2: nhận | 3: 10⁻¹⁴ | 4: 0 đến 14"
     },
     {
       "type": "mcq",
@@ -409,7 +507,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. CO₂ tạo acid H₂CO₃ làm nồng độ H⁺ tăng và pH giảm xuống dưới 7 (khoảng 5,5)."
         }
-      ]
+      ],
+      "stmts": [
+        "Dung dịch có pH = 3 có nồng độ [H⁺] gấp 10 lần dung dịch có pH = 4.",
+        "Đất chua là đất có pH < 6,5, người ta thường bón vôi (CaO hoặc Ca(OH)₂) để khử chua cho đất.",
+        "Máu người bình thường có pH duy trì ổn định trong khoảng 7,35 - 7,45 nhờ hệ đệm sinh học.",
+        "Hòa tan khí CO₂ vào nước cất làm tăng pH của nước lên trên 7."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (10⁻³ M so với 10⁻⁴ M).<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. CO₂ tạo acid H₂CO₃ làm nồng độ H⁺ tăng và pH giảm xuống dưới 7 (khoảng 5,5)."
     },
     {
       "type": "mcq",
@@ -445,13 +557,26 @@ const LESSONS_DATA = {
           "b": "D. pH > 7 (môi trường base khá mạnh, quỳ hóa xanh)."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Hiện tượng thủy phân của muối theo bản chất ion acid/base liên hợp."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Hiện tượng thủy phân của muối theo bản chất ion acid/base liên hợp.",
+      "colA": [
+        "NaCl (tạo bởi base mạnh và acid mạnh)",
+        "NH₄Cl (tạo bởi base yếu và acid mạnh)",
+        "CH₃COONa (tạo bởi acid yếu và base mạnh)",
+        "Na₂CO₃ (muối của acid rất yếu H₂CO₃)"
+      ],
+      "colB": [
+        "pH = 7 (môi trường trung tính).",
+        "pH < 7 (môi trường acid do NH₄⁺ thủy phân tạo H⁺).",
+        "pH > 7 (môi trường base do CH₃COO⁻ nhận H⁺ tạo OH⁻).",
+        "pH > 7 (môi trường base khá mạnh, quỳ hóa xanh)."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -490,7 +615,21 @@ const LESSONS_DATA = {
           "ans": true,
           "exp": "Đúng."
         }
-      ]
+      ],
+      "stmts": [
+        "Quá trình hòa tan và lắng đọng đá vôi tạo hang động nhũ đá là cân bằng: CaCO₃ + CO₂ + H₂O ⇌ Ca(HCO₃)₂.",
+        "Sự tạo phức của hemoglobin với khí O₂ và CO trong máu là các cân bằng hóa học cạnh tranh.",
+        "Nhiệt độ tăng luôn làm tăng giá trị hằng số cân bằng K_C của mọi phản ứng.",
+        "Biểu thức K_C chỉ phụ thuộc vào nhiệt độ và bản chất của phản ứng."
+      ],
+      "ans": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Sai | d) Đúng",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (chiều thuận hòa tan đá vôi tạo hang, chiều nghịch kết tinh tạo thạch nhũ).<br>• <b>Ý b) [Đúng]:</b> Đúng (CO liên kết chặt hơn O₂ khoảng 200 lần gây ngộ độc khí than).<br>• <b>Ý c) [Sai]:</b> Sai. Chỉ làm tăng K_C của phản ứng thu nhiệt (ΔH > 0), và làm giảm K_C của phản ứng tỏa nhiệt (ΔH < 0).<br>• <b>Ý d) [Đúng]:</b> Đúng."
     },
     {
       "type": "mcq",
@@ -507,7 +646,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Hằng số cân bằng nồng độ K_C cho biết mức độ xảy ra của phản ứng %%%SLOT_1%%%. Chuẩn độ acid – base dựa trên phản ứng %%%SLOT_2%%% giữa ion H⁺ và ion OH⁻. Điểm mà tại đó lượng acid và lượng base vừa đủ tác dụng hết với nhau gọi là điểm %%%SLOT_3%%%, được nhận biết bằng chất %%%SLOT_4%%%.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "thuận nghịch",
         "trung hòa",
@@ -515,12 +654,20 @@ const LESSONS_DATA = {
         "chỉ thị màu"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Phản ứng thuận nghịch.<br>• Phản ứng trung hòa.<br>• Điểm tương đương, chất chỉ thị màu.",
+      "words": [
         "thuận nghịch",
         "trung hòa",
         "tương đương",
         "chỉ thị màu"
       ],
-      "exp": "• Phản ứng thuận nghịch.<br>• Phản ứng trung hòa.<br>• Điểm tương đương, chất chỉ thị màu."
+      "text": "Hằng số cân bằng nồng độ K_C cho biết mức độ xảy ra của phản ứng [blank]. Chuẩn độ acid – base dựa trên phản ứng [blank] giữa ion H⁺ và ion OH⁻. Điểm mà tại đó lượng acid và lượng base vừa đủ tác dụng hết với nhau gọi là điểm [blank], được nhận biết bằng chất [blank].",
+      "correctText": "1: thuận nghịch | 2: trung hòa | 3: tương đương | 4: chỉ thị màu"
     },
     {
       "type": "mcq",
@@ -588,7 +735,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Nitrogen còn tồn tại trong khoáng diêm tiêu NaNO₃ và trong cơ thể sống (protein, nucleic acid...)."
         }
-      ]
+      ],
+      "stmts": [
+        "Nitrogen tác dụng với kim loại Lithium (Li) ngay ở nhiệt độ thường tạo Li₃N.",
+        "Khi tác dụng với H₂ ở nhiệt độ và áp suất cao có xúc tác, N₂ thể hiện tính oxi hóa.",
+        "Ở nhiệt độ khoảng 3000 °C hoặc khi có tia sét, N₂ tác dụng với O₂ tạo khí NO thể hiện tính khử.",
+        "Trong tự nhiên, nitrogen chỉ tồn tại ở dạng đơn chất trong không khí."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (6Li + N₂ -> 2Li₃N).<br>• <b>Ý b) [Đúng]:</b> Đúng (N₂⁰ -> 2N⁻³H₃).<br>• <b>Ý c) [Đúng]:</b> Đúng (N₂⁰ -> 2N⁺²O).<br>• <b>Ý d) [Sai]:</b> Sai. Nitrogen còn tồn tại trong khoáng diêm tiêu NaNO₃ và trong cơ thể sống (protein, nucleic acid...)."
     },
     {
       "type": "mcq",
@@ -624,13 +785,26 @@ const LESSONS_DATA = {
           "b": "D. Khí trơ, ít bị dãn nở nhiệt theo nhiệt độ giúp áp suất lốp ổn định."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Các ứng dụng quan trọng của khí N₂ và N₂ lỏng."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Các ứng dụng quan trọng của khí N₂ và N₂ lỏng.",
+      "colA": [
+        "Bơm khí N₂ vào gói bim bim, bánh kẹo",
+        "Dùng nitrogen lỏng trong y tế",
+        "Tổng hợp ammonia (NH₃)",
+        "Bơm lốp xe đua F1 và máy bay"
+      ],
+      "colB": [
+        "Môi trường trơ đẩy O₂, ngăn oxi hóa dầu mỡ và giữ giòn thực phẩm.",
+        "Nhiệt độ sôi rất thấp (-196 °C) dùng để bảo quản tinh trùng, mô, phôi.",
+        "Nguyên liệu sản xuất phân bón đạm cho nông nghiệp.",
+        "Khí trơ, ít bị dãn nở nhiệt theo nhiệt độ giúp áp suất lốp ổn định."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -669,7 +843,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. N₂ có số oxi hóa 0 là trung gian, vừa có tính oxi hóa (với H₂, kim loại) vừa có tính khử (với O₂)."
         }
-      ]
+      ],
+      "stmts": [
+        "Nitrogen có các số oxi hóa: -3, 0, +1, +2, +3, +4, +5.",
+        "Trong NH₃ và ion NH₄⁺, nitrogen có số oxi hóa là -3 (thấp nhất).",
+        "Trong HNO₃ và ion NO₃⁻, nitrogen có số oxi hóa là +5 (cao nhất).",
+        "Trong đơn chất N₂, nitrogen chỉ có thể thể hiện tính oxi hóa."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng.<br>• <b>Ý b) [Đúng]:</b> Đúng (chỉ có tính khử).<br>• <b>Ý c) [Đúng]:</b> Đúng (chỉ có tính oxi hóa).<br>• <b>Ý d) [Sai]:</b> Sai. N₂ có số oxi hóa 0 là trung gian, vừa có tính oxi hóa (với H₂, kim loại) vừa có tính khử (với O₂)."
     },
     {
       "type": "mcq",
@@ -686,7 +874,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Phân tử nitrogen gồm hai nguyên tử liên kết với nhau bằng một liên kết %%%SLOT_1%%%. Ở điều kiện thường, nitrogen là chất khí %%%SLOT_2%%% màu, không mùi, nhẹ hơn không khí và rất %%%SLOT_3%%% về mặt hóa học. Ở nhiệt độ cao, nitrogen vừa thể hiện tính %%%SLOT_4%%% vừa thể hiện tính khử.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "ba (N≡N)",
         "không",
@@ -694,12 +882,20 @@ const LESSONS_DATA = {
         "oxi hóa"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Liên kết ba N≡N, không màu, trơ hóa học, tính oxi hóa.",
+      "words": [
         "ba (N≡N)",
         "không",
         "trơ",
         "oxi hóa"
       ],
-      "exp": "• Liên kết ba N≡N, không màu, trơ hóa học, tính oxi hóa."
+      "text": "Phân tử nitrogen gồm hai nguyên tử liên kết với nhau bằng một liên kết [blank]. Ở điều kiện thường, nitrogen là chất khí [blank] màu, không mùi, nhẹ hơn không khí và rất [blank] về mặt hóa học. Ở nhiệt độ cao, nitrogen vừa thể hiện tính [blank] vừa thể hiện tính khử.",
+      "correctText": "1: ba (N≡N) | 2: không | 3: trơ | 4: oxi hóa"
     },
     {
       "type": "mcq",
@@ -767,7 +963,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Được tổng hợp trực tiếp từ N₂ và H₂ theo phương pháp Haber-Bosch."
         }
-      ]
+      ],
+      "stmts": [
+        "Dung dịch NH₃ làm quỳ tím hóa xanh và làm dung dịch phenolphthalein hóa hồng.",
+        "Khi tiếp xúc với đũa thủy tinh nhúng acid HCl đặc, khí NH₃ tạo khói trắng gồm các hạt tinh thể NH₄Cl.",
+        "Ammonia thể hiện tính khử khi cháy trong khí oxygen tạo khí nitrogen: 4NH₃ + 3O₂ --t°--> 2N₂ + 6H₂O.",
+        "Trong công nghiệp, ammonia được tổng hợp từ than đá và acid sulfuric."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng do có cân bằng tạo ion OH⁻.<br>• <b>Ý b) [Đúng]:</b> Đúng (NH₃ + HCl -> NH₄Cl khói trắng).<br>• <b>Ý c) [Đúng]:</b> Đúng (N từ -3 tăng lên 0).<br>• <b>Ý d) [Sai]:</b> Sai. Được tổng hợp trực tiếp từ N₂ và H₂ theo phương pháp Haber-Bosch."
     },
     {
       "type": "mcq",
@@ -803,13 +1013,26 @@ const LESSONS_DATA = {
           "b": "D. N₂O↑ + 2H₂O."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Đặc tính nhiệt phân của các muối ammonium."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Đặc tính nhiệt phân của các muối ammonium.",
+      "colA": [
+        "NH₄Cl --t°-->",
+        "NH₄HCO₃ (bột nở) --t°-->",
+        "NH₄NO₂ --t°-->",
+        "NH₄NO₃ --t°-->"
+      ],
+      "colB": [
+        "NH₃↑ + HCl↑ (khí bay lên rồi tái kết hợp thành muối bám ở miệng ống nghiệm).",
+        "NH₃↑ + CO₂↑ + H₂O (làm bánh phồng xốp).",
+        "N₂↑ + 2H₂O.",
+        "N₂O↑ + 2H₂O."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -848,7 +1071,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Vôi bột (base) tác dụng với NH₄⁺ giải phóng khí NH₃ bay mất: NH₄⁺ + OH⁻ -> NH₃↑ + H₂O, làm mất đạm."
         }
-      ]
+      ],
+      "stmts": [
+        "Tất cả các muối ammonium đều tan rất tốt trong nước.",
+        "Muối ammonium đều kém bền với nhiệt và dễ bị nhiệt phân khi nung nóng.",
+        "Muối (NH₄)₂SO₄ và NH₄NO₃ được dùng làm phân bón đạm cung cấp nguyên tố nitrogen cho cây trồng.",
+        "Bón phân đạm ammonium cùng lúc với vôi bột làm tăng hiệu quả sử dụng đạm của cây."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (chất điện li mạnh trong nước).<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Vôi bột (base) tác dụng với NH₄⁺ giải phóng khí NH₃ bay mất: NH₄⁺ + OH⁻ -> NH₃↑ + H₂O, làm mất đạm."
     },
     {
       "type": "mcq",
@@ -865,7 +1102,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Khí ammonia có công thức phân tử là %%%SLOT_1%%%, có mùi %%%SLOT_2%%% đặc trưng, nhẹ hơn không khí. Do còn một cặp electron chưa liên kết trên nguyên tử nitrogen nên ammonia có tính %%%SLOT_3%%% yếu và có khả năng tạo phức chất. Trong phân tử ammonia, nitrogen có số oxi hóa -3 nên thể hiện tính %%%SLOT_4%%%.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "NH₃",
         "khai",
@@ -873,12 +1110,20 @@ const LESSONS_DATA = {
         "khử"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• NH₃, mùi khai, tính base, tính khử.",
+      "words": [
         "NH₃",
         "khai",
         "base",
         "khử"
       ],
-      "exp": "• NH₃, mùi khai, tính base, tính khử."
+      "text": "Khí ammonia có công thức phân tử là [blank], có mùi [blank] đặc trưng, nhẹ hơn không khí. Do còn một cặp electron chưa liên kết trên nguyên tử nitrogen nên ammonia có tính [blank] yếu và có khả năng tạo phức chất. Trong phân tử ammonia, nitrogen có số oxi hóa -3 nên thể hiện tính [blank].",
+      "correctText": "1: NH₃ | 2: khai | 3: base | 4: khử"
     },
     {
       "type": "mcq",
@@ -946,7 +1191,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Mưa acid tàn phá rừng và hệ sinh thái nghiêm trọng."
         }
-      ]
+      ],
+      "stmts": [
+        "Ăn mòn các công trình kiến trúc, tượng đài bằng đá vôi (CaCO₃ + 2H⁺ -> Ca²⁺ + CO₂ + H₂O) và kim loại.",
+        "Làm chua đất nông nghiệp, rửa trôi các chất dinh dưỡng khoáng cần thiết cho cây trồng.",
+        "Làm giảm pH của nước sông, hồ, hủy diệt hệ sinh thái thủy sinh và cá chết hàng loạt.",
+        "Mưa acid giúp đất phì nhiêu hơn và không cần phải xử lí."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng.<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Mưa acid tàn phá rừng và hệ sinh thái nghiêm trọng."
     },
     {
       "type": "mcq",
@@ -982,13 +1241,26 @@ const LESSONS_DATA = {
           "b": "D. Bị thụ động hóa (tạo màng oxit bền bảo vệ kim loại)."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Đặc tính oxi hóa cực mạnh của HNO₃ và hiện tượng thụ động hóa Fe, Al."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Đặc tính oxi hóa cực mạnh của HNO₃ và hiện tượng thụ động hóa Fe, Al.",
+      "colA": [
+        "Cu + 4HNO₃ đặc -> Cu(NO₃)₂ + ... + 2H₂O",
+        "3Cu + 8HNO₃ loãng -> 3Cu(NO₃)₂ + ... + 4H₂O",
+        "4Zn + 10HNO₃ rất loãng -> 4Zn(NO₃)₂ + ... + 3H₂O",
+        "Fe, Al, Cr tác dụng với HNO₃ đặc, nguội"
+      ],
+      "colB": [
+        "2NO₂↑ (khí màu nâu đỏ).",
+        "2NO↑ (khí không màu hóa nâu ngoài không khí).",
+        "NH₄NO₃ (muối ammonium không có khí thoát ra).",
+        "Bị thụ động hóa (tạo màng oxit bền bảo vệ kim loại)."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -1027,7 +1299,21 @@ const LESSONS_DATA = {
           "ans": true,
           "exp": "Đúng vì Al và Fe bị thụ động hóa trong HNO₃ đặc nguội."
         }
-      ]
+      ],
+      "stmts": [
+        "HNO₃ là một acid mạnh, làm quỳ tím hóa đỏ và tác dụng với basic oxide, base, muối của acid yếu.",
+        "HNO₃ là chất oxi hóa rất mạnh do nguyên tử nitrogen có số oxi hóa cao nhất (+5).",
+        "Khi tác dụng với kim loại, acid nitric giải phóng khí hydrogen (H₂).",
+        "Người ta có thể dùng thùng bằng nhôm (Al) hoặc sắt (Fe) để đựng acid nitric đặc nguội."
+      ],
+      "ans": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Sai | d) Đúng",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng.<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Sai]:</b> Sai. Hầu như không bao giờ giải phóng H₂ mà giải phóng các sản phẩm khử của N (NO₂, NO, N₂O, N₂, NH₄NO₃).<br>• <b>Ý d) [Đúng]:</b> Đúng vì Al và Fe bị thụ động hóa trong HNO₃ đặc nguội."
     },
     {
       "type": "mcq",
@@ -1044,7 +1330,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Mưa acid có giá trị pH nhỏ hơn %%%SLOT_1%%%, được hình thành chủ yếu do hai khí ô nhiễm là %%%SLOT_2%%% và các oxide của nitrogen (NOx). Acid nitric HNO₃ là một acid mạnh và là chất %%%SLOT_3%%% rất mạnh. Sắt và nhôm bị %%%SLOT_4%%% trong dung dịch HNO₃ đặc, nguội.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "5,6",
         "SO₂",
@@ -1052,12 +1338,20 @@ const LESSONS_DATA = {
         "thụ động hóa"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• pH < 5,6, SO₂, chất oxi hóa mạnh, thụ động hóa.",
+      "words": [
         "5,6",
         "SO₂",
         "oxi hóa",
         "thụ động hóa"
       ],
-      "exp": "• pH < 5,6, SO₂, chất oxi hóa mạnh, thụ động hóa."
+      "text": "Mưa acid có giá trị pH nhỏ hơn [blank], được hình thành chủ yếu do hai khí ô nhiễm là [blank] và các oxide của nitrogen (NOx). Acid nitric HNO₃ là một acid mạnh và là chất [blank] rất mạnh. Sắt và nhôm bị [blank] trong dung dịch HNO₃ đặc, nguội.",
+      "correctText": "1: 5,6 | 2: SO₂ | 3: oxi hóa | 4: thụ động hóa"
     },
     {
       "type": "mcq",
@@ -1125,7 +1419,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. SO₂ là khí độc gây ngạt, kích ứng phế quản và là tác nhân chính gây mưa acid."
         }
-      ]
+      ],
+      "stmts": [
+        "Sulfur thể hiện tính oxi hóa khi tác dụng với kim loại (Fe, Al, Zn) và hydrogen: Fe + S --t°--> FeS.",
+        "Sulfur thể hiện tính khử khi tác dụng với các phi kim mạnh hơn như O₂, F₂: S + O₂ --t°--> SO₂.",
+        "Sulfur có ứng dụng lớn nhất trong công nghiệp là để sản xuất sulfuric acid (H₂SO₄) và lưu hóa cao su.",
+        "Khí SO₂ sinh ra khi đốt than không gây độc hại cho môi trường."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (S⁰ -> S⁻²).<br>• <b>Ý b) [Đúng]:</b> Đúng (S⁰ -> S⁺⁴).<br>• <b>Ý c) [Đúng]:</b> Đúng (hơn 90% sản lượng S dùng sản xuất H₂SO₄).<br>• <b>Ý d) [Sai]:</b> Sai. SO₂ là khí độc gây ngạt, kích ứng phế quản và là tác nhân chính gây mưa acid."
     },
     {
       "type": "mcq",
@@ -1161,13 +1469,26 @@ const LESSONS_DATA = {
           "b": "D. Tác dụng tẩy trắng và diệt nấm mốc, chống ôi thiu."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Các phản ứng đặc trưng của SO₂."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Các phản ứng đặc trưng của SO₂.",
+      "colA": [
+        "Dẫn SO₂ vào dung dịch nước bromine (Br₂ màu vàng nâu)",
+        "Dẫn SO₂ vào dung dịch H₂S",
+        "Dẫn SO₂ vào dung dịch Ca(OH)₂ dư",
+        "Dùng SO₂ xông khói thuốc bắc, quả khô"
+      ],
+      "colB": [
+        "Dung dịch Br₂ bị mất màu hoàn toàn (SO₂ thể hiện tính khử).",
+        "Xuất hiện váng kết tủa màu vàng (S) (SO₂ thể hiện tính oxi hóa).",
+        "Xuất hiện kết tủa trắng đục CaSO₃ (tính acidic oxide).",
+        "Tác dụng tẩy trắng và diệt nấm mốc, chống ôi thiu."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -1206,7 +1527,21 @@ const LESSONS_DATA = {
           "ans": true,
           "exp": "Đúng (SO₂ + Ca(OH)₂ -> CaSO₃↓ + H₂O rẻ tiền, hiệu quả)."
         }
-      ]
+      ],
+      "stmts": [
+        "Khí SO₂ được dùng làm chất tẩy trắng bột giấy, đường cát trong công nghiệp.",
+        "Dùng một lượng nhỏ SO₂ (dưới mức giới hạn an toàn E220) để bảo quản rượu vang chống vi khuẩn.",
+        "Khí SO₂ trong khí thải nhà máy nhiệt điện than kết hợp với O₂ và hơi nước tạo H₂SO₄ gây mưa acid.",
+        "Phương pháp xử lí khí SO₂ trong khí thải công nghiệp là sục vào dung dịch nước vôi trong Ca(OH)₂."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Đúng",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng.<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng (2SO₂ + O₂ + 2H₂O -> 2H₂SO₄).<br>• <b>Ý d) [Đúng]:</b> Đúng (SO₂ + Ca(OH)₂ -> CaSO₃↓ + H₂O rẻ tiền, hiệu quả)."
     },
     {
       "type": "mcq",
@@ -1223,7 +1558,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Sulfur là chất rắn màu %%%SLOT_1%%%, có hai dạng thù hình là sulfur tà phương và sulfur đơn tà. Khí sulfur dioxide có công thức là %%%SLOT_2%%%, mùi xốc độc hại, vừa có tính khử vừa có tính %%%SLOT_3%%%. Một trong những nguồn sinh ra SO₂ lớn nhất trong khí quyển là từ các nhà máy nhiệt điện đốt %%%SLOT_4%%%.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "vàng",
         "SO₂",
@@ -1231,12 +1566,20 @@ const LESSONS_DATA = {
         "than đá"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Màu vàng, SO₂, tính oxi hóa, than đá.",
+      "words": [
         "vàng",
         "SO₂",
         "oxi hóa",
         "than đá"
       ],
-      "exp": "• Màu vàng, SO₂, tính oxi hóa, than đá."
+      "text": "Sulfur là chất rắn màu [blank], có hai dạng thù hình là sulfur tà phương và sulfur đơn tà. Khí sulfur dioxide có công thức là [blank], mùi xốc độc hại, vừa có tính khử vừa có tính [blank]. Một trong những nguồn sinh ra SO₂ lớn nhất trong khí quyển là từ các nhà máy nhiệt điện đốt [blank].",
+      "correctText": "1: vàng | 2: SO₂ | 3: oxi hóa | 4: than đá"
     },
     {
       "type": "mcq",
@@ -1304,7 +1647,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Chứng minh H₂SO₄ đặc có tính háo nước và tính oxi hóa mạnh."
         }
-      ]
+      ],
+      "stmts": [
+        "Đường ban đầu màu trắng chuyển sang màu vàng, nâu rồi hóa thành cột than màu đen xốp dâng cao miệng cốc.",
+        "Cột than xốp dâng lên là do khí CO₂ và SO₂ sinh ra từ phản ứng của C với H₂SO₄ đặc đẩy lên: C + 2H₂SO₄ -> CO₂ + 2SO₂ + 2H₂O.",
+        "Phản ứng tỏa nhiệt rất mạnh làm cốc thủy tinh nóng rực.",
+        "Thí nghiệm trên chứng minh H₂SO₄ đặc có tính khử mạnh."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (C₁₂H₂₂O₁₁ --H₂SO₄ đ--> 12C + 11H₂O).<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Chứng minh H₂SO₄ đặc có tính háo nước và tính oxi hóa mạnh."
     },
     {
       "type": "mcq",
@@ -1340,13 +1697,26 @@ const LESSONS_DATA = {
           "b": "D. Dùng làm muối tắm thư giãn cơ bắp và thuốc nhuận tràng y học."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Các ứng dụng đời sống của các muối sulfate."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Các ứng dụng đời sống của các muối sulfate.",
+      "colA": [
+        "CaSO₄·2H₂O (Thạch cao sống)",
+        "BaSO₄ (Barium sulfate)",
+        "CuSO₄·5H₂O (Phèn xanh)",
+        "MgSO₄ (Muối Epsom)"
+      ],
+      "colB": [
+        "Sản xuất thạch cao nung đúc tượng, bó bột gãy xương, làm trần thạch cao.",
+        "Làm chất cản quang trong chụp X-quang đường tiêu hóa y tế.",
+        "Diệt nấm mốc, rêu tảo trong bể bơi và pha chế thuốc bảo vệ thực vật Bordeaux.",
+        "Dùng làm muối tắm thư giãn cơ bắp và thuốc nhuận tràng y học."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -1385,7 +1755,21 @@ const LESSONS_DATA = {
           "ans": true,
           "exp": "Đúng."
         }
-      ]
+      ],
+      "stmts": [
+        "Giai đoạn 1: Đốt cháy sulfur hoặc quặng pyrite (FeS₂) tạo khí SO₂.",
+        "Giai đoạn 2: Oxi hóa SO₂ thành SO₃ bằng O₂ không khí với xúc tác V₂O₅ ở khoảng 450 °C.",
+        "Giai đoạn 3: Dùng nước cất nguyên chất để hấp thụ trực tiếp khí SO₃ tạo H₂SO₄.",
+        "H₂SO₄ được ví như 'máu của ngành công nghiệp hóa chất' vì sản lượng H₂SO₄ là chỉ số đánh giá sức mạnh công nghiệp của một quốc gia."
+      ],
+      "ans": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Sai | d) Đúng",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (S + O₂ -> SO₂ hoặc 4FeS₂ + 11O₂ -> 2Fe₂O₃ + 8SO₂).<br>• <b>Ý b) [Đúng]:</b> Đúng (2SO₂ + O₂ ⇌ 2SO₃).<br>• <b>Ý c) [Sai]:</b> Sai. Dùng nước cất sẽ tạo màn sương mù acid cực khó ngưng tụ; công nghiệp phải dùng H₂SO₄ 98% hấp thụ SO₃ tạo oleum H₂SO₄·nSO₃.<br>• <b>Ý d) [Đúng]:</b> Đúng."
     },
     {
       "type": "mcq",
@@ -1402,7 +1786,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Khi pha loãng acid sulfuric đặc, phải luôn rót từ từ %%%SLOT_1%%% vào %%%SLOT_2%%%, không được làm ngược lại. Dung dịch H₂SO₄ đặc có tính %%%SLOT_3%%% rất mạnh và tính háo nước mãnh liệt. Thuốc thử để nhận biết ion SO₄²⁻ là dung dịch muối của %%%SLOT_4%%%.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "acid",
         "nước",
@@ -1410,12 +1794,20 @@ const LESSONS_DATA = {
         "barium (Ba²⁺)"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Rót acid vào nước.<br>• Tính oxi hóa mạnh, háo nước.<br>• Thuốc thử Ba²⁺.",
+      "words": [
         "acid",
         "nước",
         "oxi hóa",
         "barium (Ba²⁺)"
       ],
-      "exp": "• Rót acid vào nước.<br>• Tính oxi hóa mạnh, háo nước.<br>• Thuốc thử Ba²⁺."
+      "text": "Khi pha loãng acid sulfuric đặc, phải luôn rót từ từ [blank] vào [blank], không được làm ngược lại. Dung dịch H₂SO₄ đặc có tính [blank] rất mạnh và tính háo nước mãnh liệt. Thuốc thử để nhận biết ion SO₄²⁻ là dung dịch muối của [blank].",
+      "correctText": "1: acid | 2: nước | 3: oxi hóa | 4: barium (Ba²⁺)"
     },
     {
       "type": "mcq",
@@ -1483,7 +1875,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. H₂SO₄ là acid sẽ phản ứng ngay với base NH₃ tạo muối (NH₄)₂SO₄: 2NH₃ + H₂SO₄ -> (NH₄)₂SO₄."
         }
-      ]
+      ],
+      "stmts": [
+        "Dung dịch NH₄Cl và dung dịch NaOH không thể cùng tồn tại lâu vì phản ứng sinh khí NH₃: NH₄⁺ + OH⁻ -> NH₃↑ + H₂O.",
+        "Dung dịch BaCl₂ và dung dịch Na₂SO₄ không thể cùng tồn tại vì tạo kết tủa trắng BaSO₄.",
+        "Dung dịch NaCl và dung dịch KNO₃ cùng tồn tại được với nhau ở nhiệt độ phòng vì không xảy ra phản ứng trao đổi.",
+        "Dung dịch H₂SO₄ đặc có thể dùng để làm khô khí ammonia ẩm (NH₃)."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng.<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng (không tạo kết tủa hay chất khí).<br>• <b>Ý d) [Sai]:</b> Sai. H₂SO₄ là acid sẽ phản ứng ngay với base NH₃ tạo muối (NH₄)₂SO₄: 2NH₃ + H₂SO₄ -> (NH₄)₂SO₄."
     },
     {
       "type": "mcq",
@@ -1519,13 +1925,26 @@ const LESSONS_DATA = {
           "b": "D. Kim loại nặng tích tụ sinh học phá hủy hệ thần kinh."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Các vấn đề môi trường trọng tâm trong Chương 2 Hóa 11."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Các vấn đề môi trường trọng tâm trong Chương 2 Hóa 11.",
+      "colA": [
+        "Khí SO₂ và NOx",
+        "Dư lượng phân đạm nitrate (NO₃⁻) và phosphate trong ao hồ",
+        "Khí than CO",
+        "Bột thủy ngân (Hg)"
+      ],
+      "colB": [
+        "Gây hiện tượng mưa acid tàn phá rừng và công trình kiến trúc.",
+        "Gây hiện tượng phú dưỡng (Eutrophication) làm tảo nở hoa, cá chết ngạt.",
+        "Chiếm hemoglobin trong hồng cầu gây ngạt thở tử vong nhanh chóng.",
+        "Kim loại nặng tích tụ sinh học phá hủy hệ thần kinh."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -1564,7 +1983,21 @@ const LESSONS_DATA = {
           "ans": true,
           "exp": "Đúng do S(+4) trung gian, còn S(+6) cao nhất."
         }
-      ]
+      ],
+      "stmts": [
+        "Cho Fe tác dụng với dung dịch HNO₃ dư luôn thu được muối sắt(III) Fe(NO₃)₃.",
+        "Cho Fe dư tác dụng với dung dịch HNO₃ thì dung dịch cuối cùng chứa muối sắt(II) Fe(NO₃)₂.",
+        "Nhiệt phân muối KNO₃ giải phóng khí O₂: 2KNO₃ --t°--> 2KNO₂ + O₂.",
+        "Khí SO₂ vừa là chất oxi hóa vừa là chất khử, còn H₂SO₄ đặc chỉ thể hiện tính oxi hóa."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Đúng",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (HNO₃ dư oxi hóa Fe lên mức cao nhất +3).<br>• <b>Ý b) [Đúng]:</b> Đúng (Fe dư khử Fe³⁺ về Fe²⁺: Fe + 2Fe³⁺ -> 3Fe²⁺).<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Đúng]:</b> Đúng do S(+4) trung gian, còn S(+6) cao nhất."
     },
     {
       "type": "mcq",
@@ -1581,7 +2014,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Nguyên tố nitrogen và sulfur là hai phi kim quan trọng của nhóm %%%SLOT_1%%% và VIA. Khí ammonia có tính %%%SLOT_2%%% yếu. Acid nitric và acid sulfuric đặc đều là những acid có tính %%%SLOT_3%%% rất mạnh. Ion sulfate được nhận biết đặc trưng bằng dung dịch chứa ion %%%SLOT_4%%%.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "VA",
         "base",
@@ -1589,12 +2022,20 @@ const LESSONS_DATA = {
         "barium (Ba²⁺)"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Nhóm VA, tính base yếu, oxi hóa mạnh, ion Ba²⁺.",
+      "words": [
         "VA",
         "base",
         "oxi hóa",
         "barium (Ba²⁺)"
       ],
-      "exp": "• Nhóm VA, tính base yếu, oxi hóa mạnh, ion Ba²⁺."
+      "text": "Nguyên tố nitrogen và sulfur là hai phi kim quan trọng của nhóm [blank] và VIA. Khí ammonia có tính [blank] yếu. Acid nitric và acid sulfuric đặc đều là những acid có tính [blank] rất mạnh. Ion sulfate được nhận biết đặc trưng bằng dung dịch chứa ion [blank].",
+      "correctText": "1: VA | 2: base | 3: oxi hóa | 4: barium (Ba²⁺)"
     },
     {
       "type": "mcq",
@@ -1662,7 +2103,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Phản ứng hữu cơ thường xảy ra chậm, không hoàn toàn, cần xúc tác/đun nóng và sinh ra hỗn hợp nhiều sản phẩm phụ."
         }
-      ]
+      ],
+      "stmts": [
+        "Hợp chất hữu cơ được chia thành 2 nhóm lớn: Hydrocarbon và Dẫn xuất của hydrocarbon.",
+        "Hydrocarbon là những hợp chất mà phân tử chỉ gồm 2 nguyên tố carbon và hydrogen.",
+        "Dẫn xuất của hydrocarbon là hợp chất mà ngoài C và H còn chứa các nguyên tố khác như O, N, S, halogen.",
+        "Phản ứng hóa học của hợp chất hữu cơ thường diễn ra rất nhanh và chỉ cho một sản phẩm duy nhất."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng theo chuẩn phân loại.<br>• <b>Ý b) [Đúng]:</b> Đúng (ví dụ CH₄, C₂H₄, C₆H₆).<br>• <b>Ý c) [Đúng]:</b> Đúng (ví dụ C₂H₅OH, CH₃COOH, CH₃NH₂).<br>• <b>Ý d) [Sai]:</b> Sai. Phản ứng hữu cơ thường xảy ra chậm, không hoàn toàn, cần xúc tác/đun nóng và sinh ra hỗn hợp nhiều sản phẩm phụ."
     },
     {
       "type": "mcq",
@@ -1698,13 +2153,26 @@ const LESSONS_DATA = {
           "b": "D. Ester."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Các nhóm chức cơ bản của hóa học hữu cơ."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Các nhóm chức cơ bản của hóa học hữu cơ.",
+      "colA": [
+        "Nhóm –OH",
+        "Nhóm –CHO",
+        "Nhóm –COOH",
+        "Nhóm –COO–"
+      ],
+      "colB": [
+        "Alcohol (rượu).",
+        "Aldehyde.",
+        "Carboxylic acid.",
+        "Ester."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -1743,7 +2211,21 @@ const LESSONS_DATA = {
           "ans": true,
           "exp": "Đúng theo thuyết cấu tạo hóa học."
         }
-      ]
+      ],
+      "stmts": [
+        "CH₄, C₂H₅OH, C₆H₁₂O₆ là các hợp chất hữu cơ.",
+        "NaHCO₃ và CaCO₃ là các hợp chất vô cơ dù chứa nguyên tố carbon.",
+        "Mọi hợp chất hữu cơ đều tan tốt trong nước và không bao giờ cháy.",
+        "Trong hợp chất hữu cơ, nguyên tử carbon luôn có hóa trị IV."
+      ],
+      "ans": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Sai | d) Đúng",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng.<br>• <b>Ý b) [Đúng]:</b> Đúng (muối carbonate vô cơ).<br>• <b>Ý c) [Sai]:</b> Sai. Đa số hợp chất hữu cơ không tan trong nước, tan trong dung môi hữu cơ và rất dễ cháy.<br>• <b>Ý d) [Đúng]:</b> Đúng theo thuyết cấu tạo hóa học."
     },
     {
       "type": "mcq",
@@ -1760,7 +2242,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Hợp chất hữu cơ là hợp chất của %%%SLOT_1%%%. Liên kết trong phân tử hữu cơ chủ yếu là liên kết %%%SLOT_2%%%. Nhóm nguyên tử quyết định tính chất hóa học đặc trưng của phân tử gọi là %%%SLOT_3%%%. Phương pháp phổ %%%SLOT_4%%% (IR) giúp xác định các nhóm chức có mặt trong phân tử.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "carbon",
         "cộng hóa trị",
@@ -1768,12 +2250,20 @@ const LESSONS_DATA = {
         "hồng ngoại"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Carbon, cộng hóa trị, nhóm chức, hồng ngoại IR.",
+      "words": [
         "carbon",
         "cộng hóa trị",
         "nhóm chức",
         "hồng ngoại"
       ],
-      "exp": "• Carbon, cộng hóa trị, nhóm chức, hồng ngoại IR."
+      "text": "Hợp chất hữu cơ là hợp chất của [blank]. Liên kết trong phân tử hữu cơ chủ yếu là liên kết [blank]. Nhóm nguyên tử quyết định tính chất hóa học đặc trưng của phân tử gọi là [blank]. Phương pháp phổ [blank] (IR) giúp xác định các nhóm chức có mặt trong phân tử.",
+      "correctText": "1: carbon | 2: cộng hóa trị | 3: nhóm chức | 4: hồng ngoại"
     },
     {
       "type": "mcq",
@@ -1841,7 +2331,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Sắc kí cột dùng để tách các hỗn hợp phức tạp gồm các chất có tính chất rất gần nhau dựa trên sự hấp phụ và rửa giải khác nhau."
         }
-      ]
+      ],
+      "stmts": [
+        "Nấu rượu thủ công truyền thống áp dụng phương pháp chưng cất phân đoạn.",
+        "Ngâm thảo dược (sâm, ngải cứu...) vào rượu để ngâm rượu thuốc là phương pháp chiết lỏng – rắn.",
+        "Làm đường phèn tinh khiết từ nước mía áp dụng phương pháp kết tinh lại.",
+        "Phương pháp sắc kí cột dùng để tách các chất có tính chất rất khác biệt nhau hoàn toàn."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (rượu sôi ở 78 °C bay hơi trước).<br>• <b>Ý b) [Đúng]:</b> Đúng (dung môi ethanol hòa tan các hoạt chất trong dược liệu).<br>• <b>Ý c) [Đúng]:</b> Đúng (cô đặc dung dịch đường nóng, để nguội tinh thể đường kết tinh tách ra).<br>• <b>Ý d) [Sai]:</b> Sai. Sắc kí cột dùng để tách các hỗn hợp phức tạp gồm các chất có tính chất rất gần nhau dựa trên sự hấp phụ và rửa giải khác nhau."
     },
     {
       "type": "mcq",
@@ -1877,13 +2381,26 @@ const LESSONS_DATA = {
           "b": "D. Phương pháp sắc kí cột (hoặc sắc kí bản mỏng)."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Ứng dụng thực tế của 4 phương pháp tách biệt và tinh chế hữu cơ."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Ứng dụng thực tế của 4 phương pháp tách biệt và tinh chế hữu cơ.",
+      "colA": [
+        "Nấu rượu gạo từ bỗng rượu lên men",
+        "Pha trà, sắc thuốc bắc bằng nước nóng",
+        "Thu hoạch muối ăn kết tinh từ nước biển trên ruộng muối",
+        "Tách các sắc tố màu chlorophyll trong lá cây"
+      ],
+      "colB": [
+        "Phương pháp chưng cất.",
+        "Phương pháp chiết lỏng – rắn.",
+        "Phương pháp kết tinh (làm bay hơi nước).",
+        "Phương pháp sắc kí cột (hoặc sắc kí bản mỏng)."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -1922,7 +2439,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Lớp chất lỏng phía trên phải được rót ra từ miệng trên của phễu để tránh lẫn tạp chất bám ở cuống phễu."
         }
-      ]
+      ],
+      "stmts": [
+        "Sau khi lắc đều hỗn hợp trong phễu chiết, cần mở khóa phễu để xả áp suất khí bên trong.",
+        "Đặt phễu chiết trên giá đỡ và chờ cho hai lớp chất lỏng phân tách ranh giới rõ ràng.",
+        "Mở khóa để cho lớp chất lỏng nặng hơn ở phía dưới chảy từ từ ra bình hứng.",
+        "Lớp chất lỏng nhẹ hơn ở phía trên cũng phải được tháo qua khóa đáy phễu."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng để tránh áp suất hơi dung môi đẩy bay nắp.<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Lớp chất lỏng phía trên phải được rót ra từ miệng trên của phễu để tránh lẫn tạp chất bám ở cuống phễu."
     },
     {
       "type": "mcq",
@@ -1939,7 +2470,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Có 4 phương pháp tách biệt và tinh chế hợp chất hữu cơ quan trọng: Phương pháp %%%SLOT_1%%% dựa trên độ sôi khác nhau; Phương pháp %%%SLOT_2%%% dựa trên độ tan trong các dung môi không trộn lẫn; Phương pháp %%%SLOT_3%%% áp dụng cho chất rắn; và Phương pháp %%%SLOT_4%%% cột dùng để tách các hỗn hợp tinh vi.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "chưng cất",
         "chiết",
@@ -1947,12 +2478,20 @@ const LESSONS_DATA = {
         "sắc kí"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Chưng cất, chiết, kết tinh, sắc kí.",
+      "words": [
         "chưng cất",
         "chiết",
         "kết tinh",
         "sắc kí"
       ],
-      "exp": "• Chưng cất, chiết, kết tinh, sắc kí."
+      "text": "Có 4 phương pháp tách biệt và tinh chế hợp chất hữu cơ quan trọng: Phương pháp [blank] dựa trên độ sôi khác nhau; Phương pháp [blank] dựa trên độ tan trong các dung môi không trộn lẫn; Phương pháp [blank] áp dụng cho chất rắn; và Phương pháp [blank] cột dùng để tách các hỗn hợp tinh vi.",
+      "correctText": "1: chưng cất | 2: chiết | 3: kết tinh | 4: sắc kí"
     },
     {
       "type": "mcq",
@@ -2020,7 +2559,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. M(C₂H₄O) = 44. Vì m/z = 88 ⇒ n = 88/44 = 2 ⇒ Công thức phân tử là C₄H₈O₂."
         }
-      ]
+      ],
+      "stmts": [
+        "Số mol C trong X là 0,2 mol và số mol H là 0,4 mol.",
+        "Khối lượng oxygen trong X là 4,4 - (0,2·12 + 0,4·1) = 1,6 gam (tương ứng 0,1 mol O).",
+        "Tỉ lệ n_C : n_H : n_O = 0,2 : 0,4 : 0,1 = 2 : 4 : 1 ⇒ Công thức đơn giản nhất là C₂H₄O.",
+        "Nếu phổ MS cho pic ion phân tử m/z = 88 thì công thức phân tử của X là C₂H₄O."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng: n_C = 8,8/44 = 0,2 mol; n_H = 2 · (3,6/18) = 0,4 mol.<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. M(C₂H₄O) = 44. Vì m/z = 88 ⇒ n = 88/44 = 2 ⇒ Công thức phân tử là C₄H₈O₂."
     },
     {
       "type": "mcq",
@@ -2056,13 +2609,26 @@ const LESSONS_DATA = {
           "b": "D. C₂H₆O (trùng với công thức phân tử)."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Rút gọn tỉ lệ các nguyên tử để tìm công thức đơn giản nhất."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Rút gọn tỉ lệ các nguyên tử để tìm công thức đơn giản nhất.",
+      "colA": [
+        "Benzene (C₆H₆)",
+        "Ethylene (C₂H₄)",
+        "Glucose (C₆H₁₂O₆)",
+        "Ethanol (C₂H₆O)"
+      ],
+      "colB": [
+        "CH.",
+        "CH₂.",
+        "CH₂O.",
+        "C₂H₆O (trùng với công thức phân tử)."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -2101,7 +2667,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Phân tích định lượng xác định chính xác % khối lượng từng nguyên tố."
         }
-      ]
+      ],
+      "stmts": [
+        "Phân tích định tính nhằm xác định nguyên tố nào có mặt trong hợp chất hữu cơ.",
+        "Dùng CuSO₄ khan (màu trắng) để nhận biết nước sinh ra vì nó chuyển sang màu xanh CuSO₄·5H₂O.",
+        "Dùng dung dịch Ca(OH)₂ nhận biết CO₂ vì tạo kết tủa trắng đục CaCO₃.",
+        "Phân tích định lượng chỉ cho biết tỉ lệ thể tích mà không tính được phần trăm khối lượng."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (thường chuyển C thành CO₂, H thành H₂O, N thành NH₃ để nhận biết).<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Phân tích định lượng xác định chính xác % khối lượng từng nguyên tố."
     },
     {
       "type": "mcq",
@@ -2118,7 +2698,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Công thức %%%SLOT_1%%% cho biết tỉ lệ số nguyên tử tối giản của các nguyên tố. Công thức %%%SLOT_2%%% cho biết số lượng nguyên tử chính xác của mỗi nguyên tố trong một phân tử. Phổ khối lượng %%%SLOT_3%%% (MS) cho biết giá trị %%%SLOT_4%%% phân tử M của hợp chất.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "đơn giản nhất",
         "phân tử",
@@ -2126,12 +2706,20 @@ const LESSONS_DATA = {
         "khối lượng mol"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Đơn giản nhất, phân tử, phổ khối lượng, khối lượng mol.",
+      "words": [
         "đơn giản nhất",
         "phân tử",
         "khối lượng",
         "khối lượng mol"
       ],
-      "exp": "• Đơn giản nhất, phân tử, phổ khối lượng, khối lượng mol."
+      "text": "Công thức [blank] cho biết tỉ lệ số nguyên tử tối giản của các nguyên tố. Công thức [blank] cho biết số lượng nguyên tử chính xác của mỗi nguyên tố trong một phân tử. Phổ khối lượng [blank] (MS) cho biết giá trị [blank] phân tử M của hợp chất.",
+      "correctText": "1: đơn giản nhất | 2: phân tử | 3: khối lượng | 4: khối lượng mol"
     },
     {
       "type": "mcq",
@@ -2199,7 +2787,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Điều kiện để có đồng phân cis-trans là mỗi nguyên tử C ở liên kết đôi phải liên kết với 2 nhóm nguyên tử khác nhau hoàn toàn (abC=Ccd với a ≠ b và c ≠ d)."
         }
-      ]
+      ],
+      "stmts": [
+        "Đồng phân cấu tạo gồm: đồng phân mạch carbon, đồng phân vị trí nhóm chức và đồng phân loại nhóm chức.",
+        "Butane (CH₃-CH₂-CH₂-CH₃) và Isobutane (CH₃-CH(CH₃)-CH₃) là đồng phân mạch carbon của nhau.",
+        "Propan-1-ol và Propan-2-ol là đồng phân vị trí nhóm chức -OH.",
+        "Mọi hợp chất có chứa liên kết đôi C=C đều có đồng phân hình học cis – trans."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng theo phân loại SGK 11.<br>• <b>Ý b) [Đúng]:</b> Đúng (cùng C₄H₁₀).<br>• <b>Ý c) [Đúng]:</b> Đúng (cùng C₃H₈O).<br>• <b>Ý d) [Sai]:</b> Sai. Điều kiện để có đồng phân cis-trans là mỗi nguyên tử C ở liên kết đôi phải liên kết với 2 nhóm nguyên tử khác nhau hoàn toàn (abC=Ccd với a ≠ b và c ≠ d)."
     },
     {
       "type": "mcq",
@@ -2235,13 +2837,26 @@ const LESSONS_DATA = {
           "b": "D. Đồng phân hình học (đồng phân lập thể không gian)."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Phân loại chính xác các kiểu đồng phân thường gặp."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Phân loại chính xác các kiểu đồng phân thường gặp.",
+      "colA": [
+        "CH₃CH₂CH₂OH và CH₃CH(OH)CH₃",
+        "CH₃CH₂CH₂CH₃ và CH₃CH(CH₃)CH₃",
+        "C₂H₅OH và CH₃OCH₃",
+        "cis-but-2-ene và trans-but-2-ene"
+      ],
+      "colB": [
+        "Đồng phân vị trí nhóm chức.",
+        "Đồng phân mạch carbon.",
+        "Đồng phân nhóm chức (alcohol và ether).",
+        "Đồng phân hình học (đồng phân lập thể không gian)."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -2280,7 +2895,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. C₂H₂ (acetylene) và C₆H₆ (benzene) cùng có CTĐGN là CH nhưng thuộc hai dãy đồng đẳng hoàn toàn khác nhau."
         }
-      ]
+      ],
+      "stmts": [
+        "Các chất đồng đẳng có cấu tạo hóa học tương tự nhau và thành phần phân tử hơn kém nhau một hay nhiều nhóm -CH₂-.",
+        "Dãy CH₄, C₂H₆, C₃H₈, C₄H₁₀ lập thành dãy đồng đẳng của alkane.",
+        "Các chất trong cùng một dãy đồng đẳng có tính chất hóa học tương tự nhau.",
+        "Hai chất có cùng công thức đơn giản nhất thì chắc chắn là đồng đẳng của nhau."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng định nghĩa đồng đẳng.<br>• <b>Ý b) [Đúng]:</b> Đúng (công thức chung CnH2n+2).<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. C₂H₂ (acetylene) và C₆H₆ (benzene) cùng có CTĐGN là CH nhưng thuộc hai dãy đồng đẳng hoàn toàn khác nhau."
     },
     {
       "type": "mcq",
@@ -2297,7 +2926,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Thuyết cấu tạo hóa học chỉ ra rằng trong phân tử hữu cơ, carbon luôn có hóa trị %%%SLOT_1%%%. Các nguyên tử carbon có thể liên kết với nhau tạo thành %%%SLOT_2%%% carbon (mạch thẳng, mạch nhánh hoặc mạch vòng). Những chất có cùng công thức phân tử nhưng khác nhau về cấu tạo hóa học gọi là các %%%SLOT_3%%%. Đồng phân hình học gồm hai dạng là %%%SLOT_4%%% và trans.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "IV",
         "mạch",
@@ -2305,12 +2934,20 @@ const LESSONS_DATA = {
         "cis"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Hóa trị IV, mạch carbon, đồng phân, dạng cis và trans.",
+      "words": [
         "IV",
         "mạch",
         "đồng phân",
         "cis"
       ],
-      "exp": "• Hóa trị IV, mạch carbon, đồng phân, dạng cis và trans."
+      "text": "Thuyết cấu tạo hóa học chỉ ra rằng trong phân tử hữu cơ, carbon luôn có hóa trị [blank]. Các nguyên tử carbon có thể liên kết với nhau tạo thành [blank] carbon (mạch thẳng, mạch nhánh hoặc mạch vòng). Những chất có cùng công thức phân tử nhưng khác nhau về cấu tạo hóa học gọi là các [blank]. Đồng phân hình học gồm hai dạng là [blank] và trans.",
+      "correctText": "1: IV | 2: mạch | 3: đồng phân | 4: cis"
     },
     {
       "type": "mcq",
@@ -2378,7 +3015,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Hóa hữu cơ là nền tảng của dược phẩm, thực phẩm, nhựa, dệt may, xăng dầu..."
         }
-      ]
+      ],
+      "stmts": [
+        "Để tách hai chất lỏng tan vô hạn vào nhau có nhiệt độ sôi cách nhau từ 20 °C trở lên, người ta dùng phương pháp chưng cất.",
+        "Hợp chất hữu cơ CH₃-CH=CH-CH₃ có 2 đồng phân hình học là cis và trans.",
+        "Các chất có cùng công thức phân tử thì luôn có cùng khối lượng mol phân tử M.",
+        "Hóa học hữu cơ không thể ứng dụng trong đời sống vì các chất hữu cơ đều độc hại."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (chưng cất phân đoạn).<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng (cùng CTPT thì M như nhau).<br>• <b>Ý d) [Sai]:</b> Sai. Hóa hữu cơ là nền tảng của dược phẩm, thực phẩm, nhựa, dệt may, xăng dầu..."
     },
     {
       "type": "mcq",
@@ -2414,13 +3065,26 @@ const LESSONS_DATA = {
           "b": "D. Methyl formate."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Tên gọi chuẩn IUPAC của các hợp chất hữu cơ đơn giản."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Tên gọi chuẩn IUPAC của các hợp chất hữu cơ đơn giản.",
+      "colA": [
+        "CH₃–CH₂–OH",
+        "CH₃–CHO",
+        "CH₃–COOH",
+        "H–COO–CH₃"
+      ],
+      "colB": [
+        "Ethanol.",
+        "Acetaldehyde (ethanal).",
+        "Acetic acid (ethanoic acid).",
+        "Methyl formate."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -2459,7 +3123,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Chỉ một số ít muối hữu cơ (như RCOONa) mới có liên kết ion, đa số là liên kết cộng hóa trị."
         }
-      ]
+      ],
+      "stmts": [
+        "Đa số các hydrocarbon (khí gas, xăng dầu) nhẹ hơn nước và không tan trong nước.",
+        "Khi xăng dầu bị cháy, không được dùng nước để dập lửa vì xăng dầu nổi lên mặt nước làm đám cháy lan rộng.",
+        "Nhiệt độ sôi của các chất hữu cơ nói chung tăng dần theo chiều tăng của phân tử khối trong cùng dãy đồng đẳng.",
+        "Mọi hợp chất hữu cơ đều có liên kết ion giữa các nguyên tử."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (do phân tử không phân cực).<br>• <b>Ý b) [Đúng]:</b> Đúng (phải dùng bình bọt chữa cháy hoặc cát).<br>• <b>Ý c) [Đúng]:</b> Đúng do tương tác van der Waals tăng.<br>• <b>Ý d) [Sai]:</b> Sai. Chỉ một số ít muối hữu cơ (như RCOONa) mới có liên kết ion, đa số là liên kết cộng hóa trị."
     },
     {
       "type": "mcq",
@@ -2476,7 +3154,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Phân tích nguyên tố gồm phân tích %%%SLOT_1%%% để biết thành phần các nguyên tố và phân tích %%%SLOT_2%%% để tìm tỉ lệ khối lượng. Từ phổ MS ta tìm được %%%SLOT_3%%% phân tử. Từ phổ IR ta xác định được các %%%SLOT_4%%% có mặt trong phân tử.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "định tính",
         "định lượng",
@@ -2484,12 +3162,20 @@ const LESSONS_DATA = {
         "nhóm chức"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Định tính, định lượng, khối lượng phân tử, nhóm chức.",
+      "words": [
         "định tính",
         "định lượng",
         "khối lượng",
         "nhóm chức"
       ],
-      "exp": "• Định tính, định lượng, khối lượng phân tử, nhóm chức."
+      "text": "Phân tích nguyên tố gồm phân tích [blank] để biết thành phần các nguyên tố và phân tích [blank] để tìm tỉ lệ khối lượng. Từ phổ MS ta tìm được [blank] phân tử. Từ phổ IR ta xác định được các [blank] có mặt trong phân tử.",
+      "correctText": "1: định tính | 2: định lượng | 3: khối lượng | 4: nhóm chức"
     },
     {
       "type": "mcq",
@@ -2557,7 +3243,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Alkane không phản ứng và không làm mất màu thuốc tím ở điều kiện thường."
         }
-      ]
+      ],
+      "stmts": [
+        "Nguyên tử halogen ưu tiên thế vào nguyên tử hydrogen ở carbon bậc cao hơn (tạo sản phẩm chính).",
+        "Khi clo hóa propane thu được sản phẩm chính là 2-chloropropane (CH₃-CHCl-CH₃).",
+        "Phản ứng thế halogen vào alkane xảy ra theo cơ chế thế gốc tự do (SR).",
+        "Alkane làm mất màu dung dịch thuốc tím KMnO₄ ở nhiệt độ phòng."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (quy tắc thế thế gốc ưu tiên tạo gốc tự do bậc cao bền hơn).<br>• <b>Ý b) [Đúng]:</b> Đúng (C bậc 2 là sản phẩm chính).<br>• <b>Ý c) [Đúng]:</b> Đúng (gồm 3 giai đoạn: khơi mào, phát triển mạch và đứt mạch).<br>• <b>Ý d) [Sai]:</b> Sai. Alkane không phản ứng và không làm mất màu thuốc tím ở điều kiện thường."
     },
     {
       "type": "mcq",
@@ -2593,13 +3293,26 @@ const LESSONS_DATA = {
           "b": "D. Phản ứng oxi hóa hoàn toàn (phản ứng cháy)."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Các phản ứng hóa học quan trọng của alkane trong đời sống và lọc dầu."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Các phản ứng hóa học quan trọng của alkane trong đời sống và lọc dầu.",
+      "colA": [
+        "CH₄ + Cl₂ --as--> CH₃Cl + HCl",
+        "C₄H₁₀ --t°, xt--> C₂H₄ + C₂H₆",
+        "C₄H₁₀ --t°, xt--> C₄H₈ + H₂",
+        "CH₄ + 2O₂ --t°--> CO₂ + 2H₂O"
+      ],
+      "colB": [
+        "Phản ứng thế halogen.",
+        "Phản ứng cracking (bẻ gãy mạch carbon).",
+        "Phản ứng tách hydrogen (dehydrogenation).",
+        "Phản ứng oxi hóa hoàn toàn (phản ứng cháy)."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -2638,7 +3351,21 @@ const LESSONS_DATA = {
           "ans": true,
           "exp": "Đúng (CH₄ + 2O₂ -> CO₂ + 2H₂O tỏa nhiệt sinh sóng xung kích)."
         }
-      ]
+      ],
+      "stmts": [
+        "Các alkane từ C₁ đến C₄ (methane, ethane, propane, butane) ở trạng thái khí ở điều kiện thường.",
+        "Khí gas đun nấu không có mùi, người ta phải pha thêm chất có mùi hôi (mercaptan) để dễ phát hiện khi rò rỉ gas.",
+        "Khi phát hiện mùi gas rò rỉ trong bếp, cần bật ngay công tắc đèn hoặc quạt thông gió để tản khí.",
+        "Hỗn hợp khí methane và oxygen theo tỉ lệ thể tích 1 : 2 là hỗn hợp nổ cực kì nguy hiểm."
+      ],
+      "ans": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Sai | d) Đúng",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng.<br>• <b>Ý b) [Đúng]:</b> Đúng (biện pháp an toàn cảnh báo chống nổ gas).<br>• <b>Ý c) [Sai]:</b> Sai. Bật công tắc điện sinh tia lửa điện gây nổ tức khắc; phải lập tức khóa van gas, mở toang cửa sổ và không được bật tắt bất kì thiết bị điện nào.<br>• <b>Ý d) [Đúng]:</b> Đúng (CH₄ + 2O₂ -> CO₂ + 2H₂O tỏa nhiệt sinh sóng xung kích)."
     },
     {
       "type": "mcq",
@@ -2655,7 +3382,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Alkane là các hydrocarbon %%%SLOT_1%%% mạch hở có công thức chung là CnH2n+2. Phản ứng đặc trưng của alkane là phản ứng %%%SLOT_2%%% halogen. Trong công nghiệp dầu mỏ, quá trình %%%SLOT_3%%% dùng để bẻ gãy các phân tử alkane mạch dài thành các alkane và alkene mạch ngắn hơn có giá trị kinh tế cao, làm tăng chỉ số %%%SLOT_4%%% của xăng.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "no",
         "thế",
@@ -2663,12 +3390,20 @@ const LESSONS_DATA = {
         "octane"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Hydrocarbon no, phản ứng thế, cracking, chỉ số octane.",
+      "words": [
         "no",
         "thế",
         "cracking",
         "octane"
       ],
-      "exp": "• Hydrocarbon no, phản ứng thế, cracking, chỉ số octane."
+      "text": "Alkane là các hydrocarbon [blank] mạch hở có công thức chung là CnH2n+2. Phản ứng đặc trưng của alkane là phản ứng [blank] halogen. Trong công nghiệp dầu mỏ, quá trình [blank] dùng để bẻ gãy các phân tử alkane mạch dài thành các alkane và alkene mạch ngắn hơn có giá trị kinh tế cao, làm tăng chỉ số [blank] của xăng.",
+      "correctText": "1: no | 2: thế | 3: cracking | 4: octane"
     },
     {
       "type": "mcq",
@@ -2736,7 +3471,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. 1-bromopropane chỉ là sản phẩm phụ."
         }
-      ]
+      ],
+      "stmts": [
+        "Nguyên tử H ưu tiên cộng vào nguyên tử carbon mang nhiều hydrogen hơn (ở liên kết đôi).",
+        "Phần mang điện tích âm (như Br, OH) ưu tiên cộng vào carbon mang ít hydrogen hơn.",
+        "Sản phẩm chính của phản ứng CH₂=CH-CH₃ + HBr là 2-bromopropane (CH₃-CHBr-CH₃).",
+        "Sản phẩm chính của phản ứng là 1-bromopropane."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (quy tắc 'giàu càng giàu thêm').<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. 1-bromopropane chỉ là sản phẩm phụ."
     },
     {
       "type": "mcq",
@@ -2772,13 +3521,26 @@ const LESSONS_DATA = {
           "b": "D. Hoocmon thực vật kích thích hoa mau nở và trái cây mau chín."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Các phản ứng và ứng dụng tiêu biểu của ethylene và acetylene."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Các phản ứng và ứng dụng tiêu biểu của ethylene và acetylene.",
+      "colA": [
+        "Trùng hợp ethylene: nCH₂=CH₂ --p, xt, t°--> (-CH₂-CH₂-)n",
+        "Dẫn acetylene vào dung dịch AgNO₃ trong NH₃",
+        "Đốt cháy khí acetylene trong khí oxy (ngọn lửa oxy - axetilen)",
+        "Khí ethylene sinh ra từ hoa quả chín"
+      ],
+      "colB": [
+        "Sản xuất nhựa polyethylene (PE) làm màng bọc, túi nilon, chai lọ.",
+        "Xuất hiện kết tủa màu vàng nhạt bạc acetylide (CAg≡CAg↓).",
+        "Tỏa nhiệt trên 3000 °C dùng để hàn cắt kim loại.",
+        "Hoocmon thực vật kích thích hoa mau nở và trái cây mau chín."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -2817,7 +3579,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Đây là phản ứng đặc trưng để nhận biết liên kết đôi/ba."
         }
-      ]
+      ],
+      "stmts": [
+        "Alkene cháy hoàn toàn trong O₂ tỏa nhiệt, thu được số mol CO₂ bằng số mol H₂O.",
+        "Khi sục ethylene vào dung dịch KMnO₄, dung dịch mất màu tím và xuất hiện kết tủa nâu đen MnO₂.",
+        "Sản phẩm hữu cơ thu được khi oxi hóa ethylene bằng dung dịch KMnO₄ là ethylene glycol (ethan-1,2-diol).",
+        "Phản ứng làm mất màu KMnO₄ không dùng để nhận biết liên kết đôi được."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (CnH2n + 1,5nO₂ -> nCO₂ + nH₂O).<br>• <b>Ý b) [Đúng]:</b> Đúng (3C₂H₄ + 2KMnO₄ + 4H₂O -> 3C₂H₄(OH)₂ + 2MnO₂↓ + 2KOH).<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Đây là phản ứng đặc trưng để nhận biết liên kết đôi/ba."
     },
     {
       "type": "mcq",
@@ -2834,7 +3610,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Alkene có công thức chung là %%%SLOT_1%%%, alkyne có công thức chung là %%%SLOT_2%%%. Cả hai đều làm mất màu dung dịch nước %%%SLOT_3%%%. Các alk-1-yne có nguyên tử H linh động ở đầu mạch phản ứng với dung dịch AgNO₃ trong NH₃ tạo kết tủa màu %%%SLOT_4%%%.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "CnH2n",
         "CnH2n-2",
@@ -2842,12 +3618,20 @@ const LESSONS_DATA = {
         "vàng nhạt"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• CnH2n, CnH2n-2, nước bromine, kết tủa vàng nhạt.",
+      "words": [
         "CnH2n",
         "CnH2n-2",
         "bromine",
         "vàng nhạt"
       ],
-      "exp": "• CnH2n, CnH2n-2, nước bromine, kết tủa vàng nhạt."
+      "text": "Alkene có công thức chung là [blank], alkyne có công thức chung là [blank]. Cả hai đều làm mất màu dung dịch nước [blank]. Các alk-1-yne có nguyên tử H linh động ở đầu mạch phản ứng với dung dịch AgNO₃ trong NH₃ tạo kết tủa màu [blank].",
+      "correctText": "1: CnH2n | 2: CnH2n-2 | 3: bromine | 4: vàng nhạt"
     },
     {
       "type": "mcq",
@@ -2915,7 +3699,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Toluene chỉ làm mất màu dung dịch KMnO₄ khi đun nóng (oxi hóa nhóm -CH₃ thành -COOK)."
         }
-      ]
+      ],
+      "stmts": [
+        "Benzene phản ứng với Br₂ khan khi có xúc tác bột sắt Fe đun nóng tạo bromobenzene: C₆H₆ + Br₂ --Fe, t°--> C₆H₅Br + HBr.",
+        "Nitro hóa benzene bằng hỗn hợp HNO₃ đặc và H₂SO₄ đặc tạo nitrobenzene C₆H₅NO₂ (chất lỏng màu vàng, mùi hạnh nhân).",
+        "Nhóm alkyl (-CH₃) trên vòng benzene của toluene định hướng phản ứng thế ưu tiên vào vị trí ortho và para.",
+        "Toluene làm mất màu dung dịch KMnO₄ ngay ở nhiệt độ thường giống ethylene."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (xúc tác Fe tạo FeBr₃).<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng (nhóm đẩy electron hoạt hóa nhân thơm).<br>• <b>Ý d) [Sai]:</b> Sai. Toluene chỉ làm mất màu dung dịch KMnO₄ khi đun nóng (oxi hóa nhóm -CH₃ thành -COOK)."
     },
     {
       "type": "mcq",
@@ -2951,13 +3749,26 @@ const LESSONS_DATA = {
           "b": "D. Chất rắn màu trắng thăng hoa, dùng xua đuổi gián, côn trùng và chống ẩm mốc tủ quần áo."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Ứng dụng thực tế của các hydrocarbon thơm phổ biến."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Ứng dụng thực tế của các hydrocarbon thơm phổ biến.",
+      "colA": [
+        "Benzene (C₆H₆)",
+        "Toluene (C₆H₅CH₃)",
+        "Styrene (C₆H₅–CH=CH₂)",
+        "Naphthalene (Băng phiến)"
+      ],
+      "colB": [
+        "Dung môi công nghiệp và nguyên liệu tổng hợp styrene, phenol, nylon.",
+        "Dung môi pha sơn, mực in và sản xuất thuốc nổ TNT (2,4,6-trinitrotoluene).",
+        "Trùng hợp sản xuất nhựa xốp Polystyrene (PS) cách nhiệt, hộp xốp.",
+        "Chất rắn màu trắng thăng hoa, dùng xua đuổi gián, côn trùng và chống ẩm mốc tủ quần áo."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -2996,7 +3807,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Hơi benzene rất độc, gây ức chế tủy xương và là chất gây ung thư máu (bạch cầu) đã được chứng minh."
         }
-      ]
+      ],
+      "stmts": [
+        "Dưới tác dụng của ánh sáng tử ngoại, benzene cộng với Cl₂ tạo thuốc trừ sâu 666 (hexachlorocyclohexane C₆H₆Cl₆).",
+        "Dẫn khí H₂ qua benzene có xúc tác Ni nung nóng thu được cyclohexane (C₆H₁₂).",
+        "Thuốc trừ sâu 666 hiện nay đã bị cấm sử dụng vì độc tính cao và tồn dư sinh học lâu dài trong đất, nước.",
+        "Benzene rất an toàn cho sức khỏe con người và có thể dùng làm nước rửa tay."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (C₆H₆ + 3Cl₂ --as--> C₆H₆Cl₆).<br>• <b>Ý b) [Đúng]:</b> Đúng (C₆H₆ + 3H₂ --Ni, t°--> C₆H₁₂).<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Hơi benzene rất độc, gây ức chế tủy xương và là chất gây ung thư máu (bạch cầu) đã được chứng minh."
     },
     {
       "type": "mcq",
@@ -3013,7 +3838,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Benzene có công thức phân tử là %%%SLOT_1%%%, có tính thơm đặc trưng: %%%SLOT_2%%% tham gia phản ứng thế, %%%SLOT_3%%% tham gia phản ứng cộng và bền vững với các chất oxi hóa. Khi nitro hóa toluene thu được thuốc nổ %%%SLOT_4%%%.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "C₆H₆",
         "dễ",
@@ -3021,12 +3846,20 @@ const LESSONS_DATA = {
         "TNT"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• C₆H₆, dễ thế, khó cộng, thuốc nổ TNT.",
+      "words": [
         "C₆H₆",
         "dễ",
         "khó",
         "TNT"
       ],
-      "exp": "• C₆H₆, dễ thế, khó cộng, thuốc nổ TNT."
+      "text": "Benzene có công thức phân tử là [blank], có tính thơm đặc trưng: [blank] tham gia phản ứng thế, [blank] tham gia phản ứng cộng và bền vững với các chất oxi hóa. Khi nitro hóa toluene thu được thuốc nổ [blank].",
+      "correctText": "1: C₆H₆ | 2: dễ | 3: khó | 4: TNT"
     },
     {
       "type": "mcq",
@@ -3094,7 +3927,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Benzene không làm mất màu nước bromine."
         }
-      ]
+      ],
+      "stmts": [
+        "Đốt cháy hoàn toàn alkane luôn thu được n_H₂O > n_CO₂.",
+        "Đốt cháy hoàn toàn alkyne luôn thu được n_CO₂ > n_H₂O.",
+        "Nhiệt phân methane ở 1500 °C làm lạnh nhanh thu được acetylene: 2CH₄ --1500°C--> C₂H₂ + 3H₂.",
+        "Benzene làm mất màu nước bromine giống như ethylene."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (CnH2n+2 -> nCO₂ + (n+1)H₂O).<br>• <b>Ý b) [Đúng]:</b> Đúng (CnH2n-2 -> nCO₂ + (n-1)H₂O).<br>• <b>Ý c) [Đúng]:</b> Đúng (phương pháp công nghiệp điều chế C₂H₂ hiện đại).<br>• <b>Ý d) [Sai]:</b> Sai. Benzene không làm mất màu nước bromine."
     },
     {
       "type": "mcq",
@@ -3130,13 +3977,26 @@ const LESSONS_DATA = {
           "b": "D. Cấu trúc lục giác đều phẳng, hệ 6e π liên hợp thơm."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• 4 cấu trúc kinh điển của 4 nhóm hydrocarbon cơ bản."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• 4 cấu trúc kinh điển của 4 nhóm hydrocarbon cơ bản.",
+      "colA": [
+        "Methane (CH₄)",
+        "Ethylene (C₂H₄)",
+        "Acetylene (C₂H₂)",
+        "Benzene (C₆H₆)"
+      ],
+      "colB": [
+        "Cấu trúc tứ diện đều, 4 liên kết đơn C–H.",
+        "Cấu trúc phẳng, 1 liên kết đôi C=C (1σ, 1π).",
+        "Cấu trúc đường thẳng, 1 liên kết ba C≡C (1σ, 2π).",
+        "Cấu trúc lục giác đều phẳng, hệ 6e π liên hợp thơm."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -3175,7 +4035,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Rác thải nhựa PE, PP mất hàng trăm năm mới phân hủy, gây ra 'ô nhiễm trắng' và vi nhựa nghiêm trọng."
         }
-      ]
+      ],
+      "stmts": [
+        "Đốt cháy xăng dầu sinh ra khí CO₂ là nguyên nhân hàng đầu gây hiệu ứng nhà kính và biến đổi khí hậu toàn cầu.",
+        "Sự cố tràn dầu trên biển tạo màng dầu mỏng ngăn cản sự trao đổi oxy giữa không khí và nước biển, hủy diệt sinh vật biển và chim biển.",
+        "Nhiên liệu sinh học (như xăng E5 chứa 5% bio-ethanol) giúp giảm phát thải khí độc hại và thân thiện với môi trường hơn.",
+        "Rác thải đồ nhựa nylon làm từ PE, PP có khả năng tự phân hủy sinh học nhanh chóng trong đất sau 1 tuần."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng.<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Rác thải nhựa PE, PP mất hàng trăm năm mới phân hủy, gây ra 'ô nhiễm trắng' và vi nhựa nghiêm trọng."
     },
     {
       "type": "mcq",
@@ -3192,7 +4066,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Hydrocarbon no chỉ chứa liên kết %%%SLOT_1%%%, phản ứng đặc trưng là phản ứng %%%SLOT_2%%%. Hydrocarbon không no chứa liên kết %%%SLOT_3%%%, phản ứng đặc trưng là phản ứng %%%SLOT_4%%%. Arene có vòng benzen thể hiện tính thơm.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "đơn",
         "thế",
@@ -3200,12 +4074,20 @@ const LESSONS_DATA = {
         "cộng"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Liên kết đơn, phản ứng thế, liên kết bội, phản ứng cộng.",
+      "words": [
         "đơn",
         "thế",
         "bội (đôi, ba)",
         "cộng"
       ],
-      "exp": "• Liên kết đơn, phản ứng thế, liên kết bội, phản ứng cộng."
+      "text": "Hydrocarbon no chỉ chứa liên kết [blank], phản ứng đặc trưng là phản ứng [blank]. Hydrocarbon không no chứa liên kết [blank], phản ứng đặc trưng là phản ứng [blank]. Arene có vòng benzen thể hiện tính thơm.",
+      "correctText": "1: đơn | 2: thế | 3: bội (đôi, ba) | 4: cộng"
     },
     {
       "type": "mcq",
@@ -3273,7 +4155,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. CFC khi bay lên tầng bình lưu bị tia UV phân cắt tạo gốc tự do Cl• phá hủy hàng ngàn phân tử ozone O₃ gây thủng tầng ozone."
         }
-      ]
+      ],
+      "stmts": [
+        "Nguyên tử halogen bị tách cùng với nguyên tử hydrogen ở carbon bên cạnh có bậc cao hơn (chứa ít H hơn).",
+        "Sản phẩm chính là alkene có nhiều nhóm thế alkyl gắn vào liên kết đôi hơn.",
+        "Tách HBr từ 2-bromobutane thu được sản phẩm chính là but-2-ene (CH₃-CH=CH-CH₃).",
+        "Khí CFC (chlorofluorocarbon) rất thân thiện và bảo vệ tầng ozone của Trái Đất."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (quy tắc Zaitsev).<br>• <b>Ý b) [Đúng]:</b> Đúng (alkene mang nhiều nhóm alkyl hơn bền hơn).<br>• <b>Ý c) [Đúng]:</b> Đúng (but-1-ene là sản phẩm phụ).<br>• <b>Ý d) [Sai]:</b> Sai. CFC khi bay lên tầng bình lưu bị tia UV phân cắt tạo gốc tự do Cl• phá hủy hàng ngàn phân tử ozone O₃ gây thủng tầng ozone."
     },
     {
       "type": "mcq",
@@ -3309,13 +4205,26 @@ const LESSONS_DATA = {
           "b": "D. Thuốc xịt gây tê cục bộ giảm đau chấn thương thể thao."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Ứng dụng thực tế của các dẫn xuất halogen."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Ứng dụng thực tế của các dẫn xuất halogen.",
+      "colA": [
+        "Chloroform (CHCl₃)",
+        "Teflon (-CF₂-CF₂-)n",
+        "Methyl bromide (CH₃Br)",
+        "Ethyl chloride (C₂H₅Cl)"
+      ],
+      "colB": [
+        "Thuốc gây mê lịch sử trong y học và dung môi hòa tan chất béo, sáp.",
+        "Lớp phủ chống dính chảo chiên rán và van chịu hóa chất.",
+        "Hóa chất xông hơi khử trùng nông sản (hiện bị hạn chế).",
+        "Thuốc xịt gây tê cục bộ giảm đau chấn thương thể thao."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -3354,7 +4263,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Kết tủa vàng nhạt là AgBr (chứa bromine); kết tủa trắng mới là AgCl (chứa chlorine)."
         }
-      ]
+      ],
+      "stmts": [
+        "Nhỏ trực tiếp dung dịch AgNO₃ vào dẫn xuất halogen R–X ở điều kiện thường sẽ không xuất hiện kết tủa.",
+        "Cần đun nóng R–X với dung dịch NaOH để thủy phân giải phóng ion halide X⁻.",
+        "Sau khi thủy phân, phải acid hóa dung dịch bằng HNO₃ loãng rồi mới nhỏ dung dịch AgNO₃ vào.",
+        "Nếu xuất hiện kết tủa màu vàng nhạt thì dẫn xuất chứa nguyên tố chlorine."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (vì halogen liên kết cộng hóa trị với carbon, không có ion halide tự do).<br>• <b>Ý b) [Đúng]:</b> Đúng (R–X + NaOH -> R–OH + NaX).<br>• <b>Ý c) [Đúng]:</b> Đúng để trung hòa lượng kiềm NaOH dư, tránh tạo kết tủa Ag₂O màu nâu đen.<br>• <b>Ý d) [Sai]:</b> Sai. Kết tủa vàng nhạt là AgBr (chứa bromine); kết tủa trắng mới là AgCl (chứa chlorine)."
     },
     {
       "type": "mcq",
@@ -3371,7 +4294,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Dẫn xuất halogen tham gia hai phản ứng hóa học quan trọng: phản ứng %%%SLOT_1%%% nguyên tử halogen bằng nhóm -OH trong môi trường kiềm đun nóng; và phản ứng %%%SLOT_2%%% hydrogen halide (HX) tuân theo quy tắc %%%SLOT_3%%%. Khí CFC trước đây dùng làm chất làm lạnh đã bị cấm do phá hủy %%%SLOT_4%%% của khí quyển.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "thế",
         "tách",
@@ -3379,12 +4302,20 @@ const LESSONS_DATA = {
         "tầng ozone"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Phản ứng thế, phản ứng tách, quy tắc Zaitsev, tầng ozone.",
+      "words": [
         "thế",
         "tách",
         "Zaitsev",
         "tầng ozone"
       ],
-      "exp": "• Phản ứng thế, phản ứng tách, quy tắc Zaitsev, tầng ozone."
+      "text": "Dẫn xuất halogen tham gia hai phản ứng hóa học quan trọng: phản ứng [blank] nguyên tử halogen bằng nhóm -OH trong môi trường kiềm đun nóng; và phản ứng [blank] hydrogen halide (HX) tuân theo quy tắc [blank]. Khí CFC trước đây dùng làm chất làm lạnh đã bị cấm do phá hủy [blank] của khí quyển.",
+      "correctText": "1: thế | 2: tách | 3: Zaitsev | 4: tầng ozone"
     },
     {
       "type": "mcq",
@@ -3452,7 +4383,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Alcohol có tính acid cực kì yếu (yếu hơn nước), không phân li được ra H⁺ nên dung dịch trung tính, không đổi màu quỳ."
         }
-      ]
+      ],
+      "stmts": [
+        "Cho mẩu Na vào cốc đựng cồn ethanol (C₂H₅OH) thấy sủi bọt khí H₂ và mẩu Na tan dần.",
+        "Phản ứng chứng minh nguyên tử H trong nhóm -OH của alcohol có tính linh động.",
+        "Tốc độ phản ứng của Na với ethanol chậm và êm dịu hơn nhiều so với phản ứng của Na với nước.",
+        "Dung dịch ethanol làm đổi màu giấy quỳ tím sang màu đỏ."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (2C₂H₅OH + 2Na -> 2C₂H₅ONa + H₂↑).<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng (liên kết O–H trong alcohol kém phân cực hơn trong nước).<br>• <b>Ý d) [Sai]:</b> Sai. Alcohol có tính acid cực kì yếu (yếu hơn nước), không phân li được ra H⁺ nên dung dịch trung tính, không đổi màu quỳ."
     },
     {
       "type": "mcq",
@@ -3488,13 +4433,26 @@ const LESSONS_DATA = {
           "b": "D. Thu được CO₂ và H₂O với n_H₂O > n_CO₂."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Phản ứng oxi hóa đặc trưng phân biệt 3 bậc alcohol."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Phản ứng oxi hóa đặc trưng phân biệt 3 bậc alcohol.",
+      "colA": [
+        "Alcohol bậc I (R–CH₂OH)",
+        "Alcohol bậc II (R–CH(OH)–R')",
+        "Alcohol bậc III (R₃C–OH)",
+        "Đốt cháy hoàn toàn alcohol no đơn chức"
+      ],
+      "colB": [
+        "Tạo Aldehyde (R–CHO) và Cu kim loại màu đỏ gạch.",
+        "Tạo Ketone (R–CO–R') và Cu kim loại màu đỏ gạch.",
+        "Bền vững, không bị oxi hóa ở điều kiện này.",
+        "Thu được CO₂ và H₂O với n_H₂O > n_CO₂."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -3533,7 +4491,21 @@ const LESSONS_DATA = {
           "ans": true,
           "exp": "Đúng."
         }
-      ]
+      ],
+      "stmts": [
+        "Glycerol tác dụng với Cu(OH)₂ ở nhiệt độ thường hòa tan kết tủa tạo dung dịch phức đồng màu xanh lam thẫm.",
+        "Ethylene glycol (chất chống đông làm mát két nước ô tô) cũng hòa tan được Cu(OH)₂ tạo dung dịch màu xanh lam.",
+        "Monorượu như ethanol (C₂H₅OH) cũng hòa tan được Cu(OH)₂ ở nhiệt độ thường.",
+        "Phản ứng với Cu(OH)₂ là thuốc thử nhận biết đặc trưng cho các polyalcohol có các nhóm -OH gắn vào các nguyên tử carbon kề nhau."
+      ],
+      "ans": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Sai | d) Đúng",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (2C₃H₅(OH)₃ + Cu(OH)₂ -> [C₃H₅(OH)₂O]₂Cu + 2H₂O).<br>• <b>Ý b) [Đúng]:</b> Đúng vì có 2 nhóm -OH kề nhau.<br>• <b>Ý c) [Sai]:</b> Sai. Alcohol đơn chức không hòa tan được Cu(OH)₂.<br>• <b>Ý d) [Đúng]:</b> Đúng."
     },
     {
       "type": "mcq",
@@ -3550,7 +4522,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Alcohol có nhiệt độ sôi cao và tan nhiều trong nước nhờ khả năng tạo liên kết %%%SLOT_1%%%. Phản ứng đặc trưng của alcohol gồm phản ứng với kim loại %%%SLOT_2%%%, phản ứng tách nước tạo %%%SLOT_3%%% ở 170 °C hoặc tạo ether ở 140 °C. Oxi hóa alcohol bậc I bằng CuO nung nóng thu được %%%SLOT_4%%%.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "hydrogen",
         "kiềm (Na, K)",
@@ -3558,12 +4530,20 @@ const LESSONS_DATA = {
         "aldehyde"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Liên kết hydrogen, kim loại kiềm, alkene, aldehyde.",
+      "words": [
         "hydrogen",
         "kiềm (Na, K)",
         "alkene",
         "aldehyde"
       ],
-      "exp": "• Liên kết hydrogen, kim loại kiềm, alkene, aldehyde."
+      "text": "Alcohol có nhiệt độ sôi cao và tan nhiều trong nước nhờ khả năng tạo liên kết [blank]. Phản ứng đặc trưng của alcohol gồm phản ứng với kim loại [blank], phản ứng tách nước tạo [blank] ở 170 °C hoặc tạo ether ở 140 °C. Oxi hóa alcohol bậc I bằng CuO nung nóng thu được [blank].",
+      "correctText": "1: hydrogen | 2: kiềm (Na, K) | 3: alkene | 4: aldehyde"
     },
     {
       "type": "mcq",
@@ -3631,7 +4611,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Phenol là acid rất yếu không làm đổi màu quỳ tím."
         }
-      ]
+      ],
+      "stmts": [
+        "Phenol tác dụng với dung dịch NaOH: C₆H₅OH + NaOH -> C₆H₅ONa + H₂O.",
+        "Phenol tác dụng với dung dịch nước bromine tạo kết tủa màu trắng 2,4,6-tribromophenol ngay ở điều kiện thường.",
+        "Tác dụng với HNO₃ đặc (xúc tác H₂SO₄ đặc) tạo acid picric (2,4,6-trinitrophenol) màu vàng dùng làm thuốc nổ và thuốc thử.",
+        "Phenol làm quỳ tím hóa đỏ giống như acid vô cơ HCl."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (dung dịch phenol đục chuyển sang trong suốt).<br>• <b>Ý b) [Đúng]:</b> Đúng (thuốc thử đặc trưng nhận biết phenol).<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Phenol là acid rất yếu không làm đổi màu quỳ tím."
     },
     {
       "type": "mcq",
@@ -3667,13 +4661,26 @@ const LESSONS_DATA = {
           "b": "D. Dung dịch bị vẩn đục trở lại do phenol ít tan bị giải phóng."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Các hiện tượng thí nghiệm cốt lõi của bài Phenol."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Các hiện tượng thí nghiệm cốt lõi của bài Phenol.",
+      "colA": [
+        "Dung dịch NaOH",
+        "Dung dịch nước bromine (Br₂)",
+        "Dung dịch HNO₃ đặc / H₂SO₄ đặc",
+        "Sục khí CO₂ vào dung dịch C₆H₅ONa"
+      ],
+      "colB": [
+        "Dung dịch phenol vẩn đục tan hoàn toàn thành dung dịch trong suốt.",
+        "Xuất hiện kết tủa màu trắng 2,4,6-tribromophenol.",
+        "Xuất hiện kết tủa màu vàng tinh thể acid picric.",
+        "Dung dịch bị vẩn đục trở lại do phenol ít tan bị giải phóng."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -3712,7 +4719,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Phenol có mùi hắc đặc trưng, độc hại và sát trùng mạnh, không dùng làm nước hoa."
         }
-      ]
+      ],
+      "stmts": [
+        "Ở nhiệt độ thường, phenol tinh khiết là chất rắn kết tinh không màu, nóng chảy ở 43 °C.",
+        "Phenol ít tan trong nước lạnh nhưng tan vô hạn trong nước ở nhiệt độ trên 66 °C.",
+        "Phenol rất độc, khi dây vào da sẽ gây bỏng rát và ăn mòn da nguy hiểm.",
+        "Phenol có mùi thơm dễ chịu và được dùng làm nước hoa xịt phòng."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (để lâu ngoài không khí bị oxi hóa chuyển sang màu hồng đỏ).<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng (phải rửa ngay bằng cồn ethanol nếu bị dây vào da).<br>• <b>Ý d) [Sai]:</b> Sai. Phenol có mùi hắc đặc trưng, độc hại và sát trùng mạnh, không dùng làm nước hoa."
     },
     {
       "type": "mcq",
@@ -3729,7 +4750,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Phenol có công thức phân tử là %%%SLOT_1%%%. Nhóm –OH liên kết trực tiếp với vòng %%%SLOT_2%%%. Phenol có tính acid yếu hơn H₂CO₃ nên không làm đổi màu %%%SLOT_3%%%. Thuốc thử đặc trưng để nhận biết phenol là dung dịch nước %%%SLOT_4%%% cho kết tủa trắng.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "C₆H₅OH",
         "benzene",
@@ -3737,12 +4758,20 @@ const LESSONS_DATA = {
         "bromine"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• C₆H₅OH, vòng benzene, quỳ tím, nước bromine.",
+      "words": [
         "C₆H₅OH",
         "benzene",
         "quỳ tím",
         "bromine"
       ],
-      "exp": "• C₆H₅OH, vòng benzene, quỳ tím, nước bromine."
+      "text": "Phenol có công thức phân tử là [blank]. Nhóm –OH liên kết trực tiếp với vòng [blank]. Phenol có tính acid yếu hơn H₂CO₃ nên không làm đổi màu [blank]. Thuốc thử đặc trưng để nhận biết phenol là dung dịch nước [blank] cho kết tủa trắng.",
+      "correctText": "1: C₆H₅OH | 2: benzene | 3: quỳ tím | 4: bromine"
     },
     {
       "type": "mcq",
@@ -3810,7 +4839,21 @@ const LESSONS_DATA = {
           "ans": true,
           "exp": "Đúng (chứng minh tính acid phenol yếu hơn H₂CO₃)."
         }
-      ]
+      ],
+      "stmts": [
+        "Dùng Cu(OH)₂ nhận biết được glycerol (dung dịch xanh lam thẫm) với ethanol (không hiện tượng).",
+        "Dùng nước bromine nhận biết được phenol (kết tủa trắng) với alcohol.",
+        "Dùng kim loại Na phân biệt được ethanol và nước nguyên chất.",
+        "Phenol bị acid carbonic H₂CO₃ đẩy ra khỏi muối phenolate: C₆H₅ONa + CO₂ + H₂O -> C₆H₅OH + NaHCO₃."
+      ],
+      "ans": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Sai | d) Đúng",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (polyalcohol kề nhau).<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Sai]:</b> Sai. Cả ethanol và nước đều tác dụng với Na giải phóng khí H₂.<br>• <b>Ý d) [Đúng]:</b> Đúng (chứng minh tính acid phenol yếu hơn H₂CO₃)."
     },
     {
       "type": "mcq",
@@ -3846,13 +4889,26 @@ const LESSONS_DATA = {
           "b": "D. Đun với kiềm, acid hóa bằng HNO₃ rồi thêm dung dịch AgNO₃ (kết tủa trắng AgCl)."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Các thuốc thử nhận biết đặc trưng từng chất."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Các thuốc thử nhận biết đặc trưng từng chất.",
+      "colA": [
+        "Phenol (C₆H₅OH)",
+        "Glycerol (C₃H₅(OH)₃)",
+        "Ethanol (C₂H₅OH)",
+        "Chloroform (CHCl₃)"
+      ],
+      "colB": [
+        "Dung dịch nước bromine (xuất hiện kết tủa trắng).",
+        "Dung dịch Cu(OH)₂ ở nhiệt độ thường (tạo dung dịch xanh lam thẫm).",
+        "Bột CuO nung nóng (tạo Cu màu đỏ và hơi làm mất màu quỳ tím).",
+        "Đun với kiềm, acid hóa bằng HNO₃ rồi thêm dung dịch AgNO₃ (kết tủa trắng AgCl)."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -3891,7 +4947,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Benzene hoàn toàn không tác dụng với dung dịch NaOH."
         }
-      ]
+      ],
+      "stmts": [
+        "Vòng benzene hút electron làm liên kết O–H phân cực mạnh hơn, làm tính acid của phenol mạnh hơn alcohol.",
+        "Nhóm –OH đẩy electron vào vòng benzene làm mật độ electron ở vị trí ortho và para tăng lên, giúp phản ứng thế halogen xảy ra dễ dàng hơn benzene.",
+        "Ảnh hưởng qua lại giữa các nhóm nguyên tử giải thích sự khác biệt tính chất giữa các chất có cùng nhóm chức.",
+        "Benzene và phenol đều tác dụng dễ dàng với dung dịch NaOH ở nhiệt độ thường."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng.<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Benzene hoàn toàn không tác dụng với dung dịch NaOH."
     },
     {
       "type": "mcq",
@@ -3908,7 +4978,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Alcohol và phenol đều có nhóm %%%SLOT_1%%% (–OH) trong phân tử. Nhưng phenol có nhóm –OH gắn trực tiếp vào vòng %%%SLOT_2%%% nên thể hiện tính %%%SLOT_3%%% yếu và phản ứng được với dung dịch kiềm NaOH. Dung dịch nước bromine là thuốc thử dùng để nhận biết %%%SLOT_4%%% nhờ tạo kết tủa trắng.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "hydroxyl",
         "benzene",
@@ -3916,12 +4986,20 @@ const LESSONS_DATA = {
         "phenol"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Nhóm hydroxyl, vòng benzene, tính acid, nhận biết phenol.",
+      "words": [
         "hydroxyl",
         "benzene",
         "acid",
         "phenol"
       ],
-      "exp": "• Nhóm hydroxyl, vòng benzene, tính acid, nhận biết phenol."
+      "text": "Alcohol và phenol đều có nhóm [blank] (–OH) trong phân tử. Nhưng phenol có nhóm –OH gắn trực tiếp vào vòng [blank] nên thể hiện tính [blank] yếu và phản ứng được với dung dịch kiềm NaOH. Dung dịch nước bromine là thuốc thử dùng để nhận biết [blank] nhờ tạo kết tủa trắng.",
+      "correctText": "1: hydroxyl | 2: benzene | 3: acid | 4: phenol"
     },
     {
       "type": "mcq",
@@ -3989,7 +5067,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Ketone không bị oxi hóa bởi nước bromine, chỉ có aldehyde làm mất màu nước bromine."
         }
-      ]
+      ],
+      "stmts": [
+        "Khử aldehyde bằng NaBH₄ hoặc LiAlH₄ thu được alcohol bậc I.",
+        "Khử ketone bằng NaBH₄ thu được alcohol bậc II.",
+        "Đun nóng aldehyde với Cu(OH)₂ trong môi trường kiềm NaOH thu được kết tủa màu đỏ gạch Cu₂O.",
+        "Ketone dễ dàng bị oxi hóa bởi nước bromine ở điều kiện thường."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (R–CHO + 2[H] -> R–CH₂OH).<br>• <b>Ý b) [Đúng]:</b> Đúng (R–CO–R' + 2[H] -> R–CH(OH)–R').<br>• <b>Ý c) [Đúng]:</b> Đúng (R–CHO + 2Cu(OH)₂ + NaOH -> R–COONa + Cu₂O↓ đỏ gạch + 3H₂O).<br>• <b>Ý d) [Sai]:</b> Sai. Ketone không bị oxi hóa bởi nước bromine, chỉ có aldehyde làm mất màu nước bromine."
     },
     {
       "type": "mcq",
@@ -4025,13 +5117,26 @@ const LESSONS_DATA = {
           "b": "D. Hương vani tự nhiên tạo hương vị hấp dẫn cho bánh ngọt, kem, sữa chua."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Các ứng dụng rất quen thuộc của aldehyde và ketone trong đời sống."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Các ứng dụng rất quen thuộc của aldehyde và ketone trong đời sống.",
+      "colA": [
+        "Formaldehyde (HCHO / dung dịch fomalin 37-40%)",
+        "Acetone (CH₃COCH₃)",
+        "Benzaldehyde (C₆H₅CHO)",
+        "Vanillin"
+      ],
+      "colB": [
+        "Ngâm ướp mẫu bệnh phẩm sinh học và sản xuất keo dán gỗ, nhựa bakelite.",
+        "Dung môi tẩy sơn móng tay, pha sơn và hòa tan chất béo trong phòng thí nghiệm.",
+        "Tinh dầu hạnh nhân, hương liệu tạo mùi thơm trong bánh kẹo, mỹ phẩm.",
+        "Hương vani tự nhiên tạo hương vị hấp dẫn cho bánh ngọt, kem, sữa chua."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -4070,7 +5175,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Acetone có mùi thơm nhẹ dễ chịu và tan vô hạn trong nước."
         }
-      ]
+      ],
+      "stmts": [
+        "Giữa các phân tử aldehyde và ketone không có liên kết hydrogen liên phân tử với nhau.",
+        "Nhiệt độ sôi của aldehyde và ketone thấp hơn alcohol có cùng số nguyên tử carbon.",
+        "Các aldehyde và ketone mạch ngắn (như HCHO, CH₃CHO, CH₃COCH₃) tan vô hạn trong nước nhờ tạo liên kết hydrogen với nước.",
+        "Acetone là chất lỏng có mùi rất hôi và hoàn toàn không tan trong nước."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (do không có nguyên tử H liên kết trực tiếp với O).<br>• <b>Ý b) [Đúng]:</b> Đúng (do alcohol có liên kết hydrogen).<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Acetone có mùi thơm nhẹ dễ chịu và tan vô hạn trong nước."
     },
     {
       "type": "mcq",
@@ -4087,7 +5206,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Aldehyde và ketone đều chứa nhóm %%%SLOT_1%%% (>C=O). Aldehyde có tính %%%SLOT_2%%% khi tác dụng với thuốc thử Tollens tạo kết tủa %%%SLOT_3%%% sáng bóng và tác dụng với Cu(OH)₂ trong kiềm nóng tạo kết tủa đỏ gạch %%%SLOT_4%%%.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "carbonyl",
         "khử",
@@ -4095,12 +5214,20 @@ const LESSONS_DATA = {
         "Cu₂O"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Nhóm carbonyl, tính khử của aldehyde, kết tủa Ag và Cu₂O.",
+      "words": [
         "carbonyl",
         "khử",
         "bạc (Ag)",
         "Cu₂O"
       ],
-      "exp": "• Nhóm carbonyl, tính khử của aldehyde, kết tủa Ag và Cu₂O."
+      "text": "Aldehyde và ketone đều chứa nhóm [blank] (>C=O). Aldehyde có tính [blank] khi tác dụng với thuốc thử Tollens tạo kết tủa [blank] sáng bóng và tác dụng với Cu(OH)₂ trong kiềm nóng tạo kết tủa đỏ gạch [blank].",
+      "correctText": "1: carbonyl | 2: khử | 3: bạc (Ag) | 4: Cu₂O"
     },
     {
       "type": "mcq",
@@ -4168,7 +5295,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Carboxylic acid đều là acid yếu (chất điện li yếu), yếu hơn nhiều so với các acid vô cơ mạnh như HCl, H₂SO₄, HNO₃."
         }
-      ]
+      ],
+      "stmts": [
+        "Dung dịch carboxylic acid làm quỳ tím chuyển sang màu đỏ.",
+        "Tác dụng với kim loại đứng trước H (như Mg, Zn, Fe) giải phóng khí H₂: 2CH₃COOH + Mg -> (CH₃COO)₂Mg + H₂↑.",
+        "Tác dụng với muối carbonate (như Na₂CO₃, CaCO₃) sủi bọt khí CO₂.",
+        "Carboxylic acid là acid mạnh hơn hydrochloric acid HCl."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (phân li thuận nghịch ra ion H⁺).<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng (chứng minh tính acid mạnh hơn acid carbonic H₂CO₃).<br>• <b>Ý d) [Sai]:</b> Sai. Carboxylic acid đều là acid yếu (chất điện li yếu), yếu hơn nhiều so với các acid vô cơ mạnh như HCl, H₂SO₄, HNO₃."
     },
     {
       "type": "mcq",
@@ -4204,13 +5345,26 @@ const LESSONS_DATA = {
           "b": "D. Có trong khế chua, lá me và tạo sỏi thận canxi oxalat nếu dư thừa."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Các carboxylic acid rất quen thuộc trong ẩm thực và đời sống tự nhiên."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Các carboxylic acid rất quen thuộc trong ẩm thực và đời sống tự nhiên.",
+      "colA": [
+        "Acetic acid (CH₃COOH)",
+        "Formic acid (HCOOH)",
+        "Citric acid (C₆H₈O₇)",
+        "Oxalic acid (HOOC–COOH)"
+      ],
+      "colB": [
+        "Thành phần chính tạo vị chua của giấm ăn (nồng độ 2 - 5%).",
+        "Có trong nọc kiến, nọc ong, vòi chích của sâu róm gây bỏng rát da.",
+        "Tạo vị chua thanh mát đặc trưng của quả chanh, cam, bưởi.",
+        "Có trong khế chua, lá me và tạo sỏi thận canxi oxalat nếu dư thừa."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -4249,7 +5403,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Giấm ăn là acid hữu cơ tự nhiên lên men từ tinh bột hoặc rượu, nồng độ an toàn cho người dùng ăn uống."
         }
-      ]
+      ],
+      "stmts": [
+        "Dùng giấm ăn để tẩy sạch cặn vôi (CaCO₃) bám dưới đáy ấm đun nước: 2CH₃COOH + CaCO₃ -> (CH₃COO)₂Ca + CO₂↑ + H₂O.",
+        "Dùng giấm ăn để rửa sạch mùi tanh của cá (do các amine có tính base bị acid acetic trung hòa thành muối không bay hơi).",
+        "Giấm ăn dùng để làm sạch vết gỉ sét kim loại nhẹ.",
+        "Giấm ăn là acid vô cơ có nồng độ 100% cực kì nguy hiểm."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng (CaCO₃ tan sinh bọt khí).<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Giấm ăn là acid hữu cơ tự nhiên lên men từ tinh bột hoặc rượu, nồng độ an toàn cho người dùng ăn uống."
     },
     {
       "type": "mcq",
@@ -4266,7 +5434,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Carboxylic acid chứa nhóm chức %%%SLOT_1%%% (–COOH). Acid có nhiệt độ sôi cao nhất nhờ liên kết hydrogen liên phân tử dạng %%%SLOT_2%%%. Acid tác dụng với alcohol tạo %%%SLOT_3%%% trong phản ứng este hóa thuận nghịch. Acid %%%SLOT_4%%% (HCOOH) là acid duy nhất tham gia phản ứng tráng bạc.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "carboxyl",
         "dimer",
@@ -4274,12 +5442,20 @@ const LESSONS_DATA = {
         "formic"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Nhóm carboxyl, dạng dimer, tạo ester, acid formic.",
+      "words": [
         "carboxyl",
         "dimer",
         "ester",
         "formic"
       ],
-      "exp": "• Nhóm carboxyl, dạng dimer, tạo ester, acid formic."
+      "text": "Carboxylic acid chứa nhóm chức [blank] (–COOH). Acid có nhiệt độ sôi cao nhất nhờ liên kết hydrogen liên phân tử dạng [blank]. Acid tác dụng với alcohol tạo [blank] trong phản ứng este hóa thuận nghịch. Acid [blank] (HCOOH) là acid duy nhất tham gia phản ứng tráng bạc.",
+      "correctText": "1: carboxyl | 2: dimer | 3: ester | 4: formic"
     },
     {
       "type": "mcq",
@@ -4347,7 +5523,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Acetic acid no, rất bền vững không làm mất màu KMnO₄."
         }
-      ]
+      ],
+      "stmts": [
+        "Thuốc thử Tollens phân biệt được aldehyde (tráng bạc) với ketone và alcohol.",
+        "Dùng dung dịch NaHCO₃ phân biệt được carboxylic acid (sủi bọt khí CO₂) với alcohol.",
+        "Thuốc thử Iodoform (I₂/NaOH) nhận biết được acetaldehyde (CH₃CHO) và acetone (CH₃COCH₃).",
+        "Acetic acid làm đổi màu dung dịch thuốc tím KMnO₄ ngay ở nhiệt độ thường."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng.<br>• <b>Ý b) [Đúng]:</b> Đúng (RCOOH + NaHCO₃ -> RCOONa + CO₂↑ + H₂O).<br>• <b>Ý c) [Đúng]:</b> Đúng (đều chứa nhóm CH₃-C=O tạo kết tủa vàng CHI₃).<br>• <b>Ý d) [Sai]:</b> Sai. Acetic acid no, rất bền vững không làm mất màu KMnO₄."
     },
     {
       "type": "mcq",
@@ -4383,13 +5573,26 @@ const LESSONS_DATA = {
           "b": "D. Nhận biết methyl ketone nhờ tạo kết tủa vàng CHI₃."
         }
       ],
-      "ans": {
-        "1": "A",
-        "2": "B",
-        "3": "C",
-        "4": "D"
-      },
-      "exp": "• Các thuốc thử định tính cốt lõi của Chương 6 Hóa 11."
+      "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Các thuốc thử định tính cốt lõi của Chương 6 Hóa 11.",
+      "colA": [
+        "Thuốc thử Tollens [Ag(NH₃)₂]OH",
+        "Dung dịch Cu(OH)₂ trong kiềm đun nóng",
+        "Dung dịch Na₂CO₃",
+        "Thuốc thử I₂ trong dung dịch NaOH"
+      ],
+      "colB": [
+        "Nhận biết aldehyde nhờ tạo lớp gương bạc sáng bóng Ag.",
+        "Nhận biết aldehyde nhờ tạo kết tủa màu đỏ gạch Cu₂O.",
+        "Nhận biết carboxylic acid nhờ sủi bọt khí CO₂ mãnh liệt.",
+        "Nhận biết methyl ketone nhờ tạo kết tủa vàng CHI₃."
+      ],
+      "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
     },
     {
       "type": "mcq",
@@ -4428,7 +5631,21 @@ const LESSONS_DATA = {
           "ans": false,
           "exp": "Sai. Formaldehyde là chất khí, nhưng acetone là chất lỏng dễ bay hơi."
         }
-      ]
+      ],
+      "stmts": [
+        "Theo chiều tăng tính acid: Alcohol < Phenol < Carbonic acid (H₂CO₃) < Carboxylic acid.",
+        "Phản ứng este hóa là phản ứng thuận nghịch, không bao giờ đạt hiệu suất 100%.",
+        "Ester sinh ra từ phản ứng este hóa thường nhẹ hơn nước, ít tan trong nước và có mùi thơm hoa quả.",
+        "Formaldehyde và acetone đều là những chất khí không màu ở điều kiện thường."
+      ],
+      "ans": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+      "exp": "• <b>Ý a) [Đúng]:</b> Đúng theo dãy biến thiên tính acid.<br>• <b>Ý b) [Đúng]:</b> Đúng (luôn có cân bằng este hóa - thủy phân).<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Formaldehyde là chất khí, nhưng acetone là chất lỏng dễ bay hơi."
     },
     {
       "type": "mcq",
@@ -4445,7 +5662,7 @@ const LESSONS_DATA = {
     },
     {
       "type": "drag",
-      "q": "Điền vào chỗ trống:<br>Hợp chất carbonyl gồm %%%SLOT_1%%% và ketone. Aldehyde tham gia phản ứng tráng bạc với thuốc thử %%%SLOT_2%%%. Carboxylic acid có nhóm chức %%%SLOT_3%%% (–COOH), có tính acid và tham gia phản ứng %%%SLOT_4%%% với alcohol tạo ester có mùi thơm.",
+      "q": "Điền vào chỗ trống:",
       "options": [
         "aldehyde",
         "Tollens",
@@ -4453,12 +5670,20 @@ const LESSONS_DATA = {
         "este hóa"
       ],
       "ans": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exp": "• Aldehyde, thuốc thử Tollens, nhóm carboxyl, phản ứng este hóa.",
+      "words": [
         "aldehyde",
         "Tollens",
         "carboxyl",
         "este hóa"
       ],
-      "exp": "• Aldehyde, thuốc thử Tollens, nhóm carboxyl, phản ứng este hóa."
+      "text": "Hợp chất carbonyl gồm [blank] và ketone. Aldehyde tham gia phản ứng tráng bạc với thuốc thử [blank]. Carboxylic acid có nhóm chức [blank] (–COOH), có tính acid và tham gia phản ứng [blank] với alcohol tạo ester có mùi thơm.",
+      "correctText": "1: aldehyde | 2: Tollens | 3: carboxyl | 4: este hóa"
     },
     {
       "type": "mcq",

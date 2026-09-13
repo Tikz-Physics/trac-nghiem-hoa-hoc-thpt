@@ -1127,7 +1127,21 @@
         "ans": false,
         "exp": "Sai. Sinh ra ion OH⁻ làm dung dịch có tính base, quỳ tím hóa xanh."
       }
-    ]
+    ],
+    "stmts": [
+      "Phân tử NH₃ nhận proton (H⁺) từ H₂O nên đóng vai trò là base.",
+      "Phân tử H₂O nhường proton (H⁺) cho NH₃ nên đóng vai trò là acid.",
+      "Ion NH₄⁺ là acid liên hợp của base NH₃.",
+      "Dung dịch NH₃ có môi trường acid làm quỳ tím hóa đỏ."
+    ],
+    "ans": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng theo Brønsted - Lowry.<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng (NH₄⁺ có khả năng cho lại H⁺).<br>• <b>Ý d) [Sai]:</b> Sai. Sinh ra ion OH⁻ làm dung dịch có tính base, quỳ tím hóa xanh."
   },
   {
     "type": "mcq",
@@ -1163,13 +1177,26 @@
         "b": "D. pH ≈ 1,5 - 2,5 (acid mạnh nhờ HCl)."
       }
     ],
-    "ans": {
-      "1": "A",
-      "2": "B",
-      "3": "C",
-      "4": "D"
-    },
-    "exp": "• HCl 0,01 M: [H⁺] = 10⁻² M -> pH = 2.<br>• Nước cất: pH = 7.<br>• NaOH 0,01 M: [OH⁻] = 10⁻² M -> pOH = 2 -> pH = 12.<br>• Dạ dày: pH 1,5 - 2,5."
+    "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• HCl 0,01 M: [H⁺] = 10⁻² M -> pH = 2.<br>• Nước cất: pH = 7.<br>• NaOH 0,01 M: [OH⁻] = 10⁻² M -> pOH = 2 -> pH = 12.<br>• Dạ dày: pH 1,5 - 2,5.",
+    "colA": [
+      "Dung dịch HCl 0,01 M",
+      "Nước cất nguyên chất",
+      "Dung dịch NaOH 0,01 M",
+      "Dịch vị dạ dày người"
+    ],
+    "colB": [
+      "pH = 2 (môi trường acid mạnh).",
+      "pH = 7 (môi trường trung tính).",
+      "pH = 12 (môi trường base mạnh).",
+      "pH ≈ 1,5 - 2,5 (acid mạnh nhờ HCl)."
+    ],
+    "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
   },
   {
     "type": "mcq",
@@ -1208,7 +1235,21 @@
         "ans": false,
         "exp": "Sai. Phenolphthalein không đổi màu (vẫn không màu) trong môi trường acid."
       }
-    ]
+    ],
+    "stmts": [
+      "Giấy quỳ tím chuyển sang màu đỏ trong môi trường acid (pH < 7).",
+      "Giấy quỳ tím chuyển sang màu xanh trong môi trường base (pH > 7).",
+      "Dung dịch phenolphthalein không màu chuyển sang màu hồng đậm trong môi trường base (pH > 8,3).",
+      "Dung dịch phenolphthalein chuyển sang màu đỏ rực trong môi trường acid."
+    ],
+    "ans": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng.<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Phenolphthalein không đổi màu (vẫn không màu) trong môi trường acid."
   },
   {
     "type": "mcq",
@@ -1225,7 +1266,7 @@
   },
   {
     "type": "drag",
-    "q": "Điền vào chỗ trống:<br>Theo thuyết Brønsted – Lowry, acid là chất %%%SLOT_1%%% proton H⁺, base là chất %%%SLOT_2%%% proton H⁺. Tích số ion của nước ở 25 °C là K_w = [H⁺] · [OH⁻] = %%%SLOT_3%%%. Thang đo pH tiện dụng thường có giá trị từ %%%SLOT_4%%%.",
+    "q": "Điền vào chỗ trống:",
     "options": [
       "cho",
       "nhận",
@@ -1233,12 +1274,20 @@
       "0 đến 14"
     ],
     "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• Acid cho, base nhận.<br>• K_w = 10⁻¹⁴.<br>• Thang pH từ 0 đến 14.",
+    "words": [
       "cho",
       "nhận",
       "10⁻¹⁴",
       "0 đến 14"
     ],
-    "exp": "• Acid cho, base nhận.<br>• K_w = 10⁻¹⁴.<br>• Thang pH từ 0 đến 14."
+    "text": "Theo thuyết Brønsted – Lowry, acid là chất [blank] proton H⁺, base là chất [blank] proton H⁺. Tích số ion của nước ở 25 °C là K_w = [H⁺] · [OH⁻] = [blank]. Thang đo pH tiện dụng thường có giá trị từ [blank].",
+    "correctText": "1: cho | 2: nhận | 3: 10⁻¹⁴ | 4: 0 đến 14"
   },
   {
     "type": "mcq",

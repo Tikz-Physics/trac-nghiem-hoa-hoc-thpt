@@ -1127,7 +1127,21 @@
         "ans": false,
         "exp": "Sai. Chất xúc tác chỉ làm tăng tốc độ đạt đến cân bằng mà không làm thay đổi K_C và vị trí cân bằng."
       }
-    ]
+    ],
+    "stmts": [
+      "Khi làm thay đổi một trong các yếu tố nồng độ, nhiệt độ, áp suất thì cân bằng chuyển dịch theo chiều chống lại sự thay đổi đó.",
+      "Khi tăng nhiệt độ, cân bằng luôn chuyển dịch theo chiều phản ứng thu nhiệt (chiều có ΔH > 0).",
+      "Khi tăng áp suất chung của hệ, cân bằng chuyển dịch theo chiều làm giảm số mol khí.",
+      "Chất xúc tác làm thay đổi giá trị của hằng số cân bằng K_C."
+    ],
+    "ans": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng theo nguyên lí Le Chatelier.<br>• <b>Ý b) [Đúng]:</b> Đúng (thu bớt nhiệt lượng để hạ nhiệt độ).<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Chất xúc tác chỉ làm tăng tốc độ đạt đến cân bằng mà không làm thay đổi K_C và vị trí cân bằng."
   },
   {
     "type": "mcq",
@@ -1163,13 +1177,26 @@
         "b": "D. Cân bằng không bị dịch chuyển."
       }
     ],
-    "ans": {
-      "1": "A",
-      "2": "B",
-      "3": "C",
-      "4": "D"
-    },
-    "exp": "• Phản ứng thu nhiệt (ΔH > 0): Tăng t° dịch chuyển sang phải (tạo NO₂ màu nâu đỏ).<br>• Tăng áp suất dịch chuyển về phía ít mol khí hơn (sang trái)."
+    "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• Phản ứng thu nhiệt (ΔH > 0): Tăng t° dịch chuyển sang phải (tạo NO₂ màu nâu đỏ).<br>• Tăng áp suất dịch chuyển về phía ít mol khí hơn (sang trái).",
+    "colA": [
+      "Đun nóng bình (tăng nhiệt độ)",
+      "Ngâm bình vào nước đá (hạ nhiệt độ)",
+      "Nén piston (tăng áp suất)",
+      "Cho thêm chất xúc tác"
+    ],
+    "colB": [
+      "Cân bằng dịch theo chiều thuận (màu nâu đỏ đậm lên).",
+      "Cân bằng dịch theo chiều nghịch (màu nâu nhạt dần).",
+      "Cân bằng dịch theo chiều nghịch (giảm số mol khí từ 2 về 1).",
+      "Cân bằng không bị dịch chuyển."
+    ],
+    "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
   },
   {
     "type": "mcq",
@@ -1208,7 +1235,21 @@
         "ans": false,
         "exp": "Sai. Thêm khí trơ ở thể tích không đổi không làm thay đổi nồng độ các chất phản ứng nên cân bằng không đổi."
       }
-    ]
+    ],
+    "stmts": [
+      "Số mol khí ở hai vế phương trình bằng nhau (1 + 1 = 2).",
+      "Khi thay đổi áp suất của hệ, cân bằng không bị chuyển dịch.",
+      "Hằng số cân bằng K_C = [HI]² / ([H₂] · [I₂]).",
+      "Thêm khí trơ Argon vào bình ở thể tích không đổi làm cân bằng chuyển dịch theo chiều thuận."
+    ],
+    "ans": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng.<br>• <b>Ý b) [Đúng]:</b> Đúng (do số mol khí 2 vế bằng nhau: Δn = 0).<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Thêm khí trơ ở thể tích không đổi không làm thay đổi nồng độ các chất phản ứng nên cân bằng không đổi."
   },
   {
     "type": "mcq",
@@ -1225,7 +1266,7 @@
   },
   {
     "type": "drag",
-    "q": "Điền vào chỗ trống:<br>Phản ứng thuận nghịch là phản ứng xảy ra theo %%%SLOT_1%%% chiều trái ngược nhau trong cùng điều kiện. Cân bằng hóa học là cân bằng %%%SLOT_2%%%. Khi một hệ đang ở trạng thái cân bằng chịu một tác động từ bên ngoài, cân bằng sẽ chuyển dịch theo chiều làm %%%SLOT_3%%% tác động đó theo nguyên lí %%%SLOT_4%%%.",
+    "q": "Điền vào chỗ trống:",
     "options": [
       "hai",
       "động",
@@ -1233,12 +1274,20 @@
       "Le Chatelier"
     ],
     "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• Hai chiều trái ngược, cân bằng động.<br>• Giảm tác động bên ngoài theo nguyên lí Le Chatelier.",
+    "words": [
       "hai",
       "động",
       "giảm",
       "Le Chatelier"
     ],
-    "exp": "• Hai chiều trái ngược, cân bằng động.<br>• Giảm tác động bên ngoài theo nguyên lí Le Chatelier."
+    "text": "Phản ứng thuận nghịch là phản ứng xảy ra theo [blank] chiều trái ngược nhau trong cùng điều kiện. Cân bằng hóa học là cân bằng [blank]. Khi một hệ đang ở trạng thái cân bằng chịu một tác động từ bên ngoài, cân bằng sẽ chuyển dịch theo chiều làm [blank] tác động đó theo nguyên lí [blank].",
+    "correctText": "1: hai | 2: động | 3: giảm | 4: Le Chatelier"
   },
   {
     "type": "mcq",

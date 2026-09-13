@@ -1127,7 +1127,21 @@
         "ans": false,
         "exp": "Sai. M(C₂H₄O) = 44. Vì m/z = 88 ⇒ n = 88/44 = 2 ⇒ Công thức phân tử là C₄H₈O₂."
       }
-    ]
+    ],
+    "stmts": [
+      "Số mol C trong X là 0,2 mol và số mol H là 0,4 mol.",
+      "Khối lượng oxygen trong X là 4,4 - (0,2·12 + 0,4·1) = 1,6 gam (tương ứng 0,1 mol O).",
+      "Tỉ lệ n_C : n_H : n_O = 0,2 : 0,4 : 0,1 = 2 : 4 : 1 ⇒ Công thức đơn giản nhất là C₂H₄O.",
+      "Nếu phổ MS cho pic ion phân tử m/z = 88 thì công thức phân tử của X là C₂H₄O."
+    ],
+    "ans": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng: n_C = 8,8/44 = 0,2 mol; n_H = 2 · (3,6/18) = 0,4 mol.<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. M(C₂H₄O) = 44. Vì m/z = 88 ⇒ n = 88/44 = 2 ⇒ Công thức phân tử là C₄H₈O₂."
   },
   {
     "type": "mcq",
@@ -1163,13 +1177,26 @@
         "b": "D. C₂H₆O (trùng với công thức phân tử)."
       }
     ],
-    "ans": {
-      "1": "A",
-      "2": "B",
-      "3": "C",
-      "4": "D"
-    },
-    "exp": "• Rút gọn tỉ lệ các nguyên tử để tìm công thức đơn giản nhất."
+    "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• Rút gọn tỉ lệ các nguyên tử để tìm công thức đơn giản nhất.",
+    "colA": [
+      "Benzene (C₆H₆)",
+      "Ethylene (C₂H₄)",
+      "Glucose (C₆H₁₂O₆)",
+      "Ethanol (C₂H₆O)"
+    ],
+    "colB": [
+      "CH.",
+      "CH₂.",
+      "CH₂O.",
+      "C₂H₆O (trùng với công thức phân tử)."
+    ],
+    "correctText": "1 - A | 2 - B | 3 - C | 4 - D"
   },
   {
     "type": "mcq",
@@ -1208,7 +1235,21 @@
         "ans": false,
         "exp": "Sai. Phân tích định lượng xác định chính xác % khối lượng từng nguyên tố."
       }
-    ]
+    ],
+    "stmts": [
+      "Phân tích định tính nhằm xác định nguyên tố nào có mặt trong hợp chất hữu cơ.",
+      "Dùng CuSO₄ khan (màu trắng) để nhận biết nước sinh ra vì nó chuyển sang màu xanh CuSO₄·5H₂O.",
+      "Dùng dung dịch Ca(OH)₂ nhận biết CO₂ vì tạo kết tủa trắng đục CaCO₃.",
+      "Phân tích định lượng chỉ cho biết tỉ lệ thể tích mà không tính được phần trăm khối lượng."
+    ],
+    "ans": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctText": "a) Đúng | b) Đúng | c) Đúng | d) Sai",
+    "exp": "• <b>Ý a) [Đúng]:</b> Đúng (thường chuyển C thành CO₂, H thành H₂O, N thành NH₃ để nhận biết).<br>• <b>Ý b) [Đúng]:</b> Đúng.<br>• <b>Ý c) [Đúng]:</b> Đúng.<br>• <b>Ý d) [Sai]:</b> Sai. Phân tích định lượng xác định chính xác % khối lượng từng nguyên tố."
   },
   {
     "type": "mcq",
@@ -1225,7 +1266,7 @@
   },
   {
     "type": "drag",
-    "q": "Điền vào chỗ trống:<br>Công thức %%%SLOT_1%%% cho biết tỉ lệ số nguyên tử tối giản của các nguyên tố. Công thức %%%SLOT_2%%% cho biết số lượng nguyên tử chính xác của mỗi nguyên tố trong một phân tử. Phổ khối lượng %%%SLOT_3%%% (MS) cho biết giá trị %%%SLOT_4%%% phân tử M của hợp chất.",
+    "q": "Điền vào chỗ trống:",
     "options": [
       "đơn giản nhất",
       "phân tử",
@@ -1233,12 +1274,20 @@
       "khối lượng mol"
     ],
     "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "exp": "• Đơn giản nhất, phân tử, phổ khối lượng, khối lượng mol.",
+    "words": [
       "đơn giản nhất",
       "phân tử",
       "khối lượng",
       "khối lượng mol"
     ],
-    "exp": "• Đơn giản nhất, phân tử, phổ khối lượng, khối lượng mol."
+    "text": "Công thức [blank] cho biết tỉ lệ số nguyên tử tối giản của các nguyên tố. Công thức [blank] cho biết số lượng nguyên tử chính xác của mỗi nguyên tố trong một phân tử. Phổ khối lượng [blank] (MS) cho biết giá trị [blank] phân tử M của hợp chất.",
+    "correctText": "1: đơn giản nhất | 2: phân tử | 3: khối lượng | 4: khối lượng mol"
   },
   {
     "type": "mcq",
