@@ -2376,6 +2376,662 @@
       display: none !important;
     }
 
+  
+    
+    /* === END FULLSCREEN ZERO-SCROLL ARCHITECTURE === */
+
+  
+    /* ==========================================================================
+       FULLSCREEN ZERO-SCROLL ARCHITECTURE: PROJECTOR & STUDENT BUZZER SCREENS
+       ========================================================================== */
+
+    /* Honor inline display: none for all views */
+    #setupView[style*="display: none"],
+    #battleView[style*="display: none"],
+    #buzzerView[style*="display: none"] {
+      display: none !important;
+    }
+
+    /* --------------------------------------------------------------------------
+       1. PROJECTOR PRESENTATION SCREEN (?role=projector & .projector-clean-mode)
+       -------------------------------------------------------------------------- */
+    html.role-projector, html.role-projector body,
+    body.projector-clean-mode {
+      height: 100vh !important;
+      max-height: 100vh !important;
+      overflow: hidden !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    html.role-projector #battleView:not([style*="display: none"]),
+    body.projector-clean-mode #battleView:not([style*="display: none"]) {
+      height: 100vh !important;
+      max-height: 100vh !important;
+      overflow: hidden !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Compact Projector Header */
+    html.role-projector header,
+    body.projector-clean-mode header {
+      height: 42px !important;
+      min-height: 42px !important;
+      max-height: 42px !important;
+      padding: 3px 20px !important;
+      flex-shrink: 0 !important;
+      box-sizing: border-box !important;
+    }
+    html.role-projector .brand-title,
+    body.projector-clean-mode .brand-title {
+      font-size: 1.12rem !important;
+    }
+
+    /* Main Container: Clamped strictly to viewport height */
+    html.role-projector .arena-container,
+    body.projector-clean-mode .arena-container {
+      flex: 1 1 auto !important;
+      height: calc(100vh - 44px) !important;
+      max-height: calc(100vh - 44px) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      padding: 4px 16px 6px !important;
+      gap: 6px !important;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+      max-width: 1600px !important;
+    }
+
+    /* Battle Card Clamped & Auto-Fitting */
+    html.role-projector .battle-card,
+    body.projector-clean-mode .battle-card {
+      flex: 1 1 auto !important;
+      height: auto !important;
+      max-height: calc(100% - 88px) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      padding: 8px 16px !important;
+      gap: 5px !important;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+      border-radius: 14px !important;
+    }
+
+    html.role-projector .round-meta-bar,
+    body.projector-clean-mode .round-meta-bar {
+      margin-bottom: 2px !important;
+      flex-shrink: 0 !important;
+    }
+    html.role-projector .round-tag,
+    body.projector-clean-mode .round-tag {
+      font-size: 0.82rem !important;
+      padding: 3px 10px !important;
+    }
+    html.role-projector .q-point-pill,
+    body.projector-clean-mode .q-point-pill {
+      font-size: 0.82rem !important;
+      padding: 3px 10px !important;
+    }
+    html.role-projector .timer-widget,
+    body.projector-clean-mode .timer-widget {
+      font-size: 1rem !important;
+      padding: 3px 10px !important;
+    }
+    html.role-projector .timer-val,
+    body.projector-clean-mode .timer-val {
+      font-size: 1.2rem !important;
+    }
+
+    /* Live Submissions Strip */
+    html.role-projector .olympia-live-bar,
+    body.projector-clean-mode .olympia-live-bar {
+      padding: 2px 8px !important;
+      margin: 1px 0 3px 0 !important;
+      border-radius: 8px !important;
+      flex-shrink: 0 !important;
+    }
+    html.role-projector .olympia-team-chip,
+    body.projector-clean-mode .olympia-team-chip {
+      padding: 2px 6px !important;
+      font-size: 0.78rem !important;
+      border-radius: 6px !important;
+    }
+
+    /* Question Title & Graph */
+    html.role-projector .question-box,
+    body.projector-clean-mode .question-box {
+      margin: 1px 0 !important;
+      flex-shrink: 0 !important;
+    }
+    html.role-projector .question-title,
+    body.projector-clean-mode .question-title {
+      font-size: clamp(1rem, 1.45vw, 1.28rem) !important;
+      line-height: 1.32 !important;
+      margin-bottom: 2px !important;
+      font-weight: 800 !important;
+    }
+    html.role-projector .question-img-wrap,
+    body.projector-clean-mode .question-img-wrap {
+      height: clamp(80px, 15vh, 150px) !important;
+      max-height: clamp(80px, 15vh, 150px) !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 2px !important;
+      margin: 2px auto !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+    }
+    html.role-projector .question-img-wrap svg,
+    body.projector-clean-mode .question-img-wrap svg,
+    html.role-projector .question-img-wrap img,
+    body.projector-clean-mode .question-img-wrap img {
+      max-height: 100% !important;
+      max-width: 100% !important;
+      height: 100% !important;
+      width: auto !important;
+      object-fit: contain !important;
+      display: block !important;
+    }
+
+    /* Adaptive Options Grid */
+    html.role-projector .options-grid,
+    body.projector-clean-mode .options-grid {
+      flex: 1 1 auto !important;
+      display: grid !important;
+      gap: 8px !important;
+      overflow: hidden !important;
+      align-content: stretch !important;
+    }
+    html.role-projector .options-grid.mcq-layout,
+    body.projector-clean-mode .options-grid.mcq-layout {
+      grid-template-columns: 1fr 1fr !important;
+      grid-template-rows: 1fr 1fr !important;
+    }
+    html.role-projector .option-btn,
+    body.projector-clean-mode .option-btn {
+      font-size: clamp(0.88rem, 1.15vw, 1.05rem) !important;
+      padding: 6px 14px !important;
+      min-height: clamp(36px, 6vh, 48px) !important;
+      border-radius: 10px !important;
+      line-height: 1.3 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      text-align: left !important;
+    }
+    html.role-projector .option-prefix,
+    body.projector-clean-mode .option-prefix {
+      width: 28px !important;
+      height: 28px !important;
+      font-size: 0.95rem !important;
+      margin-right: 10px !important;
+      flex-shrink: 0 !important;
+    }
+
+    /* True/False on Projector */
+    html.role-projector .arena-tf-container,
+    body.projector-clean-mode .arena-tf-container {
+      gap: 3px !important;
+    }
+    html.role-projector .arena-tf-row,
+    body.projector-clean-mode .arena-tf-row {
+      padding: 3px 8px !important;
+      font-size: clamp(0.8rem, 0.95vw, 0.92rem) !important;
+      border-radius: 7px !important;
+    }
+    html.role-projector .arena-tf-status,
+    body.projector-clean-mode .arena-tf-status {
+      padding: 2px 6px !important;
+      font-size: 0.74rem !important;
+    }
+
+    /* Match Pair on Projector */
+    html.role-projector .arena-match-container,
+    body.projector-clean-mode .arena-match-container {
+      gap: 6px !important;
+    }
+    html.role-projector .match-column-title,
+    body.projector-clean-mode .match-column-title {
+      font-size: 0.74rem !important;
+      padding: 2px 5px !important;
+      margin-bottom: 2px !important;
+    }
+    html.role-projector .match-item-card,
+    body.projector-clean-mode .match-item-card {
+      padding: 3px 6px !important;
+      font-size: clamp(0.75rem, 0.9vw, 0.85rem) !important;
+      border-radius: 7px !important;
+    }
+    html.role-projector .match-idx-badge,
+    body.projector-clean-mode .match-idx-badge {
+      width: 20px !important;
+      height: 20px !important;
+      font-size: 0.76rem !important;
+    }
+
+    /* Cloze / Fill on Projector */
+    html.role-projector .arena-cloze-card,
+    body.projector-clean-mode .arena-cloze-card {
+      padding: 5px 10px !important;
+      font-size: clamp(0.82rem, 1vw, 0.94rem) !important;
+      line-height: 1.55 !important;
+      border-radius: 9px !important;
+    }
+    html.role-projector .arena-wordbank-card,
+    body.projector-clean-mode .arena-wordbank-card {
+      padding: 4px 8px !important;
+      margin-top: 3px !important;
+      border-radius: 9px !important;
+    }
+    html.role-projector .wb-chip,
+    body.projector-clean-mode .wb-chip {
+      padding: 2px 7px !important;
+      font-size: 0.76rem !important;
+    }
+
+    /* Revealed State on Projector (Zero Scroll Guarantee) */
+    html.role-projector .battle-card.is-revealed .question-img-wrap,
+    body.projector-clean-mode .battle-card.is-revealed .question-img-wrap {
+      max-height: clamp(50px, 8vh, 75px) !important;
+    }
+    html.role-projector .olympia-results-card,
+    body.projector-clean-mode .olympia-results-card {
+      padding: 4px 8px !important;
+      margin: 2px 0 !important;
+      border-radius: 8px !important;
+      flex-shrink: 0 !important;
+    }
+    html.role-projector .olympia-rank-row,
+    body.projector-clean-mode .olympia-rank-row {
+      font-size: 0.8rem !important;
+      padding: 2px 6px !important;
+      margin-bottom: 1px !important;
+    }
+    html.role-projector .explanation-box,
+    body.projector-clean-mode .explanation-box {
+      font-size: clamp(0.78rem, 0.92vw, 0.88rem) !important;
+      line-height: 1.35 !important;
+      padding: 5px 10px !important;
+      margin-top: 2px !important;
+      max-height: clamp(65px, 12vh, 100px) !important;
+      overflow-y: auto !important;
+      border-radius: 7px !important;
+      flex-shrink: 1 !important;
+    }
+    html.role-projector .explanation-title,
+    body.projector-clean-mode .explanation-title {
+      font-size: 0.8rem !important;
+      margin-bottom: 1px !important;
+    }
+
+    /* Bottom Teams Podium on Projector (Fixed 82px compact row) */
+    html.role-projector .teams-grid,
+    body.projector-clean-mode .teams-grid {
+      height: 80px !important;
+      min-height: 80px !important;
+      max-height: 80px !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 6px !important;
+      flex-shrink: 0 !important;
+      margin: 0 !important;
+    }
+    html.role-projector .team-card,
+    body.projector-clean-mode .team-card {
+      padding: 4px 6px !important;
+      border-radius: 10px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      box-sizing: border-box !important;
+    }
+    html.role-projector .team-card-header,
+    body.projector-clean-mode .team-card-header {
+      margin-bottom: 1px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 3px !important;
+    }
+    html.role-projector .team-name,
+    body.projector-clean-mode .team-name {
+      font-size: clamp(0.7rem, 0.85vw, 0.8rem) !important;
+      white-space: nowrap !important;
+    }
+    html.role-projector .team-score,
+    body.projector-clean-mode .team-score {
+      font-size: clamp(1.2rem, 1.8vw, 1.55rem) !important;
+      line-height: 1 !important;
+      margin: 1px 0 !important;
+    }
+    html.role-projector .olympia-rank-badge,
+    body.projector-clean-mode .olympia-rank-badge {
+      font-size: 0.6rem !important;
+      padding: 1px 4px !important;
+    }
+    html.role-projector .team-answer-preview,
+    body.projector-clean-mode .team-answer-preview {
+      font-size: 0.68rem !important;
+      padding: 1px 5px !important;
+      margin-top: 1px !important;
+    }
+
+    /* Setup QR Screen on Projector */
+    html.role-projector #setupView:not([style*="display: none"]) {
+      height: 100vh !important;
+      max-height: 100vh !important;
+      overflow: hidden !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      padding: 8px !important;
+      box-sizing: border-box !important;
+    }
+    html.role-projector #setupView .setup-grid {
+      grid-template-columns: 1fr !important;
+      max-width: 600px !important;
+      margin: 0 auto !important;
+    }
+    html.role-projector #setupQRWrap svg,
+    html.role-projector #setupQRWrap img,
+    html.role-projector #setupQRWrap canvas {
+      max-height: clamp(150px, 30vh, 240px) !important;
+      width: auto !important;
+    }
+
+
+    /* --------------------------------------------------------------------------
+       2. STUDENT MOBILE BUZZER SCREEN (?role=buzzer / #buzzerView)
+       -------------------------------------------------------------------------- */
+    html.role-buzzer, html.role-buzzer body {
+      height: 100dvh !important;
+      height: 100vh !important;
+      max-height: 100dvh !important;
+      max-height: 100vh !important;
+      overflow: hidden !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      touch-action: manipulation !important;
+      overscroll-behavior: none !important;
+      background: radial-gradient(circle at top, #1e1b4b 0%, #090d16 60%, #030712 100%) !important;
+    }
+
+    html.role-buzzer #buzzerView:not([style*="display: none"]) {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      width: 100% !important;
+      max-width: 440px !important;
+      height: 100dvh !important;
+      height: 100vh !important;
+      max-height: 100dvh !important;
+      max-height: 100vh !important;
+      padding: 5px 8px 6px !important;
+      margin: 0 auto !important;
+      box-sizing: border-box !important;
+      overflow: hidden !important;
+    }
+
+    /* Honor display: none on student screens */
+    html.role-buzzer #pickTeamScreen[style*="display: none"],
+    html.role-buzzer #studentGameScreen[style*="display: none"] {
+      display: none !important;
+    }
+
+    /* Student Team Picker: 2x2 Compact Grid */
+    html.role-buzzer #pickTeamScreen:not([style*="display: none"]) {
+      height: 100% !important;
+      max-height: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      padding: 4px 0 !important;
+      box-sizing: border-box !important;
+      overflow: hidden !important;
+    }
+    html.role-buzzer .team-picker-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 8px !important;
+      margin: 6px 0 !important;
+      flex: 1 !important;
+      align-content: center !important;
+    }
+    html.role-buzzer .btn-pick-team {
+      padding: 10px 6px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      gap: 3px !important;
+      border-radius: 12px !important;
+      height: 100% !important;
+      min-height: 72px !important;
+    }
+    html.role-buzzer .btn-pick-team span {
+      font-size: 1.6rem !important;
+    }
+    html.role-buzzer .btn-pick-team div div:first-child {
+      font-size: 0.82rem !important;
+      font-weight: 800 !important;
+    }
+
+    /* Student Active Game Screen */
+    html.role-buzzer #studentGameScreen:not([style*="display: none"]) {
+      height: 100% !important;
+      max-height: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      gap: 4px !important;
+      box-sizing: border-box !important;
+      overflow: hidden !important;
+    }
+
+    html.role-buzzer .client-header {
+      padding: 3px 6px !important;
+      border-radius: 8px !important;
+      margin-bottom: 0 !important;
+      flex-shrink: 0 !important;
+    }
+    html.role-buzzer .client-title {
+      font-size: 0.78rem !important;
+      margin: 0 !important;
+    }
+    html.role-buzzer .client-team-name {
+      font-size: 0.9rem !important;
+      margin: 1px 0 !important;
+    }
+    html.role-buzzer .client-status-badge {
+      font-size: 0.68rem !important;
+      padding: 1px 5px !important;
+    }
+
+    html.role-buzzer .student-q-meta {
+      padding: 3px 8px !important;
+      border-radius: 7px !important;
+      flex-shrink: 0 !important;
+    }
+
+    html.role-buzzer .student-format-tabs {
+      padding: 2px !important;
+      margin: 1px 0 2px 0 !important;
+      gap: 2px !important;
+      flex-shrink: 0 !important;
+    }
+    html.role-buzzer .btn-fmt-tab {
+      padding: 3px 1px !important;
+      font-size: 0.66rem !important;
+    }
+
+    /* Student Format Pads */
+    html.role-buzzer .student-format-pad {
+      display: none !important;
+    }
+    html.role-buzzer .student-format-pad.active {
+      display: flex !important;
+      flex-direction: column !important;
+      flex: 1 1 auto !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      justify-content: space-between !important;
+      overflow: hidden !important;
+      padding: 2px 0 !important;
+    }
+
+    /* MCQ Pad: 2x2 massive touch buttons */
+    html.role-buzzer .student-options-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      grid-template-rows: 1fr 1fr !important;
+      gap: 6px !important;
+      height: 100% !important;
+      width: 100% !important;
+      flex: 1 !important;
+      box-sizing: border-box !important;
+    }
+    html.role-buzzer .btn-student-opt {
+      height: 100% !important;
+      padding: 4px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      border-radius: 12px !important;
+      box-sizing: border-box !important;
+    }
+    html.role-buzzer .opt-letter {
+      font-size: clamp(1.6rem, 5vh, 2.3rem) !important;
+      line-height: 1 !important;
+      margin-bottom: 1px !important;
+    }
+    html.role-buzzer .opt-label {
+      font-size: 0.74rem !important;
+      line-height: 1.1 !important;
+    }
+
+    /* True/False Pad: Compact 4 rows + Submit */
+    html.role-buzzer .tf-rows-container {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 3px !important;
+      flex: 1 !important;
+      justify-content: space-evenly !important;
+    }
+    html.role-buzzer .tf-row {
+      padding: 3px 6px !important;
+      border-radius: 7px !important;
+      gap: 5px !important;
+    }
+    html.role-buzzer .tf-row-letter {
+      font-size: 0.88rem !important;
+      width: 20px !important;
+    }
+    html.role-buzzer .btn-tf-toggle {
+      padding: 5px 10px !important;
+      font-size: 0.8rem !important;
+      border-radius: 5px !important;
+    }
+
+    /* Match Pair Pad: Compact 4 rows + Submit */
+    html.role-buzzer .match-rows-container {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 3px !important;
+      flex: 1 !important;
+      justify-content: space-evenly !important;
+    }
+    html.role-buzzer .match-row {
+      padding: 3px 6px !important;
+      border-radius: 7px !important;
+      gap: 5px !important;
+    }
+    html.role-buzzer .match-num-badge {
+      width: 22px !important;
+      height: 22px !important;
+      font-size: 0.78rem !important;
+    }
+    html.role-buzzer .btn-match-pill {
+      width: 30px !important;
+      height: 30px !important;
+      font-size: 0.78rem !important;
+      border-radius: 5px !important;
+    }
+
+    /* Fill Pad: Input + Chips or Numpad */
+    html.role-buzzer .fill-mode-switch {
+      margin-bottom: 2px !important;
+    }
+    html.role-buzzer .btn-fill-mode {
+      padding: 3px 5px !important;
+      font-size: 0.7rem !important;
+    }
+    html.role-buzzer .fill-input-box-wrap {
+      padding: 3px 6px !important;
+      margin-bottom: 2px !important;
+      border-radius: 7px !important;
+    }
+    html.role-buzzer .fill-text-input {
+      font-size: 0.82rem !important;
+      padding: 3px 6px !important;
+    }
+    html.role-buzzer .fill-word-bank-chips {
+      gap: 3px !important;
+      max-height: clamp(70px, 16vh, 100px) !important;
+      overflow-y: auto !important;
+    }
+    html.role-buzzer .btn-word-chip {
+      padding: 2px 6px !important;
+      font-size: 0.72rem !important;
+    }
+    html.role-buzzer .fill-numpad-grid {
+      gap: 3px !important;
+    }
+    html.role-buzzer .btn-numpad {
+      padding: 5px !important;
+      font-size: 0.9rem !important;
+    }
+
+    /* Unified Student Submit Button */
+    html.role-buzzer .btn-submit-format {
+      padding: 7px 10px !important;
+      font-size: 0.82rem !important;
+      border-radius: 8px !important;
+      margin-top: 2px !important;
+      flex-shrink: 0 !important;
+    }
+
+    /* Student Feedback Banner & Footer */
+    html.role-buzzer .student-feedback-box {
+      padding: 3px 6px !important;
+      font-size: 0.7rem !important;
+      border-radius: 7px !important;
+      min-height: 20px !important;
+      margin: 0 !important;
+      flex-shrink: 0 !important;
+    }
+    html.role-buzzer .client-bottom-bar {
+      padding-top: 1px !important;
+      flex-shrink: 0 !important;
+    }
+    html.role-buzzer .btn-switch-team {
+      padding: 2px 6px !important;
+      font-size: 0.7rem !important;
+    }
+    /* === END FULLSCREEN ZERO-SCROLL ARCHITECTURE === */
+
   </style>
 </head>
 <body>
