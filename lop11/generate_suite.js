@@ -30,6 +30,7 @@ function getBaseCSS() {
     sub, sup { font-size: 0.74em; line-height: 0; position: relative; vertical-align: baseline; color: inherit; }
     sup { top: -0.42em; }
     sub { bottom: -0.22em; }
+    sub, .math-sym sub, .formula-box sub { font-style: normal !important; font-family: var(--font-family) !important; font-weight: 600; white-space: nowrap; }
 
     *, button, input, select, textarea { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-family); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-tap-highlight-color: transparent; }
 
@@ -526,7 +527,7 @@ function getBaseCSS() {
       justify-content: center;
       font-weight: 800;
       color: #38bdf8;
-      font-size: 0.84rem;
+      font-size: calc(0.86rem * var(--font-scale));
       flex-shrink: 0;
     }
 
@@ -543,7 +544,7 @@ function getBaseCSS() {
     .tf-stmt-text { font-size: calc(0.88rem * var(--font-scale)); line-height: 1.45; }
     .tf-btns { display: flex; gap: 6px; flex-shrink: 0; }
     .tf-btn { 
-      padding: 5px 12px; border-radius: 6px; font-size: 0.82rem; font-weight: 700; cursor: pointer; 
+      padding: 5px 12px; border-radius: 6px; font-size: calc(0.85rem * var(--font-scale)); font-weight: 700; cursor: pointer; 
       border: 1.5px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #cbd5e1; transition: 0.15s; 
     }
     .tf-btn:hover:not(.disabled) { background: rgba(255,255,255,0.12); color: #fff; }
@@ -557,17 +558,21 @@ function getBaseCSS() {
     .match-col { display: flex; flex-direction: column; gap: 8px; }
     .match-card {
       background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.12); border-radius: 10px;
-      padding: 8px 12px; font-size: 0.86rem; cursor: pointer; transition: 0.15s; line-height: 1.4;
+      padding: 8px 12px; font-size: calc(0.90rem * var(--font-scale)); cursor: pointer; transition: 0.15s; line-height: 1.4;
     }
     .match-card:hover:not(.disabled) { background: rgba(255,255,255,0.08); border-color: var(--secondary); }
     .match-card.active-select { border-color: #38bdf8; background: rgba(56, 189, 248, 0.2); box-shadow: 0 0 10px rgba(56, 189, 248, 0.3); }
 
     /* Drag & Drop Word Bank */
     .fill-sentence { font-size: 0.92rem; line-height: 2.1; margin-bottom: 12px; background: rgba(0,0,0,0.3); padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
-    .blank-slot { display: inline-block; min-width: 100px; height: 30px; padding: 0 10px; margin: 0 3px; border-bottom: 2px dashed #06b6d4; background: rgba(6,182,212,0.16); text-align: center; font-weight: 800; color: #a5f3fc; cursor: pointer; vertical-align: middle; border-radius: 6px 6px 0 0; transition: 0.15s; }
-    .blank-slot.active { background: rgba(6,182,212,0.35); border-bottom: 2px solid #fff; }
+    .blank-slot { display: inline-flex; align-items: center; justify-content: center; min-width: 84px; height: 32px; padding: 0 12px; margin: 2px 4px; border: 1.5px dashed #06b6d4; background: rgba(6,182,212,0.14); text-align: center; font-weight: 800; color: #a5f3fc; font-size: calc(0.92rem * var(--font-scale)); cursor: pointer; vertical-align: middle; border-radius: 8px; transition: all 0.2s ease; user-select: none; }
+    .blank-slot:hover:not(.locked) { background: rgba(6,182,212,0.25); border-color: #38bdf8; transform: translateY(-1px); }
+    .blank-slot.active { background: rgba(14,165,233,0.28); border: 1.5px solid #38bdf8; color: #ffffff; box-shadow: 0 0 10px rgba(56,189,248,0.35); }
+    .blank-slot.correct-slot { background: rgba(16,185,129,0.25) !important; border: 1.5px solid #10b981 !important; color: #a7f3d0 !important; box-shadow: 0 0 10px rgba(16,185,129,0.4) !important; }
+    .blank-slot.wrong-slot { background: rgba(239,68,68,0.25) !important; border: 1.5px solid #ef4444 !important; color: #fecaca !important; box-shadow: 0 0 10px rgba(239,68,68,0.4) !important; }
+    .blank-slot.locked { pointer-events: none; cursor: default; }
     .word-bank { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px; background: rgba(0,0,0,0.35); border-radius: 12px; }
-    .word-chip { background: #4f46e5; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 0.84rem; cursor: pointer; border: none; color: #fff; transition: 0.15s; }
+    .word-chip { background: #4f46e5; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: calc(0.86rem * var(--font-scale)); cursor: pointer; border: none; color: #fff; transition: 0.15s; }
     .word-chip.active-chip { outline: 2.5px solid #fff; transform: scale(1.05); }
     .word-chip.used { opacity: 0.25; pointer-events: none; }
 
@@ -627,7 +632,9 @@ function getBaseCSS() {
       border: 1.5px solid var(--success);
       padding: 5px 12px;
       border-radius: 8px;
-      font-size: 0.92rem;
+      font-size: calc(0.95rem * var(--font-scale) * var(--exp-font-scale, 1));
+      line-height: 1.4;
+      transition: font-size 0.15s ease;
       font-weight: 800;
       color: #a7f3d0;
       margin-bottom: 8px;
@@ -640,7 +647,8 @@ function getBaseCSS() {
       align-items: center;
       gap: 6px;
       color: #38bdf8;
-      font-size: 0.92rem;
+      font-size: calc(0.92rem * var(--font-scale) * var(--exp-font-scale, 1));
+      transition: font-size 0.15s ease;
       font-weight: 800;
       margin-bottom: 6px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
