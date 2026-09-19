@@ -1903,9 +1903,393 @@
     .pillar-3 { height: 130px; background: linear-gradient(180deg, #d97706, #78350f); }
 
     #confettiCanvas { position: fixed; inset: 0; pointer-events: none; z-index: 9999; }
+  
+    /* ==========================================================================
+       ARENA MULTI-FORMAT QUESTIONS & 3-SCREEN INDEPENDENT ARCHITECTURE
+       ========================================================================== */
+    /* View Switcher in Header */
+    .host-view-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1.5px solid rgba(56, 189, 248, 0.35);
+      border-radius: 9999px;
+      padding: 3px 6px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(8px);
+    }
+    .btn-mode-tab {
+      border: none;
+      background: transparent;
+      color: #94a3b8;
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-mode-tab:hover {
+      color: #f8fafc;
+      background: rgba(56, 189, 248, 0.15);
+    }
+    .btn-mode-tab.active {
+      color: #ffffff;
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+    }
+
+    /* Projector Return Floating Badge */
+    .projector-return-badge {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      position: fixed;
+      top: 14px;
+      right: 18px;
+      z-index: 99999;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1.5px solid #38bdf8;
+      border-radius: 9999px;
+      padding: 8px 18px;
+      color: #38bdf8;
+      font-weight: 800;
+      font-size: 0.85rem;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 16px rgba(56, 189, 248, 0.35);
+      backdrop-filter: blur(12px);
+      transition: all 0.25s ease;
+    }
+    .projector-return-badge:hover {
+      transform: translateY(-2px);
+      color: #ffffff;
+      border-color: #67e8f9;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.85), 0 0 24px rgba(56, 189, 248, 0.6);
+    }
+    body.projector-clean-mode .projector-return-badge {
+      display: inline-flex !important;
+    }
+
+    /* MCQ 2x2 Grid Layout */
+    .options-grid.mcq-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      width: 100%;
+    }
+
+    /* True/False Layout */
+    .options-grid.tf-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+    .arena-tf-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+    .arena-tf-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1.5px solid rgba(56, 189, 248, 0.25);
+      border-radius: 12px;
+      padding: 12px 18px;
+      transition: all 0.25s ease;
+    }
+    .arena-tf-row.is-true-verdict {
+      border-color: #10b981 !important;
+      background: rgba(16, 185, 129, 0.14) !important;
+      box-shadow: 0 0 14px rgba(16, 185, 129, 0.25) !important;
+    }
+    .arena-tf-row.is-false-verdict {
+      border-color: #ef4444 !important;
+      background: rgba(239, 68, 68, 0.14) !important;
+      box-shadow: 0 0 14px rgba(239, 68, 68, 0.25) !important;
+    }
+    .arena-tf-letter {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #38bdf8;
+      min-width: 28px;
+    }
+    .arena-tf-text {
+      flex: 1;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: #f1f5f9;
+    }
+    .arena-tf-status {
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      background: rgba(100, 116, 139, 0.25);
+      color: #94a3b8;
+      white-space: nowrap;
+    }
+    .arena-tf-row.is-true-verdict .arena-tf-status {
+      background: #10b981;
+      color: #ffffff;
+    }
+    .arena-tf-row.is-false-verdict .arena-tf-status {
+      background: #ef4444;
+      color: #ffffff;
+    }
+
+    /* Match Layout */
+    .options-grid.match-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+    .arena-match-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      width: 100%;
+    }
+    .match-column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .match-column-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #38bdf8;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid rgba(56, 189, 248, 0.25);
+    }
+    .match-item-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1.5px solid rgba(56, 189, 248, 0.25);
+      border-radius: 12px;
+      padding: 10px 14px;
+      min-height: 52px;
+      transition: all 0.25s ease;
+    }
+    .match-item-card.paired-correct {
+      border-color: #10b981 !important;
+      background: rgba(16, 185, 129, 0.15) !important;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.25) !important;
+    }
+    .match-idx-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+      font-weight: 800;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+    .match-text-content {
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: #f1f5f9;
+      flex: 1;
+    }
+    .arena-match-reveal-bar {
+      margin-top: 10px;
+      padding: 10px 16px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1.5px solid #10b981;
+      border-radius: 10px;
+      color: #a7f3d0;
+      font-weight: 800;
+      font-size: 1.05rem;
+      text-align: center;
+      display: none;
+    }
+
+    /* Fill / Cloze Layout */
+    .options-grid.fill-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+    }
+    .arena-cloze-card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1.5px solid rgba(56, 189, 248, 0.25);
+      border-radius: 12px;
+      padding: 18px 22px;
+      font-size: 1.12rem;
+      line-height: 1.85;
+      color: #f8fafc;
+    }
+    .arena-blank-slot {
+      display: inline-block;
+      min-width: 100px;
+      padding: 2px 14px;
+      margin: 0 4px;
+      border-radius: 8px;
+      border: 2px dashed #38bdf8;
+      background: rgba(14, 165, 233, 0.12);
+      color: #38bdf8;
+      font-weight: 700;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+    .arena-blank-slot.filled-correct {
+      border: 2px solid #10b981 !important;
+      background: rgba(16, 185, 129, 0.2) !important;
+      color: #34d399 !important;
+      font-weight: 800 !important;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.3) !important;
+    }
+    .arena-wordbank-card {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1.5px solid rgba(148, 163, 184, 0.2);
+      border-radius: 12px;
+      padding: 12px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .wordbank-label {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .wordbank-chips-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .wb-chip {
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    /* Student Mobile Simulator Modal */
+    #studentSimulatorOverlay {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      background: rgba(3, 7, 18, 0.85);
+      backdrop-filter: blur(14px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 16px;
+    }
+    #studentSimulatorOverlay.active {
+      display: flex;
+    }
+    .simulator-phone-bezel {
+      width: 400px;
+      max-width: 95vw;
+      height: min(780px, 90vh);
+      background: #020617;
+      border: 3px solid rgba(56, 189, 248, 0.45);
+      border-radius: 36px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(56, 189, 248, 0.25);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+    .simulator-notch {
+      width: 120px;
+      height: 18px;
+      background: #0f172a;
+      border-radius: 0 0 14px 14px;
+      margin: 0 auto;
+      flex-shrink: 0;
+    }
+    .simulator-team-picker {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      padding: 6px 10px;
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+    }
+    .btn-sim-team {
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      background: rgba(30, 41, 59, 0.7);
+      color: #94a3b8;
+      padding: 5px 2px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-sim-team.active {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #38bdf8;
+      box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+    }
+    .simulator-content-pane {
+      flex: 1;
+      overflow-y: auto;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+    }
+    .simulator-close-bar {
+      margin-top: 12px;
+    }
+    .btn-sim-close {
+      border: 1.5px solid rgba(239, 68, 68, 0.4);
+      background: rgba(239, 68, 68, 0.15);
+      color: #fca5a5;
+      border-radius: 9999px;
+      padding: 8px 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-sim-close:hover {
+      background: #ef4444;
+      color: #ffffff;
+      box-shadow: 0 0 16px rgba(239, 68, 68, 0.5);
+    }
+
   </style>
 </head>
 <body>
+
+  <!-- Projector View Floating Return Badge -->
+  <div class="projector-return-badge" onclick="setHostViewMode('host')" title="Nhấp để quay lại Màn Hình Giáo Viên">
+    📽️ Màn Hình Chiếu • Nhấp để về Giáo Viên (Esc)
+  </div>
+
 
   <canvas id="confettiCanvas"></canvas>
 
@@ -2017,6 +2401,20 @@
         <span>⚔️</span> ĐẤU TRƯỜNG HÓA HỌC LIÊN NHÓM
         <span style="font-size: 0.8rem; color: #f59e0b; margin-left: 6px;" id="arenaBattleSubTitle">Hóa Học 12</span>
       </div>
+
+      <!-- 3-Screen Independent View Switcher -->
+      <div class="host-view-switcher" id="viewModeSwitcher">
+        <button class="btn-mode-tab active" id="btnModeHost" onclick="setHostViewMode('host')">
+          <span>👨‍🏫</span> Màn Hình Giáo Viên
+        </button>
+        <button class="btn-mode-tab" id="btnModeProjector" onclick="setHostViewMode('projector')">
+          <span>📽️</span> Màn Hình Chiếu
+        </button>
+        <button class="btn-mode-tab" id="btnModeStudent" onclick="setHostViewMode('student')">
+          <span>📱</span> Màn Hình Học Sinh
+        </button>
+      </div>
+
       <div style="display: flex; gap: 8px; align-items: center;">
         <div class="net-status-badge" id="netStatusBadge" style="font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #34d399; display: flex; align-items: center; gap: 4px;">
           <span>🟢</span> Online
@@ -2421,7 +2819,29 @@
     </div>
   </div>
 
-  <div class="modal-overlay" id="mysteryModal">
+  
+    <!-- Student Mobile Simulator Modal for Host Preview -->
+    <div id="studentSimulatorOverlay">
+      <div class="simulator-phone-bezel">
+        <div class="simulator-notch"></div>
+        <div class="simulator-team-picker">
+          <button class="btn-sim-team active" id="simTeamBtn_1" onclick="simulatorSelectTeam(1)">⚡ Tổ 1</button>
+          <button class="btn-sim-team" id="simTeamBtn_2" onclick="simulatorSelectTeam(2)">🪐 Tổ 2</button>
+          <button class="btn-sim-team" id="simTeamBtn_3" onclick="simulatorSelectTeam(3)">🔬 Tổ 3</button>
+          <button class="btn-sim-team" id="simTeamBtn_4" onclick="simulatorSelectTeam(4)">🧪 Tổ 4</button>
+        </div>
+        <div class="simulator-content-pane" id="simBuzzerContainer">
+          <!-- Live student interactive view rendered here -->
+        </div>
+      </div>
+      <div class="simulator-close-bar">
+        <button class="btn-sim-close" onclick="setHostViewMode('host')">
+          <span>✕</span> Đóng • Quay lại Màn Hình Giáo Viên (Esc)
+        </button>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="mysteryModal">
     <div class="modal-box">
       <h2 style="color: #f59e0b; margin-bottom: 6px;">🎁 HỘP QUÀ BÍ MẬT MAY MẮN</h2>
       <p style="color: #94a3b8; font-size: 0.92rem;">Quay ngẫu nhiên hoặc bấm trực tiếp 1 trong 4 hộp quà để nhận đặc quyền / điểm thưởng!</p>
@@ -3551,6 +3971,7 @@
     let isQuestionAnswered = false;
     let teamAnswers = {};
     let lastQuestionResults = null;
+    let timerSeconds = 20;
 
     let teams = [
       { id: 1, name: "TỔ 1 (MENDELEEV)", score: 100, avatar: "🧪", color: "#38bdf8", isOnline: false, hasShield: false, hasStar: false },
@@ -3586,36 +4007,302 @@
       return r === 1 ? 20 : (r === 2 ? 15 : 30);
     }
 
+    /* ==========================================================================
+       ARENA MULTI-FORMAT QUESTION ENGINE & TEACHER VIEW SWITCHER
+       ========================================================================== */
+    let currentHostViewMode = 'host';
+    let currentSimTeamId = 1;
+    let simTfState = { a: 'Đ', b: 'Đ', c: 'S', d: 'Đ' };
+
+    function setHostViewMode(mode) {
+      currentHostViewMode = mode;
+      document.querySelectorAll('.btn-mode-tab').forEach(b => b.classList.remove('active'));
+      const activeBtn = document.getElementById('btnMode' + mode.charAt(0).toUpperCase() + mode.slice(1));
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const overlay = document.getElementById('studentSimulatorOverlay');
+
+      if (mode === 'host') {
+        document.body.classList.remove('projector-clean-mode');
+        if (overlay) overlay.classList.remove('active');
+      } else if (mode === 'projector') {
+        document.body.classList.add('projector-clean-mode');
+        if (overlay) overlay.classList.remove('active');
+      } else if (mode === 'student') {
+        document.body.classList.remove('projector-clean-mode');
+        if (overlay) {
+          overlay.classList.add('active');
+          syncSimulatorView();
+        }
+      }
+    }
+
+    function simulatorSelectTeam(teamId) {
+      currentSimTeamId = teamId;
+      for (let i = 1; i <= 4; i++) {
+        const btn = document.getElementById(`simTeamBtn_${i}`);
+        if (btn) {
+          if (i === teamId) btn.classList.add('active');
+          else btn.classList.remove('active');
+        }
+      }
+      syncSimulatorView();
+    }
+
+    function syncSimulatorView() {
+      const container = document.getElementById('simBuzzerContainer');
+      if (!container) return;
+      const q = battleQuestions[currentQIdx] || {};
+      const qType = q.type || q.qType || (q.stmts ? 'tf' : (q.colA ? 'match' : (q.words ? 'fill' : 'mcq')));
+      const team = teams.find(t => t.id === currentSimTeamId) || teams[0];
+      const submission = teamAnswers[currentSimTeamId];
+
+      let bodyHtml = `
+        <div style="background: rgba(15, 23, 42, 0.92); border-radius: 18px; padding: 12px; border: 1.5px solid ${team.color}; display: flex; flex-direction: column; gap: 10px; height: 100%;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+            <span style="font-weight: 800; color: ${team.color}; font-size: 1rem;">${team.avatar} ${team.name}</span>
+            <span style="background: rgba(56,189,248,0.15); border: 1px solid #38bdf8; color: #38bdf8; border-radius: 6px; padding: 2px 8px; font-size: 0.75rem; font-weight: 700;">⏱️ ${timerSeconds}s</span>
+          </div>
+          <div style="font-size: 0.82rem; color: #94a3b8; font-weight: 600;">
+            Câu ${currentQIdx + 1}/${battleQuestions.length} • [${qType.toUpperCase()}]
+          </div>
+          <div style="font-size: 0.86rem; color: #f1f5f9; line-height: 1.35; max-height: 70px; overflow-y: auto;">
+            ${q.q || ''}
+          </div>
+      `;
+
+      if (submission) {
+        bodyHtml += `
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(16, 185, 129, 0.12); border: 1.5px solid #10b981; border-radius: 12px; padding: 16px; text-align: center;">
+            <div style="font-size: 1.8rem; margin-bottom: 6px;">✅</div>
+            <div style="color: #34d399; font-weight: 800; font-size: 1.05rem;">ĐÃ NỘP BÀI THÀNH CÔNG</div>
+            <div style="color: #ffffff; font-weight: 800; font-size: 1.2rem; margin: 8px 0; background: rgba(0,0,0,0.3); padding: 6px 14px; border-radius: 8px;">${submission.choiceText || submission.choice}</div>
+            <div style="color: #94a3b8; font-size: 0.82rem;">Thời gian phản hồi: <b>${submission.time}s</b></div>
+          </div>
+        `;
+      } else if (isQuestionAnswered) {
+        bodyHtml += `
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(239, 68, 68, 0.12); border: 1.5px solid #ef4444; border-radius: 12px; padding: 16px; text-align: center;">
+            <div style="font-size: 1.8rem; margin-bottom: 6px;">⏱️</div>
+            <div style="color: #fca5a5; font-weight: 800; font-size: 1.05rem;">ĐÃ HẾT GIỜ / ĐÃ CÔNG BỐ</div>
+            <div style="color: #94a3b8; font-size: 0.82rem; margin-top: 6px;">Tổ chưa kịp gửi phương án</div>
+          </div>
+        `;
+      } else {
+        if (qType === 'mcq') {
+          const opts = q.opts || ['A', 'B', 'C', 'D'];
+          const prefixes = ['A', 'B', 'C', 'D'];
+          bodyHtml += `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex: 1;">`;
+          opts.forEach((opt, idx) => {
+            bodyHtml += `
+              <button onclick="simulatorSubmitMcq(${idx})" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px 6px; border-radius: 12px; border: 1.5px solid rgba(56,189,248,0.4); background: rgba(15,23,42,0.8); color: #ffffff; cursor: pointer; transition: all 0.2s;">
+                <span style="font-size: 1.2rem; font-weight: 900; color: #38bdf8;">${prefixes[idx]}</span>
+                <span style="font-size: 0.72rem; color: #cbd5e1; margin-top: 4px; text-align: center; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${opt}</span>
+              </button>
+            `;
+          });
+          bodyHtml += `</div>`;
+        } else if (qType === 'tf') {
+          const stmts = q.stmts || ['Ý a', 'Ý b', 'Ý c', 'Ý d'];
+          const letters = ['a', 'b', 'c', 'd'];
+          bodyHtml += `<div style="display: flex; flex-direction: column; gap: 6px; flex: 1; overflow-y: auto;">`;
+          letters.forEach((let, i) => {
+            bodyHtml += `
+              <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(30,41,59,0.7); border: 1px solid rgba(56,189,248,0.25); border-radius: 8px; padding: 6px 10px;">
+                <span style="font-weight: 800; color: #38bdf8; font-size: 0.85rem; margin-right: 6px;">${let})</span>
+                <span style="flex: 1; font-size: 0.75rem; color: #e2e8f0; line-height: 1.2; margin-right: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${stmts[i]}</span>
+                <div style="display: flex; gap: 4px;">
+                  <button id="simTf_${let}_T" onclick="simToggleTf('${let}', 'Đ')" style="border: 1px solid #10b981; background: ${simTfState[let] === 'Đ' ? '#10b981' : 'rgba(16,185,129,0.2)'}; color: ${simTfState[let] === 'Đ' ? '#fff' : '#34d399'}; border-radius: 6px; padding: 3px 8px; font-weight: 700; font-size: 0.75rem; cursor: pointer;">Đ</button>
+                  <button id="simTf_${let}_F" onclick="simToggleTf('${let}', 'S')" style="border: 1px solid #ef4444; background: ${simTfState[let] === 'S' ? '#ef4444' : 'rgba(239,68,68,0.2)'}; color: ${simTfState[let] === 'S' ? '#fff' : '#fca5a5'}; border-radius: 6px; padding: 3px 8px; font-weight: 700; font-size: 0.75rem; cursor: pointer;">S</button>
+                </div>
+              </div>
+            `;
+          });
+          bodyHtml += `
+            <button onclick="simulatorSubmitTf()" style="margin-top: 6px; width: 100%; padding: 10px; border: none; border-radius: 10px; background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; font-weight: 800; font-size: 0.85rem; cursor: pointer;">
+              🚀 Nộp Bài Đúng / Sai
+            </button>
+          </div>`;
+        } else if (qType === 'match') {
+          const colA = q.colA || [];
+          const colB = q.colB || [];
+          bodyHtml += `
+            <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; overflow-y: auto;">
+              <div style="font-size: 0.78rem; color: #38bdf8; font-weight: 700;">Ghép Cột A với Cột B:</div>
+          `;
+          colA.forEach((item, i) => {
+            bodyHtml += `
+              <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(30,41,59,0.7); border: 1px solid rgba(56,189,248,0.25); border-radius: 8px; padding: 6px 8px;">
+                <span style="font-weight: 800; color: #38bdf8; font-size: 0.8rem; min-width: 20px;">${i+1}.</span>
+                <span style="flex: 1; font-size: 0.72rem; color: #cbd5e1; line-height: 1.2; margin-right: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${item}</span>
+                <select id="simMatchSel_${i}" style="background: #0f172a; border: 1px solid #38bdf8; color: #38bdf8; border-radius: 6px; padding: 2px 4px; font-size: 0.75rem; font-weight: 700;">
+                  ${colB.map((b, bIdx) => `<option value="${bIdx}">${String.fromCharCode(65 + bIdx)}</option>`).join('')}
+                </select>
+              </div>
+            `;
+          });
+          bodyHtml += `
+            <button onclick="simulatorSubmitMatch()" style="margin-top: 6px; width: 100%; padding: 10px; border: none; border-radius: 10px; background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; font-weight: 800; font-size: 0.85rem; cursor: pointer;">
+              🚀 Nộp Bài Ghép Đôi
+            </button>
+          </div>`;
+        } else if (qType === 'drag' || qType === 'fill') {
+          const words = q.words || [];
+          bodyHtml += `
+            <div style="display: flex; flex-direction: column; gap: 8px; flex: 1; overflow-y: auto;">
+              <div style="font-size: 0.78rem; color: #38bdf8; font-weight: 700;">Chọn từ khóa tương ứng:</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 4px; background: rgba(15,23,42,0.6); padding: 6px; border-radius: 8px;">
+                ${words.map(w => `<span style="background: rgba(30,41,59,0.9); border: 1px solid rgba(56,189,248,0.3); border-radius: 6px; padding: 2px 6px; font-size: 0.72rem; color: #e2e8f0;">${w}</span>`).join('')}
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 4px;">
+                ${[1, 2, 3, 4].map(slot => `
+                  <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: #38bdf8; min-width: 44px;">Vị trí ${slot}:</span>
+                    <select id="simFillSel_${slot-1}" style="flex: 1; background: #0f172a; border: 1px solid #38bdf8; color: #38bdf8; border-radius: 6px; padding: 3px 6px; font-size: 0.75rem;">
+                      ${words.map((w, wIdx) => `<option value="${wIdx}">${w}</option>`).join('')}
+                    </select>
+                  </div>
+                `).join('')}
+              </div>
+              <button onclick="simulatorSubmitFill()" style="margin-top: 6px; width: 100%; padding: 10px; border: none; border-radius: 10px; background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; font-weight: 800; font-size: 0.85rem; cursor: pointer;">
+                🚀 Nộp Bài Điền Khuyết
+              </button>
+            </div>
+          `;
+        }
+      }
+
+      bodyHtml += `</div>`;
+      container.innerHTML = bodyHtml;
+    }
+
+    function simToggleTf(letter, val) {
+      simTfState[letter] = val;
+      const btnT = document.getElementById(`simTf_${letter}_T`);
+      const btnF = document.getElementById(`simTf_${letter}_F`);
+      if (btnT && btnF) {
+        if (val === 'Đ') {
+          btnT.style.background = '#10b981';
+          btnT.style.color = '#fff';
+          btnF.style.background = 'rgba(239,68,68,0.2)';
+          btnF.style.color = '#fca5a5';
+        } else {
+          btnF.style.background = '#ef4444';
+          btnF.style.color = '#fff';
+          btnT.style.background = 'rgba(16,185,129,0.2)';
+          btnT.style.color = '#34d399';
+        }
+      }
+    }
+
+    function simulatorSubmitMcq(oIdx) {
+      const elapsed = Math.max(0.1, (20 - timerSeconds)).toFixed(2);
+      const prefixes = ['A', 'B', 'C', 'D'];
+      hostOnClientAnswer({
+        teamId: currentSimTeamId,
+        format: 'mcq',
+        choice: oIdx,
+        choiceText: prefixes[oIdx],
+        time: parseFloat(elapsed)
+      });
+      syncSimulatorView();
+    }
+
+    function simulatorSubmitTf() {
+      const elapsed = Math.max(0.1, (20 - timerSeconds)).toFixed(2);
+      const tfAnswers = [
+        simTfState.a === 'Đ',
+        simTfState.b === 'Đ',
+        simTfState.c === 'Đ',
+        simTfState.d === 'Đ'
+      ];
+      const choiceText = `${simTfState.a}-${simTfState.b}-${simTfState.c}-${simTfState.d}`;
+      hostOnClientAnswer({
+        teamId: currentSimTeamId,
+        format: 'tf',
+        choice: choiceText,
+        choiceText: choiceText,
+        tfAnswers: tfAnswers,
+        time: parseFloat(elapsed)
+      });
+      syncSimulatorView();
+    }
+
+    function simulatorSubmitMatch() {
+      const elapsed = Math.max(0.1, (20 - timerSeconds)).toFixed(2);
+      const matchAnswers = [];
+      for (let i = 0; i < 4; i++) {
+        const sel = document.getElementById(`simMatchSel_${i}`);
+        matchAnswers.push(sel ? parseInt(sel.value, 10) : 0);
+      }
+      const choiceText = matchAnswers.map((v, i) => `${i+1}${String.fromCharCode(65 + v)}`).join('-');
+      hostOnClientAnswer({
+        teamId: currentSimTeamId,
+        format: 'match',
+        choice: choiceText,
+        choiceText: choiceText,
+        matchAnswers: matchAnswers,
+        time: parseFloat(elapsed)
+      });
+      syncSimulatorView();
+    }
+
+    function simulatorSubmitFill() {
+      const elapsed = Math.max(0.1, (20 - timerSeconds)).toFixed(2);
+      const fillAnswers = [];
+      for (let i = 0; i < 4; i++) {
+        const sel = document.getElementById(`simFillSel_${i}`);
+        fillAnswers.push(sel ? parseInt(sel.value, 10) : 0);
+      }
+      const q = battleQuestions[currentQIdx] || {};
+      const words = q.words || [];
+      const choiceText = fillAnswers.map(idx => words[idx] || (idx+1)).join(' | ');
+      hostOnClientAnswer({
+        teamId: currentSimTeamId,
+        format: 'fill',
+        choice: choiceText,
+        choiceText: choiceText,
+        fillAnswers: fillAnswers,
+        time: parseFloat(elapsed)
+      });
+      syncSimulatorView();
+    }
+
     function loadQuestionsForBattle(grade, lessonKey, count) {
       battleQuestions = [];
       if (typeof ARENA_QUESTIONS !== 'undefined') {
         if (grade === 'all') {
           [10, 11, 12].forEach(g => {
-            const gData = ARENA_QUESTIONS[g] || {};
+            const gData = ARENA_QUESTIONS[g] || ARENA_QUESTIONS[String(g)] || {};
             for (let l in gData) battleQuestions.push(...gData[l]);
           });
         } else {
-          const gData = ARENA_QUESTIONS[grade] || {};
+          const gData = ARENA_QUESTIONS[grade] || ARENA_QUESTIONS[String(grade)] || {};
           if (lessonKey === 'all') {
             for (let l in gData) battleQuestions.push(...gData[l]);
-          } else if (gData[lessonKey]) {
-            battleQuestions = [...gData[lessonKey]];
+          } else {
+            const lQuestions = gData[lessonKey] || gData[String(lessonKey)];
+            if (lQuestions && lQuestions.length > 0) {
+              battleQuestions = [...lQuestions];
+            }
           }
         }
       }
 
       if (battleQuestions.length === 0) {
         battleQuestions = [
-          { q: "Chất nào sau đây là este no, đơn chức, mạch hở?", opts: ["CH₃COOCH₃", "CH₂=CHCOOCH₃", "HCOOCH=CH₂", "CH₃COOH"], ans: 0, exp: "• <b>Kiến thức SGK Hóa 12:</b> CH₃COOCH₃ (metyl axetat) có công thức phân tử C₃H₆O₂ là este no, đơn chức, mạch hở." },
-          { q: "Kim loại nào sau đây có tính dẫn điện tốt nhất?", opts: ["Bạc (Ag)", "Đồng (Cu)", "Vàng (Au)", "Nhôm (Al)"], ans: 0, exp: "• <b>Kiến thức SGK Hóa 12:</b> Thứ tự độ dẫn điện giảm dần: Ag > Cu > Au > Al > Fe. Bạc (Ag) dẫn điện tốt nhất." },
-          { q: "Quỳ tím chuyển sang màu gì khi nhúng vào dung dịch metylamin?", opts: ["Màu xanh", "Màu đỏ", "Màu tím", "Mất màu"], ans: 0, exp: "• <b>Kiến thức SGK Hóa 12:</b> Metylamin tan nhiều trong nước tạo môi trường bazơ làm quỳ tím hóa xanh." },
-          { q: "Số liên kết peptit có trong phân tử tripeptit Gly-Ala-Val là bao nhiêu?", opts: ["2", "3", "1", "4"], ans: 0, exp: "• <b>Kiến thức SGK Hóa 12:</b> Phân tử n-peptit có (n - 1) liên kết peptit. Tripeptit có (3 - 1) = 2 liên kết peptit." }
+          { q: "Đơn vị chuẩn của nhiệt nóng chảy riêng λ trong hệ SI là gì?", opts: ["J/kg", "J/(kg·K)", "J", "cal/g"], ans: 0, exp: "Nhiệt nóng chảy riêng λ = Q/m có đơn vị là J/kg." },
+          { q: "Theo định luật Boyle, khi thể tích giảm 3 lần ở nhiệt độ không đổi thì áp suất:", opts: ["Tăng 3 lần", "Giảm 3 lần", "Không đổi", "Tăng 9 lần"], ans: 0, exp: "Áp suất tỉ lệ nghịch với thể tích." }
         ];
       }
 
       const maxAvail = battleQuestions.length;
       const finalCount = Math.min(count, maxAvail);
-      battleQuestions = shuffleArray(battleQuestions).slice(0, finalCount);
+      if (lessonKey !== 'all') {
+        battleQuestions = battleQuestions.slice(0, finalCount);
+      } else {
+        battleQuestions = shuffleArray(battleQuestions).slice(0, finalCount);
+      }
     }
 
     function shuffleArray(arr) {
@@ -3697,8 +4384,9 @@
       }
       currentQIdx = Math.max(0, idx);
       const q = battleQuestions[currentQIdx];
+      const qType = q.type || q.qType || (q.stmts ? 'tf' : (q.colA ? 'match' : (q.words ? 'fill' : 'mcq')));
 
-      // Reset question cycle states
+      // Reset cycle states
       isQuestionAnswered = false;
       teamAnswers = {};
       lastQuestionResults = null;
@@ -3716,15 +4404,13 @@
         const chip = document.getElementById(`liveTeam_${t.id}`);
         if (chip) {
           chip.className = 'olympia-team-chip';
-          chip.innerHTML = `${t.avatar} Tổ ${t.id}: ⏳ Đang chọn`;
+          chip.innerHTML = `${t.avatar} Tổ ${t.id}: ⏳ Đang suy nghĩ`;
         }
       });
 
       stopTimer(isRemote);
 
       const round = getQuestionRound(currentQIdx);
-      const points = getQuestionPoints(currentQIdx);
-
       const roundTag = document.getElementById('roundTag');
       if (roundTag) {
         roundTag.className = `round-tag round-${round}`;
@@ -3750,40 +4436,122 @@
       const grid = document.getElementById('optionsGrid');
       if (grid) {
         grid.innerHTML = '';
-        const prefixes = ['A', 'B', 'C', 'D'];
-        (q.opts || []).forEach((opt, oIdx) => {
-          const btn = document.createElement('button');
-          btn.className = 'option-btn';
-          btn.id = `optBtn_${oIdx}`;
-          btn.innerHTML = `
-            <div class="option-prefix">${prefixes[oIdx]}</div>
-            <div style="flex: 1; line-height: 1.4;">${opt}</div>
-          `;
-          btn.onclick = () => selectOption(oIdx);
-          grid.appendChild(btn);
-        });
+        grid.className = `options-grid ${qType}-layout`;
+
+        if (qType === 'mcq') {
+          const prefixes = ['A', 'B', 'C', 'D'];
+          (q.opts || []).forEach((opt, oIdx) => {
+            const btn = document.createElement('button');
+            btn.className = 'option-btn';
+            btn.id = `optBtn_${oIdx}`;
+            btn.innerHTML = `
+              <div class="option-prefix">${prefixes[oIdx]}</div>
+              <div style="flex: 1; line-height: 1.4;">${opt}</div>
+            `;
+            btn.onclick = () => selectOption(oIdx);
+            grid.appendChild(btn);
+          });
+        } else if (qType === 'tf') {
+          const tfContainer = document.createElement('div');
+          tfContainer.className = 'arena-tf-container';
+          const letters = ['a', 'b', 'c', 'd'];
+          const stmts = q.stmts || [];
+          letters.forEach((let, i) => {
+            const row = document.createElement('div');
+            row.className = 'arena-tf-row';
+            row.id = `arenaTfRow_${i}`;
+            row.innerHTML = `
+              <span class="arena-tf-letter">${let})</span>
+              <span class="arena-tf-text">${stmts[i] || ''}</span>
+              <span class="arena-tf-status" id="arenaTfStatus_${i}">Chờ công bố</span>
+            `;
+            tfContainer.appendChild(row);
+          });
+          grid.appendChild(tfContainer);
+        } else if (qType === 'match') {
+          const matchWrap = document.createElement('div');
+          matchWrap.className = 'arena-match-container';
+          const colA = q.colA || [];
+          const colB = q.colB || [];
+
+          let colAHtml = `<div class="match-column"><div class="match-column-title">📌 CỘT A (Hiện tượng / Dữ kiện)</div>`;
+          colA.forEach((item, i) => {
+            colAHtml += `
+              <div class="match-item-card" id="matchCardA_${i}">
+                <span class="match-idx-badge">${i + 1}</span>
+                <span class="match-text-content">${item}</span>
+              </div>
+            `;
+          });
+          colAHtml += `</div>`;
+
+          let colBHtml = `<div class="match-column"><div class="match-column-title">🎯 CỘT B (Bản chất / Khái niệm)</div>`;
+          colB.forEach((item, i) => {
+            colBHtml += `
+              <div class="match-item-card" id="matchCardB_${i}">
+                <span class="match-idx-badge">${String.fromCharCode(65 + i)}</span>
+                <span class="match-text-content">${item}</span>
+              </div>
+            `;
+          });
+          colBHtml += `</div>`;
+
+          matchWrap.innerHTML = colAHtml + colBHtml;
+          grid.appendChild(matchWrap);
+
+          const revealBar = document.createElement('div');
+          revealBar.className = 'arena-match-reveal-bar';
+          revealBar.id = 'arenaMatchRevealBar';
+          grid.appendChild(revealBar);
+        } else if (qType === 'drag' || qType === 'fill') {
+          const clozeCard = document.createElement('div');
+          clozeCard.className = 'arena-cloze-card';
+          let blankCounter = 0;
+          const parsedText = (q.text || '').replace(/\[blank\]/g, () => {
+            blankCounter++;
+            return `<span class="arena-blank-slot" id="arenaBlank_${blankCounter - 1}">[ Vị trí ${blankCounter} ]</span>`;
+          });
+          clozeCard.innerHTML = parsedText;
+          grid.appendChild(clozeCard);
+
+          if (q.words && q.words.length > 0) {
+            const wbCard = document.createElement('div');
+            wbCard.className = 'arena-wordbank-card';
+            wbCard.innerHTML = `
+              <div class="wordbank-label">🏷️ Ngân Hàng Từ Khóa Lựa Chọn:</div>
+              <div class="wordbank-chips-wrap">
+                ${q.words.map((w, idx) => `<span class="wb-chip" id="wbChip_${idx}">${w}</span>`).join('')}
+              </div>
+            `;
+            grid.appendChild(wbCard);
+          }
+        }
       }
 
-      timeLeft = getQuestionTime(currentQIdx);
+      // Update simulator if open
+      if (currentHostViewMode === 'student') {
+        syncSimulatorView();
+      }
+
+      // Reset timer
+      timerSeconds = 20;
       updateTimerDisplay();
-      startTimer(isRemote);
 
-      renderTeams();
-
-      const qType = detectQuestionType(q);
-
-      // Broadcast to student phones & projector
-      if (!isRemote && !isProjectorRole) {
+      if (!isRemote) {
         broadcastMsg({
           action: 'START_QUESTION',
           qIdx: currentQIdx,
           totalQ: battleQuestions.length,
-          timeLimit: timeLeft,
-          qType: qType,
-          words: q.words || null,
-          fillAns: q.fillAns || null,
-          isNumeric: typeof q.fillAns === 'number'
+          timeLimit: 20,
+          qType: qType === 'drag' ? 'fill' : qType,
+          q: q.q,
+          opts: q.opts || [],
+          stmts: q.stmts || [],
+          colA: q.colA || [],
+          colB: q.colB || [],
+          words: q.words || []
         });
+        startTimer();
       }
     }
 
@@ -3793,269 +4561,233 @@
         if (q.type === 'drag') return 'fill';
         return q.type;
       }
-      const text = ((q.q || '') + ' ' + (q.exp || '')).toLowerCase();
-      if (/đúng.*sai|mệnh đề|nhận định sau|tính đúng\/sai/.test(text)) return 'tf';
-      if (/ghép.*cặp|ghép.*cột|ghép từng|ghép đôi/.test(text)) return 'match';
-      if (/điền.*khuyết|điền.*từ|điền.*chữ|điền.*số|đáp số|chọn.*từ|từ khóa/.test(text)) return 'fill';
+      if (q.stmts) return 'tf';
+      if (q.colA) return 'match';
+      if (q.words) return 'fill';
       return 'mcq';
     }
 
     function selectOption(oIdx) {
       if (isQuestionAnswered) return;
+      const prefixes = ['A', 'B', 'C', 'D'];
       const q = battleQuestions[currentQIdx];
-      if (oIdx === q.ans) {
-        revealAnswer();
-      } else {
-        const optBtn = document.getElementById(`optBtn_${oIdx}`);
-        if (optBtn) {
-          optBtn.classList.add('wrong');
-          soundWrong();
-        }
-      }
+      const qType = q.type || q.qType || 'mcq';
+      revealAnswer();
     }
 
     function revealAnswer(isRemote = false) {
-      if (currentQIdx >= battleQuestions.length) return;
       if (isQuestionAnswered) return;
-      const q = battleQuestions[currentQIdx];
       isQuestionAnswered = true;
       stopTimer(isRemote);
-      const bCard = document.querySelector('.battle-card');
-      if (bCard) bCard.classList.add('is-revealed');
 
-      const correctAns = q.ans;
-      const prefixes = ['A', 'B', 'C', 'D'];
+      const q = battleQuestions[currentQIdx];
+      const qType = q.type || q.qType || (q.stmts ? 'tf' : (q.colA ? 'match' : (q.words ? 'fill' : 'mcq')));
 
-      // 1. Highlight correct button on host board
-      const correctBtn = document.getElementById(`optBtn_${correctAns}`);
-      if (correctBtn) {
-        correctBtn.style.display = 'flex';
-        correctBtn.classList.remove('eliminated');
-        correctBtn.classList.add('correct');
+      // 1. Highlight answers on main board
+      if (qType === 'mcq') {
+        (q.opts || []).forEach((_, idx) => {
+          const btn = document.getElementById(`optBtn_${idx}`);
+          if (btn) {
+            if (idx === q.ans) btn.classList.add('correct');
+            else btn.classList.add('faded');
+          }
+        });
+      } else if (qType === 'tf') {
+        const ansArray = Array.isArray(q.ans) ? q.ans : [true, true, false, true];
+        ansArray.forEach((val, i) => {
+          const row = document.getElementById(`arenaTfRow_${i}`);
+          const status = document.getElementById(`arenaTfStatus_${i}`);
+          if (row) {
+            if (val) {
+              row.classList.add('is-true-verdict');
+              if (status) status.innerText = 'ĐÚNG';
+            } else {
+              row.classList.add('is-false-verdict');
+              if (status) status.innerText = 'SAI';
+            }
+          }
+        });
+      } else if (qType === 'match') {
+        const revBar = document.getElementById('arenaMatchRevealBar');
+        if (revBar) {
+          revBar.style.display = 'block';
+          revBar.innerHTML = `🎯 ĐÁP ÁN GHÉP NỐI CHUẨN: <b>${q.correctText || ''}</b>`;
+        }
+        const pairs = Array.isArray(q.ans) ? q.ans : [];
+        pairs.forEach((bIdx, aIdx) => {
+          const cardA = document.getElementById(`matchCardA_${aIdx}`);
+          const cardB = document.getElementById(`matchCardB_${bIdx}`);
+          if (cardA) cardA.classList.add('paired-correct');
+          if (cardB) cardB.classList.add('paired-correct');
+        });
+      } else if (qType === 'drag' || qType === 'fill') {
+        const ansIndices = Array.isArray(q.ans) ? q.ans : [];
+        const words = q.words || [];
+        ansIndices.forEach((wIdx, slotIdx) => {
+          const slot = document.getElementById(`arenaBlank_${slotIdx}`);
+          if (slot) {
+            slot.classList.add('filled-correct');
+            slot.innerText = words[wIdx] || (wIdx + 1);
+          }
+        });
       }
 
-      document.querySelectorAll('.option-btn').forEach(btn => {
-        btn.classList.add('disabled');
-        btn.style.pointerEvents = 'none';
-      });
+      // 2. Show explanation box
+      const expBox = document.getElementById('explanationBox');
+      if (expBox) {
+        const expText = document.getElementById('explanationText');
+        if (expText) {
+          expText.innerHTML = `
+            <div style="font-weight: 800; color: #38bdf8; font-size: 1.05rem; margin-bottom: 8px;">
+              🎯 ${q.correctText || 'ĐÁP ÁN CHÍNH XÁC'}
+            </div>
+            <div style="color: #cbd5e1; line-height: 1.6;">${q.exp || ''}</div>
+          `;
+        }
+        expBox.classList.add('show');
+      }
 
-      // 2. Olympia Scoring Ladder (40, 30, 20, 10)
+      // 3. Evaluate submissions & Olympia Speed Bonus
       const correctTeams = [];
       const wrongTeams = [];
       const unsubmittedTeams = [];
 
       teams.forEach(team => {
         const sub = teamAnswers[team.id];
-        if (sub) {
-          let isCorrect = false;
-          if (sub.format === 'tf') {
-            if (q.tfAns) {
-              isCorrect = Object.keys(q.tfAns).every(k => sub.tfAnswers && sub.tfAnswers[k] === q.tfAns[k]);
-            } else {
-              isCorrect = (sub.choice === correctAns || sub.choiceText === prefixes[correctAns]);
-            }
-          } else if (sub.format === 'match') {
-            if (q.matchAns) {
-              isCorrect = Object.keys(q.matchAns).every(k => sub.matchAnswers && sub.matchAnswers[k] === q.matchAns[k]);
-            } else {
-              isCorrect = (sub.choice === correctAns || sub.choiceText === prefixes[correctAns]);
-            }
-          } else if (sub.format === 'fill') {
-            const cleanSub = String(sub.choice || '').trim().toLowerCase();
-            if (q.fillAns !== undefined) {
-              const expectedList = Array.isArray(q.fillAns) 
-                ? q.fillAns.map(a => String(a).trim().toLowerCase())
-                : [String(q.fillAns).trim().toLowerCase()];
-              isCorrect = expectedList.includes(cleanSub);
-              if (!isCorrect && !isNaN(cleanSub) && !isNaN(q.fillAns)) {
-                isCorrect = Math.abs(parseFloat(cleanSub) - parseFloat(q.fillAns)) < 0.01;
-              }
-            } else if (q.words && q.words.length > 0) {
-              const correctTarget = String(q.correctText || q.ans || '').trim().toLowerCase();
-              isCorrect = (cleanSub === correctTarget || (q.words && q.words.map(w => w.toLowerCase()).includes(cleanSub)));
-            } else if (q.ans !== undefined) {
-              const cleanAns = String(q.ans).trim().toLowerCase();
-              isCorrect = (cleanSub === cleanAns);
-            } else {
-              isCorrect = false;
-            }
-          } else {
-            isCorrect = (sub.choice === correctAns);
-          }
+        if (!sub) {
+          unsubmittedTeams.push({ team, choiceText: 'Chưa nộp', time: null });
+          return;
+        }
 
-          if (isCorrect) {
-            correctTeams.push({ team, choice: sub.choice, choiceText: sub.choiceText, format: sub.format, time: sub.time });
+        let isCorrect = false;
+        if (qType === 'mcq') {
+          isCorrect = (sub.choice === q.ans);
+        } else if (qType === 'tf') {
+          if (Array.isArray(sub.tfAnswers) && Array.isArray(q.ans)) {
+            isCorrect = sub.tfAnswers.every((val, i) => val === q.ans[i]);
           } else {
-            wrongTeams.push({ team, choice: sub.choice, choiceText: sub.choiceText, format: sub.format, time: sub.time });
+            isCorrect = (sub.choice === q.correctText);
           }
+        } else if (qType === 'match') {
+          if (Array.isArray(sub.matchAnswers) && Array.isArray(q.ans)) {
+            isCorrect = sub.matchAnswers.every((val, i) => val === q.ans[i]);
+          }
+        } else if (qType === 'drag' || qType === 'fill') {
+          if (Array.isArray(sub.fillAnswers) && Array.isArray(q.ans)) {
+            isCorrect = sub.fillAnswers.every((val, i) => val === q.ans[i]);
+          }
+        }
+
+        if (isCorrect) {
+          correctTeams.push({ team, choice: sub.choice, choiceText: sub.choiceText, time: sub.time });
         } else {
-          unsubmittedTeams.push({ team, choice: null, choiceText: null, format: null, time: null });
+          wrongTeams.push({ team, choice: sub.choice, choiceText: sub.choiceText, time: sub.time });
         }
       });
 
-      // Sort correct teams by response time ascending
-      correctTeams.sort((a, b) => a.time - b.time);
+      // Sort correct teams by speed
+      correctTeams.sort((a, b) => (a.time || 999) - (b.time || 999));
+      wrongTeams.sort((a, b) => (a.time || 999) - (b.time || 999));
 
-      const OLYMPIA_POINTS = [40, 30, 20, 10];
+      // Olympia Speed Bonus points
+      const bonusTable = [40, 30, 20, 10];
       const rankings = [];
 
-      correctTeams.forEach((item, idx) => {
-        const rank = idx + 1;
-        let basePts = OLYMPIA_POINTS[idx] || 10;
-        let earnedPts = basePts;
-        if (item.team.hasStar) {
-          earnedPts *= 2;
-          if (!isRemote) item.team.hasStar = false;
-        }
-        if (!isRemote) {
-          item.team.score += earnedPts;
-        }
+      correctTeams.forEach((item, rankIdx) => {
+        const pts = bonusTable[rankIdx] || 10;
+        item.team.score += pts;
         rankings.push({
           teamId: item.team.id,
-          name: item.team.name,
+          teamName: item.team.name,
           avatar: item.team.avatar,
-          choice: item.choice,
-          choiceText: item.choiceText || (item.choice !== null ? prefixes[item.choice] : ''),
-          format: item.format,
-          time: item.time,
           isCorrect: true,
-          rank: rank,
-          pts: earnedPts
+          rank: rankIdx + 1,
+          pts: pts,
+          choiceText: item.choiceText,
+          time: item.time
         });
       });
 
       wrongTeams.forEach(item => {
-        if (!isRemote && item.team.hasStar) {
-          item.team.hasStar = false;
-        }
         rankings.push({
           teamId: item.team.id,
-          name: item.team.name,
+          teamName: item.team.name,
           avatar: item.team.avatar,
-          choice: item.choice,
-          choiceText: item.choiceText || (item.choice !== null ? prefixes[item.choice] : ''),
-          format: item.format,
-          time: item.time,
           isCorrect: false,
           rank: null,
-          pts: 0
+          pts: 0,
+          choiceText: item.choiceText,
+          time: item.time
         });
       });
 
       unsubmittedTeams.forEach(item => {
         rankings.push({
           teamId: item.team.id,
-          name: item.team.name,
+          teamName: item.team.name,
           avatar: item.team.avatar,
-          choice: null,
-          choiceText: null,
-          format: null,
-          time: null,
           isCorrect: false,
           rank: null,
-          pts: 0
+          pts: 0,
+          choiceText: '—',
+          time: null
         });
       });
 
-      lastQuestionResults = rankings;
-
-      // 3. Render Olympia Results Card on Host Screen
+      // Render Olympia Results Card
       const resCard = document.getElementById('olympiaResultsCard');
-      const corrText = document.getElementById('olympiaCorrectText');
-      const ranksList = document.getElementById('olympiaRanksList');
-
-      if (corrText) {
-        corrText.innerHTML = `[ ${prefixes[correctAns]} ] ${q.opts[correctAns] || ''}`;
+      if (resCard) {
+        let html = `
+          <div class="olympia-results-header">
+            <span>🏆</span> BẢNG TỔNG SẮP TĂNG TỐC OLIMPIA (CÂU ${currentQIdx + 1})
+          </div>
+          <div class="olympia-ranks-list">
+        `;
+        if (correctTeams.length === 0) {
+          html += `<div style="color: #fca5a5; text-align: center; padding: 12px; font-weight: 700;">Rất tiếc! Chưa có Tổ nào trả lời chính xác câu hỏi này.</div>`;
+        } else {
+          correctTeams.forEach((item, r) => {
+            const pts = bonusTable[r] || 10;
+            const medal = r === 0 ? '🥇 HẠNG 1' : (r === 1 ? '🥈 HẠNG 2' : (r === 2 ? '🥉 HẠNG 3' : '🎖️ HẠNG 4'));
+            html += `
+              <div class="olympia-rank-row rank-${r + 1}">
+                <div class="olympia-rank-badge">${medal}</div>
+                <div class="olympia-rank-team">${item.team.avatar} ${item.team.name}</div>
+                <div class="olympia-rank-choice">[ <b>${item.choiceText}</b> ]</div>
+                <div class="olympia-rank-time">⏱️ ${item.time}s</div>
+                <div class="olympia-rank-pts">+${pts}đ</div>
+              </div>
+            `;
+          });
+        }
+        html += `</div>`;
+        resCard.innerHTML = html;
+        resCard.style.display = 'flex';
       }
 
-      if (ranksList) {
-        ranksList.innerHTML = '';
-        const displayList = [...rankings].sort((a, b) => {
-          if (a.isCorrect && !b.isCorrect) return -1;
-          if (!a.isCorrect && b.isCorrect) return 1;
-          if (a.isCorrect && b.isCorrect) return a.rank - b.rank;
-          return 0;
-        });
-
-        const rankMedals = ['🥇', '🥈', '🥉', '🎖️'];
-
-        displayList.forEach(item => {
-          const row = document.createElement('div');
-          if (item.isCorrect) {
-            row.className = `olympia-rank-row rank-${item.rank}`;
-            row.innerHTML = `
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <span style="font-size: 1.3rem;">${rankMedals[item.rank - 1] || '🎖️'}</span>
-                <div>
-                  <div style="font-weight: 800; font-size: 0.95rem;">${item.name}</div>
-                  <div style="font-size: 0.8rem; color: #94a3b8;">
-                    Đáp án <b>[ ${item.choiceText || (prefixes[item.choice] || '')} ]</b> trong <b>${item.time}s</b>
-                  </div>
-                </div>
-              </div>
-              <div style="font-size: 1.1rem; font-weight: 900; color: #fbbf24;">+${item.pts}đ</div>
-            `;
-          } else if (item.choice !== null || item.choiceText) {
-            row.className = 'olympia-rank-row wrong-row';
-            row.innerHTML = `
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <span style="font-size: 1.3rem;">❌</span>
-                <div>
-                  <div style="font-weight: 800; font-size: 0.95rem;">${item.name}</div>
-                  <div style="font-size: 0.8rem; color: #fca5a5;">
-                    Đã chọn [ <b>${item.choiceText || (prefixes[item.choice] || '')}</b> ] (${item.time}s) • Chưa đúng
-                  </div>
-                </div>
-              </div>
-              <div style="font-size: 1rem; font-weight: 800; color: #94a3b8;">+0đ</div>
-            `;
-          } else {
-            row.className = 'olympia-rank-row wrong-row';
-            row.style.opacity = '0.65';
-            row.innerHTML = `
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <span style="font-size: 1.3rem;">⏳</span>
-                <div>
-                  <div style="font-weight: 800; font-size: 0.95rem;">${item.name}</div>
-                  <div style="font-size: 0.8rem; color: #94a3b8;">Chưa nộp đáp án</div>
-                </div>
-              </div>
-              <div style="font-size: 1rem; font-weight: 800; color: #94a3b8;">+0đ</div>
-            `;
-          }
-          ranksList.appendChild(row);
-        });
-      }
-
-      if (resCard) resCard.style.display = 'block';
-
-      // 4. Show explanation
-      const expBox = document.getElementById('explanationBox');
-      if (expBox) {
-        document.getElementById('explanationContent').innerHTML = q.exp || 'Đã xác nhận kết quả!';
-        expBox.classList.add('show');
-      }
-
-      // 5. Sound & Confetti
+      // Play audio & trigger confetti
       if (correctTeams.length > 0) {
         playVictoryFanfare5s();
-        triggerConfetti(70);
+        triggerConfetti(60);
       } else {
-        soundWrong();
+        playTone(330, 0.4, 'sawtooth', 0.25);
       }
 
-      // 6. Update Teams on Host
       renderTeams();
 
-      // 7. Broadcast results to all student phones and projector
-      if (!isRemote && !isProjectorRole) {
+      // Sync simulator if open
+      if (currentHostViewMode === 'student') {
+        syncSimulatorView();
+      }
+
+      if (!isRemote) {
         broadcastMsg({
           action: 'QUESTION_RESULT',
-          qIdx: currentQIdx,
-          correctAns: correctAns,
-          rankings: rankings,
-          teams: teams,
-          teamAnswers: teamAnswers
+          idx: currentQIdx,
+          qType: qType,
+          correctAns: q.ans,
+          correctText: q.correctText || '',
+          rankings: rankings
         });
       }
     }
@@ -4387,6 +5119,10 @@
         if (['INPUT', 'TEXTAREA', 'SELECT'].includes(targetTag)) return;
 
         if (e.key === 'Escape') {
+          if (typeof currentHostViewMode !== 'undefined' && (currentHostViewMode === 'projector' || currentHostViewMode === 'student')) {
+            setHostViewMode('host');
+            return;
+          }
           document.querySelectorAll('.modal-overlay.open').forEach(m => m.classList.remove('open'));
           return;
         }
