@@ -6010,6 +6010,40 @@
           clientJoinTeam(t.id, t.name, t.avatar, t.color);
         } catch(e) {}
       }
+
+      const autoTest = urlParams.get('test');
+      if (autoTest) {
+        setTimeout(() => {
+          if (!myTeamId) clientJoinTeam(1, 'TỔ 1 (MENDELEEV)', '⚗️', '#38bdf8');
+          if (autoTest === 'fill' || autoTest === 'word') {
+            setStudentFormat('fill');
+            const mockWords = ['tỏa nhiệt', 'thu nhiệt', 'tăng', 'giảm', 'cân bằng hóa học', 'kết tủa trắng'];
+            clientOnStartQuestion({ qIdx: 0, totalQ: 10, timeLimit: 20, qType: 'fill', words: mockWords });
+            clientSelectFillSlot(0);
+            clientSelectWord('tỏa nhiệt');
+            clientSelectFillSlot(1);
+            clientSelectWord('thu nhiệt');
+          } else if (autoTest === 'tf') {
+            setStudentFormat('tf');
+            clientOnStartQuestion({ qIdx: 1, totalQ: 10, timeLimit: 20, qType: 'tf' });
+            clientSelectTf('a', 'Đ');
+            clientSelectTf('b', 'S');
+            clientSelectTf('c', 'Đ');
+            clientSelectTf('d', 'Đ');
+          } else if (autoTest === 'match') {
+            setStudentFormat('match');
+            clientOnStartQuestion({ qIdx: 2, totalQ: 10, timeLimit: 20, qType: 'match' });
+            clientSelectMatch(1, 'B');
+            clientSelectMatch(2, 'A');
+            clientSelectMatch(3, 'D');
+            clientSelectMatch(4, 'C');
+          } else if (autoTest === 'mcq') {
+            setStudentFormat('mcq');
+            clientOnStartQuestion({ qIdx: 3, totalQ: 10, timeLimit: 20, qType: 'mcq' });
+            clientSubmitAnswer(1);
+          }
+        }, 100);
+      }
     }
 
     function clientJoinTeam(id, name, avatar, color) {
