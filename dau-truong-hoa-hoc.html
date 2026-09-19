@@ -2970,38 +2970,57 @@
       border-radius: 5px !important;
     }
 
-    /* Fill Pad: Input + Chips or Numpad */
+    /* Fill Pad: Spacious & Ergonomic Input */
     html.role-buzzer .fill-mode-switch {
-      margin-bottom: 2px !important;
+      margin-bottom: 4px !important;
+      display: flex !important;
+      gap: 4px !important;
     }
     html.role-buzzer .btn-fill-mode {
-      padding: 3px 5px !important;
-      font-size: 0.7rem !important;
+      flex: 1 !important;
+      padding: 5px 8px !important;
+      font-size: 0.75rem !important;
+      font-weight: 700 !important;
     }
     html.role-buzzer .fill-input-box-wrap {
-      padding: 3px 6px !important;
-      margin-bottom: 2px !important;
-      border-radius: 7px !important;
+      padding: 6px 10px !important;
+      margin-bottom: 6px !important;
+      border-radius: 10px !important;
+      background: rgba(15, 23, 42, 0.85) !important;
+      border: 1.5px solid rgba(56, 189, 248, 0.45) !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
     }
     html.role-buzzer .fill-text-input {
-      font-size: 0.82rem !important;
-      padding: 3px 6px !important;
+      font-size: 1.05rem !important;
+      font-weight: 700 !important;
+      padding: 4px 6px !important;
+      color: #38bdf8 !important;
+      min-height: 36px !important;
+    }
+    html.role-buzzer .btn-fill-clear-icon {
+      width: 32px !important;
+      height: 32px !important;
+      font-size: 0.95rem !important;
     }
     html.role-buzzer .fill-word-bank-chips {
-      gap: 3px !important;
-      max-height: clamp(70px, 16vh, 100px) !important;
+      gap: 5px !important;
+      max-height: clamp(85px, 20vh, 130px) !important;
       overflow-y: auto !important;
+      padding: 3px 0 !important;
     }
     html.role-buzzer .btn-word-chip {
-      padding: 2px 6px !important;
-      font-size: 0.72rem !important;
+      padding: 5px 10px !important;
+      font-size: 0.8rem !important;
+      font-weight: 600 !important;
     }
     html.role-buzzer .fill-numpad-grid {
-      gap: 3px !important;
+      gap: 5px !important;
     }
     html.role-buzzer .btn-numpad {
-      padding: 5px !important;
-      font-size: 0.9rem !important;
+      padding: 8px !important;
+      font-size: 1.05rem !important;
+      font-weight: 800 !important;
+      min-height: 40px !important;
     }
 
     /* Unified Student Submit Button */
@@ -3463,23 +3482,23 @@
 
       <!-- Format Pad 4: Numerical / Word / Cloze Fill In -->
       <div class="student-format-pad" id="pad_fill">
-        <!-- Slot selection row for multi-blank questions -->
-        <div class="fill-slots-row" id="fillSlotsContainer" style="display: none; gap: 6px; margin-bottom: 6px;">
-          <button type="button" class="btn-fill-slot active" id="btnFillSlot_0" onclick="clientSelectFillSlot(0)" style="flex: 1; padding: 4px; border-radius: 8px; border: 1.5px solid #38bdf8; background: rgba(56,189,248,0.15); color: #fff; cursor: pointer; text-align: center;">
-            <div style="font-size: 0.65rem; color: #94a3b8; font-weight: 700;">VỊ TRÍ 1</div>
-            <div class="fill-slot-val" id="fillSlotVal_0" style="font-size: 0.72rem; color: #38bdf8; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">—</div>
+        <!-- Slot selection grid for multi-blank questions (2x2 grid for generous width) -->
+        <div class="fill-slots-grid" id="fillSlotsContainer" style="display: none; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
+          <button type="button" class="btn-fill-slot active" id="btnFillSlot_0" onclick="clientSelectFillSlot(0)" style="display: flex; align-items: center; justify-content: space-between; padding: 6px 10px; border-radius: 8px; border: 1.5px solid #38bdf8; background: rgba(56,189,248,0.15); color: #fff; cursor: pointer;">
+            <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 800; min-width: 32px;">[1]</span>
+            <span class="fill-slot-val" id="fillSlotVal_0" style="font-size: 0.8rem; color: #38bdf8; font-weight: 700; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; margin-left: 4px;">—</span>
           </button>
-          <button type="button" class="btn-fill-slot" id="btnFillSlot_1" onclick="clientSelectFillSlot(1)" style="flex: 1; padding: 4px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(15,23,42,0.6); color: #fff; cursor: pointer; text-align: center;">
-            <div style="font-size: 0.65rem; color: #94a3b8; font-weight: 700;">VỊ TRÍ 2</div>
-            <div class="fill-slot-val" id="fillSlotVal_1" style="font-size: 0.72rem; color: #cbd5e1; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">—</div>
+          <button type="button" class="btn-fill-slot" id="btnFillSlot_1" onclick="clientSelectFillSlot(1)" style="display: flex; align-items: center; justify-content: space-between; padding: 6px 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(15,23,42,0.6); color: #fff; cursor: pointer;">
+            <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 800; min-width: 32px;">[2]</span>
+            <span class="fill-slot-val" id="fillSlotVal_1" style="font-size: 0.8rem; color: #cbd5e1; font-weight: 700; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; margin-left: 4px;">—</span>
           </button>
-          <button type="button" class="btn-fill-slot" id="btnFillSlot_2" onclick="clientSelectFillSlot(2)" style="flex: 1; padding: 4px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(15,23,42,0.6); color: #fff; cursor: pointer; text-align: center;">
-            <div style="font-size: 0.65rem; color: #94a3b8; font-weight: 700;">VỊ TRÍ 3</div>
-            <div class="fill-slot-val" id="fillSlotVal_2" style="font-size: 0.72rem; color: #cbd5e1; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">—</div>
+          <button type="button" class="btn-fill-slot" id="btnFillSlot_2" onclick="clientSelectFillSlot(2)" style="display: flex; align-items: center; justify-content: space-between; padding: 6px 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(15,23,42,0.6); color: #fff; cursor: pointer;">
+            <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 800; min-width: 32px;">[3]</span>
+            <span class="fill-slot-val" id="fillSlotVal_2" style="font-size: 0.8rem; color: #cbd5e1; font-weight: 700; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; margin-left: 4px;">—</span>
           </button>
-          <button type="button" class="btn-fill-slot" id="btnFillSlot_3" onclick="clientSelectFillSlot(3)" style="flex: 1; padding: 4px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(15,23,42,0.6); color: #fff; cursor: pointer; text-align: center;">
-            <div style="font-size: 0.65rem; color: #94a3b8; font-weight: 700;">VỊ TRÍ 4</div>
-            <div class="fill-slot-val" id="fillSlotVal_3" style="font-size: 0.72rem; color: #cbd5e1; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">—</div>
+          <button type="button" class="btn-fill-slot" id="btnFillSlot_3" onclick="clientSelectFillSlot(3)" style="display: flex; align-items: center; justify-content: space-between; padding: 6px 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(15,23,42,0.6); color: #fff; cursor: pointer;">
+            <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 800; min-width: 32px;">[4]</span>
+            <span class="fill-slot-val" id="fillSlotVal_3" style="font-size: 0.8rem; color: #cbd5e1; font-weight: 700; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; margin-left: 4px;">—</span>
           </button>
         </div>
 
@@ -6458,7 +6477,7 @@
       const isDragOrWords = (data.words && Array.isArray(data.words) && data.words.length > 0);
       const slotsRow = document.getElementById('fillSlotsContainer');
       if (slotsRow) {
-        slotsRow.style.display = isDragOrWords ? 'flex' : 'none';
+        slotsRow.style.display = isDragOrWords ? 'grid' : 'none';
       }
 
       if (isDragOrWords) {
