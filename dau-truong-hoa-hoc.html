@@ -3463,6 +3463,26 @@
 
       <!-- Format Pad 4: Numerical / Word / Cloze Fill In -->
       <div class="student-format-pad" id="pad_fill">
+        <!-- Slot selection row for multi-blank questions -->
+        <div class="fill-slots-row" id="fillSlotsContainer" style="display: none; gap: 6px; margin-bottom: 6px;">
+          <button type="button" class="btn-fill-slot active" id="btnFillSlot_0" onclick="clientSelectFillSlot(0)" style="flex: 1; padding: 4px; border-radius: 8px; border: 1.5px solid #38bdf8; background: rgba(56,189,248,0.15); color: #fff; cursor: pointer; text-align: center;">
+            <div style="font-size: 0.65rem; color: #94a3b8; font-weight: 700;">VỊ TRÍ 1</div>
+            <div class="fill-slot-val" id="fillSlotVal_0" style="font-size: 0.72rem; color: #38bdf8; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">—</div>
+          </button>
+          <button type="button" class="btn-fill-slot" id="btnFillSlot_1" onclick="clientSelectFillSlot(1)" style="flex: 1; padding: 4px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(15,23,42,0.6); color: #fff; cursor: pointer; text-align: center;">
+            <div style="font-size: 0.65rem; color: #94a3b8; font-weight: 700;">VỊ TRÍ 2</div>
+            <div class="fill-slot-val" id="fillSlotVal_1" style="font-size: 0.72rem; color: #cbd5e1; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">—</div>
+          </button>
+          <button type="button" class="btn-fill-slot" id="btnFillSlot_2" onclick="clientSelectFillSlot(2)" style="flex: 1; padding: 4px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(15,23,42,0.6); color: #fff; cursor: pointer; text-align: center;">
+            <div style="font-size: 0.65rem; color: #94a3b8; font-weight: 700;">VỊ TRÍ 3</div>
+            <div class="fill-slot-val" id="fillSlotVal_2" style="font-size: 0.72rem; color: #cbd5e1; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">—</div>
+          </button>
+          <button type="button" class="btn-fill-slot" id="btnFillSlot_3" onclick="clientSelectFillSlot(3)" style="flex: 1; padding: 4px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(15,23,42,0.6); color: #fff; cursor: pointer; text-align: center;">
+            <div style="font-size: 0.65rem; color: #94a3b8; font-weight: 700;">VỊ TRÍ 4</div>
+            <div class="fill-slot-val" id="fillSlotVal_3" style="font-size: 0.72rem; color: #cbd5e1; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">—</div>
+          </button>
+        </div>
+
         <!-- Sub-Mode Switcher -->
         <div class="fill-mode-switch">
           <button type="button" class="btn-fill-mode active" id="btnFillMode_text" onclick="setFillSubMode('text')">
@@ -4833,9 +4853,6 @@
           <div style="font-size: 0.82rem; color: #94a3b8; font-weight: 600;">
             Câu ${currentQIdx + 1}/${battleQuestions.length} • [${qType.toUpperCase()}]
           </div>
-          <div style="font-size: 0.86rem; color: #f1f5f9; line-height: 1.35; max-height: 70px; overflow-y: auto;">
-            ${q.q || ''}
-          </div>
       `;
 
       if (submission) {
@@ -4857,81 +4874,72 @@
         `;
       } else {
         if (qType === 'mcq') {
-          const opts = q.opts || ['A', 'B', 'C', 'D'];
           const prefixes = ['A', 'B', 'C', 'D'];
           bodyHtml += `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex: 1;">`;
-          opts.forEach((opt, idx) => {
+          prefixes.forEach((pref, idx) => {
             bodyHtml += `
-              <button onclick="simulatorSubmitMcq(${idx})" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px 6px; border-radius: 12px; border: 1.5px solid rgba(56,189,248,0.4); background: rgba(15,23,42,0.8); color: #ffffff; cursor: pointer; transition: all 0.2s;">
-                <span style="font-size: 1.2rem; font-weight: 900; color: #38bdf8;">${prefixes[idx]}</span>
-                <span style="font-size: 0.72rem; color: #cbd5e1; margin-top: 4px; text-align: center; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${opt}</span>
+              <button onclick="simulatorSubmitMcq(${idx})" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px 6px; border-radius: 12px; border: 1.5px solid rgba(56,189,248,0.4); background: rgba(15,23,42,0.8); color: #ffffff; cursor: pointer; transition: all 0.2s;">
+                <span style="font-size: 1.8rem; font-weight: 900; color: #38bdf8;">${pref}</span>
               </button>
             `;
           });
           bodyHtml += `</div>`;
         } else if (qType === 'tf') {
-          const stmts = q.stmts || ['Ý a', 'Ý b', 'Ý c', 'Ý d'];
           const letters = ['a', 'b', 'c', 'd'];
-          bodyHtml += `<div style="display: flex; flex-direction: column; gap: 6px; flex: 1; overflow-y: auto;">`;
+          bodyHtml += `<div style="display: flex; flex-direction: column; gap: 8px; flex: 1; justify-content: center;">`;
           letters.forEach((let, i) => {
             bodyHtml += `
-              <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(30,41,59,0.7); border: 1px solid rgba(56,189,248,0.25); border-radius: 8px; padding: 6px 10px;">
-                <span style="font-weight: 800; color: #38bdf8; font-size: 0.85rem; margin-right: 6px;">${let})</span>
-                <span style="flex: 1; font-size: 0.75rem; color: #e2e8f0; line-height: 1.2; margin-right: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${stmts[i]}</span>
-                <div style="display: flex; gap: 4px;">
-                  <button id="simTf_${let}_T" onclick="simToggleTf('${let}', 'Đ')" style="border: 1px solid #10b981; background: ${simTfState[let] === 'Đ' ? '#10b981' : 'rgba(16,185,129,0.2)'}; color: ${simTfState[let] === 'Đ' ? '#fff' : '#34d399'}; border-radius: 6px; padding: 3px 8px; font-weight: 700; font-size: 0.75rem; cursor: pointer;">Đ</button>
-                  <button id="simTf_${let}_F" onclick="simToggleTf('${let}', 'S')" style="border: 1px solid #ef4444; background: ${simTfState[let] === 'S' ? '#ef4444' : 'rgba(239,68,68,0.2)'}; color: ${simTfState[let] === 'S' ? '#fff' : '#fca5a5'}; border-radius: 6px; padding: 3px 8px; font-weight: 700; font-size: 0.75rem; cursor: pointer;">S</button>
+              <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(30,41,59,0.7); border: 1px solid rgba(56,189,248,0.25); border-radius: 8px; padding: 8px 12px;">
+                <span style="font-weight: 800; color: #38bdf8; font-size: 1.1rem;">${let})</span>
+                <div style="display: flex; gap: 8px;">
+                  <button id="simTf_${let}_T" onclick="simToggleTf('${let}', 'Đ')" style="border: 1px solid #10b981; background: ${simTfState[let] === 'Đ' ? '#10b981' : 'rgba(16,185,129,0.2)'}; color: ${simTfState[let] === 'Đ' ? '#fff' : '#34d399'}; border-radius: 8px; padding: 6px 14px; font-weight: 800; font-size: 0.9rem; cursor: pointer;">Đúng</button>
+                  <button id="simTf_${let}_F" onclick="simToggleTf('${let}', 'S')" style="border: 1px solid #ef4444; background: ${simTfState[let] === 'S' ? '#ef4444' : 'rgba(239,68,68,0.2)'}; color: ${simTfState[let] === 'S' ? '#fff' : '#fca5a5'}; border-radius: 8px; padding: 6px 14px; font-weight: 800; font-size: 0.9rem; cursor: pointer;">Sai</button>
                 </div>
               </div>
             `;
           });
           bodyHtml += `
-            <button onclick="simulatorSubmitTf()" style="margin-top: 6px; width: 100%; padding: 10px; border: none; border-radius: 10px; background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; font-weight: 800; font-size: 0.85rem; cursor: pointer;">
+            <button onclick="simulatorSubmitTf()" style="margin-top: 6px; width: 100%; padding: 10px; border: none; border-radius: 10px; background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; font-weight: 800; font-size: 0.9rem; cursor: pointer;">
               🚀 Nộp Bài Đúng / Sai
             </button>
           </div>`;
         } else if (qType === 'match') {
-          const colA = q.colA || [];
-          const colB = q.colB || [];
+          const prefixes = ['A', 'B', 'C', 'D'];
           bodyHtml += `
-            <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; overflow-y: auto;">
-              <div style="font-size: 0.78rem; color: #38bdf8; font-weight: 700;">Ghép Cột A với Cột B:</div>
+            <div style="display: flex; flex-direction: column; gap: 8px; flex: 1; justify-content: center;">
+              <div style="font-size: 0.8rem; color: #38bdf8; font-weight: 700; text-align: center;">CHỌN ĐÁP ÁN GHÉP NỐI CHO 1..4:</div>
           `;
-          colA.forEach((item, i) => {
+          [1, 2, 3, 4].forEach((num, i) => {
             bodyHtml += `
-              <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(30,41,59,0.7); border: 1px solid rgba(56,189,248,0.25); border-radius: 8px; padding: 6px 8px;">
-                <span style="font-weight: 800; color: #38bdf8; font-size: 0.8rem; min-width: 20px;">${i+1}.</span>
-                <span style="flex: 1; font-size: 0.72rem; color: #cbd5e1; line-height: 1.2; margin-right: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${item}</span>
-                <select id="simMatchSel_${i}" style="background: #0f172a; border: 1px solid #38bdf8; color: #38bdf8; border-radius: 6px; padding: 2px 4px; font-size: 0.75rem; font-weight: 700;">
-                  ${colB.map((b, bIdx) => `<option value="${bIdx}">${String.fromCharCode(65 + bIdx)}</option>`).join('')}
+              <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(30,41,59,0.7); border: 1px solid rgba(56,189,248,0.25); border-radius: 8px; padding: 8px 12px;">
+                <span style="font-weight: 800; color: #38bdf8; font-size: 1rem;">${num}.</span>
+                <select id="simMatchSel_${i}" style="background: #0f172a; border: 1.5px solid #38bdf8; color: #38bdf8; border-radius: 6px; padding: 4px 10px; font-size: 0.85rem; font-weight: 800;">
+                  ${prefixes.map((b, bIdx) => `<option value="${bIdx}">${b}</option>`).join('')}
                 </select>
               </div>
             `;
           });
           bodyHtml += `
-            <button onclick="simulatorSubmitMatch()" style="margin-top: 6px; width: 100%; padding: 10px; border: none; border-radius: 10px; background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; font-weight: 800; font-size: 0.85rem; cursor: pointer;">
+            <button onclick="simulatorSubmitMatch()" style="margin-top: 6px; width: 100%; padding: 10px; border: none; border-radius: 10px; background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; font-weight: 800; font-size: 0.9rem; cursor: pointer;">
               🚀 Nộp Bài Ghép Đôi
             </button>
           </div>`;
         } else if (qType === 'drag' || qType === 'fill') {
           const words = q.words || [];
           bodyHtml += `
-            <div style="display: flex; flex-direction: column; gap: 8px; flex: 1; overflow-y: auto;">
-              <div style="font-size: 0.78rem; color: #38bdf8; font-weight: 700;">Chọn từ khóa tương ứng:</div>
-              <div style="display: flex; flex-wrap: wrap; gap: 4px; background: rgba(15,23,42,0.6); padding: 6px; border-radius: 8px;">
-                ${words.map(w => `<span style="background: rgba(30,41,59,0.9); border: 1px solid rgba(56,189,248,0.3); border-radius: 6px; padding: 2px 6px; font-size: 0.72rem; color: #e2e8f0;">${w}</span>`).join('')}
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 4px;">
+            <div style="display: flex; flex-direction: column; gap: 8px; flex: 1; justify-content: center;">
+              <div style="font-size: 0.8rem; color: #38bdf8; font-weight: 700; text-align: center;">CHỌN TỪ KHÓA CHO TỪNG VỊ TRÍ:</div>
+              <div style="display: flex; flex-direction: column; gap: 6px;">
                 ${[1, 2, 3, 4].map(slot => `
-                  <div style="display: flex; align-items: center; gap: 6px;">
-                    <span style="font-size: 0.75rem; font-weight: 700; color: #38bdf8; min-width: 44px;">Vị trí ${slot}:</span>
-                    <select id="simFillSel_${slot-1}" style="flex: 1; background: #0f172a; border: 1px solid #38bdf8; color: #38bdf8; border-radius: 6px; padding: 3px 6px; font-size: 0.75rem;">
+                  <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(30,41,59,0.7); border: 1px solid rgba(56,189,248,0.25); border-radius: 8px; padding: 6px 10px;">
+                    <span style="font-size: 0.8rem; font-weight: 800; color: #38bdf8;">Vị trí ${slot}:</span>
+                    <select id="simFillSel_${slot-1}" style="background: #0f172a; border: 1px solid #38bdf8; color: #38bdf8; border-radius: 6px; padding: 4px 8px; font-size: 0.78rem; max-width: 180px;">
                       ${words.map((w, wIdx) => `<option value="${wIdx}">${w}</option>`).join('')}
                     </select>
                   </div>
                 `).join('')}
               </div>
-              <button onclick="simulatorSubmitFill()" style="margin-top: 6px; width: 100%; padding: 10px; border: none; border-radius: 10px; background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; font-weight: 800; font-size: 0.85rem; cursor: pointer;">
+              <button onclick="simulatorSubmitFill()" style="margin-top: 6px; width: 100%; padding: 10px; border: none; border-radius: 10px; background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; font-weight: 800; font-size: 0.9rem; cursor: pointer;">
                 🚀 Nộp Bài Điền Khuyết
               </button>
             </div>
@@ -5430,18 +5438,49 @@
         if (qType === 'mcq') {
           isCorrect = (sub.choice === q.ans);
         } else if (qType === 'tf') {
-          if (Array.isArray(sub.tfAnswers) && Array.isArray(q.ans)) {
-            isCorrect = sub.tfAnswers.every((val, i) => val === q.ans[i]);
-          } else {
-            isCorrect = (sub.choice === q.correctText);
+          let tfArr = null;
+          if (Array.isArray(sub.tfAnswers)) {
+            tfArr = sub.tfAnswers;
+          } else if (sub.tfAnswers && typeof sub.tfAnswers === 'object') {
+            tfArr = ['a', 'b', 'c', 'd'].map(k => sub.tfAnswers[k] === 'Đ' || sub.tfAnswers[k] === true);
+          }
+          if (tfArr && Array.isArray(q.ans)) {
+            isCorrect = tfArr.every((val, i) => val === q.ans[i]);
+          } else if (sub.choice === q.correctText) {
+            isCorrect = true;
           }
         } else if (qType === 'match') {
-          if (Array.isArray(sub.matchAnswers) && Array.isArray(q.ans)) {
-            isCorrect = sub.matchAnswers.every((val, i) => val === q.ans[i]);
+          let matchArr = null;
+          if (Array.isArray(sub.matchAnswers)) {
+            matchArr = sub.matchAnswers;
+          } else if (sub.matchAnswers && typeof sub.matchAnswers === 'object') {
+            const letters = ['A', 'B', 'C', 'D'];
+            matchArr = [1, 2, 3, 4].map(k => {
+              const v = sub.matchAnswers[k];
+              return typeof v === 'number' ? v : (typeof v === 'string' ? letters.indexOf(v.toUpperCase()) : -1);
+            });
+          }
+          if (matchArr && Array.isArray(q.ans)) {
+            isCorrect = matchArr.every((val, i) => val === q.ans[i]);
           }
         } else if (qType === 'drag' || qType === 'fill') {
-          if (Array.isArray(sub.fillAnswers) && Array.isArray(q.ans)) {
+          if (Array.isArray(sub.fillAnswers) && Array.isArray(q.ans) && sub.fillAnswers.some(v => v !== -1)) {
             isCorrect = sub.fillAnswers.every((val, i) => val === q.ans[i]);
+          } else if (typeof sub.choice === 'string') {
+            const clean = sub.choice.trim().toLowerCase();
+            if (q.correctText && clean === q.correctText.trim().toLowerCase()) {
+              isCorrect = true;
+            } else if (Array.isArray(q.ans) && q.words) {
+              const expectedWords = q.ans.map(idx => (q.words[idx] || '').trim().toLowerCase());
+              if (expectedWords.includes(clean)) {
+                isCorrect = true;
+              } else {
+                const matchesCount = expectedWords.filter(ew => ew && clean.includes(ew)).length;
+                if (matchesCount >= Math.min(2, expectedWords.length)) {
+                  isCorrect = true;
+                }
+              }
+            }
           }
         }
 
@@ -5580,6 +5619,7 @@
         format: fmt,
         tfAnswers: data.tfAnswers || null,
         matchAnswers: data.matchAnswers || null,
+        fillAnswers: data.fillAnswers || null,
         time: data.time
       };
 
@@ -5998,6 +6038,26 @@
     let clientMatchSelections = { 1: null, 2: null, 3: null, 4: null };
     let clientFillValue = '';
     let fillSubMode = 'text';
+    let currentFillSlot = 0;
+    let clientSlotWords = ['', '', '', ''];
+    let currentWordBankList = [];
+
+    function clientSelectFillSlot(slotIdx) {
+      currentFillSlot = slotIdx;
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`btnFillSlot_${i}`);
+        const valEl = document.getElementById(`fillSlotVal_${i}`);
+        if (btn) {
+          btn.style.border = (i === slotIdx) ? '1.5px solid #38bdf8' : '1px solid rgba(255,255,255,0.15)';
+          btn.style.background = (i === slotIdx) ? 'rgba(56,189,248,0.15)' : 'rgba(15,23,42,0.6)';
+        }
+        if (valEl) {
+          valEl.style.color = (i === slotIdx) ? '#38bdf8' : '#cbd5e1';
+        }
+      }
+      playTone(550, 0.04, 'sine', 0.1);
+    }
+
 
     const DEFAULT_CHEM_WORDS = [
       'tỏa nhiệt', 'thu nhiệt', 'tăng', 'giảm', 'không đổi', 'chuyển dịch thuận', 'chuyển dịch nghịch',
@@ -6054,6 +6114,7 @@
       const elapsed = Math.max(0.05, (Date.now() - clientQStartTime) / 1000).toFixed(2);
       const choiceParts = ['a', 'b', 'c', 'd'].map(k => `${k}:${clientTfSelections[k] || '-'}`);
       const choiceText = choiceParts.join(' ');
+      const tfAnswers = ['a', 'b', 'c', 'd'].map(k => clientTfSelections[k] === 'Đ');
 
       // Disable TF buttons
       document.querySelectorAll('#pad_tf button').forEach(b => {
@@ -6079,7 +6140,7 @@
         format: 'tf',
         choice: choiceText,
         choiceText: choiceText,
-        tfAnswers: { ...clientTfSelections },
+        tfAnswers: tfAnswers,
         time: parseFloat(elapsed)
       });
     }
@@ -6116,6 +6177,11 @@
       const elapsed = Math.max(0.05, (Date.now() - clientQStartTime) / 1000).toFixed(2);
       const parts = [1, 2, 3, 4].map(k => `${k}${clientMatchSelections[k] || '?'}`);
       const choiceText = parts.join('-');
+      const letters = ['A', 'B', 'C', 'D'];
+      const matchAnswers = [1, 2, 3, 4].map(k => {
+        const l = clientMatchSelections[k];
+        return l ? letters.indexOf(l) : -1;
+      });
 
       // Disable Match buttons
       document.querySelectorAll('#pad_match button').forEach(b => {
@@ -6141,7 +6207,7 @@
         format: 'match',
         choice: choiceText,
         choiceText: choiceText,
-        matchAnswers: { ...clientMatchSelections },
+        matchAnswers: matchAnswers,
         time: parseFloat(elapsed)
       });
     }
@@ -6184,6 +6250,20 @@
       clientFillValue = word;
       const input = document.getElementById('fillTextInput');
       if (input) input.value = word;
+      
+      const slotsRow = document.getElementById('fillSlotsContainer');
+      if (slotsRow && slotsRow.style.display !== 'none') {
+        clientSlotWords[currentFillSlot] = word;
+        const valEl = document.getElementById(`fillSlotVal_${currentFillSlot}`);
+        if (valEl) valEl.innerText = word;
+        let nextSlot = (currentFillSlot + 1) % 4;
+        for (let i = 0; i < 4; i++) {
+          const checkIdx = (currentFillSlot + 1 + i) % 4;
+          if (!clientSlotWords[checkIdx]) { nextSlot = checkIdx; break; }
+        }
+        clientSelectFillSlot(nextSlot);
+      }
+
       document.querySelectorAll('#fillWordBankChips .btn-word-chip').forEach(c => {
         c.classList.toggle('selected', c.innerText.trim().toLowerCase() === word.trim().toLowerCase());
       });
@@ -6247,13 +6327,26 @@
 
     function clientSubmitFillAnswer() {
       if (clientHasAnswered) return;
-      if (!clientFillValue.trim()) {
-        alert('Vui lòng nhập từ khóa hoặc đáp số trước khi nộp!');
+      const hasSlotWords = clientSlotWords.some(w => w && w.trim() !== '');
+      if (!clientFillValue.trim() && !hasSlotWords) {
+        alert('Vui lòng chọn từ khóa hoặc nhập đáp số trước khi nộp!');
         return;
       }
       clientHasAnswered = true;
       const elapsed = Math.max(0.05, (Date.now() - clientQStartTime) / 1000).toFixed(2);
-      const choiceText = clientFillValue.trim();
+      let choiceText = clientFillValue.trim();
+      let fillAnswers = null;
+      const wordList = currentWordBankList.length > 0 ? currentWordBankList : (typeof DEFAULT_PHYSICS_KEYWORDS !== 'undefined' ? DEFAULT_PHYSICS_KEYWORDS : (typeof DEFAULT_CHEM_WORDS !== 'undefined' ? DEFAULT_CHEM_WORDS : []));
+      if (hasSlotWords) {
+        const parts = clientSlotWords.map((w, idx) => `${idx + 1}: ${w || '—'}`);
+        choiceText = parts.join(' | ');
+        fillAnswers = clientSlotWords.map(w => w ? wordList.indexOf(w) : -1);
+      } else {
+        const matchIdx = wordList.findIndex(w => w.toLowerCase() === choiceText.toLowerCase());
+        if (matchIdx !== -1) {
+          fillAnswers = [matchIdx];
+        }
+      }
 
       document.querySelectorAll('#pad_fill button, #pad_fill input').forEach(b => {
         b.disabled = true;
@@ -6278,6 +6371,7 @@
         format: 'fill',
         choice: choiceText,
         choiceText: choiceText,
+        fillAnswers: fillAnswers,
         time: parseFloat(elapsed)
       });
     }
@@ -6339,8 +6433,16 @@
       if (btnSubmitMatch) { btnSubmitMatch.disabled = false; btnSubmitMatch.style.pointerEvents = 'auto'; }
       updateMatchSummary();
 
-      // Reset Fill / Words / Numpad
+      // Reset Fill / Words / Numpad / Slots
       clientFillValue = '';
+      currentFillSlot = 0;
+      clientSlotWords = ['', '', '', ''];
+      for (let i = 0; i < 4; i++) {
+        const valEl = document.getElementById(`fillSlotVal_${i}`);
+        if (valEl) valEl.innerText = '—';
+      }
+      clientSelectFillSlot(0);
+
       const fillInput = document.getElementById('fillTextInput');
       if (fillInput) {
         fillInput.value = '';
@@ -6353,11 +6455,20 @@
       });
       document.querySelectorAll('#fillWordBankChips .btn-word-chip').forEach(c => c.classList.remove('selected'));
 
-      if (data.words && Array.isArray(data.words) && data.words.length > 0) {
+      const isDragOrWords = (data.words && Array.isArray(data.words) && data.words.length > 0);
+      const slotsRow = document.getElementById('fillSlotsContainer');
+      if (slotsRow) {
+        slotsRow.style.display = isDragOrWords ? 'flex' : 'none';
+      }
+
+      if (isDragOrWords) {
+        currentWordBankList = [...data.words];
         renderWordBankChips(data.words);
         setFillSubMode('text');
       } else {
-        renderWordBankChips(DEFAULT_CHEM_WORDS);
+        const defaultList = (typeof DEFAULT_PHYSICS_KEYWORDS !== 'undefined' ? DEFAULT_PHYSICS_KEYWORDS : (typeof DEFAULT_CHEM_WORDS !== 'undefined' ? DEFAULT_CHEM_WORDS : []));
+        currentWordBankList = [...defaultList];
+        renderWordBankChips(defaultList);
         if (data.isNumeric) {
           setFillSubMode('numpad');
         } else {
